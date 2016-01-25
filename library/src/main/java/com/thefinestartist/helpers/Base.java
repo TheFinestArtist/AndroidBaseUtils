@@ -20,4 +20,6 @@ public class Base {
 
         return Base.context;
     }
+
+    // TODO: add ripple, bitmap related helper
 }

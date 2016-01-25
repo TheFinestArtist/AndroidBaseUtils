@@ -47,7 +47,6 @@ import android.os.Vibrator;
 import android.os.storage.StorageManager;
 import android.print.PrintManager;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringDef;
 import android.telecom.TelecomManager;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
@@ -59,8 +58,6 @@ import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 
 /**
@@ -133,8 +130,13 @@ public class ServiceHelper {
         return Base.getContext().getSystemService(serviceName);
     }
 
+    // TODO: nice annotaion to check if the class is available for specific API
     public static <T> T getSystemService(Class<T> serviceClass) {
         String serviceName = SYSTEM_SERVICE_NAMES.get(serviceClass);
-        return serviceName != null ? (T) getSystemService(serviceName) : null;
+        if (serviceName == null) return null;
+        Object service = getSystemService(serviceName);
+        if (service == null) return null;
+        else return (T) service;
     }
+
 }

@@ -1,7 +1,5 @@
 package com.thefinestartist.helpers;
 
-import android.app.UiModeManager;
-import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -16,11 +14,12 @@ public class KeyboardHelper {
     private static InputMethodManager inputMethodManager;
 
     public static InputMethodManager getInputMethodManager() {
-        ServiceHelper.getSystemService(UiModeManager.class);
+
         if (inputMethodManager == null) {
             synchronized (KeyboardHelper.class) {
-                if (inputMethodManager == null)
-                    inputMethodManager = (InputMethodManager) Base.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (inputMethodManager == null) {
+                    inputMethodManager = ServiceHelper.getSystemService(InputMethodManager.class);
+                }
             }
         }
 

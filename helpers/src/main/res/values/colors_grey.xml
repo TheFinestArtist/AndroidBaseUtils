@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /**
+ * Copyright 2013 The Finest Artist
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+
+    <!-- Grey Percent -->
+    <color name="grey_percent_5">#0D0D0D</color>
+    <color name="grey_percent_10">#1A1A1A</color>
+    <color name="grey_percent_15">#262626</color>
+    <color name="grey_percent_20">#333333</color>
+    <color name="grey_percent_25">#404040</color>
+    <color name="grey_percent_30">#4D4D4D</color>
+    <color name="grey_percent_35">#595959</color>
+    <color name="grey_percent_40">#666666</color>
+    <color name="grey_percent_45">#737373</color>
+    <color name="grey_percent_50">#808080</color>
+    <color name="grey_percent_55">#8C8C8C</color>
+    <color name="grey_percent_60">#999999</color>
+    <color name="grey_percent_65">#A6A6A5</color>
+    <color name="grey_percent_70">#B3B3B3</color>
+    <color name="grey_percent_75">#BFBFBF</color>
+    <color name="grey_percent_80">#CCCCCC</color>
+    <color name="grey_percent_85">#D9D9D9</color>
+    <color name="grey_percent_90">#E6E6E6</color>
+    <color name="grey_percent_95">#F2F2F2</color>
+
+    <!-- Grey 0 -->
+    <color name="grey_hex_00">#000000</color>
+    <color name="grey_hex_01">#010101</color>
+    <color name="grey_hex_02">#020202</color>
+    <color name="grey_hex_03">#030303</color>
+    <color name="grey_hex_04">#040404</color>
+    <color name="grey_hex_05">#050505</color>
+    <color name="grey_hex_06">#060606</color>
+    <color name="grey_hex_07">#070707</color>
+    <color name="grey_hex_08">#080808</color>
+    <color name="grey_hex_09">#090909</color>
+    <color name="grey_hex_0a">#0a0a0a</color>
+    <color name="grey_hex_0b">#0b0b0b</color>
+    <color name="grey_hex_0c">#0c0c0c</color>
+    <color name="grey_hex_0d">#0d0d0d</color>
+    <color name="grey_hex_0e">#0e0e0e</color>
+    <color name="grey_hex_0f">#0f0f0f</color>
+    <!-- Grey 1 -->
+    <color name="grey_hex_10">#101010</color>
+    <color name="grey_hex_11">#111111</color>
+    <color name="grey_hex_12">#121212</color>
+    <color name="grey_hex_13">#131313</color>
+    <color name="grey_hex_14">#141414</color>
+    <color name="grey_hex_15">#151515</color>
+    <color name="grey_hex_16">#161616</color>
+    <color name="grey_hex_17">#171717</color>
+    <color name="grey_hex_18">#181818</color>
+    <color name="grey_hex_19">#191919</color>
+    <color name="grey_hex_1a">#1a1a1a</color>
+    <color name="grey_hex_1b">#1b1b1b</color>
+    <color name="grey_hex_1c">#1c1c1c</color>
+    <color name="grey_hex_1d">#1d1d1d</color>
+    <color name="grey_hex_1e">#1e1e1e</color>
+    <color name="grey_hex_1f">#1f1f1f</color>
+    <!-- Grey 2 -->
+    <color name="grey_hex_20">#202020</color>
+    <color name="grey_hex_21">#212121</color>
+    <color name="grey_hex_22">#222222</color>
+    <color name="grey_hex_23">#232323</color>
+    <color name="grey_hex_24">#242424</color>
+    <color name="grey_hex_25">#252525</color>
+    <color name="grey_hex_26">#262626</color>
+    <color name="grey_hex_27">#272727</color>
+    <color name="grey_hex_28">#282828</color>
+    <color name="grey_hex_29">#292929</color>
+    <color name="grey_hex_2a">#2a2a2a</color>
+    <color name="grey_hex_2b">#2b2b2b</color>
+    <color name="grey_hex_2c">#2c2c2c</color>
+    <color name="grey_hex_2d">#2d2d2d</color>
+    <color name="grey_hex_2e">#2e2e2e</color>
+    <color name="grey_hex_2f">#2f2f2f</color>
+    <!-- Grey 3 -->
+    <color name="grey_hex_30">#303030</color>
+    <color name="grey_hex_31">#313131</color>
+    <color name="grey_hex_32">#323232</color>
+    <color name="grey_hex_33">#333333</color>
+    <color name="grey_hex_34">#343434</color>
+    <color name="grey_hex_35">#353535</color>
+    <color name="grey_hex_36">#363636</color>
+    <color name="grey_hex_37">#373737</color>
+    <color name="grey_hex_38">#383838</color>
+    <color name="grey_hex_39">#393939</color>
+    <color name="grey_hex_3a">#3a3a3a</color>
+    <color name="grey_hex_3b">#3b3b3b</color>
+    <color name="grey_hex_3c">#3c3c3c</color>
+    <color name="grey_hex_3d">#3d3d3d</color>
+    <color name="grey_hex_3e">#3e3e3e</color>
+    <color name="grey_hex_3f">#3f3f3f</color>
+    <!-- Grey 4 -->
+    <color name="grey_hex_40">#404040</color>
+    <color name="grey_hex_41">#414141</color>
+    <color name="grey_hex_42">#424242</color>
+    <color name="grey_hex_43">#434343</color>
+    <color name="grey_hex_44">#444444</color>
+    <color name="grey_hex_45">#454545</color>
+    <color name="grey_hex_46">#464646</color>
+    <color name="grey_hex_47">#474747</color>
+    <color name="grey_hex_48">#484848</color>
+    <color name="grey_hex_49">#494949</color>
+    <color name="grey_hex_4a">#4a4a4a</color>
+    <color name="grey_hex_4b">#4b4b4b</color>
+    <color name="grey_hex_4c">#4c4c4c</color>
+    <color name="grey_hex_4d">#4d4d4d</color>
+    <color name="grey_hex_4e">#4e4e4e</color>
+    <color name="grey_hex_4f">#4f4f4f</color>
+    <!-- Grey 5 -->
+    <color name="grey_hex_50">#505050</color>
+    <color name="grey_hex_51">#515151</color>
+    <color name="grey_hex_52">#525252</color>
+    <color name="grey_hex_53">#535353</color>
+    <color name="grey_hex_54">#545454</color>
+    <color name="grey_hex_55">#555555</color>
+    <color name="grey_hex_56">#565656</color>
+    <color name="grey_hex_57">#575757</color>
+    <color name="grey_hex_58">#585858</color>
+    <color name="grey_hex_59">#595959</color>
+    <color name="grey_hex_5a">#5a5a5a</color>
+    <color name="grey_hex_5b">#5b5b5b</color>
+    <color name="grey_hex_5c">#5c5c5c</color>
+    <color name="grey_hex_5d">#5d5d5d</color>
+    <color name="grey_hex_5e">#5e5e5e</color>
+    <color name="grey_hex_5f">#5f5f5f</color>
+    <!-- Grey 6 -->
+    <color name="grey_hex_60">#606060</color>
+    <color name="grey_hex_61">#616161</color>
+    <color name="grey_hex_62">#626262</color>
+    <color name="grey_hex_63">#636363</color>
+    <color name="grey_hex_64">#646464</color>
+    <color name="grey_hex_65">#656565</color>
+    <color name="grey_hex_66">#666666</color>
+    <color name="grey_hex_67">#676767</color>
+    <color name="grey_hex_68">#686868</color>
+    <color name="grey_hex_69">#696969</color>
+    <color name="grey_hex_6a">#6a6a6a</color>
+    <color name="grey_hex_6b">#6b6b6b</color>
+    <color name="grey_hex_6c">#6c6c6c</color>
+    <color name="grey_hex_6d">#6d6d6d</color>
+    <color name="grey_hex_6e">#6e6e6e</color>
+    <color name="grey_hex_6f">#6f6f6f</color>
+    <!-- Grey 7 -->
+    <color name="grey_hex_70">#707070</color>
+    <color name="grey_hex_71">#717171</color>
+    <color name="grey_hex_72">#727272</color>
+    <color name="grey_hex_73">#737373</color>
+    <color name="grey_hex_74">#747474</color>
+    <color name="grey_hex_75">#757575</color>
+    <color name="grey_hex_76">#767676</color>
+    <color name="grey_hex_77">#777777</color>
+    <color name="grey_hex_78">#787878</color>
+    <color name="grey_hex_79">#797979</color>
+    <color name="grey_hex_7a">#7a7a7a</color>
+    <color name="grey_hex_7b">#7b7b7b</color>
+    <color name="grey_hex_7c">#7c7c7c</color>
+    <color name="grey_hex_7d">#7d7d7d</color>
+    <color name="grey_hex_7e">#7e7e7e</color>
+    <color name="grey_hex_7f">#7f7f7f</color>
+    <!-- Grey 8 -->
+    <color name="grey_hex_80">#808080</color>
+    <color name="grey_hex_81">#818181</color>
+    <color name="grey_hex_82">#828282</color>
+    <color name="grey_hex_83">#838383</color>
+    <color name="grey_hex_84">#848484</color>
+    <color name="grey_hex_85">#858585</color>
+    <color name="grey_hex_86">#868686</color>
+    <color name="grey_hex_87">#878787</color>
+    <color name="grey_hex_88">#888888</color>
+    <color name="grey_hex_89">#898989</color>
+    <color name="grey_hex_8a">#8a8a8a</color>
+    <color name="grey_hex_8b">#8b8b8b</color>
+    <color name="grey_hex_8c">#8c8c8c</color>
+    <color name="grey_hex_8d">#8d8d8d</color>
+    <color name="grey_hex_8e">#8e8e8e</color>
+    <color name="grey_hex_8f">#8f8f8f</color>
+    <!-- Grey 9 -->
+    <color name="grey_hex_90">#909090</color>
+    <color name="grey_hex_91">#919191</color>
+    <color name="grey_hex_92">#929292</color>
+    <color name="grey_hex_93">#939393</color>
+    <color name="grey_hex_94">#949494</color>
+    <color name="grey_hex_95">#959595</color>
+    <color name="grey_hex_96">#969696</color>
+    <color name="grey_hex_97">#979797</color>
+    <color name="grey_hex_98">#989898</color>
+    <color name="grey_hex_99">#999999</color>
+    <color name="grey_hex_9a">#9a9a9a</color>
+    <color name="grey_hex_9b">#9b9b9b</color>
+    <color name="grey_hex_9c">#9c9c9c</color>
+    <color name="grey_hex_9d">#9d9d9d</color>
+    <color name="grey_hex_9e">#9e9e9e</color>
+    <color name="grey_hex_9f">#9f9f9f</color>
+    <!-- Grey a -->
+    <color name="grey_hex_a0">#a0a0a0</color>
+    <color name="grey_hex_a1">#a1a1a1</color>
+    <color name="grey_hex_a2">#a2a2a2</color>
+    <color name="grey_hex_a3">#a3a3a3</color>
+    <color name="grey_hex_a4">#a4a4a4</color>
+    <color name="grey_hex_a5">#a5a5a5</color>
+    <color name="grey_hex_a6">#a6a6a6</color>
+    <color name="grey_hex_a7">#a7a7a7</color>
+    <color name="grey_hex_a8">#a8a8a8</color>
+    <color name="grey_hex_a9">#a9a9a9</color>
+    <color name="grey_hex_aa">#aaaaaa</color>
+    <color name="grey_hex_ab">#ababab</color>
+    <color name="grey_hex_ac">#acacac</color>
+    <color name="grey_hex_ad">#adadad</color>
+    <color name="grey_hex_ae">#aeaeae</color>
+    <color name="grey_hex_af">#afafaf</color>
+    <!-- Grey b -->
+    <color name="grey_hex_b0">#b0b0b0</color>
+    <color name="grey_hex_b1">#b1b1b1</color>
+    <color name="grey_hex_b2">#b2b2b2</color>
+    <color name="grey_hex_b3">#b3b3b3</color>
+    <color name="grey_hex_b4">#b4b4b4</color>
+    <color name="grey_hex_b5">#b5b5b5</color>
+    <color name="grey_hex_b6">#b6b6b6</color>
+    <color name="grey_hex_b7">#b7b7b7</color>
+    <color name="grey_hex_b8">#b8b8b8</color>
+    <color name="grey_hex_b9">#b9b9b9</color>
+    <color name="grey_hex_ba">#bababa</color>
+    <color name="grey_hex_bb">#bbbbbb</color>
+    <color name="grey_hex_bc">#bcbcbc</color>
+    <color name="grey_hex_bd">#bdbdbd</color>
+    <color name="grey_hex_be">#bebebe</color>
+    <color name="grey_hex_bf">#bfbfbf</color>
+    <!-- Grey c -->
+    <color name="grey_hex_c0">#c0c0c0</color>
+    <color name="grey_hex_c1">#c1c1c1</color>
+    <color name="grey_hex_c2">#c2c2c2</color>
+    <color name="grey_hex_c3">#c3c3c3</color>
+    <color name="grey_hex_c4">#c4c4c4</color>
+    <color name="grey_hex_c5">#c5c5c5</color>
+    <color name="grey_hex_c6">#c6c6c6</color>
+    <color name="grey_hex_c7">#c7c7c7</color>
+    <color name="grey_hex_c8">#c8c8c8</color>
+    <color name="grey_hex_c9">#c9c9c9</color>
+    <color name="grey_hex_ca">#cacaca</color>
+    <color name="grey_hex_cb">#cbcbcb</color>
+    <color name="grey_hex_cc">#cccccc</color>
+    <color name="grey_hex_cd">#cdcdcd</color>
+    <color name="grey_hex_ce">#cecece</color>
+    <color name="grey_hex_cf">#cfcfcf</color>
+    <!-- Grey d -->
+    <color name="grey_hex_d0">#d0d0d0</color>
+    <color name="grey_hex_d1">#d1d1d1</color>
+    <color name="grey_hex_d2">#d2d2d2</color>
+    <color name="grey_hex_d3">#d3d3d3</color>
+    <color name="grey_hex_d4">#d4d4d4</color>
+    <color name="grey_hex_d5">#d5d5d5</color>
+    <color name="grey_hex_d6">#d6d6d6</color>
+    <color name="grey_hex_d7">#d7d7d7</color>
+    <color name="grey_hex_d8">#d8d8d8</color>
+    <color name="grey_hex_d9">#d9d9d9</color>
+    <color name="grey_hex_da">#dadada</color>
+    <color name="grey_hex_db">#dbdbdb</color>
+    <color name="grey_hex_dc">#dcdcdc</color>
+    <color name="grey_hex_dd">#dddddd</color>
+    <color name="grey_hex_de">#dedede</color>
+    <color name="grey_hex_df">#dfdfdf</color>
+    <!-- Grey e -->
+    <color name="grey_hex_e0">#e0e0e0</color>
+    <color name="grey_hex_e1">#e1e1e1</color>
+    <color name="grey_hex_e2">#e2e2e2</color>
+    <color name="grey_hex_e3">#e3e3e3</color>
+    <color name="grey_hex_e4">#e4e4e4</color>
+    <color name="grey_hex_e5">#e5e5e5</color>
+    <color name="grey_hex_e6">#e6e6e6</color>
+    <color name="grey_hex_e7">#e7e7e7</color>
+    <color name="grey_hex_e8">#e8e8e8</color>
+    <color name="grey_hex_e9">#e9e9e9</color>
+    <color name="grey_hex_ea">#eaeaea</color>
+    <color name="grey_hex_eb">#ebebeb</color>
+    <color name="grey_hex_ec">#ececec</color>
+    <color name="grey_hex_ed">#ededed</color>
+    <color name="grey_hex_ee">#eeeeee</color>
+    <color name="grey_hex_ef">#efefef</color>
+    <!-- Grey f -->
+    <color name="grey_hex_f0">#f0f0f0</color>
+    <color name="grey_hex_f1">#f1f1f1</color>
+    <color name="grey_hex_f2">#f2f2f2</color>
+    <color name="grey_hex_f3">#f3f3f3</color>
+    <color name="grey_hex_f4">#f4f4f4</color>
+    <color name="grey_hex_f5">#f5f5f5</color>
+    <color name="grey_hex_f6">#f6f6f6</color>
+    <color name="grey_hex_f7">#f7f7f7</color>
+    <color name="grey_hex_f8">#f8f8f8</color>
+    <color name="grey_hex_f9">#f9f9f9</color>
+    <color name="grey_hex_fa">#fafafa</color>
+    <color name="grey_hex_fb">#fbfbfb</color>
+    <color name="grey_hex_fc">#fcfcfc</color>
+    <color name="grey_hex_fd">#fdfdfd</color>
+    <color name="grey_hex_fe">#fefefe</color>
+    <color name="grey_hex_ff">#ffffff</color>
+
+</resources>

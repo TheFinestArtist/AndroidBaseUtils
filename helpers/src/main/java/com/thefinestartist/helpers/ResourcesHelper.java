@@ -96,4 +96,12 @@ public class ResourcesHelper {
         }
     }
 
+    public static void setBackground(View view, @DrawableRes int drawableRes) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+            view.setBackgroundDrawable(Base.getContext().getResources().getDrawable(drawableRes));
+        } else {
+            view.setBackground(Base.getContext().getResources().getDrawable(drawableRes));
+        }
+    }
+
 }

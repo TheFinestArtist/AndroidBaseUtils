@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /**
+ * Copyright 2013 The Finest Artist
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+
+    <!-- Black Transparent -->
+    <color name="transparent_black_hex_1">#11000000</color>
+    <color name="transparent_black_hex_2">#22000000</color>
+    <color name="transparent_black_hex_3">#33000000</color>
+    <color name="transparent_black_hex_4">#44000000</color>
+    <color name="transparent_black_hex_5">#55000000</color>
+    <color name="transparent_black_hex_6">#66000000</color>
+    <color name="transparent_black_hex_7">#77000000</color>
+    <color name="transparent_black_hex_8">#88000000</color>
+    <color name="transparent_black_hex_9">#99000000</color>
+    <color name="transparent_black_hex_a">#aa000000</color>
+    <color name="transparent_black_hex_b">#bb000000</color>
+    <color name="transparent_black_hex_c">#cc000000</color>
+    <color name="transparent_black_hex_d">#dd000000</color>
+    <color name="transparent_black_hex_e">#ee000000</color>
+    <color name="transparent_black_percent_5">#0D000000</color>
+    <color name="transparent_black_percent_10">#1A000000</color>
+    <color name="transparent_black_percent_15">#26000000</color>
+    <color name="transparent_black_percent_20">#33000000</color>
+    <color name="transparent_black_percent_25">#40000000</color>
+    <color name="transparent_black_percent_30">#4D000000</color>
+    <color name="transparent_black_percent_35">#59000000</color>
+    <color name="transparent_black_percent_40">#66000000</color>
+    <color name="transparent_black_percent_45">#73000000</color>
+    <color name="transparent_black_percent_50">#80000000</color>
+    <color name="transparent_black_percent_55">#8C000000</color>
+    <color name="transparent_black_percent_60">#99000000</color>
+    <color name="transparent_black_percent_65">#A6000000</color>
+    <color name="transparent_black_percent_70">#B3000000</color>
+    <color name="transparent_black_percent_75">#BF000000</color>
+    <color name="transparent_black_percent_80">#CC000000</color>
+    <color name="transparent_black_percent_85">#D9000000</color>
+    <color name="transparent_black_percent_90">#E6000000</color>
+    <color name="transparent_black_percent_95">#F2000000</color>
+
+    <!-- White Transparent -->
+    <color name="transparent_white_hex_1">#11ffffff</color>
+    <color name="transparent_white_hex_2">#22ffffff</color>
+    <color name="transparent_white_hex_3">#33ffffff</color>
+    <color name="transparent_white_hex_4">#44ffffff</color>
+    <color name="transparent_white_hex_5">#55ffffff</color>
+    <color name="transparent_white_hex_6">#66ffffff</color>
+    <color name="transparent_white_hex_7">#77ffffff</color>
+    <color name="transparent_white_hex_8">#88ffffff</color>
+    <color name="transparent_white_hex_9">#99ffffff</color>
+    <color name="transparent_white_hex_a">#aaffffff</color>
+    <color name="transparent_white_hex_b">#bbffffff</color>
+    <color name="transparent_white_hex_c">#ccffffff</color>
+    <color name="transparent_white_hex_d">#ddffffff</color>
+    <color name="transparent_white_hex_e">#eeffffff</color>
+    <color name="transparent_white_percent_5">#0Dffffff</color>
+    <color name="transparent_white_percent_10">#1Affffff</color>
+    <color name="transparent_white_percent_15">#26ffffff</color>
+    <color name="transparent_white_percent_20">#33ffffff</color>
+    <color name="transparent_white_percent_25">#40ffffff</color>
+    <color name="transparent_white_percent_30">#4Dffffff</color>
+    <color name="transparent_white_percent_35">#59ffffff</color>
+    <color name="transparent_white_percent_40">#66ffffff</color>
+    <color name="transparent_white_percent_45">#73ffffff</color>
+    <color name="transparent_white_percent_50">#80ffffff</color>
+    <color name="transparent_white_percent_55">#8Cffffff</color>
+    <color name="transparent_white_percent_60">#99ffffff</color>
+    <color name="transparent_white_percent_65">#A6ffffff</color>
+    <color name="transparent_white_percent_70">#B3ffffff</color>
+    <color name="transparent_white_percent_75">#BFffffff</color>
+    <color name="transparent_white_percent_80">#CCffffff</color>
+    <color name="transparent_white_percent_85">#D9ffffff</color>
+    <color name="transparent_white_percent_90">#E6ffffff</color>
+    <color name="transparent_white_percent_95">#F2ffffff</color>
+
+</resources>

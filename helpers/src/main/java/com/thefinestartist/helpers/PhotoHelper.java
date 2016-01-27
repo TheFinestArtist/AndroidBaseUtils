@@ -16,9 +16,6 @@ import java.lang.ref.SoftReference;
  */
 public class PhotoHelper {
 
-    private PhotoHelper() {
-    }
-
     public static final int IMAGE_MAX_WIDTH = 800;
 
     public static SoftReference<byte[]> convertToByte(String path) {

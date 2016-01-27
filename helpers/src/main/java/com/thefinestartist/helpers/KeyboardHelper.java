@@ -1,5 +1,8 @@
 package com.thefinestartist.helpers;
 
+import android.app.Activity;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -26,33 +29,36 @@ public class KeyboardHelper {
         return inputMethodManager;
     }
 
-    public static void show(final View view) {
+    public static void showDelayed(final View view) {
         if (view == null) return;
-
         view.requestFocus();
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
-                getInputMethodManager().showSoftInput(view, 0);
+                getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
             }
         }, 200);
     }
 
-    public static void showByUser(View view) {
+    /**
+     * Please note that this method doesn't guarantee to show keyboard every time
+     * Do not use this method in onCreate() or onCreateView() lifecycle
+     * @param view
+     */
+    public static void showImmediately(View view) {
         if (view == null) return;
-
+        view.requestFocus();
         getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    public static void hide(Activity activity) {
+        if (activity == null) return;
+        hide(activity.getCurrentFocus());
     }
 
     public static void hide(View view) {
         if (view == null) return;
-
-        getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
-
-    public static void hideByUser(View view) {
-        if (view == null) return;
-
+        view.clearFocus();
         getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 }

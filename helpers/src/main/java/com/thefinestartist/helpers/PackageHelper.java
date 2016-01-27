@@ -1,5 +1,6 @@
 package com.thefinestartist.helpers;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -36,7 +37,7 @@ public class PackageHelper {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             Base.getContext().startActivity(intent);
-        } catch (android.content.ActivityNotFoundException anfe) {
+        } catch (ActivityNotFoundException exception) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + packageName));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             Base.getContext().startActivity(intent);

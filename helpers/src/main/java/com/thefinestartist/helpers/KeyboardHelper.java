@@ -31,11 +31,10 @@ public class KeyboardHelper {
 
     public static void showDelayed(final View view) {
         if (view == null) return;
-        view.requestFocus();
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
-                getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+                showImmediately(view);
             }
         }, 200);
     }

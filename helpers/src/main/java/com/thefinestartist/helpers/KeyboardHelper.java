@@ -61,3 +61,4 @@ public class KeyboardHelper {
         getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 }
+//TODO: Support keyboard show and hide listener

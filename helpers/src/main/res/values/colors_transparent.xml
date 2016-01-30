@@ -19,21 +19,21 @@
 <resources>
 
     <!-- Black Transparent -->
-    <color name="transparent_black_hex_1">#11000000</color>
-    <color name="transparent_black_hex_2">#22000000</color>
-    <color name="transparent_black_hex_3">#33000000</color>
-    <color name="transparent_black_hex_4">#44000000</color>
-    <color name="transparent_black_hex_5">#55000000</color>
-    <color name="transparent_black_hex_6">#66000000</color>
-    <color name="transparent_black_hex_7">#77000000</color>
-    <color name="transparent_black_hex_8">#88000000</color>
-    <color name="transparent_black_hex_9">#99000000</color>
-    <color name="transparent_black_hex_a">#aa000000</color>
-    <color name="transparent_black_hex_b">#bb000000</color>
-    <color name="transparent_black_hex_c">#cc000000</color>
-    <color name="transparent_black_hex_d">#dd000000</color>
-    <color name="transparent_black_hex_e">#ee000000</color>
-    <color name="transparent_black_percent_5">#0D000000</color>
+    <color name="transparent_black_hex_11">#11000000</color>
+    <color name="transparent_black_hex_22">#22000000</color>
+    <color name="transparent_black_hex_33">#33000000</color>
+    <color name="transparent_black_hex_44">#44000000</color>
+    <color name="transparent_black_hex_55">#55000000</color>
+    <color name="transparent_black_hex_66">#66000000</color>
+    <color name="transparent_black_hex_77">#77000000</color>
+    <color name="transparent_black_hex_88">#88000000</color>
+    <color name="transparent_black_hex_99">#99000000</color>
+    <color name="transparent_black_hex_aa">#aa000000</color>
+    <color name="transparent_black_hex_bb">#bb000000</color>
+    <color name="transparent_black_hex_cc">#cc000000</color>
+    <color name="transparent_black_hex_dd">#dd000000</color>
+    <color name="transparent_black_hex_ee">#ee000000</color>
+    <color name="transparent_black_percent_05">#0D000000</color>
     <color name="transparent_black_percent_10">#1A000000</color>
     <color name="transparent_black_percent_15">#26000000</color>
     <color name="transparent_black_percent_20">#33000000</color>
@@ -54,21 +54,21 @@
     <color name="transparent_black_percent_95">#F2000000</color>
 
     <!-- White Transparent -->
-    <color name="transparent_white_hex_1">#11ffffff</color>
-    <color name="transparent_white_hex_2">#22ffffff</color>
-    <color name="transparent_white_hex_3">#33ffffff</color>
-    <color name="transparent_white_hex_4">#44ffffff</color>
-    <color name="transparent_white_hex_5">#55ffffff</color>
-    <color name="transparent_white_hex_6">#66ffffff</color>
-    <color name="transparent_white_hex_7">#77ffffff</color>
-    <color name="transparent_white_hex_8">#88ffffff</color>
-    <color name="transparent_white_hex_9">#99ffffff</color>
-    <color name="transparent_white_hex_a">#aaffffff</color>
-    <color name="transparent_white_hex_b">#bbffffff</color>
-    <color name="transparent_white_hex_c">#ccffffff</color>
-    <color name="transparent_white_hex_d">#ddffffff</color>
-    <color name="transparent_white_hex_e">#eeffffff</color>
-    <color name="transparent_white_percent_5">#0Dffffff</color>
+    <color name="transparent_white_hex_11">#11ffffff</color>
+    <color name="transparent_white_hex_22">#22ffffff</color>
+    <color name="transparent_white_hex_33">#33ffffff</color>
+    <color name="transparent_white_hex_44">#44ffffff</color>
+    <color name="transparent_white_hex_55">#55ffffff</color>
+    <color name="transparent_white_hex_66">#66ffffff</color>
+    <color name="transparent_white_hex_77">#77ffffff</color>
+    <color name="transparent_white_hex_88">#88ffffff</color>
+    <color name="transparent_white_hex_99">#99ffffff</color>
+    <color name="transparent_white_hex_aa">#aaffffff</color>
+    <color name="transparent_white_hex_bb">#bbffffff</color>
+    <color name="transparent_white_hex_cc">#ccffffff</color>
+    <color name="transparent_white_hex_dd">#ddffffff</color>
+    <color name="transparent_white_hex_ee">#eeffffff</color>
+    <color name="transparent_white_percent_05">#0Dffffff</color>
     <color name="transparent_white_percent_10">#1Affffff</color>
     <color name="transparent_white_percent_15">#26ffffff</color>
     <color name="transparent_white_percent_20">#33ffffff</color>

@@ -10,22 +10,22 @@ import java.util.Date;
  */
 public class AgeHelper {
 
-    public static String getFromBirthDay(Date birthDay) {
-        if (birthDay == null)
+    public static String getFromBirthDay(Date date) {
+        if (date == null)
             return "?";
 
-        int year = Integer.parseInt((String) DateFormat.format("yyyy", birthDay));
-        int month = Integer.parseInt((String) DateFormat.format("MM", birthDay));
-        int day = Integer.parseInt((String) DateFormat.format("dd", birthDay));
+        int year = Integer.parseInt((String) DateFormat.format("yyyy", date));
+        int month = Integer.parseInt((String) DateFormat.format("MM", date));
+        int day = Integer.parseInt((String) DateFormat.format("dd", date));
 
-        Calendar dob = Calendar.getInstance();
+        Calendar birthday = Calendar.getInstance();
+        birthday.set(year, month - 1, day);
         Calendar today = Calendar.getInstance();
 
-        dob.set(year, month - 1, day);
 
-        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        int age = today.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
 
-        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+        if (today.get(Calendar.DAY_OF_YEAR) < birthday.get(Calendar.DAY_OF_YEAR)) {
             age--;
         }
 

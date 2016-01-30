@@ -17,7 +17,6 @@ import android.support.annotation.PluralsRes;
 import android.support.annotation.StringRes;
 import android.support.annotation.XmlRes;
 import android.support.v4.content.ContextCompat;
-import android.util.TypedValue;
 import android.view.View;
 
 /**

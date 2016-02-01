@@ -4,11 +4,14 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Vibrator;
 
 import com.thefinestartist.Base;
 
 /**
- * Created by TheFinestArtist on 1/26/16.
+ * PackageHelper is a helper class related to package
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class PackageHelper {
 

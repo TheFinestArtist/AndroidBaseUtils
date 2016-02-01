@@ -54,5 +54,4 @@ public class ScreenHelper {
                 ResourcesHelper.getDimensionPixelSize(resourceId) :
                 0;
     }
-
 }

@@ -1,10 +1,12 @@
 package com.thefinestartist.helpers;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.AnimRes;
 import android.support.annotation.BoolRes;
 import android.support.annotation.ColorInt;
@@ -13,6 +15,7 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.PluralsRes;
 import android.support.annotation.StringRes;
 import android.support.annotation.XmlRes;
@@ -21,12 +24,34 @@ import android.view.View;
 
 import com.thefinestartist.Base;
 
+import java.io.File;
+
 /**
  * Created by TheFinestArtist on 1/25/16.
  */
 public class ResourcesHelper {
 
     // From ContextCompat
+    public static boolean startActivities(Intent[] intents) {
+        return startActivities(intents, null);
+    }
+
+    public static boolean startActivities(Intent[] intents, Bundle options) {
+        return ContextCompat.startActivities(Base.getContext(), intents, options);
+    }
+
+    public static File[] getObbDirs() {
+        return ContextCompat.getObbDirs(Base.getContext());
+    }
+
+    public static File[] getExternalFilesDirs(String type) {
+        return ContextCompat.getExternalFilesDirs(Base.getContext(), type);
+    }
+
+    public static File[] getExternalCacheDirs() {
+        return ContextCompat.getExternalCacheDirs(Base.getContext());
+    }
+
     public static Drawable getDrawable(@DrawableRes int drawableRes) {
         return ContextCompat.getDrawable(Base.getContext(), drawableRes);
     }
@@ -37,6 +62,18 @@ public class ResourcesHelper {
 
     @ColorInt public static int getColor(@ColorRes int colorRes) {
         return ContextCompat.getColor(Base.getContext(), colorRes);
+    }
+
+    public static int checkSelfPermission(@NonNull String permission) {
+        return ContextCompat.checkSelfPermission(Base.getContext(), permission);
+    }
+
+    public static File getNoBackupFilesDir() {
+        return new ContextCompat().getNoBackupFilesDir(Base.getContext());
+    }
+
+    public final File getCodeCacheDir() {
+        return new ContextCompat().getCodeCacheDir(Base.getContext());
     }
 
     // From Resources.java

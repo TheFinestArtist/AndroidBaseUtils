@@ -2,6 +2,8 @@ package com.thefinestartist.helpers;
 
 import android.content.Intent;
 
+import com.thefinestartist.Base;
+
 /**
  * Created by TheFinestArtist
  */

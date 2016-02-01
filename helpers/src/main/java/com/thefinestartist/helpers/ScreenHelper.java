@@ -4,30 +4,16 @@ import android.graphics.Point;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.Display;
-import android.view.WindowManager;
 
 /**
- * Created by TheFinestArtist on 1/25/16.
+ * ScreenHelper is a helper class which helps to calculate screen size conveniently
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ScreenHelper {
 
-    private static WindowManager windowManager;
-
-    public static WindowManager getWindowManager() {
-
-        if (windowManager == null) {
-            synchronized (ScreenHelper.class) {
-                if (windowManager == null) {
-                    windowManager = ServiceHelper.getSystemService(WindowManager.class);
-                }
-            }
-        }
-
-        return windowManager;
-    }
-
     public static int getDeviceWidth() {
-        Display display = getWindowManager().getDefaultDisplay();
+        Display display = WindowManagerHelper.getDefaultDisplay();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             Point size = new Point();
             display.getSize(size);
@@ -38,7 +24,7 @@ public class ScreenHelper {
     }
 
     public static int getDeviceHeight() {
-        Display display = getWindowManager().getDefaultDisplay();
+        Display display = WindowManagerHelper.getDefaultDisplay();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             Point size = new Point();
             display.getSize(size);

@@ -1,36 +1,34 @@
 package com.thefinestartist.helpers;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
-import android.support.annotation.NonNull;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 /**
- * KeyboardHelper
- * It pops up keyboard to input texts and drops a cursor to a view(final View view, such as EditText)
+ * KeyboardHelper helps to show and hide keyboard window
  *
- * @author The Finest Artist
+ * @author Leonardo Taehwan Kim
  */
 public class KeyboardHelper {
 
-    private static InputMethodManager inputMethodManager;
+    /**
+     * Helps to show keyboard in {@link Activity#onCreate(Bundle)}, {@link Activity#onStart()},
+     * {@link Activity#onResume()},
+     * {@link MenuItem.OnActionExpandListener#onMenuItemActionExpand(MenuItem)},
+     * {@link Fragment#onCreateView(LayoutInflater, ViewGroup, Bundle)} and etc
+     * This method guarantee to show keyboard every time.
+     */
+    public static void show(final View view) {
+        if (view == null)
+            return;
 
-    public static InputMethodManager getInputMethodManager() {
-
-        if (inputMethodManager == null) {
-            synchronized (KeyboardHelper.class) {
-                if (inputMethodManager == null) {
-                    inputMethodManager = ServiceHelper.getSystemService(InputMethodManager.class);
-                }
-            }
-        }
-
-        return inputMethodManager;
-    }
-
-    public static void showDelayed(final View view) {
-        if (view == null) return;
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -40,25 +38,47 @@ public class KeyboardHelper {
     }
 
     /**
-     * Please note that this method doesn't guarantee to show keyboard every time
-     * Do not use this method in onCreate() or onCreateView() lifecycle
-     * @param view
+     * Please note that this method does not guarantee to show keyboard every time. To guarantee
+     * to show keyboard, please use {@link #show(View)} instead. It doesn't have any delay, use
+     * this method when it is able to show keyboard immediately. EX) when user click a button to
+     * show keyboard
      */
     public static void showImmediately(View view) {
-        if (view == null) return;
+        if (view == null)
+            return;
+
         view.requestFocus();
-        getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+        ServiceHelper.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    public static void hide(Fragment fragment) {
+        if (fragment == null || fragment.getActivity() == null)
+            return;
+
+        hide(fragment.getActivity());
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static void hide(android.app.Fragment fragment) {
+        if (fragment == null || fragment.getActivity() == null)
+            return;
+
+        hide(fragment.getActivity());
     }
 
     public static void hide(Activity activity) {
-        if (activity == null) return;
+        if (activity == null)
+            return;
+
         hide(activity.getCurrentFocus());
     }
 
     public static void hide(View view) {
-        if (view == null) return;
+        if (view == null)
+            return;
+
         view.clearFocus();
-        getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
+        ServiceHelper.getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 }
 //TODO: Support keyboard show and hide listener

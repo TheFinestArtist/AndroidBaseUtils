@@ -1,4 +1,4 @@
-package com.thefinestartist.helpers;
+package com.thefinestartist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -18,8 +18,8 @@ public class Base {
         if (Base.context == null)
             throw new NullPointerException("Please call Base.initialize(context) within your Application onCreate() method.");
 
-        return Base.context;
+        return Base.context.getApplicationContext();
     }
 
-    // TODO: add ripple, bitmap, time related helper
 }
+// TODO: add ripple, bitmap, time related helper

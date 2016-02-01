@@ -2,37 +2,22 @@ package com.thefinestartist.helpers;
 
 import android.annotation.TargetApi;
 import android.media.AudioAttributes;
-import android.os.Build;
 import android.os.Vibrator;
 
 /**
- * VibratorHelper is a helper class which helps to use Android {@link Vibrator} conviniently
+ * VibratorHelper is a helper class which helps to use Android {@link Vibrator} conveniently
  *
  * @author Leonardo Taehwan Kim
  */
 public class VibratorHelper {
 
-    protected static Vibrator vibrator;
-
-    public static Vibrator getInstance() {
-
-        if (vibrator == null) {
-            synchronized (VibratorHelper.class) {
-                if (vibrator == null) {
-                    vibrator = ServiceHelper.getSystemService(Vibrator.class);
-                }
-            }
-        }
-
-        return vibrator;
+    public static Vibrator getService() {
+        return ServiceHelper.getVibrator();
     }
 
+    @TargetApi(11)
     public static boolean hasVibrator() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-            return getInstance() != null;
-        } else {
-            return getInstance() != null && getInstance().hasVibrator();
-        }
+        return getService().hasVibrator();
     }
 
     public static void eee() {
@@ -44,26 +29,24 @@ public class VibratorHelper {
     }
 
     public static void vibrate(long[] pattern) {
-        vibrate(pattern, 1);
+        vibrate(pattern, -1);
     }
 
     public static void vibrate(long[] pattern, int repeat) {
-        if (getInstance() == null)
-            return;
-
-        getInstance().vibrate(pattern, repeat);
+        getService().vibrate(pattern, repeat);
     }
 
     @TargetApi(21)
     public static void vibrate(long milliseconds, AudioAttributes attributes) {
-        vibrate(new long[]{milliseconds}, 1, attributes);
+        vibrate(new long[]{milliseconds}, -1, attributes);
     }
 
     @TargetApi(21)
     public static void vibrate(long[] pattern, int repeat, AudioAttributes attributes) {
-        if (getInstance() == null)
-            return;
+        getService().vibrate(pattern, repeat, attributes);
+    }
 
-        getInstance().vibrate(pattern, repeat, attributes);
+    public static void cancel() {
+        getService().cancel();
     }
 }

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 
+import com.thefinestartist.Base;
+
 /**
  * Created by TheFinestArtist on 1/26/16.
  */

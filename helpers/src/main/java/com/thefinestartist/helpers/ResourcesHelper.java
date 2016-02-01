@@ -19,6 +19,8 @@ import android.support.annotation.XmlRes;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.thefinestartist.Base;
+
 /**
  * Created by TheFinestArtist on 1/25/16.
  */

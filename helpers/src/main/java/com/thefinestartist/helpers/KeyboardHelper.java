@@ -32,7 +32,12 @@ public class KeyboardHelper {
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
-                showImmediately(view);
+                // In case view become null after 200 milliseconds
+                if (view == null)
+                    return;
+
+                view.requestFocus();
+                ServiceHelper.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
             }
         }, 200);
     }
@@ -43,12 +48,18 @@ public class KeyboardHelper {
      * this method when it is able to show keyboard immediately. EX) when user click a button to
      * show keyboard
      */
-    public static void showImmediately(View view) {
+    public static void showImmediately(final View view) {
         if (view == null)
             return;
 
-        view.requestFocus();
-        ServiceHelper.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+        // In case showImmediately is called from other than UI thread
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                view.requestFocus();
+                ServiceHelper.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
     }
 
     public static void hide(Fragment fragment) {

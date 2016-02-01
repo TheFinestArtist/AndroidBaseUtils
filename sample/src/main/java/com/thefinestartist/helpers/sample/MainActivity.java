@@ -31,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
         Base.initialize(this);
         VibratorHelper.eee();
-        KeyboardHelper.show(editText);
+//        KeyboardHelper.showImmediately(editText);
     }
 
     @Override protected void onStart() {
         super.onStart();
-//        KeyboardHelper.showDelayed(editText);
+//        KeyboardHelper.showImmediately(editText);
     }
 
     @Override protected void onResume() {
         super.onResume();
-//        KeyboardHelper.showDelayed(editText);
+//        KeyboardHelper.showImmediately(editText);
     }
 }

@@ -2,7 +2,6 @@ package com.thefinestartist.helpers.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.helpers.ExtrasHelper;
@@ -17,6 +16,7 @@ public class SubActivity extends AppCompatActivity {
 
     @Extra(TITLE) String title;
     @Extra(CONTENT) int content;
+    @Extra int[] values;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

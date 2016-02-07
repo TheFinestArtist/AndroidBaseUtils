@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 new ActivityBuilder(SubActivity.class)
                         .set(SubActivity.TITLE, "Hey")
                         .set(SubActivity.CONTENT, 1)
+                        .set("values", new int[]{1, 2, 3})
                         .start();
             }
         });

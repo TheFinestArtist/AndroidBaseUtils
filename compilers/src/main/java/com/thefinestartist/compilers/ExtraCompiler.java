@@ -163,7 +163,7 @@ public class ExtraCompiler extends AbstractProcessor {
         InjectionPoint(String variableName, String type, String value) {
             this.variableName = variableName;
             this.type = type;
-            this.value = value;
+            this.value = value.length() == 0 ? variableName : value;
         }
 
         @Override

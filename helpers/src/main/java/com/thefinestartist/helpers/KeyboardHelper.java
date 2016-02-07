@@ -32,10 +32,6 @@ public class KeyboardHelper {
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // In case view become null after 200 milliseconds
-                if (view == null)
-                    return;
-
                 view.requestFocus();
                 ServiceHelper.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
             }
@@ -91,5 +87,37 @@ public class KeyboardHelper {
         view.clearFocus();
         ServiceHelper.getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+    public abstract class OnKeyboardListener {
+        public void onStateChanged(int windowSize, int keyboardHeight, boolean opened) {
+
+        }
+    }
+
+
+//    coordinatorLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//        @Override
+//        public void onGlobalLayout() {
+//            Rect r = new Rect();
+//            coordinatorLayout.getWindowVisibleDisplayFrame(r);
+//            if (ResourcesHelper.navigationBarHeight == -1) {
+//                ResourcesHelper.navigationBarHeight = coordinatorLayout.getRootView().getHeight() - r.height() - ResourcesHelper.statusBarHeight;
+//            }
+//            int usableHeight = coordinatorLayout.getRootView().getHeight() - ResourcesHelper.statusBarHeight - ResourcesHelper.navigationBarHeight;
+//            int keyboardHeight = usableHeight - r.height();
+//            if (isKeyboardOpened) {
+//                if (keyboardHeight < 100) {
+//                    onKeyboardChanged(usableHeight, keyboardHeight, false);
+//                    isKeyboardOpened = false;
+//                }
+//            } else {
+//                if (keyboardHeight > 100) {
+//                    onKeyboardChanged(usableHeight, keyboardHeight, true);
+//                    isKeyboardOpened = true;
+//                }
+//            }
+//        }
+//    });
 }
 //TODO: Support keyboard show and hide listener
+//TODO: Keyboard height

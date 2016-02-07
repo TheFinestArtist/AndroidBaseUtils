@@ -1,1 +1,1 @@
-include ':sample', ':helpers', ':widgets'
+include ':annotations', ':compilers', ':helpers', ':sample'

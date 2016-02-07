@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.thefinestartist.Base;
-import com.thefinestartist.helpers.KeyboardHelper;
+import com.thefinestartist.helpers.ActivityBuilder;
 import com.thefinestartist.helpers.VibratorHelper;
 
 /**
@@ -18,28 +18,43 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         editText = (EditText) findViewById(R.id.edit_text);
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                KeyboardHelper.showImmediately(editText);
+            @Override
+            public void onClick(View v) {
+//                KeyboardHelper.showImmediately(editText);
+//                new ActivityBuilder(SubActivity.class)
+//                        .set(SubActivity.TITLE, "Hey")
+//                        .start();
+                new ActivityBuilder(SubActivity.class)
+                        .set(SubActivity.TITLE, "Hey")
+                        .set(SubActivity.CONTENT, 1)
+                        .start();
             }
         });
 
         Base.initialize(this);
         VibratorHelper.eee();
 //        KeyboardHelper.showImmediately(editText);
+
+//        ActivityBuilder intentBuilder = new ActivityBuilder(MainActivity.class)
+//                .put("Hey", 1);
+        new MainActivity();
     }
 
-    @Override protected void onStart() {
+    @Override
+    protected void onStart() {
         super.onStart();
 //        KeyboardHelper.showImmediately(editText);
     }
 
-    @Override protected void onResume() {
+    @Override
+    protected void onResume() {
         super.onResume();
 //        KeyboardHelper.showImmediately(editText);
     }

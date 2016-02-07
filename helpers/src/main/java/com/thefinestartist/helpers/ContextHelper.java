@@ -24,10 +24,16 @@ public class ContextHelper {
 
     // From ContextCompat
     public static boolean startActivities(Intent[] intents) {
+        for (Intent intent : intents)
+            if (intent != null)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return ContextCompat.startActivities(Base.getContext(), intents);
     }
 
     public static boolean startActivities(Intent[] intents, Bundle options) {
+        for (Intent intent : intents)
+            if (intent != null)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return ContextCompat.startActivities(Base.getContext(), intents, options);
     }
 
@@ -51,7 +57,8 @@ public class ContextHelper {
         return ContextCompat.getColorStateList(Base.getContext(), colorRes);
     }
 
-    @ColorInt public static int getColor(@ColorRes int colorRes) {
+    @ColorInt
+    public static int getColor(@ColorRes int colorRes) {
         return ContextCompat.getColor(Base.getContext(), colorRes);
     }
 
@@ -61,10 +68,6 @@ public class ContextHelper {
 
     public static File getNoBackupFilesDir() {
         return new ContextCompat().getNoBackupFilesDir(Base.getContext());
-    }
-
-    public final File getCodeCacheDir() {
-        return new ContextCompat().getCodeCacheDir(Base.getContext());
     }
 
     // From Context
@@ -100,7 +103,8 @@ public class ContextHelper {
         Base.getContext().sendBroadcast(intent);
     }
 
-    public static void startActivity(Intent intent) {
+    public static void startActivity(@NonNull Intent intent) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         Base.getContext().startActivity(intent);
     }
 
@@ -114,5 +118,9 @@ public class ContextHelper {
 
     public static void unbindService(ServiceConnection conn) {
         Base.getContext().unbindService(conn);
+    }
+
+    public final File getCodeCacheDir() {
+        return new ContextCompat().getCodeCacheDir(Base.getContext());
     }
 }

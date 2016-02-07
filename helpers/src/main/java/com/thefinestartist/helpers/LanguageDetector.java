@@ -5,8 +5,6 @@ package com.thefinestartist.helpers;
  */
 public class LanguageDetector {
 
-    public enum Language {Korean, Japanese, English}
-
     public static boolean isEnglish(CharSequence charSequence) {
         boolean isEnglish = true;
         for (char c : charSequence.toString().toCharArray()) {
@@ -49,5 +47,7 @@ public class LanguageDetector {
 
         return hasJapanese;
     }
+
+    public enum Language {Korean, Japanese, English}
 
 }

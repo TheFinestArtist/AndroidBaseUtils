@@ -17,7 +17,7 @@ public class App extends Application {
 }
 ```
 
-## Base(*****)
+## Base(★★★★★)
 Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java

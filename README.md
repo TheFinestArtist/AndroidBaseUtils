@@ -18,7 +18,7 @@ public class SubActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ExtrasUtil.bind(this);
+        ExtrasBinder.bind(this);
         // do something...
     }
 }
@@ -31,7 +31,7 @@ public class YourFragment extends Fragment {
     @Extra(EXTRA_NAME) String name;
     
     @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ExtrasUtil.bind(this);
+        ExtrasBinder.bind(this);
         // do something...
     }
 }

@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.thefinestartist.annotations.Extra;
-import com.thefinestartist.utils.extras.ExtrasUtil;
+import com.thefinestartist.binders.ExtrasBinder;
 
 /**
  * Created by TheFinestArtist on 2/8/16.
@@ -22,7 +22,7 @@ public class Fragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ExtrasUtil.bind(this);
+        ExtrasBinder.bind(this);
         return inflater.inflate(R.layout.fragment1_layout, container, false);
     }
 

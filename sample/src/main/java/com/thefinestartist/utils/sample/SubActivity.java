@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.thefinestartist.annotations.Extra;
-import com.thefinestartist.utils.extras.ExtrasUtil;
+import com.thefinestartist.binders.ExtrasBinder;
 
 import java.util.ArrayList;
 
@@ -25,6 +25,6 @@ public class SubActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ExtrasUtil.bind(this);
+        ExtrasBinder.bind(this);
     }
 }

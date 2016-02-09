@@ -1,4 +1,4 @@
-package com.thefinestartist.utils.extras;
+package com.thefinestartist.binders;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 /**
  * Created by TheFinestArtist on 2/7/16.
  */
-public class ExtrasUtil {
+public class ExtrasBinder {
 
     static final String SUFFIX = "$$ExtraBinder";
 

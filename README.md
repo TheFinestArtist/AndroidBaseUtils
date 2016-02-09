@@ -5,6 +5,10 @@
 
 #### Context free and basic utils for building Android project
 
+## KeyboardUtil
+Simply call `KeyboardUtil.show(View)`. Soft keyboard will pop up and view will be focused.   
+Call `KeyboardUtil.hide(View)` to hide keyboard. You can also call `KeyboardUtil.hide(Activity)`, `KeyboardUtil.hide(Fragment)`, `KeyboardUtil.hide(Dialog)` to hide keyboard.
+
 ## ExtrasBinder
 Simple call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 

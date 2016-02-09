@@ -37,8 +37,9 @@ ScreenUtil helps to calculate screen size conveniently.
 ScreenUtil.getDeviceWidth();
 ScreenUtil.getDeviceHeight();
 ScreenUtil.getStatusBarHeight();
+ScreenUtil.getToolbarHeight();
 ScreenUtil.getActionBarHeight();
-ScreenUtil.getNavigationBarHeight();
+ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
 ## ExtrasBinder

@@ -46,6 +46,10 @@ public class ScreenUtil {
                 0;
     }
 
+    public static int getToolbarHeight() {
+        return getActionBarHeight();
+    }
+
     public static int getActionBarHeight() {
         TypedValue tv = new TypedValue();
         return ThemeUtil.resolveAttribute(android.R.attr.actionBarSize, tv, true) ?

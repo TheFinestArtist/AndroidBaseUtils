@@ -30,19 +30,17 @@ Base.getDisplayMetrics();
 ```
 
 ## ExtrasBinder (★★★★☆)
-Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
+Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable.
 
 ```java
 public class YourActivity extends AppCompatActivity {
 
     public static final String EXTRA_TITLE = "TITLE";
 
-    // ExtrasBinder will consider annotation variable as key. 
-    // In this case, key is "TITLE".
+    // ExtrasBinder will consider annotation variable which is "TITLE" as key. 
     @Extra(EXTRA_TITLE) String title;
     
-    // ExtrasBinder will consider variable name as key. 
-    // In this case, key is "ids".
+    // ExtrasBinder will consider variable name which is "ids" as key. 
     @Extra ArrayList<Integer> ids;
 
     @Override
@@ -56,8 +54,7 @@ public class YourActivity extends AppCompatActivity {
 ```java
 public class YourFragment extends Fragment {
 
-    // ExtrasBinder will consider annotation variable as key. 
-    // In this case, key is "NAME".
+    // ExtrasBinder will consider annotation variable which is "NAME" as key. 
     @Extra("NAME") String name;
     
     @Nullable 
@@ -134,7 +131,6 @@ ServiceUtil.getMediaRouter();
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
-VibratorUtil.hasVibrator();
 VibratorUtil.eee(); // vibrate device for 200 milliseconds
 VibratorUtil.vibrate(milliseconds);
 // and more...

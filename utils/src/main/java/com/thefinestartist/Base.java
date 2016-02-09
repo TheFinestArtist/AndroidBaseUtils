@@ -8,6 +8,8 @@ import android.util.DisplayMetrics;
 
 /**
  * Base helps to get {@link Context}, {@link Resources}, {@link Configuration} and {@link DisplayMetrics} in any class.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class Base {
 

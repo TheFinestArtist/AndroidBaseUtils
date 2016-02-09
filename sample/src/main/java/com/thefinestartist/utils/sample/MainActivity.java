@@ -1,5 +1,6 @@
 package com.thefinestartist.utils.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -44,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
                         .set(SubActivity.ARRAY_LIST, list)
                         .start();
 
+                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                intent.putExtra(SubActivity.TITLE, "Title");
+                intent.putExtra(SubActivity.CONTENT, 1);
+                MainActivity.this.startActivity(intent);
+
                 Fragment1 fragment1 = new Fragment1();
+                Bundle bundle = new Bundle();
+                bundle.putString(Fragment1.NAME, "Name");
+                fragment1.setArguments(bundle);
+
                 fragment1.setArguments(new BundleBuilder()
                         .set(Fragment1.NAME, "Hoy")
                         .build());

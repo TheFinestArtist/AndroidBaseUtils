@@ -1,13 +1,17 @@
 package com.thefinestartist.binders;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
 import java.lang.reflect.Method;
 
 /**
- * Created by TheFinestArtist on 2/7/16.
+ * ExtrasBinder binds data from {@link Intent} or {@link Bundle} to matching variable.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ExtrasBinder {
 

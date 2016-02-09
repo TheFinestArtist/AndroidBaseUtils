@@ -8,7 +8,7 @@ import android.view.View;
 import com.thefinestartist.Base;
 
 /**
- * Created by TheFinestArtist on 2/2/16.
+ * ViewUtil helps to set background drawable conveniently.
  */
 public class ViewUtil {
 

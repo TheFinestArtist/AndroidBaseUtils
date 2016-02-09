@@ -42,6 +42,14 @@ ScreenUtil.getActionBarHeight();
 ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
+## ViewUtil
+ViewUtil helps to set background drawable conveniently.
+
+```java
+ViewUtil.setBackground(View view, Drawable drawable);
+ViewUtil.setBackground(View view, @DrawableRes int drawableRes);
+```
+
 ## ExtrasBinder
 Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 

@@ -76,10 +76,8 @@ public class ExtraCompiler extends AbstractProcessor {
 
             // Verify field properties.
             Set<Modifier> modifiers = element.getModifiers();
-            if (modifiers.contains(Modifier.PRIVATE)
-                    || modifiers.contains(Modifier.PROTECTED)
-                    || modifiers.contains(Modifier.STATIC)) {
-                error("@Extra fields must not be private, protected, or static: "
+            if (modifiers.contains(Modifier.PRIVATE)) {
+                error("@Extra fields must not be private: "
                         + enclosingElement.getQualifiedName()
                         + "."
                         + element);

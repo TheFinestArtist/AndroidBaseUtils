@@ -17,8 +17,8 @@ public class SubActivity extends AppCompatActivity {
     public static final String CONTENT = "CONTENT";
     public static final String ARRAY_LIST = "ARRAY_LIST";
 
-    @Extra(TITLE) String title;
-    @Extra(CONTENT) int content;
+    protected @Extra(TITLE) String title;
+    static @Extra(CONTENT) int content;
     @Extra int[] values;
     @Extra(ARRAY_LIST) ArrayList<Integer> list;
 

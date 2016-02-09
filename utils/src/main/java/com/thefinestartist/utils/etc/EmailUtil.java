@@ -1,9 +1,9 @@
 package com.thefinestartist.utils.etc;
 
 import android.content.Intent;
+import android.os.Build;
 
 import com.thefinestartist.Base;
-import com.thefinestartist.utils.BuildConfig;
 
 /**
  * Created by TheFinestArtist
@@ -14,7 +14,7 @@ public class EmailUtil {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL, new String[]{url});
-        i.putExtra(Intent.EXTRA_SUBJECT, "[FEEDBACK] Android App (" + BuildConfig.VERSION_NAME + ")");
+        i.putExtra(Intent.EXTRA_SUBJECT, "[FEEDBACK] Android App (" + Build.VERSION.CODENAME + ")");
         i.putExtra(Intent.EXTRA_TEXT, "");
         try {
             Base.getContext().startActivity(Intent.createChooser(i, "Send Feedback"));

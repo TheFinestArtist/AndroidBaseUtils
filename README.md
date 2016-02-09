@@ -7,7 +7,16 @@
 
 ## KeyboardUtil
 Simply call `KeyboardUtil.show(View)`. Soft keyboard will pop up and view will be focused.   
-Call `KeyboardUtil.hide(View)` to hide keyboard. You can also call `KeyboardUtil.hide(Activity)`, `KeyboardUtil.hide(Fragment)`, `KeyboardUtil.hide(Dialog)` to hide keyboard.
+Call `KeyboardUtil.hide(View)` to hide keyboard. 
+```java
+KeyboardUtil.show(View);
+KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
+
+KeyboardUtil.hide(View);
+KeyboardUtil.hide(Activity);
+KeyboardUtil.hide(Fragment);
+KeyboardUtil.hide(Dialog);
+```
 
 ## ExtrasBinder
 Simple call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.

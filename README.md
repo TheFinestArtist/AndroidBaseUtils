@@ -54,26 +54,6 @@ ScaleUtil.toPixelFromSP(float sp);
 ScaleUtil.toPixelFromSP(int sp);
 ```
 
-## ScreenUtil (★★☆☆☆)
-ScreenUtil helps to calculate screen size conveniently.
-
-```java
-ScreenUtil.getDeviceWidth();
-ScreenUtil.getDeviceHeight();
-ScreenUtil.getStatusBarHeight();
-ScreenUtil.getToolbarHeight();
-ScreenUtil.getActionBarHeight();
-ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
-```
-
-## ViewUtil (★☆☆☆☆)
-ViewUtil helps to set background drawable conveniently.
-
-```java
-ViewUtil.setBackground(View view, Drawable drawable);
-ViewUtil.setBackground(View view, int drawableRes);
-```
-
 ## ExtrasBinder (★★★★☆)
 Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 
@@ -112,6 +92,26 @@ public class YourFragment extends Fragment {
         // do something...
     }
 }
+```
+
+## ScreenUtil (★★★☆☆)
+ScreenUtil helps to calculate screen size conveniently.
+
+```java
+ScreenUtil.getDeviceWidth();
+ScreenUtil.getDeviceHeight();
+ScreenUtil.getStatusBarHeight();
+ScreenUtil.getToolbarHeight();
+ScreenUtil.getActionBarHeight();
+ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+```
+
+## ViewUtil (★★☆☆☆)
+ViewUtil helps to set background drawable conveniently.
+
+```java
+ViewUtil.setBackground(View view, Drawable drawable);
+ViewUtil.setBackground(View view, int drawableRes);
 ```
 
 ## ServiceUtil (★★☆☆☆)

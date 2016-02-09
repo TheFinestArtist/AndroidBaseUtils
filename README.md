@@ -39,7 +39,8 @@ ScreenUtil.getDeviceHeight();
 ScreenUtil.getStatusBarHeight();
 ScreenUtil.getToolbarHeight();
 ScreenUtil.getActionBarHeight();
-ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+// Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+ScreenUtil.getNavigationBarHeight();
 ```
 
 ## ExtrasBinder

@@ -58,7 +58,7 @@ public class YourFragment extends Fragment {
 ## ServiceUtil
 ServiceUtil helps to get Android system service conveniently.
 ```java
-ServiceUtil.getSystemService(@NonNull String serviceName);
+(ServiceType) ServiceUtil.getSystemService(Context.ServiceName);
 
 ServiceUtil.getAccessibilityManager();
 ServiceUtil.getCaptioningManager();

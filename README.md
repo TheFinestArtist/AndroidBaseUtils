@@ -8,7 +8,7 @@
 
 ## ExtrasBinder
 ```java
-public class SubActivity extends AppCompatActivity {
+public class YourActivity extends AppCompatActivity {
 
     public static final String EXTRA_TITLE = "EXTRA_TITLE";
 

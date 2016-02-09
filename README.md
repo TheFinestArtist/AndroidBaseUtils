@@ -6,7 +6,7 @@
 #### Context free and basic utils for building Android project
 
 ## KeyboardUtil
-KeyboardUtil helps to `show` and `hide` keyboard in any class.
+KeyboardUtil helps to `show` and `hide` keyboard easily.
 ```java
 KeyboardUtil.show(View);
 KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.

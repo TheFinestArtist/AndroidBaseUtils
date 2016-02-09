@@ -15,7 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.thefinestartist.utils.service.ServiceUtil;
 
 /**
- * KeyboardUtil helps to show and hide keyboard window
+ * KeyboardUtil helps to show and hide keyboard easily
  *
  * @author Leonardo Taehwan Kim
  */

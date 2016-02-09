@@ -3,10 +3,10 @@
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-#### Context free and basic utils for building Android project
+#### Context free and basic utils to build Android project conveniently
 
 ## KeyboardUtil
-KeyboardUtil helps to `show` and `hide` keyboard easily.
+KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 
 ```java
 KeyboardUtil.show(View);

@@ -18,23 +18,23 @@ public class ScaleHelper {
         return TypedValue.applyDimension(unit, value, Base.getContext().getResources().getDisplayMetrics());
     }
 
-    public static float toPixel(float density) {
+    public static float toPixel(float dp) {
         DisplayMetrics displayMetrics = Base.getContext().getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, density, displayMetrics);
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, displayMetrics);
     }
 
-    public static int toPixel(int density) {
+    public static int toPixel(int dp) {
         DisplayMetrics displayMetrics = Base.getContext().getResources().getDisplayMetrics();
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, density, displayMetrics);
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, displayMetrics);
     }
 
-    public static float toPixelFromSP(float scale) {
+    public static float toPixelFromSP(float sp) {
         DisplayMetrics displayMetrics = Base.getContext().getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, scale, displayMetrics);
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, displayMetrics);
     }
 
-    public static int toPixelFromSP(int scale) {
+    public static int toPixelFromSP(int sp) {
         DisplayMetrics displayMetrics = Base.getContext().getResources().getDisplayMetrics();
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, scale, displayMetrics);
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, displayMetrics);
     }
 }

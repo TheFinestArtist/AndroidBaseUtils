@@ -5,18 +5,20 @@ package com.thefinestartist.compilers;
  */
 public class Constants {
 
-    public static final String BINDING_ACTIVITY = "        activity.%s = (%s) intent.getSerializableExtra(\"%s\");";
+    public static final String SUFFIX = "$$ExtraBinder";
+
+    public static final String BINDING_ACTIVITY = "        activity.%s = (%s) bundle.get(\"%s\");";
     public static final String BINDER_ACTIVITY = ""
             + "package %s;\n\n"
-            + "import android.content.Intent;\n\n"
+            + "import android.os.Bundle;\n\n"
             + "public class %s {\n"
             + "    public static void bind(%s activity) {\n"
-            + "        Intent intent = activity.getIntent();\n"
+            + "        Bundle bundle = activity.getIntent().getExtras();\n"
             + "%s"
             + "    }\n"
             + "}\n";
 
-    public static final String BINDING_FRAGMENT = "        fragment.%s = (%s) bundle.getSerializable(\"%s\");";
+    public static final String BINDING_FRAGMENT = "        fragment.%s = (%s) bundle.get(\"%s\");";
     public static final String BINDER_FRAGMENT = ""
             + "package %s;\n\n"
             + "import android.os.Bundle;\n\n"

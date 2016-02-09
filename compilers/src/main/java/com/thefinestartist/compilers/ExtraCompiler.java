@@ -35,8 +35,6 @@ import javax.tools.JavaFileObject;
 @SupportedAnnotationTypes("com.thefinestartist.annotations.Extra")
 public class ExtraCompiler extends AbstractProcessor {
 
-    static final String SUFFIX = "$$ExtraBinder";
-
     @Override
     public SourceVersion getSupportedSourceVersion() {
         return SourceVersion.latestSupported();
@@ -115,7 +113,7 @@ public class ExtraCompiler extends AbstractProcessor {
             String targetClass = type.getQualifiedName().toString();
             int lastDot = targetClass.lastIndexOf(".");
             String classType = targetClass.substring(lastDot + 1);
-            String className = classType + SUFFIX;
+            String className = classType + Constants.SUFFIX;
             String packageName = targetClass.substring(0, lastDot);
             StringBuilder bindings = new StringBuilder();
             for (BindingPoint bindingPoint : binding.getValue()) {

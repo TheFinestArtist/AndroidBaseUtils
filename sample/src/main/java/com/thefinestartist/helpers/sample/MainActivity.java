@@ -13,6 +13,8 @@ import com.thefinestartist.helpers.ActivityBuilder;
 import com.thefinestartist.helpers.BundleBuilder;
 import com.thefinestartist.helpers.VibratorHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by TheFinestArtist on 1/30/16.
  */
@@ -34,11 +36,15 @@ public class MainActivity extends AppCompatActivity {
 //                new ActivityBuilder(SubActivity.class)
 //                        .set(SubActivity.TITLE, "Hey")
 //                        .start();
-//                new ActivityBuilder(SubActivity.class)
-//                        .set(SubActivity.TITLE, "Hey")
-//                        .set(SubActivity.CONTENT, 1)
-//                        .set("values", new int[]{1, 2, 3})
-//                        .start();
+
+                ArrayList<Integer> list = new ArrayList<>();
+                list.add(1);
+                new ActivityBuilder(SubActivity.class)
+                        .set(SubActivity.TITLE, "Hey")
+                        .set(SubActivity.CONTENT, 1)
+                        .set("values", new int[]{1, 2, 3})
+                        .set(SubActivity.ARRAY_LIST, list)
+                        .start();
 
                 Fragment1 fragment1 = new Fragment1();
                 fragment1.setArguments(new BundleBuilder()

@@ -8,10 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.thefinestartist.Base;
 import com.thefinestartist.builders.ActivityBuilder;
 import com.thefinestartist.builders.BundleBuilder;
-import com.thefinestartist.utils.service.VibratorUtil;
 
 import java.util.ArrayList;
 
@@ -58,13 +56,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Base.initialize(this);
-        VibratorUtil.eee();
+//        VibratorUtil.eee();
 //        KeyboardUtil.showImmediately(editText);
-
-//        ActivityBuilder intentBuilder = new ActivityBuilder(MainActivity.class)
-//                .put("Hey", 1);
-        new MainActivity();
     }
 
     @Override

@@ -21,7 +21,7 @@ public class App extends Application {
 Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
-Base.initialize(@NonNull Context context);
+Base.initialize(Context context);
 
 Base.getContext();
 Base.getResources();
@@ -71,7 +71,7 @@ ViewUtil helps to set background drawable conveniently.
 
 ```java
 ViewUtil.setBackground(View view, Drawable drawable);
-ViewUtil.setBackground(View view, @DrawableRes int drawableRes);
+ViewUtil.setBackground(View view, int drawableRes);
 ```
 
 ## ExtrasBinder

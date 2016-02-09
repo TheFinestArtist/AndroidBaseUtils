@@ -5,7 +5,7 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.view.Display;
 
-import com.thefinestartist.utils.etc.TypedValueUtil;
+import com.thefinestartist.utils.content.TypedValueUtil;
 import com.thefinestartist.utils.service.WindowManagerUtil;
 import com.thefinestartist.utils.content.ResourcesUtil;
 import com.thefinestartist.utils.content.ThemeUtil;

@@ -1,8 +1,10 @@
 package com.thefinestartist;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
+import android.util.DisplayMetrics;
 
 /**
  * Created by TheFinestArtist on 1/25/16.
@@ -26,5 +28,12 @@ public class Base {
         return Base.getContext().getResources();
     }
 
+    public static Configuration getConfiguration() {
+        return Base.getResources().getConfiguration();
+    }
+
+    public static DisplayMetrics getDisplayMetrics() {
+        return Base.getResources().getDisplayMetrics();
+    }
 }
 // TODO: add ripple, bitmap, time

@@ -72,7 +72,7 @@ public class ResourcesUtil {
     }
 
     public static Configuration getConfiguration() {
-        return Base.getResources().getConfiguration();
+        return Base.getConfiguration();
     }
 
     public static String getString(@StringRes int stringRes) {
@@ -126,5 +126,4 @@ public class ResourcesUtil {
     public static int getDimensionPixelSize(@DimenRes int dimenRes) {
         return Base.getResources().getDimensionPixelSize(dimenRes);
     }
-
 }

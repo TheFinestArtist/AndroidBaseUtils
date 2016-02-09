@@ -98,7 +98,7 @@ public class ExtraCompiler extends AbstractProcessor {
             String type = element.asType().toString();
             String value = element.getAnnotation(Extra.class).value();
 
-            if (TypeElementHelper.instanceOf(enclosingElement, Activity.class)) {
+            if (TypeElementUtil.instanceOf(enclosingElement, Activity.class)) {
                 bindings.add(new BindingPoint(ClassType.ACTIVITY, variableName, type, value));
             } else {
                 bindings.add(new BindingPoint(ClassType.FRAGMENT, variableName, type, value));
@@ -124,7 +124,7 @@ public class ExtraCompiler extends AbstractProcessor {
             try {
                 JavaFileObject jfo = filer.createSourceFile(packageName + "." + className, type);
                 Writer writer = jfo.openWriter();
-                if (TypeElementHelper.instanceOf(type, Activity.class)) {
+                if (TypeElementUtil.instanceOf(type, Activity.class)) {
                     writer.write(String.format(Constants.BINDER_ACTIVITY, packageName, className, classType, bindings.toString()));
                 } else {
                     writer.write(String.format(Constants.BINDER_FRAGMENT, packageName, className, classType, bindings.toString()));

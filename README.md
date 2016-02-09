@@ -13,10 +13,12 @@ public class YourActivity extends AppCompatActivity {
 
     public static final String EXTRA_TITLE = "TITLE";
 
-    // ExtrasBinder will consider annotation variable as key. In this case, key is "TITLE"
+    // ExtrasBinder will consider annotation variable as key. 
+    // In this case, key is "TITLE".
     @Extra(EXTRA_TITLE) String title;
     
-    // ExtrasBinder will consider variable name as key. In this case, key is "ids"
+    // ExtrasBinder will consider variable name as key. 
+    // In this case, key is "ids".
     @Extra ArrayList<Integer> ids;
 
     @Override
@@ -30,7 +32,8 @@ public class YourActivity extends AppCompatActivity {
 ```java
 public class YourFragment extends Fragment {
 
-    // ExtrasBinder will consider annotation variable as key. In this case, key is "NAME"
+    // ExtrasBinder will consider annotation variable as key. 
+    // In this case, key is "NAME".
     @Extra("NAME") String name;
     
     @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

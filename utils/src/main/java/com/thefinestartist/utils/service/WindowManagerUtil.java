@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import com.thefinestartist.utils.service.ServiceUtil;
 
 /**
- * WindowManagerUtil is a helper class which helps to use Android {@link WindowManager} conveniently
+ * WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

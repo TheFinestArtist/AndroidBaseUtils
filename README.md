@@ -142,6 +142,14 @@ VibratorUtil.vibrate(milliseconds);
 // and more...
 ```
 
+## WindowManagerUtil (★☆☆☆☆)
+WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
+
+```java
+WindowManagerUtil.getDefaultDisplay();
+WindowManagerUtil.removeViewImmediate(View view);
+```
+
 ## License
 
 ```

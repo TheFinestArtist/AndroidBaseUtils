@@ -9,6 +9,8 @@ import com.thefinestartist.Base;
 
 /**
  * ViewUtil helps to set background drawable conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ViewUtil {
 

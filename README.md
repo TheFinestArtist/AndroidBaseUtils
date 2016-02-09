@@ -30,7 +30,7 @@ Base.getDisplayMetrics();
 ```
 
 ## ExtrasBinder (★★★★☆)
-Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable. ExtrasBinder will consider annotation variable as key. If there is no annotation variable, it will consider variable name as key.
+Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable. ExtrasBinder will consider `annotation variable` as key. If there is no annotation variable, it will consider `variable name` as key.
 
 ```java
 Intent intent = new Intent(this, YourActivity.class);

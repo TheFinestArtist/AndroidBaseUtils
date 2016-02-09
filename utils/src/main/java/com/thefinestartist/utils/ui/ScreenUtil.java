@@ -5,10 +5,10 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.view.Display;
 
-import com.thefinestartist.utils.content.TypedValueUtil;
-import com.thefinestartist.utils.service.WindowManagerUtil;
 import com.thefinestartist.utils.content.ResourcesUtil;
 import com.thefinestartist.utils.content.ThemeUtil;
+import com.thefinestartist.utils.content.TypedValueUtil;
+import com.thefinestartist.utils.service.WindowManagerUtil;
 
 /**
  * ScreenUtil helps to calculate screen size conveniently.
@@ -16,6 +16,27 @@ import com.thefinestartist.utils.content.ThemeUtil;
  * @author Leonardo Taehwan Kim
  */
 public class ScreenUtil {
+
+    public enum Rotation {
+        ROTATION_0(0),
+        ROTATION_90(1),
+        ROTATION_180(2),
+        ROTATION_270(3);
+
+        int value;
+
+        Rotation(int value) {
+            this.value = value;
+        }
+
+        public static Rotation fromValue(int value) {
+            for (Rotation rotation : values())
+                if (rotation.value == value)
+                    return rotation;
+
+            return ROTATION_0;
+        }
+    }
 
     public static int getDeviceWidth() {
         Display display = WindowManagerUtil.getDefaultDisplay();
@@ -37,6 +58,13 @@ public class ScreenUtil {
         } else {
             return display.getHeight();
         }
+    }
+
+    public static Rotation getRotation() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
+            return Rotation.fromValue(WindowManagerUtil.getDefaultDisplay().getRotation());
+        else
+            return Rotation.fromValue(WindowManagerUtil.getDefaultDisplay().getOrientation());
     }
 
     public static int getStatusBarHeight() {

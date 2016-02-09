@@ -103,6 +103,7 @@ ScreenUtil helps to calculate screen size conveniently.
 ```java
 ScreenUtil.getDeviceWidth();
 ScreenUtil.getDeviceHeight();
+ScreenUtil.getRotation();
 ScreenUtil.getStatusBarHeight();
 ScreenUtil.getToolbarHeight();
 ScreenUtil.getActionBarHeight();

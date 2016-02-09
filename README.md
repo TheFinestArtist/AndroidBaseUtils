@@ -18,7 +18,7 @@ public class App extends Application {
 ```
 
 ## Base
-Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class without any `Context`.
+Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
 Base.initialize(@NonNull Context context);

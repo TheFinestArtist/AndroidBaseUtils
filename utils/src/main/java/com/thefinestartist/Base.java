@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 
 /**
- * Base helps to get {@link Context}, {@link Resources}, {@link Configuration} and {@link DisplayMetrics} in any class without any {@link Context}.
+ * Base helps to get {@link Context}, {@link Resources}, {@link Configuration} and {@link DisplayMetrics} in any class.
  */
 public class Base {
 

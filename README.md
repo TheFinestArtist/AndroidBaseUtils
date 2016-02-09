@@ -29,31 +29,6 @@ Base.getConfiguration();
 Base.getDisplayMetrics();
 ```
 
-## KeyboardUtil (★★★★☆)
-KeyboardUtil helps to `show` and `hide` keyboard conveniently.
-
-```java
-KeyboardUtil.show(View);
-KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
-
-KeyboardUtil.hide(View);
-KeyboardUtil.hide(Activity);
-KeyboardUtil.hide(Fragment);
-KeyboardUtil.hide(Dialog);
-```
-
-## ScaleUtil (★★★★☆)
-ScaleUtil helps to convert dp or sp size into pixel.
-
-```java
-ScaleUtil.applyDimension(int unit, float value);
-ScaleUtil.applyDimension(int unit, int value);
-ScaleUtil.toPixel(float dp);
-ScaleUtil.toPixel(int dp);
-ScaleUtil.toPixelFromSP(float sp);
-ScaleUtil.toPixelFromSP(int sp);
-```
-
 ## ExtrasBinder (★★★★☆)
 Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 
@@ -92,6 +67,31 @@ public class YourFragment extends Fragment {
         // do something...
     }
 }
+```
+
+## KeyboardUtil (★★★★☆)
+KeyboardUtil helps to `show` and `hide` keyboard conveniently.
+
+```java
+KeyboardUtil.show(View);
+KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
+
+KeyboardUtil.hide(View);
+KeyboardUtil.hide(Activity);
+KeyboardUtil.hide(Fragment);
+KeyboardUtil.hide(Dialog);
+```
+
+## ScaleUtil (★★★★☆)
+ScaleUtil helps to convert dp or sp size into pixel.
+
+```java
+ScaleUtil.applyDimension(int unit, float value);
+ScaleUtil.applyDimension(int unit, int value);
+ScaleUtil.toPixel(float dp);
+ScaleUtil.toPixel(int dp);
+ScaleUtil.toPixelFromSP(float sp);
+ScaleUtil.toPixelFromSP(int sp);
 ```
 
 ## ScreenUtil (★★★☆☆)

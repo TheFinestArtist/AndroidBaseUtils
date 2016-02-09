@@ -30,17 +30,17 @@ Base.getDisplayMetrics();
 ```
 
 ## ExtrasBinder (★★★★☆)
-Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable.
+Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable.
 
 ```java
 public class YourActivity extends AppCompatActivity {
 
     public static final String EXTRA_TITLE = "TITLE";
 
-    // ExtrasBinder will consider annotation variable which is "TITLE" as key. 
+    // ExtrasBinder will consider annotation variable which is "TITLE" as key.
     @Extra(EXTRA_TITLE) String title;
     
-    // ExtrasBinder will consider variable name which is "ids" as key. 
+    // ExtrasBinder will consider variable name which is "ids" as key.
     @Extra ArrayList<Integer> ids;
 
     @Override
@@ -54,7 +54,7 @@ public class YourActivity extends AppCompatActivity {
 ```java
 public class YourFragment extends Fragment {
 
-    // ExtrasBinder will consider annotation variable which is "NAME" as key. 
+    // ExtrasBinder will consider annotation variable which is "NAME" as key.
     @Extra("NAME") String name;
     
     @Nullable 

@@ -29,7 +29,7 @@ Base.getConfiguration();
 Base.getDisplayMetrics();
 ```
 
-## KeyboardUtil
+## KeyboardUtil***
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 
 ```java
@@ -42,7 +42,7 @@ KeyboardUtil.hide(Fragment);
 KeyboardUtil.hide(Dialog);
 ```
 
-## ScaleUtil
+## ScaleUtil***
 ScaleUtil helps to convert dp or sp size into pixel.
 
 ```java
@@ -54,7 +54,7 @@ ScaleUtil.toPixelFromSP(float sp);
 ScaleUtil.toPixelFromSP(int sp);
 ```
 
-## ScreenUtil
+## ScreenUtil**
 ScreenUtil helps to calculate screen size conveniently.
 
 ```java
@@ -66,7 +66,7 @@ ScreenUtil.getActionBarHeight();
 ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-## ViewUtil
+## ViewUtil*
 ViewUtil helps to set background drawable conveniently.
 
 ```java
@@ -74,7 +74,7 @@ ViewUtil.setBackground(View view, Drawable drawable);
 ViewUtil.setBackground(View view, int drawableRes);
 ```
 
-## ExtrasBinder
+## ExtrasBinder***
 Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 
 ```java
@@ -114,7 +114,7 @@ public class YourFragment extends Fragment {
 }
 ```
 
-## ServiceUtil
+## ServiceUtil**
 ServiceUtil helps to get Android system service conveniently.
 
 ```java
@@ -130,7 +130,7 @@ ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
-## VibratorUtil
+## VibratorUtil*
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java

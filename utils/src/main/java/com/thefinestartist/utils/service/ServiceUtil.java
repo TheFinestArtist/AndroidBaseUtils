@@ -62,7 +62,7 @@ import android.view.textservice.TextServicesManager;
 import com.thefinestartist.Base;
 
 /**
- * ServiceUtil is a helper class which helps to use Android {@link Context#getSystemService(String)} conveniently
+ * ServiceUtil helps to get Android system service conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

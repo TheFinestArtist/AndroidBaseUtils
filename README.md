@@ -9,7 +9,6 @@
 Call `Base.initialize(context)` within your `Application` `onCreate()` method.
 ```java
 public class App extends Application {
-    
     @Override
     public void onCreate() {
         super.onCreate();

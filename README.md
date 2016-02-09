@@ -34,7 +34,7 @@ Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBi
 
 ```java
 Intent intent = new Intent(this, YourActivity.class);
-intent.putExtra(YourActivity.EXTRA_TITLE, "Title");
+intent.putExtra(YourActivity.EXTRA_TITLE, "Activity title");
 intent.putExtra("ids", new ArrayList<Integer>());
 startActivity(intent);
 
@@ -56,7 +56,7 @@ public class YourActivity extends AppCompatActivity {
 ```java
 YourFragment fragment = new YourFragment();
 Bundle bundle = new Bundle();
-bundle.putString("Name", "Name");
+bundle.putString("Name", "Fragment name");
 fragment.setArguments(bundle);
 
 public class YourFragment extends Fragment {

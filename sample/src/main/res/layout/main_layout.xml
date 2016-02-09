@@ -15,4 +15,9 @@
         android:layout_height="wrap_content"
         android:text="button"/>
 
+    <FrameLayout
+        android:id="@android:id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

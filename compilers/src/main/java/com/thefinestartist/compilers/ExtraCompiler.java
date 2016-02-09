@@ -1,5 +1,7 @@
 package com.thefinestartist.compilers;
 
+import android.app.Activity;
+
 import com.thefinestartist.annotations.Extra;
 
 import java.io.IOException;
@@ -13,7 +15,6 @@ import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
-import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.lang.model.SourceVersion;
@@ -24,7 +25,6 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
-import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
@@ -42,37 +42,37 @@ public class ExtraCompiler extends AbstractProcessor {
         return SourceVersion.latestSupported();
     }
 
-    Processor instance;
-    Types typeUtils;
-    Elements elementUtils;
     Filer filer;
     Messager messager;
+    Types types;
 
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {
         super.init(processingEnv);
-        instance = this;
-        typeUtils = processingEnv.getTypeUtils();
-        elementUtils = processingEnv.getElementUtils();
         filer = processingEnv.getFiler();
         messager = processingEnv.getMessager();
+        types = processingEnv.getTypeUtils();
+    }
+
+    private void note(String message, Object... args) {
+        messager.printMessage(Diagnostic.Kind.NOTE, String.format(message, args));
     }
 
     private void error(String message, Object... args) {
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, String.format(message, args));
+        messager.printMessage(Diagnostic.Kind.ERROR, String.format(message, args));
     }
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        Map<TypeElement, Set<InjectionPoint>> injectionsByClass =
-                new LinkedHashMap<TypeElement, Set<InjectionPoint>>();
-        Set<TypeMirror> injectionTargets = new HashSet<TypeMirror>();
+        Map<TypeElement, Set<BindingPoint>> bindingsByClass = new LinkedHashMap<>();
+        Set<TypeMirror> bindingTargets = new HashSet<>();
 
         for (Element element : roundEnv.getElementsAnnotatedWith(Extra.class)) {
+
             // Verify containing type.
             TypeElement enclosingElement = (TypeElement) element.getEnclosingElement();
             if (enclosingElement.getKind() != ElementKind.CLASS) {
-                error("Unexpected @InjectView on field in " + element);
+                error("Unexpected @Extra on field in " + element);
                 continue;
             }
 
@@ -81,55 +81,56 @@ public class ExtraCompiler extends AbstractProcessor {
             if (modifiers.contains(Modifier.PRIVATE)
                     || modifiers.contains(Modifier.PROTECTED)
                     || modifiers.contains(Modifier.STATIC)) {
-                error("@InjectView fields must not be private, protected, or static: "
+                error("@Extra fields must not be private, protected, or static: "
                         + enclosingElement.getQualifiedName()
                         + "."
                         + element);
                 continue;
             }
 
-            // Get and optionally create a set of all injection points for a type.
-            Set<InjectionPoint> injections = injectionsByClass.get(enclosingElement);
-            if (injections == null) {
-                injections = new HashSet<InjectionPoint>();
-                injectionsByClass.put(enclosingElement, injections);
+            // Get and optionally create a set of all binding points for a type.
+            Set<BindingPoint> bindings = bindingsByClass.get(enclosingElement);
+            if (bindings == null) {
+                bindings = new HashSet<>();
+                bindingsByClass.put(enclosingElement, bindings);
             }
 
-            // Assemble information on the injection point.
+            // Assemble information on the binding point.
             String variableName = element.getSimpleName().toString();
             String type = element.asType().toString();
             String value = element.getAnnotation(Extra.class).value();
-            injections.add(new InjectionPoint(variableName, type, value));
 
-            // Add to the valid injection targets set.
-            injectionTargets.add(enclosingElement.asType());
+            if (TypeElementHelper.instanceOf(enclosingElement, Activity.class)) {
+                bindings.add(new BindingPoint(ClassType.ACTIVITY, variableName, type, value));
+            } else {
+                bindings.add(new BindingPoint(ClassType.FRAGMENT, variableName, type, value));
+            }
+
+            // Add to the valid binding targets set.
+            bindingTargets.add(enclosingElement.asType());
         }
 
-        for (Map.Entry<TypeElement, Set<InjectionPoint>> injection : injectionsByClass.entrySet()) {
-            TypeElement type = injection.getKey();
+        for (Map.Entry<TypeElement, Set<BindingPoint>> binding : bindingsByClass.entrySet()) {
+            TypeElement type = binding.getKey();
             String targetClass = type.getQualifiedName().toString();
             int lastDot = targetClass.lastIndexOf(".");
-            String activityType = targetClass.substring(lastDot + 1);
-            String className = activityType + SUFFIX;
+            String classType = targetClass.substring(lastDot + 1);
+            String className = classType + SUFFIX;
             String packageName = targetClass.substring(0, lastDot);
-            String parentClass = resolveParentType(type, injectionTargets);
-            StringBuilder injections = new StringBuilder();
-            if (parentClass != null) {
-                injections.append("        ")
-                        .append(parentClass)
-                        .append(SUFFIX)
-                        .append(".inject(activity);\n\n");
-            }
-            for (InjectionPoint injectionPoint : injection.getValue()) {
-                injections.append(injectionPoint).append("\n");
+            StringBuilder bindings = new StringBuilder();
+            for (BindingPoint bindingPoint : binding.getValue()) {
+                bindings.append(bindingPoint).append("\n");
             }
 
-            // Write the view injector class.
+            // Write the view binder class.
             try {
-                JavaFileObject jfo =
-                        processingEnv.getFiler().createSourceFile(packageName + "." + className, type);
+                JavaFileObject jfo = filer.createSourceFile(packageName + "." + className, type);
                 Writer writer = jfo.openWriter();
-                writer.write(String.format(INJECTOR, packageName, className, activityType, injections.toString()));
+                if (TypeElementHelper.instanceOf(type, Activity.class)) {
+                    writer.write(String.format(Constants.BINDER_ACTIVITY, packageName, className, classType, bindings.toString()));
+                } else {
+                    writer.write(String.format(Constants.BINDER_FRAGMENT, packageName, className, classType, bindings.toString()));
+                }
                 writer.flush();
                 writer.close();
             } catch (IOException e) {
@@ -155,12 +156,18 @@ public class ExtraCompiler extends AbstractProcessor {
         }
     }
 
-    private static class InjectionPoint {
+    private enum ClassType {
+        ACTIVITY, FRAGMENT
+    }
+
+    private static class BindingPoint {
+        private final ClassType classType;
         private final String variableName;
         private final String type;
         private final String value;
 
-        InjectionPoint(String variableName, String type, String value) {
+        BindingPoint(ClassType classType, String variableName, String type, String value) {
+            this.classType = classType;
             this.variableName = variableName;
             this.type = type;
             this.value = value.length() == 0 ? variableName : value;
@@ -168,30 +175,15 @@ public class ExtraCompiler extends AbstractProcessor {
 
         @Override
         public String toString() {
-            return String.format(INJECTION, variableName, type, value);
+            switch (classType) {
+                case ACTIVITY:
+                    return String.format(Constants.BINDING_ACTIVITY, variableName, type, value);
+                case FRAGMENT:
+                default:
+                    return String.format(Constants.BINDING_FRAGMENT, variableName, type, value);
+            }
         }
     }
 
-    private static final String INJECTION = "        activity.%s = (%s) intent.getSerializableExtra(\"%s\");";
-    private static final String INJECTOR = ""
-            + "package %s;\n\n"
-            + "import android.content.Intent;\n\n"
-            + "public class %s {\n"
-            + "    public static void bind(%s activity) {\n"
-            + "        Intent intent = activity.getIntent();\n"
-            + "%s"
-            + "    }\n"
-            + "}\n";
-}
 
-//package com.thefinestartist.helpers.sample;
-//
-//        import android.content.Intent;
-//
-//public class SubActivity$$ExtraBinder {
-//    public static void bind(SubActivity activity) {
-//        Intent intent = activity.getIntent();
-//        activity.title = (String) intent.getSerializableExtra("title");
-//        activity.content = (int) intent.getSerializableExtra("content");
-//    }
-//}
+}

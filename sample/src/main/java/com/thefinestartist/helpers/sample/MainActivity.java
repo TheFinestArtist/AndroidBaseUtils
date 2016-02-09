@@ -1,6 +1,8 @@
 package com.thefinestartist.helpers.sample;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +10,7 @@ import android.widget.EditText;
 
 import com.thefinestartist.Base;
 import com.thefinestartist.helpers.ActivityBuilder;
+import com.thefinestartist.helpers.BundleBuilder;
 import com.thefinestartist.helpers.VibratorHelper;
 
 /**
@@ -31,11 +34,21 @@ public class MainActivity extends AppCompatActivity {
 //                new ActivityBuilder(SubActivity.class)
 //                        .set(SubActivity.TITLE, "Hey")
 //                        .start();
-                new ActivityBuilder(SubActivity.class)
-                        .set(SubActivity.TITLE, "Hey")
-                        .set(SubActivity.CONTENT, 1)
-                        .set("values", new int[]{1, 2, 3})
-                        .start();
+//                new ActivityBuilder(SubActivity.class)
+//                        .set(SubActivity.TITLE, "Hey")
+//                        .set(SubActivity.CONTENT, 1)
+//                        .set("values", new int[]{1, 2, 3})
+//                        .start();
+
+                Fragment1 fragment1 = new Fragment1();
+                fragment1.setArguments(new BundleBuilder()
+                        .set(Fragment1.NAME, "Hoy")
+                        .build());
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(android.R.id.content, fragment1);
+                fragmentTransaction.commitAllowingStateLoss();
             }
         });
 

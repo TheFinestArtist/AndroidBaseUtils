@@ -22,10 +22,6 @@ public class ActivityBuilder {
         intent = new Intent(Base.getContext(), clazz);
     }
 
-    public ActivityBuilder(@NonNull Intent intent) {
-        this.intent = intent;
-    }
-
     public <T extends Serializable> ActivityBuilder set(String key, T value) {
         intent.putExtra(key, value);
         return this;

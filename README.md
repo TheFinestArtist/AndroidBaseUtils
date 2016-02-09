@@ -67,54 +67,16 @@ ServiceUtil.getActivityManager();
 ServiceUtil.getAlarmManager();
 ServiceUtil.getAudioManager();
 ServiceUtil.getMediaRouter();
-ServiceUtil.getBluetoothManager();
-ServiceUtil.getClipboardManager();
-ServiceUtil.getConnectivityManager();
-ServiceUtil.getDevicePolicyManager();
-ServiceUtil.getDownloadManager();
-ServiceUtil.getBatteryManager();
-ServiceUtil.getNfcManager();
-ServiceUtil.getDropBoxManager();
-ServiceUtil.getInputManager();
-ServiceUtil.getDisplayManager();
-ServiceUtil.getInputMethodManager();
-ServiceUtil.getTextServicesManager();
-ServiceUtil.getKeyguardManager();
-ServiceUtil.getLayoutInflater();
-ServiceUtil.getLocationManager();
-ServiceUtil.getNotificationManager();
-ServiceUtil.getNsdManager();
-ServiceUtil.getPowerManager();
-ServiceUtil.getSearchManager();
-ServiceUtil.getSensorManager();
-ServiceUtil.getStorageManager();
-ServiceUtil.getTelephonyManager();
-ServiceUtil.getSubscriptionManager();
-ServiceUtil.getCarrierConfigManager();
-ServiceUtil.getTelecomManager();
-ServiceUtil.getUiModeManager();
-ServiceUtil.getUsbManager();
-ServiceUtil.getVibrator();
-ServiceUtil.getWallpaperManager();
-ServiceUtil.getWifiManager();
-ServiceUtil.getWifiP2pManager();
-ServiceUtil.getWindowManager();
-ServiceUtil.getUserManager();
-ServiceUtil.getAppOpsManager();
-ServiceUtil.getCameraManager();
-ServiceUtil.getLauncherApps();
-ServiceUtil.getRestrictionsManager();
-ServiceUtil.getPrintManager();
-ServiceUtil.getConsumerIrManager();
-ServiceUtil.getMediaSessionManager();
-ServiceUtil.getFingerprintManager();
-ServiceUtil.getTvInputManager();
-ServiceUtil.getUsageStatsManager();
-ServiceUtil.getNetworkStatsManager();
-ServiceUtil.getJobScheduler();
-ServiceUtil.getMediaProjectionManager();
-ServiceUtil.getAppWidgetManager();
-ServiceUtil.getMidiManager();
+// and more...
+```
+
+## VibratorUtil
+VibratorUtil helps to use `Vibrator` conveniently.
+```java
+VibratorUtil.hasVibrator();
+VibratorUtil.eee(); // vibrate device for 200 milliseconds
+VibratorUtil.vibrate(milliseconds);
+// and more...
 ```
 
 ## License

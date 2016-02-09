@@ -11,7 +11,7 @@ import com.thefinestartist.utils.content.ResourcesUtil;
 import com.thefinestartist.utils.content.ThemeUtil;
 
 /**
- * ScreenUtil is a helper class which helps to calculate screen size conveniently
+ * ScreenUtil helps to calculate screen size conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

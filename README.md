@@ -30,6 +30,17 @@ ScaleUtil.toPixelFromSP(float sp);
 ScaleUtil.toPixelFromSP(int sp);
 ```
 
+## ScreenUtil
+ScreenUtil helps to calculate screen size conveniently.
+
+```java
+ScreenUtil.getDeviceWidth();
+ScreenUtil.getDeviceHeight();
+ScreenUtil.getStatusBarHeight();
+ScreenUtil.getActionBarHeight();
+ScreenUtil.getNavigationBarHeight();
+```
+
 ## ExtrasBinder
 Simply call `ExtrasBinder.bind(this);` in your `Activity` or `Fragment`. ExtrasBinder bind data from `Intent` or `Bundle` into matching variable.
 
@@ -81,7 +92,7 @@ ServiceUtil.getActivityManager();
 ServiceUtil.getAlarmManager();
 ServiceUtil.getAudioManager();
 ServiceUtil.getMediaRouter();
-// and more...
+// and so on...
 ```
 
 ## VibratorUtil

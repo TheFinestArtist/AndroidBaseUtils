@@ -6,7 +6,7 @@
 
 #### Context free and basic utils for building Android project
 
-## ExtrasUtils
+## ExtrasBinder
 ```java
 public class SubActivity extends AppCompatActivity {
 

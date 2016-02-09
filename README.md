@@ -39,8 +39,7 @@ ScreenUtil.getDeviceHeight();
 ScreenUtil.getStatusBarHeight();
 ScreenUtil.getToolbarHeight();
 ScreenUtil.getActionBarHeight();
-// Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
-ScreenUtil.getNavigationBarHeight();
+ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
 ## ExtrasBinder
@@ -74,7 +73,9 @@ public class YourFragment extends Fragment {
     // In this case, key is "NAME".
     @Extra("NAME") String name;
     
-    @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    @Nullable 
+    @Override 
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ExtrasBinder.bind(this);
         // do something...
     }

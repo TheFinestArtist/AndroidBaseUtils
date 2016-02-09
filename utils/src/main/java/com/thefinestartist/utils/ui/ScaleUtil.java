@@ -5,7 +5,7 @@ import android.util.TypedValue;
 import com.thefinestartist.utils.content.TypedValueUtil;
 
 /**
- * Created by TheFinestArtist on 1/25/16.
+ * ScaleUtil helps to convert dp or sp size into pixel.
  */
 public class ScaleUtil {
 

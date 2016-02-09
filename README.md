@@ -7,6 +7,7 @@
 
 ## KeyboardUtil
 KeyboardUtil helps to `show` and `hide` keyboard easily.
+
 ```java
 KeyboardUtil.show(View);
 KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
@@ -15,6 +16,18 @@ KeyboardUtil.hide(View);
 KeyboardUtil.hide(Activity);
 KeyboardUtil.hide(Fragment);
 KeyboardUtil.hide(Dialog);
+```
+
+## ScaleUtil
+ScaleUtil helps to convert dp or sp size into pixel.
+
+```java
+ScaleUtil.applyDimension(int unit, float value);
+ScaleUtil.applyDimension(int unit, int value);
+ScaleUtil.toPixel(float dp);
+ScaleUtil.toPixel(int dp);
+ScaleUtil.toPixelFromSP(float sp);
+ScaleUtil.toPixelFromSP(int sp);
 ```
 
 ## ExtrasBinder
@@ -57,6 +70,7 @@ public class YourFragment extends Fragment {
 
 ## ServiceUtil
 ServiceUtil helps to get Android system service conveniently.
+
 ```java
 (ServiceType) ServiceUtil.getSystemService(Context.ServiceName);
 
@@ -72,6 +86,7 @@ ServiceUtil.getMediaRouter();
 
 ## VibratorUtil
 VibratorUtil helps to use `Vibrator` conveniently.
+
 ```java
 VibratorUtil.hasVibrator();
 VibratorUtil.eee(); // vibrate device for 200 milliseconds

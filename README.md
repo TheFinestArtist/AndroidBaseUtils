@@ -5,6 +5,31 @@
 
 #### Context free and basic utils to build Android project conveniently
 
+## How to set up
+Call `Base.initialize(context)` within your `Application` `onCreate()` method.
+```java
+public class App extends Application {
+    
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Base.initialize(this);
+    }
+}
+```
+
+## Base
+Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class without any `Context`.
+
+```java
+Base.initialize(@NonNull Context context);
+
+Base.getContext();
+Base.getResources();
+Base.getConfiguration();
+Base.getDisplayMetrics();
+```
+
 ## KeyboardUtil
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 

@@ -1,5 +1,5 @@
 <manifest
-    package="com.thefinestartist.helpers.sample"
+    package="com.thefinestartist.utils.sample"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.thefinestartist.utils.sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SubActivity"/>
+        <activity android:name="com.thefinestartist.utils.sample.SubActivity"/>
 
     </application>
 

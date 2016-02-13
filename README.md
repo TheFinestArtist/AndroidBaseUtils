@@ -22,9 +22,7 @@ Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `Display
 
 ```java
 void            Base.initialize(Context context);
-```
 
-```java
 Context         Base.getContext();
 Resources       Base.getResources();
 AssetManager    Base.getAssets();
@@ -128,9 +126,7 @@ ServiceUtil helps to get Android system service conveniently.
 
 ```java
 Object                  ServiceUtil.getSystemService(Context.ServiceName);
-```
 
-```java
 AccessibilityManager    ServiceUtil.getAccessibilityManager();
 CaptioningManager       ServiceUtil.getCaptioningManager();
 AccountManager          ServiceUtil.getAccountManager();

@@ -77,40 +77,40 @@ public class YourFragment extends Fragment {
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 
 ```java
-KeyboardUtil.show(View);
-KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
+void    KeyboardUtil.show(View);
+void    KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
 
-KeyboardUtil.hide(View);
-KeyboardUtil.hide(Activity);
-KeyboardUtil.hide(Fragment);
-KeyboardUtil.hide(Dialog);
+void    KeyboardUtil.hide(View);
+void    KeyboardUtil.hide(Activity);
+void    KeyboardUtil.hide(Fragment);
+void    KeyboardUtil.hide(Dialog);
 ```
 
 ## UnitConverter (★★★★☆)
 UnitConverter helps to convert dp or sp size into pixel.
 
 ```java
-float UnitConverter.dpToPx(float dp);
-int UnitConverter.dpToPx(int dp);
-float UnitConverter.pxToDp(float px);
-int UnitConverter.pxToDp(int px);
-float UnitConverter.spToPx(float sp);
-int UnitConverter.spToPx(int sp);
-float UnitConverter.pxToSp(float px);
-int UnitConverter.pxToSp(int px);
+float   UnitConverter.dpToPx(float dp);
+int     UnitConverter.dpToPx(int dp);
+float   UnitConverter.pxToDp(float px);
+int     UnitConverter.pxToDp(int px);
+float   UnitConverter.spToPx(float sp);
+int     UnitConverter.spToPx(int sp);
+float   UnitConverter.pxToSp(float px);
+int     UnitConverter.pxToSp(int px);
 ```
 
 ## ScreenUtil (★★★☆☆)
 ScreenUtil helps to calculate screen size conveniently.
 
 ```java
-ScreenUtil.getDeviceWidth();
-ScreenUtil.getDeviceHeight();
-ScreenUtil.getRotation();
-ScreenUtil.getStatusBarHeight();
-ScreenUtil.getToolbarHeight();
-ScreenUtil.getActionBarHeight();
-ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+int         ScreenUtil.getDeviceWidth();
+int         ScreenUtil.getDeviceHeight();
+Rotation    ScreenUtil.getRotation();
+int         ScreenUtil.getStatusBarHeight();
+int         ScreenUtil.getToolbarHeight();
+int         ScreenUtil.getActionBarHeight();
+int         ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
 ## ViewUtil (★★☆☆☆)

@@ -90,14 +90,14 @@ KeyboardUtil.hide(Dialog);
 UnitConverter helps to convert dp or sp size into pixel.
 
 ```java
-UnitConverter.dpToPx(float dp);
-UnitConverter.dpToPx(int dp);
-UnitConverter.pxToDp(float px);
-UnitConverter.pxToDp(int px);
-UnitConverter.spToPx(float sp);
-UnitConverter.spToPx(int sp);
-UnitConverter.pxToSp(float px);
-UnitConverter.pxToSp(int px);
+float   UnitConverter.dpToPx(float dp);
+int     UnitConverter.dpToPx(int dp);
+float   UnitConverter.pxToDp(float px);
+int     UnitConverter.pxToDp(int px);
+float   UnitConverter.spToPx(float sp);
+int     UnitConverter.spToPx(int sp);
+float   UnitConverter.pxToSp(float px);
+int     UnitConverter.pxToSp(int px);
 ```
 
 ## ScreenUtil (★★★☆☆)

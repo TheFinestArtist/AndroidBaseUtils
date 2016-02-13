@@ -4,8 +4,6 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.thefinestartist.utils.service.ServiceUtil;
-
 /**
  * WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
  *
@@ -13,15 +11,11 @@ import com.thefinestartist.utils.service.ServiceUtil;
  */
 public class WindowManagerUtil {
 
-    public static WindowManager getService() {
-        return ServiceUtil.getWindowManager();
-    }
-
     public static Display getDefaultDisplay() {
-        return getService().getDefaultDisplay();
+        return ServiceUtil.getWindowManager().getDefaultDisplay();
     }
 
     public static void removeViewImmediate(View view) {
-        getService().removeViewImmediate(view);
+        ServiceUtil.getWindowManager().removeViewImmediate(view);
     }
 }

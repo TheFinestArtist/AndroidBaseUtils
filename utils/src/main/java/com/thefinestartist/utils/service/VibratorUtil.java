@@ -11,13 +11,9 @@ import android.os.Vibrator;
  */
 public class VibratorUtil {
 
-    public static Vibrator getService() {
-        return ServiceUtil.getVibrator();
-    }
-
     @TargetApi(11)
     public static boolean hasVibrator() {
-        return getService().hasVibrator();
+        return ServiceUtil.getVibrator().hasVibrator();
     }
 
     public static void eee() {
@@ -33,7 +29,7 @@ public class VibratorUtil {
     }
 
     public static void vibrate(long[] pattern, int repeat) {
-        getService().vibrate(pattern, repeat);
+        ServiceUtil.getVibrator().vibrate(pattern, repeat);
     }
 
     @TargetApi(21)
@@ -43,10 +39,10 @@ public class VibratorUtil {
 
     @TargetApi(21)
     public static void vibrate(long[] pattern, int repeat, AudioAttributes attributes) {
-        getService().vibrate(pattern, repeat, attributes);
+        ServiceUtil.getVibrator().vibrate(pattern, repeat, attributes);
     }
 
     public static void cancel() {
-        getService().cancel();
+        ServiceUtil.getVibrator().cancel();
     }
 }

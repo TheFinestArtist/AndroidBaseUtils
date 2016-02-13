@@ -22,7 +22,9 @@ Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `Display
 
 ```java
 void            Base.initialize(Context context);
+```
 
+```java
 Context         Base.getContext();
 Resources       Base.getResources();
 AssetManager    Base.getAssets();
@@ -117,23 +119,25 @@ int         ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bo
 ViewUtil helps to set background drawable conveniently.
 
 ```java
-ViewUtil.setBackground(View view, Drawable drawable);
-ViewUtil.setBackground(View view, int drawableRes);
+void    ViewUtil.setBackground(View view, Drawable drawable);
+void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
 ## ServiceUtil (★★☆☆☆)
 ServiceUtil helps to get Android system service conveniently.
 
 ```java
-(ServiceType) ServiceUtil.getSystemService(Context.ServiceName);
+Object                  ServiceUtil.getSystemService(Context.ServiceName);
+```
 
-ServiceUtil.getAccessibilityManager();
-ServiceUtil.getCaptioningManager();
-ServiceUtil.getAccountManager();
-ServiceUtil.getActivityManager();
-ServiceUtil.getAlarmManager();
-ServiceUtil.getAudioManager();
-ServiceUtil.getMediaRouter();
+```java
+AccessibilityManager    ServiceUtil.getAccessibilityManager();
+CaptioningManager       ServiceUtil.getCaptioningManager();
+AccountManager          ServiceUtil.getAccountManager();
+ActivityManager         ServiceUtil.getActivityManager();
+AlarmManager            ServiceUtil.getAlarmManager();
+AudioManager            ServiceUtil.getAudioManager();
+MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
@@ -141,8 +145,8 @@ ServiceUtil.getMediaRouter();
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
-VibratorUtil.eee(); // vibrate device for 200 milliseconds
-VibratorUtil.vibrate(milliseconds);
+void    VibratorUtil.eee(); // vibrate device for 200 milliseconds
+void    VibratorUtil.vibrate(milliseconds);
 // and more...
 ```
 
@@ -150,18 +154,18 @@ VibratorUtil.vibrate(milliseconds);
 TypedValueUtil helps to use `TypedValue` class conveniently.
 
 ```java
-TypedValueUtil.applyDimension(int unit, float value);
-TypedValueUtil.complexToDimension(int data);
-TypedValueUtil.complexToDimensionPixelOffset(int data);
-TypedValueUtil.complexToDimensionPixelSize(int data);
+float   TypedValueUtil.applyDimension(int unit, float value);
+float   TypedValueUtil.complexToDimension(int data);
+int     TypedValueUtil.complexToDimensionPixelOffset(int data);
+int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
 ## WindowManagerUtil (☆☆☆☆☆)
 WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
 
 ```java
-WindowManagerUtil.getDefaultDisplay();
-WindowManagerUtil.removeViewImmediate(View view);
+Display     WindowManagerUtil.getDefaultDisplay();
+void        WindowManagerUtil.removeViewImmediate(View view);
 ```
 
 ## License

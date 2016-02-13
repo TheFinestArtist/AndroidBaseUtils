@@ -1,13 +1,14 @@
 package com.thefinestartist;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 
 /**
- * Base helps to get {@link Context}, {@link Resources}, {@link Configuration} and {@link DisplayMetrics} in any class.
+ * Base helps to get {@link Context}, {@link Resources}, {@link AssetManager}, {@link Configuration} and {@link DisplayMetrics} in any class.
  *
  * @author Leonardo Taehwan Kim
  */
@@ -28,6 +29,10 @@ public class Base {
 
     public static Resources getResources() {
         return Base.getContext().getResources();
+    }
+
+    public static AssetManager getAssets() {
+        return Base.getContext().getAssets();
     }
 
     public static Configuration getConfiguration() {

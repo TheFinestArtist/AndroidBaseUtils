@@ -18,13 +18,14 @@ public class App extends Application {
 ```
 
 ## Base (★★★★★)
-Base helps to get `Context`, `Resources`, `Configuration` and `DisplayMetrics` in any class.
+Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
 Base.initialize(Context context);
 
 Base.getContext();
 Base.getResources();
+Base.getAssets();
 Base.getConfiguration();
 Base.getDisplayMetrics();
 ```
@@ -85,16 +86,18 @@ KeyboardUtil.hide(Fragment);
 KeyboardUtil.hide(Dialog);
 ```
 
-## ScaleUtil (★★★★☆)
-ScaleUtil helps to convert dp or sp size into pixel.
+## UnitConverter (★★★★☆)
+UnitConverter helps to convert dp or sp size into pixel.
 
 ```java
-ScaleUtil.applyDimension(int unit, float value);
-ScaleUtil.applyDimension(int unit, int value);
-ScaleUtil.toPixel(float dp);
-ScaleUtil.toPixel(int dp);
-ScaleUtil.toPixelFromSP(float sp);
-ScaleUtil.toPixelFromSP(int sp);
+UnitConverter.dpToPx(float dp);
+UnitConverter.dpToPx(int dp);
+UnitConverter.pxToDp(float px);
+UnitConverter.pxToDp(int px);
+UnitConverter.spToPx(float sp);
+UnitConverter.spToPx(int sp);
+UnitConverter.pxToSp(float px);
+UnitConverter.pxToSp(int px);
 ```
 
 ## ScreenUtil (★★★☆☆)
@@ -143,7 +146,17 @@ VibratorUtil.vibrate(milliseconds);
 // and more...
 ```
 
-## WindowManagerUtil (★☆☆☆☆)
+## TypedValueUtil (☆☆☆☆☆)
+TypedValueUtil helps to use `TypedValue` class conveniently.
+
+```java
+TypedValueUtil.applyDimension(int unit, float value);
+TypedValueUtil.complexToDimension(int data);
+TypedValueUtil.complexToDimensionPixelOffset(int data);
+TypedValueUtil.complexToDimensionPixelSize(int data);
+```
+
+## WindowManagerUtil (☆☆☆☆☆)
 WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
 
 ```java

@@ -1,4 +1,4 @@
-package com.thefinestartist.utils.etc;
+package com.thefinestartist.detectors;
 
 /**
  * Created by TheFinestArtist on 2014. 9. 2..

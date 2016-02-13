@@ -5,9 +5,15 @@ import android.util.TypedValue;
 import com.thefinestartist.Base;
 
 /**
- * Created by TheFinestArtist on 1/25/16.
+ * TypedValueUtil helps to use {@link TypedValue} class conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class TypedValueUtil {
+
+    public static float applyDimension(int unit, int value) {
+        return TypedValue.applyDimension(unit, value, Base.getDisplayMetrics());
+    }
 
     public static float applyDimension(int unit, float value) {
         return TypedValue.applyDimension(unit, value, Base.getDisplayMetrics());

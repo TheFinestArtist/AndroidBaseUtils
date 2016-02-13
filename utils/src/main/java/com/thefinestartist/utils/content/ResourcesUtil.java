@@ -119,6 +119,10 @@ public class ResourcesUtil {
         return Base.getResources().getIdentifier(name, defType, defPackage);
     }
 
+    public static float getDimension(@DimenRes int dimenRes) {
+        return Base.getResources().getDimension(dimenRes);
+    }
+
     public static int getDimensionPixelOffset(@DimenRes int dimenRes) {
         return Base.getResources().getDimensionPixelOffset(dimenRes);
     }

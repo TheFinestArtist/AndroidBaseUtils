@@ -21,13 +21,13 @@ public class App extends Application {
 Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
-Base.initialize(Context context);
+void            Base.initialize(Context context);
 
-Base.getContext();
-Base.getResources();
-Base.getAssets();
-Base.getConfiguration();
-Base.getDisplayMetrics();
+Context         Base.getContext();
+Resources       Base.getResources();
+AssetManager    Base.getAssets();
+Configuration   Base.getConfiguration();
+DisplayMetrics  Base.getDisplayMetrics();
 ```
 
 ## ExtrasBinder (★★★★☆)

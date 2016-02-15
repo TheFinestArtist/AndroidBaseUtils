@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.thefinestartist.binders.ExtrasBinder;
 import com.thefinestartist.converters.UnitConverter;
 import com.thefinestartist.utils.ui.KeyboardUtil;
 
@@ -52,6 +53,21 @@ public class Base {
 
     public static DisplayMetrics getDisplayMetrics() {
         return Base.getResources().getDisplayMetrics();
+    }
+
+    /**
+     * ExtrasBinder
+     */
+    public static void bindExtras(Activity activity) {
+        ExtrasBinder.bind(activity);
+    }
+
+    public static void bindExtras(Fragment fragment) {
+        ExtrasBinder.bind(fragment);
+    }
+
+    public static void bindExtras(android.app.Fragment fragment) {
+        ExtrasBinder.bind(fragment);
     }
 
     /**

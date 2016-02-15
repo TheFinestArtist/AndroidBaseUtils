@@ -17,15 +17,24 @@ public class ExtrasBinder {
 
     static final String SUFFIX = "$$ExtraBinder";
 
-    public static void bind(@NonNull Activity activity) {
+    public static void bind( Activity activity) {
+        if (activity == null)
+            return;
+
         bindObject(activity);
     }
 
-    public static void bind(@NonNull Fragment fragment) {
+    public static void bind( Fragment fragment) {
+        if (fragment == null)
+            return;
+
         bindObject(fragment);
     }
 
-    public static void bind(@NonNull android.app.Fragment fragment) {
+    public static void bind( android.app.Fragment fragment) {
+        if (fragment == null)
+            return;
+
         bindObject(fragment);
     }
 

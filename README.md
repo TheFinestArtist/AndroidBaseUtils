@@ -73,6 +73,17 @@ public class YourFragment extends Fragment {
 }
 ```
 
+```java
+void    ExtrasBinder.bind(Activity activity);
+void    ExtrasBinder.bind(Fragment fragment);
+```
+
+`ExtrasBinder` method also can be called from `Base`.
+```java
+void    Base.bindExtras(Activity activity);
+void    Base.bindExtras(Fragment fragment);
+```
+
 ## KeyboardUtil (★★★★☆)
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 

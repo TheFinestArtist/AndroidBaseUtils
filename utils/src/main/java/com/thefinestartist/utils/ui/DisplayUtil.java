@@ -12,13 +12,13 @@ import com.thefinestartist.utils.content.TypedValueUtil;
 import com.thefinestartist.utils.service.WindowManagerUtil;
 
 /**
- * ScreenUtil helps to calculate screen size conveniently.
+ * DisplayUtil helps to calculate screen size conveniently.
  *
  * @author Leonardo Taehwan Kim
  */
-public class ScreenUtil {
+public class DisplayUtil {
 
-    public static int getDeviceWidth() {
+    public static int getWidth() {
         Display display = WindowManagerUtil.getDefaultDisplay();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             Point size = new Point();
@@ -29,7 +29,7 @@ public class ScreenUtil {
         }
     }
 
-    public static int getDeviceHeight() {
+    public static int getHeight() {
         Display display = WindowManagerUtil.getDefaultDisplay();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             Point size = new Point();

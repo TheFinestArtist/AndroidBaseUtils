@@ -15,7 +15,7 @@ Any kinds of contribution including **pull request**, **writing issue**, **email
     1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
     1. [UnitConverter](https://github.com/TheFinestArtist/AndroidBaseUtils#unitconverter-)
     1. [APILevel](https://github.com/TheFinestArtist/AndroidBaseUtils#apilevel-)
-    1. [ScreenUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#screenutil-)
+    1. [DisplayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#displayutil-)
     1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
     1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
     1. [VibratorUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#vibratorutil-)
@@ -191,24 +191,24 @@ boolean Base.depecatedAtAPIGingerbread();
 // and so on...
 ```
 
-## ScreenUtil (★★★☆☆)
-ScreenUtil helps to calculate screen size conveniently.
+## DisplayUtil (★★★☆☆)
+DisplayUtil helps to calculate screen size conveniently.
 
 ```java
-int         ScreenUtil.getDeviceWidth();
-int         ScreenUtil.getDeviceHeight();
-Rotation    ScreenUtil.getRotation();
-int         ScreenUtil.getStatusBarHeight();
-int         ScreenUtil.getToolbarHeight();
-int         ScreenUtil.getActionBarHeight();
-int         ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+int         DisplayUtil.getWidth();
+int         DisplayUtil.getHeight();
+Rotation    DisplayUtil.getRotation();
+int         DisplayUtil.getStatusBarHeight();
+int         DisplayUtil.getToolbarHeight();
+int         DisplayUtil.getActionBarHeight();
+int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-`ScreenUtil` method also can be called from `Base`.
+`DisplayUtil` method also can be called from `Base`.
 ```java
-int         Base.getDeviceWidth();
-int         Base.getDeviceHeight();
-Rotation    Base.getRotation();
+int         Base.getDisplayWidth();
+int         Base.getDisplayHeight();
+Rotation    Base.getDisplayRotation();
 int         Base.getStatusBarHeight();
 int         Base.getToolbarHeight();
 int         Base.getActionBarHeight();

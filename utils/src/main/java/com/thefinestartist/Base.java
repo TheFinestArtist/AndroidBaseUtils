@@ -19,8 +19,6 @@ import android.app.usage.NetworkStatsManager;
 import android.app.usage.UsageStatsManager;
 import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothManager;
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.Context;
 import android.content.RestrictionsManager;
 import android.content.pm.LauncherApps;
@@ -82,8 +80,8 @@ import com.thefinestartist.utils.service.ClipboardManagerUtil;
 import com.thefinestartist.utils.service.ServiceUtil;
 import com.thefinestartist.utils.service.VibratorUtil;
 import com.thefinestartist.utils.service.WindowManagerUtil;
+import com.thefinestartist.utils.ui.DisplayUtil;
 import com.thefinestartist.utils.ui.KeyboardUtil;
-import com.thefinestartist.utils.ui.ScreenUtil;
 import com.thefinestartist.utils.ui.ViewUtil;
 
 /**
@@ -338,34 +336,34 @@ public class Base {
     }
 
     /**
-     * ScreenUtil
+     * DisplayUtil (Partly renamed methods)
      */
-    public static int getDeviceWidth() {
-        return ScreenUtil.getDeviceWidth();
+    public static int getDisplayWidth() {
+        return DisplayUtil.getWidth();
     }
 
-    public static int getDeviceHeight() {
-        return ScreenUtil.getDeviceHeight();
+    public static int getDisplayHeight() {
+        return DisplayUtil.getHeight();
     }
 
-    public static Rotation getRotation() {
-        return ScreenUtil.getRotation();
+    public static Rotation getDisplayRotation() {
+        return DisplayUtil.getRotation();
     }
 
     public static int getStatusBarHeight() {
-        return ScreenUtil.getStatusBarHeight();
+        return DisplayUtil.getStatusBarHeight();
     }
 
     public static int getToolbarHeight() {
-        return ScreenUtil.getToolbarHeight();
+        return DisplayUtil.getToolbarHeight();
     }
 
     public static int getActionBarHeight() {
-        return ScreenUtil.getActionBarHeight();
+        return DisplayUtil.getActionBarHeight();
     }
 
     public static int getNavigationBarHeight() {
-        return ScreenUtil.getNavigationBarHeight();
+        return DisplayUtil.getNavigationBarHeight();
     }
 
     /**

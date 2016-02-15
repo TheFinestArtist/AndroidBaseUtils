@@ -155,7 +155,7 @@ int     Base.pxToSp(int px);
 ## APILevel (★★★☆☆)
 `APILevel` helps to check device API `Build.VERSION` conveniently.
 ```java
-boolean APILevel.require(int level);
+boolean APILevel.require(int level); // Build.VERSION.SDK_INT >= level
 boolean APILevel.requireCupcake();
 boolean APILevel.requireDonut();
 boolean APILevel.requireEclair();
@@ -163,7 +163,7 @@ boolean APILevel.requireFroyo();
 boolean APILevel.requireGingerbread();
 // and so on...
 
-boolean APILevel.depecatedAt(int level);
+boolean APILevel.depecatedAt(int level); // Build.VERSION.SDK_INT < level
 boolean APILevel.depecatedAtCupcake();
 boolean APILevel.depecatedAtDonut();
 boolean APILevel.depecatedAtEclair();
@@ -174,7 +174,7 @@ boolean APILevel.depecatedAtGingerbread();
 
 `APILevel` method also can be called from `Base`.
 ```java
-boolean Base.requireAPI(int level);
+boolean Base.requireAPI(int level); // Build.VERSION.SDK_INT >= level
 boolean Base.requireAPICupcake();
 boolean Base.requireAPIDonut();
 boolean Base.requireAPIEclair();
@@ -182,7 +182,7 @@ boolean Base.requireAPIFroyo();
 boolean Base.requireAPIGingerbread();
 // and so on...
 
-boolean Base.depecatedAtAPI(int level);
+boolean Base.depecatedAtAPI(int level); // Build.VERSION.SDK_INT < level
 boolean Base.depecatedAtAPICupcake();
 boolean Base.depecatedAtAPIDonut();
 boolean Base.depecatedAtAPIEclair();

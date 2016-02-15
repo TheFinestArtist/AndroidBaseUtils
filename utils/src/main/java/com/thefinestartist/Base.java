@@ -7,15 +7,23 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Point;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.View;
 
 import com.thefinestartist.binders.ExtrasBinder;
 import com.thefinestartist.converters.UnitConverter;
+import com.thefinestartist.utils.content.ResourcesUtil;
+import com.thefinestartist.utils.content.ThemeUtil;
+import com.thefinestartist.utils.content.TypedValueUtil;
+import com.thefinestartist.utils.service.WindowManagerUtil;
 import com.thefinestartist.utils.ui.KeyboardUtil;
+import com.thefinestartist.utils.ui.ScreenUtil;
 
 /**
  * Base helps to get {@link Context}, {@link Resources}, {@link AssetManager}, {@link Configuration} and {@link DisplayMetrics} in any class.
@@ -135,6 +143,37 @@ public class Base {
 
     public static int pxToSp(int px) {
         return UnitConverter.pxToSp(px);
+    }
+
+    /**
+     * ScreenUtil
+     */
+    public static int getDeviceWidth() {
+        return ScreenUtil.getDeviceWidth();
+    }
+
+    public static int getDeviceHeight() {
+        return ScreenUtil.getDeviceHeight();
+    }
+
+    public static ScreenUtil.Rotation getRotation() {
+        return ScreenUtil.getRotation();
+    }
+
+    public static int getStatusBarHeight() {
+        return ScreenUtil.getStatusBarHeight();
+    }
+
+    public static int getToolbarHeight() {
+        return ScreenUtil.getToolbarHeight();
+    }
+
+    public static int getActionBarHeight() {
+        return ScreenUtil.getActionBarHeight();
+    }
+
+    public static int getNavigationBarHeight() {
+        return ScreenUtil.getNavigationBarHeight();
     }
 }
 // TODO: add ripple, bitmap, time, keystore, contact list, picture list, video list

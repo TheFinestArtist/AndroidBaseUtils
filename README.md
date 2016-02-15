@@ -142,6 +142,17 @@ int         ScreenUtil.getActionBarHeight();
 int         ScreenUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
+`ScreenUtil` method also can be called from `Base`.
+```java
+int         Base.getDeviceWidth();
+int         Base.getDeviceHeight();
+Rotation    Base.getRotation();
+int         Base.getStatusBarHeight();
+int         Base.getToolbarHeight();
+int         Base.getActionBarHeight();
+int         Base.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+```
+
 ## ViewUtil (★★☆☆☆)
 ViewUtil helps to set background drawable conveniently.
 

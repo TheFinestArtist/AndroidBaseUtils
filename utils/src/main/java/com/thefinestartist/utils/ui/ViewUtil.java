@@ -15,6 +15,9 @@ import com.thefinestartist.Base;
 public class ViewUtil {
 
     public static void setBackground(View view, Drawable drawable) {
+        if (view == null)
+            return;
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackgroundDrawable(drawable);
         } else {
@@ -23,6 +26,9 @@ public class ViewUtil {
     }
 
     public static void setBackground(View view, @DrawableRes int drawableRes) {
+        if (view == null)
+            return;
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackgroundDrawable(Base.getResources().getDrawable(drawableRes));
         } else {

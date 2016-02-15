@@ -63,6 +63,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.ClipboardManager;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -75,6 +76,7 @@ import com.thefinestartist.binders.ExtrasBinder;
 import com.thefinestartist.converters.UnitConverter;
 import com.thefinestartist.utils.service.ServiceUtil;
 import com.thefinestartist.utils.service.VibratorUtil;
+import com.thefinestartist.utils.service.WindowManagerUtil;
 import com.thefinestartist.utils.ui.KeyboardUtil;
 import com.thefinestartist.utils.ui.ScreenUtil;
 import com.thefinestartist.utils.ui.ViewUtil;
@@ -118,7 +120,7 @@ public class Base {
     }
 
     /**
-     * ExtrasBinder
+     * ExtrasBinder (Renamed methods)
      */
     public static void bindExtras(Activity activity) {
         ExtrasBinder.bind(activity);
@@ -133,7 +135,7 @@ public class Base {
     }
 
     /**
-     * KeyboardUtil
+     * KeyboardUtil (Renamed methods)
      */
     public static void showKeyboard(View view) {
         KeyboardUtil.show(view);
@@ -231,7 +233,7 @@ public class Base {
     }
 
     /**
-     * ViewUtil
+     * ViewUtil (Renamed methods)
      */
     public static void setViewBackground(View view, Drawable drawable) {
         ViewUtil.setBackground(view, drawable);
@@ -539,6 +541,36 @@ public class Base {
 
     public static void cancel() {
         VibratorUtil.cancel();
+    }
+
+    /**
+     * TypeValueUtil
+     */
+    public static float applyDimension(int unit, float value) {
+        return Base.applyDimension(unit, value);
+    }
+
+    public static float complexToDimension(int data) {
+        return Base.complexToDimension(data);
+    }
+
+    public static int complexToDimensionPixelOffset(int data) {
+        return Base.complexToDimensionPixelOffset(data);
+    }
+
+    public static int complexToDimensionPixelSize(int data) {
+        return Base.complexToDimensionPixelSize(data);
+    }
+
+    /**
+     * WindowManagerUtil
+     */
+    public static Display getDefaultDisplay() {
+        return WindowManagerUtil.getDefaultDisplay();
+    }
+
+    public static void removeViewImmediate(View view) {
+        WindowManagerUtil.removeViewImmediate(view);
     }
 }
 // TODO: add ripple, bitmap, time, keystore, contact list, picture list, video list

@@ -223,12 +223,26 @@ int     TypedValueUtil.complexToDimensionPixelOffset(int data);
 int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
+`TypedValueUtil` method also can be called from `Base`.
+```java
+float   Base.applyDimension(int unit, float value);
+float   Base.complexToDimension(int data);
+int     Base.complexToDimensionPixelOffset(int data);
+int     Base.complexToDimensionPixelSize(int data);
+```
+
 ## WindowManagerUtil (☆☆☆☆☆)
 WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
 
 ```java
 Display     WindowManagerUtil.getDefaultDisplay();
 void        WindowManagerUtil.removeViewImmediate(View view);
+```
+
+`WindowManagerUtil` method also can be called from `Base`.
+```java
+Display     Base.getDefaultDisplay();
+void        Base.removeViewImmediate(View view);
 ```
 
 ## License

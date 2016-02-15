@@ -34,11 +34,13 @@ DisplayMetrics  Base.getDisplayMetrics();
 Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable. ExtrasBinder will consider `annotation variable` as key. If there is no annotation variable, it will consider `variable name` as key.
 
 ```java
+// Start YourActivity with extras
 Intent intent = new Intent(this, YourActivity.class);
 intent.putExtra(YourActivity.EXTRA_TITLE, "Activity title");
 intent.putExtra("ids", new ArrayList<Integer>());
 startActivity(intent);
-
+```
+```java
 public class YourActivity extends AppCompatActivity {
 
     public static final String EXTRA_TITLE = "TITLE";
@@ -55,11 +57,13 @@ public class YourActivity extends AppCompatActivity {
 }
 ```
 ```java
+// Show YourFragment with extras
 YourFragment fragment = new YourFragment();
 Bundle bundle = new Bundle();
 bundle.putString("Name", "Fragment name");
 fragment.setArguments(bundle);
-
+```
+```java
 public class YourFragment extends Fragment {
 
     @Extra("NAME") String name;

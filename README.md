@@ -161,6 +161,12 @@ void    ViewUtil.setBackground(View view, Drawable drawable);
 void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
+`ViewUtil` method also can be called from `Base`.
+```java
+void    Base.setViewBackground(View view, Drawable drawable);
+void    Base.setViewBackground(View view, int drawableRes);
+```
+
 ## ServiceUtil (★★☆☆☆)
 ServiceUtil helps to get Android system service conveniently.
 
@@ -177,12 +183,33 @@ MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
+`ServiceUtil` method also can be called from `Base`.
+```java
+Object                  Base.getSystemService(Context.ServiceName);
+
+AccessibilityManager    Base.getAccessibilityManager();
+CaptioningManager       Base.getCaptioningManager();
+AccountManager          Base.getAccountManager();
+ActivityManager         Base.getActivityManager();
+AlarmManager            Base.getAlarmManager();
+AudioManager            Base.getAudioManager();
+MediaRouter             Base.getMediaRouter();
+// and so on...
+```
+
 ## VibratorUtil (★☆☆☆☆)
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
 void    VibratorUtil.vibrate(); // vibrate device for 200 milliseconds
 void    VibratorUtil.vibrate(milliseconds);
+// and more...
+```
+
+`VibratorUtil` method also can be called from `Base`.
+```java
+void    Base.vibrate(); // vibrate device for 200 milliseconds
+void    Base.vibrate(milliseconds);
 // and more...
 ```
 

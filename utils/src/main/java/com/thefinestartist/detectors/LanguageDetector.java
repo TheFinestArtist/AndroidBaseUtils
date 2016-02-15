@@ -50,4 +50,4 @@ public class LanguageDetector {
 
     public enum Language {Korean, Japanese, English}
 
-}
+} // TODO; do some more

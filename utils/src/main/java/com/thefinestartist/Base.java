@@ -76,6 +76,8 @@ import android.view.textservice.TextServicesManager;
 
 import com.thefinestartist.binders.ExtrasBinder;
 import com.thefinestartist.converters.UnitConverter;
+import com.thefinestartist.enums.Rotation;
+import com.thefinestartist.utils.etc.APILevel;
 import com.thefinestartist.utils.service.ClipboardManagerUtil;
 import com.thefinestartist.utils.service.ServiceUtil;
 import com.thefinestartist.utils.service.VibratorUtil;
@@ -205,6 +207,137 @@ public class Base {
     }
 
     /**
+     * APILevel (Renamed methods)
+     */
+    public static boolean requireAPI(int level) {
+        return APILevel.require(level);
+    }
+
+    public static boolean requireAPICupcake() {
+        return APILevel.requireCupcake();
+    }
+
+    public static boolean requireAPIDonut() {
+        return APILevel.requireDonut();
+    }
+
+    public static boolean requireAPIEclair() {
+        return APILevel.requireEclair();
+    }
+
+    public static boolean requireAPIFroyo() {
+        return APILevel.requireFroyo();
+    }
+
+    public static boolean requireAPIGingerbread() {
+        return APILevel.requireGingerbread();
+    }
+
+    public static boolean requireAPIHoneycomb() {
+        return APILevel.requireHoneycomb();
+    }
+
+    public static boolean requireAPIHoneycombMR2() {
+        return APILevel.requireHoneycombMR2();
+    }
+
+    public static boolean requireAPIIceCreamSandwich() {
+        return APILevel.requireIceCreamSandwich();
+    }
+
+    public static boolean requireAPIJellyBean() {
+        return APILevel.requireJellyBean();
+    }
+
+    public static boolean requireAPIJellyBeanMR1() {
+        return APILevel.requireJellyBeanMR1();
+    }
+
+    public static boolean requireAPIJellyBeanMR2() {
+        return APILevel.requireJellyBeanMR2();
+    }
+
+    public static boolean requireAPIKitkat() {
+        return APILevel.requireKitkat();
+    }
+
+    public static boolean requireAPILollipop() {
+        return APILevel.requireLollipop();
+    }
+
+    public static boolean requireAPILollipopMR1() {
+        return APILevel.requireLollipopMR1();
+    }
+
+    public static boolean requireAPIMarshmallow() {
+        return APILevel.requireMarshmallow();
+    }
+
+    public static boolean deprecatedAtAPI(int level) {
+        return APILevel.deprecatedAt(level);
+    }
+
+    public static boolean deprecatedAtAPICupcake() {
+        return APILevel.deprecatedAtCupcake();
+    }
+
+    public static boolean deprecatedAtAPIDonut() {
+        return APILevel.deprecatedAtDonut();
+    }
+
+    public static boolean deprecatedAtAPIEclair() {
+        return APILevel.deprecatedAtEclair();
+    }
+
+    public static boolean deprecatedAtAPIFroyo() {
+        return APILevel.deprecatedAtFroyo();
+    }
+
+    public static boolean deprecatedAtAPIGingerbread() {
+        return APILevel.deprecatedAtGingerbread();
+    }
+
+    public static boolean deprecatedAtAPIHoneycomb() {
+        return APILevel.deprecatedAtHoneycomb();
+    }
+
+    public static boolean deprecatedAtAPIHoneycombMR2() {
+        return APILevel.deprecatedAtHoneycombMR2();
+    }
+
+    public static boolean deprecatedAtAPIIceCreamSandwich() {
+        return APILevel.deprecatedAtIceCreamSandwich();
+    }
+
+    public static boolean deprecatedAtAPIJellyBean() {
+        return APILevel.deprecatedAtJellyBean();
+    }
+
+    public static boolean deprecatedAtAPIJellyBeanMR1() {
+        return APILevel.deprecatedAtJellyBeanMR1();
+    }
+
+    public static boolean deprecatedAtAPIJellyBeanMR2() {
+        return APILevel.deprecatedAtJellyBeanMR2();
+    }
+
+    public static boolean deprecatedAtAPIKitkat() {
+        return APILevel.deprecatedAtKitkat();
+    }
+
+    public static boolean deprecatedAtAPILollipop() {
+        return APILevel.deprecatedAtLollipop();
+    }
+
+    public static boolean deprecatedAtAPILollipopMR1() {
+        return APILevel.deprecatedAtLollipopMR1();
+    }
+
+    public static boolean deprecatedAtAPIMarshmallow() {
+        return APILevel.deprecatedAtMarshmallow();
+    }
+
+    /**
      * ScreenUtil
      */
     public static int getDeviceWidth() {
@@ -215,7 +348,7 @@ public class Base {
         return ScreenUtil.getDeviceHeight();
     }
 
-    public static ScreenUtil.Rotation getRotation() {
+    public static Rotation getRotation() {
         return ScreenUtil.getRotation();
     }
 
@@ -591,4 +724,4 @@ public class Base {
         WindowManagerUtil.removeViewImmediate(view);
     }
 }
-// TODO: add ripple, bitmap, time, keystore, contact list, picture list, video list
+// TODO: add ripple, bitmap, time, keystore, contact list, picture list, video list, connected

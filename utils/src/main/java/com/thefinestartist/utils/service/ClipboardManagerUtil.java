@@ -3,6 +3,7 @@ package com.thefinestartist.utils.service;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.ClipboardManager;
+import android.os.Build;
 
 /**
  * ClipboardManagerUtil helps to use Android {@link ClipboardManager} conveniently.
@@ -13,7 +14,7 @@ public class ClipboardManagerUtil {
 
     public static void setText(CharSequence text) {
         android.text.ClipboardManager clipboardManager = ServiceUtil.getClipboardManager();
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             clipboardManager.setText(text);
         } else {
             ClipboardManager cm = (ClipboardManager) clipboardManager;
@@ -24,7 +25,7 @@ public class ClipboardManagerUtil {
 
     public static boolean hasText() {
         android.text.ClipboardManager clipboardManager = ServiceUtil.getClipboardManager();
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             return clipboardManager.hasText();
         } else {
             ClipboardManager cm = (ClipboardManager) clipboardManager;
@@ -38,7 +39,7 @@ public class ClipboardManagerUtil {
 
     public static CharSequence getText() {
         android.text.ClipboardManager clipboardManager = ServiceUtil.getClipboardManager();
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             return clipboardManager.getText();
         } else {
             ClipboardManager cm = (ClipboardManager) clipboardManager;

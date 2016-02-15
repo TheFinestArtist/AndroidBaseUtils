@@ -232,6 +232,22 @@ void    Base.vibrate(milliseconds);
 // and more...
 ```
 
+## ClipboardManagerUtil (★☆☆☆☆)
+ClipboardManagerUtil helps to use `ClipboardManager` conveniently.
+
+```java
+void            ClipboardManagerUtil.setText(CharSequence text);
+boolean         ClipboardManagerUtil.hasText();
+CharSequence    ClipboardManagerUtil.getText();
+```
+
+`ClipboardManagerUtil` method also can be called from `Base`.
+```java
+void            Base.clipText(CharSequence text);
+boolean         Base.hasClipedText();
+CharSequence    Base.getClipedText();
+```
+
 ## TypedValueUtil (☆☆☆☆☆)
 TypedValueUtil helps to use `TypedValue` class conveniently.
 

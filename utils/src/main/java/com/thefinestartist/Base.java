@@ -19,6 +19,8 @@ import android.app.usage.NetworkStatsManager;
 import android.app.usage.UsageStatsManager;
 import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothManager;
+import android.content.ClipData;
+import android.content.ClipDescription;
 import android.content.Context;
 import android.content.RestrictionsManager;
 import android.content.pm.LauncherApps;
@@ -74,6 +76,7 @@ import android.view.textservice.TextServicesManager;
 
 import com.thefinestartist.binders.ExtrasBinder;
 import com.thefinestartist.converters.UnitConverter;
+import com.thefinestartist.utils.service.ClipboardManagerUtil;
 import com.thefinestartist.utils.service.ServiceUtil;
 import com.thefinestartist.utils.service.VibratorUtil;
 import com.thefinestartist.utils.service.WindowManagerUtil;
@@ -541,6 +544,21 @@ public class Base {
 
     public static void cancel() {
         VibratorUtil.cancel();
+    }
+
+    /**
+     * ClipboardManagerUtil (Renamed methods)
+     */
+    public static void clipText(CharSequence text) {
+        ClipboardManagerUtil.setText(text);
+    }
+
+    public static boolean hasClipedText() {
+        return ClipboardManagerUtil.hasText();
+    }
+
+    public static CharSequence getClipedText() {
+        return ClipboardManagerUtil.getText();
     }
 
     /**

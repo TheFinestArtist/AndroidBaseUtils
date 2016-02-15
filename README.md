@@ -86,6 +86,7 @@ void    KeyboardUtil.hide(Fragment);
 void    KeyboardUtil.hide(Dialog);
 ```
 
+`KeyboardUtil` method also can be called from `Base`.
 ```java
 void    Base.showKeyboard(View);
 void    Base.showKeyboardImmediately(View); // Call this method if your activity or fragment is resumed.
@@ -108,6 +109,18 @@ float   UnitConverter.spToPx(float sp);
 int     UnitConverter.spToPx(int sp);
 float   UnitConverter.pxToSp(float px);
 int     UnitConverter.pxToSp(int px);
+```
+
+`UnitConverter` method also can be called from `Base`.
+```java
+float   Base.dpToPx(float dp);
+int     Base.dpToPx(int dp);
+float   Base.pxToDp(float px);
+int     Base.pxToDp(int px);
+float   Base.spToPx(float sp);
+int     Base.spToPx(int sp);
+float   Base.pxToSp(float px);
+int     Base.pxToSp(int px);
 ```
 
 ## ScreenUtil (★★★☆☆)

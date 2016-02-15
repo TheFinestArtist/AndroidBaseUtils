@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.View;
 
+import com.thefinestartist.converters.UnitConverter;
 import com.thefinestartist.utils.ui.KeyboardUtil;
 
 /**
@@ -83,6 +84,41 @@ public class Base {
 
     public static void hideKeyboard(View view) {
         KeyboardUtil.hide(view);
+    }
+
+    /**
+     * UnitConverter
+     */
+    public static float dpToPx(float dp) {
+        return UnitConverter.dpToPx(dp);
+    }
+
+    public static int dpToPx(int dp) {
+        return UnitConverter.dpToPx(dp);
+    }
+
+    public static float pxToDp(float px) {
+        return UnitConverter.pxToDp(px);
+    }
+
+    public static int pxToDp(int px) {
+        return UnitConverter.pxToDp(px);
+    }
+
+    public static float spToPx(float sp) {
+        return UnitConverter.spToPx(sp);
+    }
+
+    public static int spToPx(int sp) {
+        return UnitConverter.spToPx(sp);
+    }
+
+    public static float pxToSp(float px) {
+        return UnitConverter.pxToSp(px);
+    }
+
+    public static int pxToSp(int px) {
+        return UnitConverter.pxToSp(px);
     }
 }
 // TODO: add ripple, bitmap, time, keystore, contact list, picture list, video list

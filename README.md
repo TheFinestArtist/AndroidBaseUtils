@@ -5,6 +5,21 @@
 
 #### Context free and basic utils to build Android project conveniently
 
+# Table of Contents
+1. [How to set up](https://github.com/TheFinestArtist/AndroidBaseUtils#how-to-set-up)
+1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
+    1. [Base](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
+    1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
+    1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
+    1. [UnitConverter](https://github.com/TheFinestArtist/AndroidBaseUtils#unitconverter-)
+    1. [ScreenUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#screenutil-)
+    1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
+    1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
+    1. [VibratorUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#vibratorutil-)
+    1. [TypedValueUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#typedvalueutil-)
+    1. [WindowManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#windowmanagerutil-)
+1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
+
 ## How to set up
 Call `Base.initialize(context)` within your `Application` `onCreate()` method.
 ```java

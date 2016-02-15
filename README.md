@@ -5,6 +5,8 @@
 
 #### Context free and basic utils to build Android project conveniently
 
+Any kinds of contribution including **pull request**, **writing issue**, **email me personally** is always welcome. Let me know if you have any idea about basic utils for Android development.
+
 # Table of Contents
 1. [How to set up](https://github.com/TheFinestArtist/AndroidBaseUtils#how-to-set-up)
 1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)

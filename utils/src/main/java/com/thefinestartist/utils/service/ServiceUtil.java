@@ -17,7 +17,6 @@ import android.app.usage.NetworkStatsManager;
 import android.app.usage.UsageStatsManager;
 import android.appwidget.AppWidgetManager;
 import android.bluetooth.BluetoothManager;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.RestrictionsManager;
 import android.content.pm.LauncherApps;
@@ -52,6 +51,7 @@ import android.telecom.TelecomManager;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.text.ClipboardManager;
 import android.view.LayoutInflater;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityManager;
@@ -108,7 +108,10 @@ public class ServiceUtil {
     }
 
     public static ClipboardManager getClipboardManager() {
-        return (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB)
+            return (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        else
+            return (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
     }
 
     public static ConnectivityManager getConnectivityManager() {

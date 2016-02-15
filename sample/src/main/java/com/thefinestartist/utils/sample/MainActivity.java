@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.thefinestartist.builders.ActivityBuilder;
 import com.thefinestartist.builders.BundleBuilder;
+import com.thefinestartist.utils.sample.fragments.Fragment1;
 
 import java.util.ArrayList;
 

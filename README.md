@@ -86,6 +86,16 @@ void    KeyboardUtil.hide(Fragment);
 void    KeyboardUtil.hide(Dialog);
 ```
 
+```java
+void    Base.showKeyboard(View);
+void    Base.showKeyboardImmediately(View); // Call this method if your activity or fragment is resumed.
+
+void    Base.hideKeyboard(View);
+void    Base.hideKeyboard(Activity);
+void    Base.hideKeyboard(Fragment);
+void    Base.hideKeyboard(Dialog);
+```
+
 ## UnitConverter (★★★★☆)
 UnitConverter helps to convert dp or sp size into pixel.
 
@@ -141,7 +151,7 @@ MediaRouter             ServiceUtil.getMediaRouter();
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
-void    VibratorUtil.eee(); // vibrate device for 200 milliseconds
+void    VibratorUtil.vibrate(); // vibrate device for 200 milliseconds
 void    VibratorUtil.vibrate(milliseconds);
 // and more...
 ```

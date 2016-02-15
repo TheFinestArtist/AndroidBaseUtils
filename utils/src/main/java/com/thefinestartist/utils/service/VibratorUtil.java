@@ -16,7 +16,7 @@ public class VibratorUtil {
         return ServiceUtil.getVibrator().hasVibrator();
     }
 
-    public static void eee() {
+    public static void vibrate() {
         vibrate(200);
     }
 

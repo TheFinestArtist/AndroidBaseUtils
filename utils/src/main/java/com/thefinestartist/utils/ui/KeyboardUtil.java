@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
+import com.thefinestartist.utils.etc.ThreadUtil;
 import com.thefinestartist.utils.service.ServiceUtil;
 
 /**
@@ -35,8 +37,7 @@ public class KeyboardUtil {
         view.postDelayed(new Runnable() {
             @Override
             public void run() {
-                view.requestFocus();
-                ServiceUtil.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+                showInMainThread(view);
             }
         }, 200);
     }
@@ -51,14 +52,24 @@ public class KeyboardUtil {
         if (view == null)
             return;
 
-        // In case showImmediately is called from other than UI thread
-        view.post(new Runnable() {
-            @Override
-            public void run() {
-                view.requestFocus();
-                ServiceUtil.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
-            }
-        });
+        if (ThreadUtil.isMain()) {
+            showInMainThread(view);
+        } else {
+            view.post(new Runnable() {
+                @Override
+                public void run() {
+                    showInMainThread(view);
+                }
+            });
+        }
+    }
+
+    private static void showInMainThread(final View view) {
+        if (view == null)
+            return;
+
+        view.requestFocus();
+        ServiceUtil.getInputMethodManager().showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
     }
 
     public static void hide(Fragment fragment) {

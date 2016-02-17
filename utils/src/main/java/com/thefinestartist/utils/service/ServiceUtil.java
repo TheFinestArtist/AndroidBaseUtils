@@ -108,10 +108,7 @@ public class ServiceUtil {
     }
 
     public static ClipboardManager getClipboardManager() {
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB)
-            return (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        else
-            return (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        return (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
     }
 
     public static ConnectivityManager getConnectivityManager() {

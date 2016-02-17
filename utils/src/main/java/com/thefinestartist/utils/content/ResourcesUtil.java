@@ -20,6 +20,7 @@ import android.support.annotation.StringRes;
 import android.support.annotation.XmlRes;
 
 import com.thefinestartist.Base;
+import com.thefinestartist.utils.etc.APILevel;
 
 /**
  * Created by TheFinestArtist on 1/25/16.
@@ -54,7 +55,7 @@ public class ResourcesUtil {
 
     @ColorInt
     public static int getColor(@ColorRes int colorRes, Resources.Theme theme) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        if (APILevel.require(23))
             return Base.getResources().getColor(colorRes, theme);
         else
             return getColor(colorRes);
@@ -65,7 +66,7 @@ public class ResourcesUtil {
     }
 
     public static ColorStateList getColorStateList(@ColorRes int colorRes, Resources.Theme theme) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        if (APILevel.require(23))
             return Base.getResources().getColorStateList(colorRes, theme);
         else
             return getColorStateList(colorRes);

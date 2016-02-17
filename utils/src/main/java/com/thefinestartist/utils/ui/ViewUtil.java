@@ -6,6 +6,7 @@ import android.support.annotation.DrawableRes;
 import android.view.View;
 
 import com.thefinestartist.Base;
+import com.thefinestartist.utils.etc.APILevel;
 
 /**
  * ViewUtil helps to set background drawable conveniently.
@@ -18,10 +19,10 @@ public class ViewUtil {
         if (view == null)
             return;
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-            view.setBackgroundDrawable(drawable);
-        } else {
+        if (APILevel.require(16)) {
             view.setBackground(drawable);
+        } else {
+            view.setBackgroundDrawable(drawable);
         }
     }
 
@@ -29,10 +30,10 @@ public class ViewUtil {
         if (view == null)
             return;
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-            view.setBackgroundDrawable(Base.getResources().getDrawable(drawableRes));
-        } else {
+        if (APILevel.require(16)) {
             view.setBackground(Base.getResources().getDrawable(drawableRes));
+        } else {
+            view.setBackgroundDrawable(Base.getResources().getDrawable(drawableRes));
         }
     }
 }

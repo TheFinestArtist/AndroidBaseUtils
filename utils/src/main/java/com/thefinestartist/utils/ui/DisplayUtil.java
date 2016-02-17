@@ -1,7 +1,6 @@
 package com.thefinestartist.utils.ui;
 
 import android.graphics.Point;
-import android.os.Build;
 import android.util.TypedValue;
 import android.view.Display;
 
@@ -9,6 +8,7 @@ import com.thefinestartist.enums.Rotation;
 import com.thefinestartist.utils.content.ResourcesUtil;
 import com.thefinestartist.utils.content.ThemeUtil;
 import com.thefinestartist.utils.content.TypedValueUtil;
+import com.thefinestartist.utils.etc.APILevel;
 import com.thefinestartist.utils.service.WindowManagerUtil;
 
 /**
@@ -20,7 +20,7 @@ public class DisplayUtil {
 
     public static int getWidth() {
         Display display = WindowManagerUtil.getDefaultDisplay();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+        if (APILevel.require(13)) {
             Point size = new Point();
             display.getSize(size);
             return size.x;
@@ -31,7 +31,7 @@ public class DisplayUtil {
 
     public static int getHeight() {
         Display display = WindowManagerUtil.getDefaultDisplay();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+        if (APILevel.require(13)) {
             Point size = new Point();
             display.getSize(size);
             return size.y;
@@ -41,7 +41,7 @@ public class DisplayUtil {
     }
 
     public static Rotation getRotation() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
+        if (APILevel.require(8))
             return Rotation.fromValue(WindowManagerUtil.getDefaultDisplay().getRotation());
         else
             return Rotation.fromValue(WindowManagerUtil.getDefaultDisplay().getOrientation());

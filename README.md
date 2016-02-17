@@ -8,7 +8,7 @@
 Any kinds of contribution including **pull request**, **writing issue**, **email me personally** is always welcome. Let me know if you have any idea about basic utils for Android development.
 
 # Table of Contents
-1. [How to set up](https://github.com/TheFinestArtist/AndroidBaseUtils#how-to-set-up)
+1. [Get started](https://github.com/TheFinestArtist/AndroidBaseUtils#get-started)
 1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#utils)
     1. [Base](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
     1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
@@ -24,7 +24,15 @@ Any kinds of contribution including **pull request**, **writing issue**, **email
     1. [WindowManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#windowmanagerutil-)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
-## How to set up
+## Get started
+
+### Gradle Dependency (jcenter)
+```java
+dependencies {
+}
+```
+
+### Initialization (Application)
 Call `Base.initialize(context)` within your `Application` `onCreate()` method.
 ```java
 public class App extends Application {

@@ -208,6 +208,8 @@ DisplayUtil helps to calculate screen size conveniently.
 int         DisplayUtil.getWidth();
 int         DisplayUtil.getHeight();
 Rotation    DisplayUtil.getRotation();
+boolean     DisplayUtil.isDisplayPortrait();
+boolean     DisplayUtil.isDisplayLandscape();
 int         DisplayUtil.getStatusBarHeight();
 int         DisplayUtil.getToolbarHeight();
 int         DisplayUtil.getActionBarHeight();
@@ -219,6 +221,8 @@ int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located b
 int         Base.getDisplayWidth();
 int         Base.getDisplayHeight();
 Rotation    Base.getDisplayRotation();
+boolean     Base.isPortrait();
+boolean     Base.isLandscape();
 int         Base.getStatusBarHeight();
 int         Base.getToolbarHeight();
 int         Base.getActionBarHeight();

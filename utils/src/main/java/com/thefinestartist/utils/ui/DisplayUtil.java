@@ -47,6 +47,16 @@ public class DisplayUtil {
             return Rotation.fromValue(WindowManagerUtil.getDefaultDisplay().getOrientation());
     }
 
+    public static boolean isPortrait() {
+        Rotation rotation = getRotation();
+        return rotation == Rotation.DEGREES_0 || rotation == Rotation.DEGREES_180;
+    }
+
+    public static boolean isLandscape() {
+        Rotation rotation = getRotation();
+        return rotation == Rotation.DEGREES_90 || rotation == Rotation.DEGREES_270;
+    }
+
     public static int getStatusBarHeight() {
         int resourceId = ResourcesUtil.getIdentifier("status_bar_height", "dimen", "android");
         return resourceId > 0 ?

@@ -350,6 +350,14 @@ public class Base {
         return DisplayUtil.getRotation();
     }
 
+    public static boolean isDisplayPortrait() {
+        return DisplayUtil.isPortrait();
+    }
+
+    public static boolean isDisplayLandscape() {
+        return DisplayUtil.isLandscape();
+    }
+
     public static int getStatusBarHeight() {
         return DisplayUtil.getStatusBarHeight();
     }

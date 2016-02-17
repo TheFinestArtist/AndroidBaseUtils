@@ -4,10 +4,10 @@ package com.thefinestartist.enums;
  * Created by TheFinestArtist on 2/16/16.
  */
 public enum Rotation {
-    ROTATION_0(0),
-    ROTATION_90(1),
-    ROTATION_180(2),
-    ROTATION_270(3);
+    DEGREES_0(0),
+    DEGREES_90(1),
+    DEGREES_180(2),
+    DEGREES_270(3);
 
     int value;
 
@@ -20,6 +20,6 @@ public enum Rotation {
             if (rotation.value == value)
                 return rotation;
 
-        return ROTATION_0;
+        return DEGREES_0;
     }
 }

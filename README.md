@@ -24,7 +24,7 @@ Any kinds of contribution including **pull request**, **writing issue**, **email
     1. [WindowManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#windowmanagerutil-)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
-## Get started
+# Get started
 
 #### Gradle Dependency (jcenter)
 ```java
@@ -333,7 +333,7 @@ Display     Base.getDefaultDisplay();
 void        Base.removeViewImmediate(View view);
 ```
 
-## License
+# License
 
 ```
 The MIT License (MIT)

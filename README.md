@@ -26,13 +26,13 @@ Any kinds of contribution including **pull request**, **writing issue**, **email
 
 ## Get started
 
-### Gradle Dependency (jcenter)
+#### Gradle Dependency (jcenter)
 ```java
 dependencies {
 }
 ```
 
-### Initialization (Application)
+#### Initialization (Application)
 Call `Base.initialize(context)` within your `Application` `onCreate()` method.
 ```java
 public class App extends Application {

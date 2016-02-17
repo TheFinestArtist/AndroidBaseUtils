@@ -9,7 +9,7 @@ Any kinds of contribution including **pull request**, **writing issue**, **email
 
 # Table of Contents
 1. [How to set up](https://github.com/TheFinestArtist/AndroidBaseUtils#how-to-set-up)
-1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
+1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#utils)
     1. [Base](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
     1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
     1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
@@ -35,6 +35,8 @@ public class App extends Application {
     }
 }
 ```
+
+# Utils
 
 ## Base (★★★★★)
 Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.

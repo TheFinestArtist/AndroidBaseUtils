@@ -7,6 +7,7 @@
 
 Any kinds of contribution including **pull request**, **writing issue**, **email me personally** is always welcome. Let me know if you have any idea about basic utils for Android development.
 
+
 # Table of Contents
 1. [Get started](https://github.com/TheFinestArtist/AndroidBaseUtils#get-started)
 1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#utils)
@@ -33,13 +34,13 @@ dependencies {
 ```
 
 #### Initialization (Application)
-Call `Base.initialize(context)` within your `Application` `onCreate()` method.
+Call `BaseUtil.initialize(context)` within your `Application` `onCreate()` method.
 ```java
 public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Base.initialize(this);
+        BaseUtil.initialize(this);
     }
 }
 ```
@@ -106,10 +107,10 @@ public class YourFragment extends Fragment {
 }
 ```
 
-`ExtrasBinder` method also can be called from `Base`.
+`ExtrasBinder` method also can be called from `BaseUtil`.
 ```java
-void    Base.bindExtras(Activity activity);
-void    Base.bindExtras(Fragment fragment);
+void    BaseUtil.bindExtras(Activity activity);
+void    BaseUtil.bindExtras(Fragment fragment);
 ```
 
 ## KeyboardUtil (★★★★☆)
@@ -125,15 +126,15 @@ void    KeyboardUtil.hide(Fragment);
 void    KeyboardUtil.hide(Dialog);
 ```
 
-`KeyboardUtil` method also can be called from `Base`.
+`KeyboardUtil` method also can be called from `BaseUtil`.
 ```java
-void    Base.showKeyboard(View);
-void    Base.showKeyboardImmediately(View); // Call this method if your activity or fragment is resumed.
+void    BaseUtil.showKeyboard(View);
+void    BaseUtil.showKeyboardImmediately(View); // Call this method if your activity or fragment is resumed.
 
-void    Base.hideKeyboard(View);
-void    Base.hideKeyboard(Activity);
-void    Base.hideKeyboard(Fragment);
-void    Base.hideKeyboard(Dialog);
+void    BaseUtil.hideKeyboard(View);
+void    BaseUtil.hideKeyboard(Activity);
+void    BaseUtil.hideKeyboard(Fragment);
+void    BaseUtil.hideKeyboard(Dialog);
 ```
 
 ## UnitConverter (★★★★☆)
@@ -150,16 +151,16 @@ float   UnitConverter.pxToSp(float px);
 int     UnitConverter.pxToSp(int px);
 ```
 
-`UnitConverter` method also can be called from `Base`.
+`UnitConverter` method also can be called from `BaseUtil`.
 ```java
-float   Base.dpToPx(float dp);
-int     Base.dpToPx(int dp);
-float   Base.pxToDp(float px);
-int     Base.pxToDp(int px);
-float   Base.spToPx(float sp);
-int     Base.spToPx(int sp);
-float   Base.pxToSp(float px);
-int     Base.pxToSp(int px);
+float   BaseUtil.dpToPx(float dp);
+int     BaseUtil.dpToPx(int dp);
+float   BaseUtil.pxToDp(float px);
+int     BaseUtil.pxToDp(int px);
+float   BaseUtil.spToPx(float sp);
+int     BaseUtil.spToPx(int sp);
+float   BaseUtil.pxToSp(float px);
+int     BaseUtil.pxToSp(int px);
 ```
 
 ## APILevel (★★★☆☆)
@@ -182,22 +183,22 @@ boolean APILevel.depecatedAtGingerbread();
 // and so on...
 ```
 
-`APILevel` method also can be called from `Base`.
+`APILevel` method also can be called from `BaseUtil`.
 ```java
-boolean Base.requireAPI(int level); // Build.VERSION.SDK_INT >= level
-boolean Base.requireAPICupcake();
-boolean Base.requireAPIDonut();
-boolean Base.requireAPIEclair();
-boolean Base.requireAPIFroyo();
-boolean Base.requireAPIGingerbread();
+boolean BaseUtil.requireAPI(int level); // Build.VERSION.SDK_INT >= level
+boolean BaseUtil.requireAPICupcake();
+boolean BaseUtil.requireAPIDonut();
+boolean BaseUtil.requireAPIEclair();
+boolean BaseUtil.requireAPIFroyo();
+boolean BaseUtil.requireAPIGingerbread();
 // and so on...
 
-boolean Base.depecatedAtAPI(int level); // Build.VERSION.SDK_INT < level
-boolean Base.depecatedAtAPICupcake();
-boolean Base.depecatedAtAPIDonut();
-boolean Base.depecatedAtAPIEclair();
-boolean Base.depecatedAtAPIFroyo();
-boolean Base.depecatedAtAPIGingerbread();
+boolean BaseUtil.depecatedAtAPI(int level); // Build.VERSION.SDK_INT < level
+boolean BaseUtil.depecatedAtAPICupcake();
+boolean BaseUtil.depecatedAtAPIDonut();
+boolean BaseUtil.depecatedAtAPIEclair();
+boolean BaseUtil.depecatedAtAPIFroyo();
+boolean BaseUtil.depecatedAtAPIGingerbread();
 // and so on...
 ```
 
@@ -216,17 +217,17 @@ int         DisplayUtil.getActionBarHeight();
 int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-`DisplayUtil` method also can be called from `Base`.
+`DisplayUtil` method also can be called from `BaseUtil`.
 ```java
-int         Base.getDisplayWidth();
-int         Base.getDisplayHeight();
-Rotation    Base.getDisplayRotation();
-boolean     Base.isPortrait();
-boolean     Base.isLandscape();
-int         Base.getStatusBarHeight();
-int         Base.getToolbarHeight();
-int         Base.getActionBarHeight();
-int         Base.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
+int         BaseUtil.getDisplayWidth();
+int         BaseUtil.getDisplayHeight();
+Rotation    BaseUtil.getDisplayRotation();
+boolean     BaseUtil.isPortrait();
+boolean     BaseUtil.isLandscape();
+int         BaseUtil.getStatusBarHeight();
+int         BaseUtil.getToolbarHeight();
+int         BaseUtil.getActionBarHeight();
+int         BaseUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
 ## ViewUtil (★★☆☆☆)
@@ -237,10 +238,10 @@ void    ViewUtil.setBackground(View view, Drawable drawable);
 void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
-`ViewUtil` method also can be called from `Base`.
+`ViewUtil` method also can be called from `BaseUtil`.
 ```java
-void    Base.setViewBackground(View view, Drawable drawable);
-void    Base.setViewBackground(View view, int drawableRes);
+void    BaseUtil.setViewBackground(View view, Drawable drawable);
+void    BaseUtil.setViewBackground(View view, int drawableRes);
 ```
 
 ## ServiceUtil (★★☆☆☆)
@@ -259,17 +260,17 @@ MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
-`ServiceUtil` method also can be called from `Base`.
+`ServiceUtil` method also can be called from `BaseUtil`.
 ```java
-Object                  Base.getSystemService(Context.ServiceName);
+Object                  BaseUtil.getSystemService(Context.ServiceName);
 
-AccessibilityManager    Base.getAccessibilityManager();
-CaptioningManager       Base.getCaptioningManager();
-AccountManager          Base.getAccountManager();
-ActivityManager         Base.getActivityManager();
-AlarmManager            Base.getAlarmManager();
-AudioManager            Base.getAudioManager();
-MediaRouter             Base.getMediaRouter();
+AccessibilityManager    BaseUtil.getAccessibilityManager();
+CaptioningManager       BaseUtil.getCaptioningManager();
+AccountManager          BaseUtil.getAccountManager();
+ActivityManager         BaseUtil.getActivityManager();
+AlarmManager            BaseUtil.getAlarmManager();
+AudioManager            BaseUtil.getAudioManager();
+MediaRouter             BaseUtil.getMediaRouter();
 // and so on...
 ```
 
@@ -282,10 +283,10 @@ void    VibratorUtil.vibrate(milliseconds);
 // and more...
 ```
 
-`VibratorUtil` method also can be called from `Base`.
+`VibratorUtil` method also can be called from `BaseUtil`.
 ```java
-void    Base.vibrate(); // vibrate device for 200 milliseconds
-void    Base.vibrate(milliseconds);
+void    BaseUtil.vibrate(); // vibrate device for 200 milliseconds
+void    BaseUtil.vibrate(milliseconds);
 // and more...
 ```
 
@@ -298,11 +299,11 @@ boolean         ClipboardManagerUtil.hasText();
 CharSequence    ClipboardManagerUtil.getText();
 ```
 
-`ClipboardManagerUtil` method also can be called from `Base`.
+`ClipboardManagerUtil` method also can be called from `BaseUtil`.
 ```java
-void            Base.clipText(CharSequence text);
-boolean         Base.hasClipedText();
-CharSequence    Base.getClipedText();
+void            BaseUtil.clipText(CharSequence text);
+boolean         BaseUtil.hasClipedText();
+CharSequence    BaseUtil.getClipedText();
 ```
 
 ## TypedValueUtil (☆☆☆☆☆)
@@ -315,12 +316,12 @@ int     TypedValueUtil.complexToDimensionPixelOffset(int data);
 int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
-`TypedValueUtil` method also can be called from `Base`.
+`TypedValueUtil` method also can be called from `BaseUtil`.
 ```java
-float   Base.applyDimension(int unit, float value);
-float   Base.complexToDimension(int data);
-int     Base.complexToDimensionPixelOffset(int data);
-int     Base.complexToDimensionPixelSize(int data);
+float   BaseUtil.applyDimension(int unit, float value);
+float   BaseUtil.complexToDimension(int data);
+int     BaseUtil.complexToDimensionPixelOffset(int data);
+int     BaseUtil.complexToDimensionPixelSize(int data);
 ```
 
 ## WindowManagerUtil (☆☆☆☆☆)
@@ -331,10 +332,10 @@ Display     WindowManagerUtil.getDefaultDisplay();
 void        WindowManagerUtil.removeViewImmediate(View view);
 ```
 
-`WindowManagerUtil` method also can be called from `Base`.
+`WindowManagerUtil` method also can be called from `BaseUtil`.
 ```java
-Display     Base.getDefaultDisplay();
-void        Base.removeViewImmediate(View view);
+Display     BaseUtil.getDefaultDisplay();
+void        BaseUtil.removeViewImmediate(View view);
 ```
 
 # License
@@ -342,7 +343,7 @@ void        Base.removeViewImmediate(View view);
 ```
 The MIT License (MIT)
 
-Copyright (c) 2016 TheFinestArtist
+Copyright (c) 2016 The Finest Artist
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

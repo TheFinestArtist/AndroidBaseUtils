@@ -6,18 +6,20 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.AnimRes;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.BoolRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.PluralsRes;
 import android.support.annotation.StringRes;
 import android.support.annotation.XmlRes;
+import android.util.DisplayMetrics;
 
 import com.thefinestartist.Base;
 import com.thefinestartist.utils.etc.APILevel;
@@ -27,7 +29,6 @@ import com.thefinestartist.utils.etc.APILevel;
  */
 public class ResourcesUtil {
 
-    // From Resources.java
     private static void finishPreloading() {
         Base.getResources().finishPreloading();
     }
@@ -36,12 +37,12 @@ public class ResourcesUtil {
         Base.getResources().flushLayoutCache();
     }
 
-    public static AssetManager getAssets() {
-        return Base.getResources().getAssets();
-    }
-
     public static XmlResourceParser getAnimation(@AnimRes int animRes) {
         return Base.getResources().getAnimation(animRes);
+    }
+
+    public static AssetManager getAssets() {
+        return Base.getResources().getAssets();
     }
 
     public static boolean getBoolean(@BoolRes int boolRes) {
@@ -75,6 +76,53 @@ public class ResourcesUtil {
     public static Configuration getConfiguration() {
         return Base.getConfiguration();
     }
+
+    public static float getDimension(@DimenRes int dimenRes) {
+        return Base.getResources().getDimension(dimenRes);
+    }
+
+    public static int getDimensionPixelOffset(@DimenRes int dimenRes) {
+        return Base.getResources().getDimensionPixelOffset(dimenRes);
+    }
+
+    public static int getDimensionPixelSize(@DimenRes int dimenRes) {
+        return Base.getResources().getDimensionPixelSize(dimenRes);
+    }
+
+    public static DisplayMetrics getDisplayMetrics() {
+        return Base.getDisplayMetrics();
+    }
+
+    public static Drawable getDrawable(@DrawableRes int drawableRes) {
+        return ContextUtil.getDrawable(drawableRes);
+    }
+
+    public static Drawable getDrawable(@DrawableRes int drawableRes, Resources.Theme theme) {
+        if (APILevel.require(21))
+            return Base.getResources().getDrawable(drawableRes, theme);
+        else
+            return Base.getResources().getDrawable(drawableRes);
+    }
+
+    public static Drawable getDrawableForDensity(@DrawableRes int drawableRes, int density) {
+        if (APILevel.require(21))
+            return Base.getResources().getDrawableForDensity(drawableRes, density, Base.getContext().getTheme());
+        else if (APILevel.require(15))
+            return Base.getResources().getDrawableForDensity(drawableRes, density);
+        else
+            return Base.getResources().getDrawable(drawableRes);
+    }
+
+    public static float getFraction(int id, int base, int pbase) {
+        return Base.getResources().getFraction(id, base, pbase);
+    }
+
+
+
+
+
+
+
 
     public static String getString(@StringRes int stringRes) {
         return Base.getContext().getString(stringRes);
@@ -118,17 +166,5 @@ public class ResourcesUtil {
 
     public static int getIdentifier(String name, String defType, String defPackage) {
         return Base.getResources().getIdentifier(name, defType, defPackage);
-    }
-
-    public static float getDimension(@DimenRes int dimenRes) {
-        return Base.getResources().getDimension(dimenRes);
-    }
-
-    public static int getDimensionPixelOffset(@DimenRes int dimenRes) {
-        return Base.getResources().getDimensionPixelOffset(dimenRes);
-    }
-
-    public static int getDimensionPixelSize(@DimenRes int dimenRes) {
-        return Base.getResources().getDimensionPixelSize(dimenRes);
     }
 } // TODO: do some more

@@ -34,13 +34,13 @@ dependencies {
 ```
 
 #### Initialization (Application)
-Call `BaseUtil.initialize(context)` within your `Application` `onCreate()` method.
+Call `Base.initialize(context)` within your `Application` `onCreate()` method.
 ```java
 public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        BaseUtil.initialize(this);
+        Base.initialize(this);
     }
 }
 ```
@@ -107,12 +107,6 @@ public class YourFragment extends Fragment {
 }
 ```
 
-`ExtrasBinder` method also can be called from `BaseUtil`.
-```java
-void    BaseUtil.bindExtras(Activity activity);
-void    BaseUtil.bindExtras(Fragment fragment);
-```
-
 ## KeyboardUtil (★★★★☆)
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 
@@ -124,17 +118,6 @@ void    KeyboardUtil.hide(View);
 void    KeyboardUtil.hide(Activity);
 void    KeyboardUtil.hide(Fragment);
 void    KeyboardUtil.hide(Dialog);
-```
-
-`KeyboardUtil` method also can be called from `BaseUtil`.
-```java
-void    BaseUtil.showKeyboard(View);
-void    BaseUtil.showKeyboardImmediately(View); // Call this method if your activity or fragment is resumed.
-
-void    BaseUtil.hideKeyboard(View);
-void    BaseUtil.hideKeyboard(Activity);
-void    BaseUtil.hideKeyboard(Fragment);
-void    BaseUtil.hideKeyboard(Dialog);
 ```
 
 ## UnitConverter (★★★★☆)
@@ -149,18 +132,6 @@ float   UnitConverter.spToPx(float sp);
 int     UnitConverter.spToPx(int sp);
 float   UnitConverter.pxToSp(float px);
 int     UnitConverter.pxToSp(int px);
-```
-
-`UnitConverter` method also can be called from `BaseUtil`.
-```java
-float   BaseUtil.dpToPx(float dp);
-int     BaseUtil.dpToPx(int dp);
-float   BaseUtil.pxToDp(float px);
-int     BaseUtil.pxToDp(int px);
-float   BaseUtil.spToPx(float sp);
-int     BaseUtil.spToPx(int sp);
-float   BaseUtil.pxToSp(float px);
-int     BaseUtil.pxToSp(int px);
 ```
 
 ## APILevel (★★★☆☆)
@@ -183,25 +154,6 @@ boolean APILevel.depecatedAtGingerbread();
 // and so on...
 ```
 
-`APILevel` method also can be called from `BaseUtil`.
-```java
-boolean BaseUtil.requireAPI(int level); // Build.VERSION.SDK_INT >= level
-boolean BaseUtil.requireAPICupcake();
-boolean BaseUtil.requireAPIDonut();
-boolean BaseUtil.requireAPIEclair();
-boolean BaseUtil.requireAPIFroyo();
-boolean BaseUtil.requireAPIGingerbread();
-// and so on...
-
-boolean BaseUtil.depecatedAtAPI(int level); // Build.VERSION.SDK_INT < level
-boolean BaseUtil.depecatedAtAPICupcake();
-boolean BaseUtil.depecatedAtAPIDonut();
-boolean BaseUtil.depecatedAtAPIEclair();
-boolean BaseUtil.depecatedAtAPIFroyo();
-boolean BaseUtil.depecatedAtAPIGingerbread();
-// and so on...
-```
-
 ## DisplayUtil (★★★☆☆)
 DisplayUtil helps to calculate screen size conveniently.
 
@@ -217,31 +169,12 @@ int         DisplayUtil.getActionBarHeight();
 int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-`DisplayUtil` method also can be called from `BaseUtil`.
-```java
-int         BaseUtil.getDisplayWidth();
-int         BaseUtil.getDisplayHeight();
-Rotation    BaseUtil.getDisplayRotation();
-boolean     BaseUtil.isPortrait();
-boolean     BaseUtil.isLandscape();
-int         BaseUtil.getStatusBarHeight();
-int         BaseUtil.getToolbarHeight();
-int         BaseUtil.getActionBarHeight();
-int         BaseUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
-```
-
 ## ViewUtil (★★☆☆☆)
 ViewUtil helps to set background drawable conveniently.
 
 ```java
 void    ViewUtil.setBackground(View view, Drawable drawable);
 void    ViewUtil.setBackground(View view, int drawableRes);
-```
-
-`ViewUtil` method also can be called from `BaseUtil`.
-```java
-void    BaseUtil.setViewBackground(View view, Drawable drawable);
-void    BaseUtil.setViewBackground(View view, int drawableRes);
 ```
 
 ## ServiceUtil (★★☆☆☆)
@@ -260,33 +193,12 @@ MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
-`ServiceUtil` method also can be called from `BaseUtil`.
-```java
-Object                  BaseUtil.getSystemService(Context.ServiceName);
-
-AccessibilityManager    BaseUtil.getAccessibilityManager();
-CaptioningManager       BaseUtil.getCaptioningManager();
-AccountManager          BaseUtil.getAccountManager();
-ActivityManager         BaseUtil.getActivityManager();
-AlarmManager            BaseUtil.getAlarmManager();
-AudioManager            BaseUtil.getAudioManager();
-MediaRouter             BaseUtil.getMediaRouter();
-// and so on...
-```
-
 ## VibratorUtil (★☆☆☆☆)
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
 void    VibratorUtil.vibrate(); // vibrate device for 200 milliseconds
 void    VibratorUtil.vibrate(milliseconds);
-// and more...
-```
-
-`VibratorUtil` method also can be called from `BaseUtil`.
-```java
-void    BaseUtil.vibrate(); // vibrate device for 200 milliseconds
-void    BaseUtil.vibrate(milliseconds);
 // and more...
 ```
 
@@ -299,13 +211,6 @@ boolean         ClipboardManagerUtil.hasText();
 CharSequence    ClipboardManagerUtil.getText();
 ```
 
-`ClipboardManagerUtil` method also can be called from `BaseUtil`.
-```java
-void            BaseUtil.clipText(CharSequence text);
-boolean         BaseUtil.hasClipedText();
-CharSequence    BaseUtil.getClipedText();
-```
-
 ## TypedValueUtil (☆☆☆☆☆)
 TypedValueUtil helps to use `TypedValue` class conveniently.
 
@@ -316,26 +221,12 @@ int     TypedValueUtil.complexToDimensionPixelOffset(int data);
 int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
-`TypedValueUtil` method also can be called from `BaseUtil`.
-```java
-float   BaseUtil.applyDimension(int unit, float value);
-float   BaseUtil.complexToDimension(int data);
-int     BaseUtil.complexToDimensionPixelOffset(int data);
-int     BaseUtil.complexToDimensionPixelSize(int data);
-```
-
 ## WindowManagerUtil (☆☆☆☆☆)
 WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
 
 ```java
 Display     WindowManagerUtil.getDefaultDisplay();
 void        WindowManagerUtil.removeViewImmediate(View view);
-```
-
-`WindowManagerUtil` method also can be called from `BaseUtil`.
-```java
-Display     BaseUtil.getDefaultDisplay();
-void        BaseUtil.removeViewImmediate(View view);
 ```
 
 # License

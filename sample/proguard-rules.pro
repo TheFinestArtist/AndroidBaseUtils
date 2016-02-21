@@ -15,3 +15,9 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class com.thefinestartist.annotations.** { *; }
+-keep class **$$ExtraBinder { *; }
+-keepclasseswithmembernames class * {
+    @com.thefinestartist.annotations.Extra <fields>;
+}

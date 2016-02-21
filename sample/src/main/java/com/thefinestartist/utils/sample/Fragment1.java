@@ -1,4 +1,4 @@
-package com.thefinestartist.utils.sample.fragments;
+package com.thefinestartist.utils.sample;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.binders.ExtrasBinder;
-import com.thefinestartist.utils.sample.R;
 
 /**
  * Created by TheFinestArtist on 2/8/16.

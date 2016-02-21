@@ -1,4 +1,4 @@
-package com.thefinestartist.utils.sample;
+package com.thefinestartist.utils.sample.fragments;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -44,7 +44,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. PhotoUtil
     1. RippleUtil
     1. Validator
-1. [Contributor](https://github.com/TheFinestArtist/AndroidBaseUtils#contributors)
+1. [Contributors](https://github.com/TheFinestArtist/AndroidBaseUtils#contributors)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
 # Get started
@@ -127,6 +127,15 @@ public class YourFragment extends Fragment {
         ExtrasBinder.bind(this);
         // do something...
     }
+}
+```
+
+Proguard
+```java
+-keep class com.thefinestartist.annotations.** { *; }
+-keep class **$$ExtraBinder { *; }
+-keepclasseswithmembernames class * {
+    @com.thefinestartist.annotations.Extra <fields>;
 }
 ```
 

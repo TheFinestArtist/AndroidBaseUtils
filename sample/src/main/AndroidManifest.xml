@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.thefinestartist.utils.sample.SubActivity"/>
+        <activity android:name=".fragments.SubActivity"/>
 
     </application>
 

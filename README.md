@@ -241,7 +241,7 @@ Bundle bundle = new BundleBuilder()
                     .build();
 ```
 
-## PackageUtil (★☆☆☆☆)
+## PackageUtil (★★☆☆☆)
 PackageUtil helps to handle methods related to package.
 
 ```java

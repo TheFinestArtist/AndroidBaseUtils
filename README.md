@@ -329,8 +329,8 @@ boolean     isMain();
 ```
 
 # Contributor
-[Leonardo Taehwan Kim](https://github.com/thefinestartist)
-[Marcos Trujillo](https://github.com/Aracem)
+[Leonardo Taehwan Kim](https://github.com/thefinestartist)  
+[Marcos Trujillo](https://github.com/Aracem)  
 [Min Kim](https://github.com/openyourboxes)
 
 # License

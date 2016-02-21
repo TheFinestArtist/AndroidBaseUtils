@@ -1,5 +1,7 @@
 package com.thefinestartist.utils.content;
 
+import android.annotation.TargetApi;
+import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentCallbacks;
 import android.content.ComponentName;
@@ -30,6 +32,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.support.annotation.StyleableRes;
@@ -185,6 +188,8 @@ public class ContextUtil {
         return ContextCompat.getDrawable(Base.getContext(), drawableRes);
     }
 
+    @Nullable
+    @TargetApi(8)
     public static File getExternalCacheDir() {
         return Base.getContext().getExternalCacheDir();
     }
@@ -193,6 +198,8 @@ public class ContextUtil {
         return ContextCompat.getExternalCacheDirs(Base.getContext());
     }
 
+    @Nullable
+    @TargetApi(8)
     public static File getExternalFilesDir(String type) {
         return Base.getContext().getExternalFilesDir(type);
     }
@@ -201,6 +208,7 @@ public class ContextUtil {
         return ContextCompat.getExternalFilesDirs(Base.getContext(), type);
     }
 
+    @TargetApi(21)
     public static File[] getExternalMediaDirs() {
         return Base.getContext().getExternalMediaDirs();
     }
@@ -221,6 +229,7 @@ public class ContextUtil {
         return new ContextCompat().getNoBackupFilesDir(Base.getContext());
     }
 
+    @TargetApi(11)
     public static File getObbDir() {
         return Base.getContext().getObbDir();
     }
@@ -229,6 +238,7 @@ public class ContextUtil {
         return ContextCompat.getObbDirs(Base.getContext());
     }
 
+    @TargetApi(8)
     public static String getPackageCodePath() {
         return Base.getContext().getPackageCodePath();
     }
@@ -241,6 +251,7 @@ public class ContextUtil {
         return Base.getContext().getPackageName();
     }
 
+    @TargetApi(8)
     public static String getPackageResourcePath() {
         return Base.getContext().getPackageResourcePath();
     }
@@ -261,6 +272,7 @@ public class ContextUtil {
         return Base.getContext().getString(stringRes, formatArgs);
     }
 
+    @TargetApi(23)
     public static <T> T getSystemService(Class<T> serviceClass) {
         return Base.getContext().getSystemService(serviceClass);
     }
@@ -269,6 +281,7 @@ public class ContextUtil {
         return Base.getContext().getSystemService(name);
     }
 
+    @TargetApi(23)
     public static String getSystemServiceName(Class<?> serviceClass) {
         return Base.getContext().getSystemServiceName(serviceClass);
     }
@@ -282,15 +295,15 @@ public class ContextUtil {
     }
 
     public static Drawable getWallpaper() {
-        return Base.getContext().getWallpaper();
+        return WallpaperManager.getInstance(Base.getContext()).getDrawable();
     }
 
     public static int getWallpaperDesiredMinimumHeight() {
-        return Base.getContext().getWallpaperDesiredMinimumHeight();
+        return WallpaperManager.getInstance(Base.getContext()).getDesiredMinimumHeight();
     }
 
     public static int getWallpaperDesiredMinimumWidth() {
-        return Base.getContext().getWallpaperDesiredMinimumWidth();
+        return WallpaperManager.getInstance(Base.getContext()).getDesiredMinimumWidth();
     }
 
     public static void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -329,14 +342,16 @@ public class ContextUtil {
         return Base.getContext().openOrCreateDatabase(name, mode, factory);
     }
 
+    @TargetApi(11)
     public static SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory, DatabaseErrorHandler errorHandler) {
         return Base.getContext().openOrCreateDatabase(name, mode, factory, errorHandler);
     }
 
     public static Drawable peekWallpaper() {
-        return Base.getContext().peekWallpaper();
+        return WallpaperManager.getInstance(Base.getContext()).peekDrawable();
     }
 
+    @TargetApi(14)
     public static void registerComponentCallbacks(ComponentCallbacks callback) {
         Base.getContext().registerComponentCallbacks(callback);
     }
@@ -349,13 +364,14 @@ public class ContextUtil {
         return Base.getContext().registerReceiver(receiver, filter, broadcastPermission, scheduler);
     }
 
-    public static void removeStickyBroadcast(Intent intent) {
-        Base.getContext().removeStickyBroadcast(intent);
-    }
-
-    public static void removeStickyBroadcastAsUser(Intent intent, UserHandle user) {
-        Base.getContext().removeStickyBroadcastAsUser(intent, user);
-    }
+//    public static void removeStickyBroadcast(Intent intent) {
+//        Base.getContext().removeStickyBroadcast(intent);
+//    }
+//
+//    @TargetApi(17)
+//    public static void removeStickyBroadcastAsUser(Intent intent, UserHandle user) {
+//        Base.getContext().removeStickyBroadcastAsUser(intent, user);
+//    }
 
     public static void revokeUriPermission(Uri uri, int modeFlags) {
         Base.getContext().revokeUriPermission(uri, modeFlags);
@@ -369,10 +385,12 @@ public class ContextUtil {
         Base.getContext().sendBroadcast(intent);
     }
 
+    @TargetApi(17)
     public static void sendBroadcastAsUser(Intent intent, UserHandle user) {
         Base.getContext().sendBroadcastAsUser(intent, user);
     }
 
+    @TargetApi(17)
     public static void sendBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission) {
         Base.getContext().sendBroadcastAsUser(intent, user, receiverPermission);
     }
@@ -385,36 +403,39 @@ public class ContextUtil {
         Base.getContext().sendOrderedBroadcast(intent, receiverPermission);
     }
 
+    @TargetApi(17)
     public static void sendOrderedBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
         Base.getContext().sendOrderedBroadcastAsUser(intent, user, receiverPermission, resultReceiver, scheduler, initialCode, initialData, initialExtras);
     }
 
-    public static void sendStickyBroadcast(Intent intent) {
-        Base.getContext().sendStickyBroadcast(intent);
-    }
-
-    public static void sendStickyBroadcastAsUser(Intent intent, UserHandle user) {
-        Base.getContext().sendStickyBroadcastAsUser(intent, user);
-    }
-
-    public static void sendStickyOrderedBroadcast(Intent intent, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-        Base.getContext().sendStickyOrderedBroadcast(intent, resultReceiver, scheduler, initialCode, initialData, initialExtras);
-    }
-
-    public static void sendStickyOrderedBroadcastAsUser(Intent intent, UserHandle user, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-        Base.getContext().sendStickyOrderedBroadcastAsUser(intent, user, resultReceiver, scheduler, initialCode, initialData, initialExtras);
-    }
+//    public static void sendStickyBroadcast(Intent intent) {
+//        Base.getContext().sendStickyBroadcast(intent);
+//    }
+//
+//    @TargetApi(17)
+//    public static void sendStickyBroadcastAsUser(Intent intent, UserHandle user) {
+//        Base.getContext().sendStickyBroadcastAsUser(intent, user);
+//    }
+//
+//    public static void sendStickyOrderedBroadcast(Intent intent, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+//        Base.getContext().sendStickyOrderedBroadcast(intent, resultReceiver, scheduler, initialCode, initialData, initialExtras);
+//    }
+//
+//    @TargetApi(17)
+//    public static void sendStickyOrderedBroadcastAsUser(Intent intent, UserHandle user, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+//        Base.getContext().sendStickyOrderedBroadcastAsUser(intent, user, resultReceiver, scheduler, initialCode, initialData, initialExtras);
+//    }
 
     public static void setTheme(@StyleRes int styleRes) {
         Base.getContext().setTheme(styleRes);
     }
 
     public static void setWallpaper(InputStream data) throws IOException {
-        Base.getContext().setWallpaper(data);
+        WallpaperManager.getInstance(Base.getContext()).setStream(data);
     }
 
     public static void setWallpaper(Bitmap bitmap) throws IOException {
-        Base.getContext().setWallpaper(bitmap);
+        WallpaperManager.getInstance(Base.getContext()).setBitmap(bitmap);
     }
 
     public static boolean startActivities(Intent[] intents, Bundle options) {
@@ -436,6 +457,7 @@ public class ContextUtil {
         Base.getContext().startActivity(intent);
     }
 
+    @TargetApi(16)
     public static void startActivity(Intent intent, Bundle options) {
         Base.getContext().startActivity(intent, options);
     }
@@ -444,6 +466,7 @@ public class ContextUtil {
         return Base.getContext().startInstrumentation(className, profileFile, arguments);
     }
 
+    @TargetApi(16)
     public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) throws IntentSender.SendIntentException {
         Base.getContext().startIntentSender(intent, fillInIntent, flagsMask, flagsValues, extraFlags, options);
     }
@@ -464,6 +487,7 @@ public class ContextUtil {
         Base.getContext().unbindService(conn);
     }
 
+    @TargetApi(14)
     public static void unregisterComponentCallbacks(ComponentCallbacks callback) {
         Base.getContext().unregisterComponentCallbacks(callback);
     }

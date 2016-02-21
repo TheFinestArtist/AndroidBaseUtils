@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.binders.ExtrasBinder;
 
 /**
@@ -16,8 +15,6 @@ import com.thefinestartist.binders.ExtrasBinder;
 public class Fragment1 extends Fragment {
 
     public static final String NAME = "NAME";
-
-    @Extra(NAME) String name;
 
     @Nullable
     @Override

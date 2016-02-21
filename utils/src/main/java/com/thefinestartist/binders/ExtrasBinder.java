@@ -17,21 +17,21 @@ public class ExtrasBinder {
 
     static final String SUFFIX = "$$ExtraBinder";
 
-    public static void bind( Activity activity) {
+    public static void bind(Activity activity) {
         if (activity == null)
             return;
 
         bindObject(activity);
     }
 
-    public static void bind( Fragment fragment) {
+    public static void bind(Fragment fragment) {
         if (fragment == null)
             return;
 
         bindObject(fragment);
     }
 
-    public static void bind( android.app.Fragment fragment) {
+    public static void bind(android.app.Fragment fragment) {
         if (fragment == null)
             return;
 
@@ -43,6 +43,8 @@ public class ExtrasBinder {
             Class<?> binder = Class.forName(object.getClass().getName() + SUFFIX);
             Method bind = binder.getMethod("bind", object.getClass());
             bind.invoke(null, object);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception e) {
@@ -50,4 +52,3 @@ public class ExtrasBinder {
         }
     }
 }
-// TODO: proguard

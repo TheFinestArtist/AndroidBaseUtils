@@ -44,7 +44,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. PhotoUtil
     1. RippleUtil
     1. Validator
-1. [Contributor](https://github.com/TheFinestArtist/AndroidBaseUtils#contributor)
+1. [Contributor](https://github.com/TheFinestArtist/AndroidBaseUtils#contributors)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
 # Get started
@@ -328,7 +328,7 @@ ThreadUtil helps to deal with thread conveniently.
 boolean     isMain();
 ```
 
-# Contributor
+# Contributors
 [Leonardo Taehwan Kim](https://github.com/thefinestartist)  
 [Marcos Trujillo](https://github.com/Aracem)  
 [Min Kim](https://github.com/openyourboxes)

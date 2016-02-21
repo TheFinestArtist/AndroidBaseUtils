@@ -50,8 +50,19 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
 # Get started
 
 #### Gradle Dependency (jcenter)
+Release is in process...
 ```java
+buildscript {
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+
 dependencies {
+    compile 'com.thefinestartist:base.utils:0.8.0'
+    apt 'com.thefinestartist:base.compilers:0.8.0'
 }
 ```
 

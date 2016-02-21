@@ -1,20 +1,24 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
     defaultConfig {
         minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+        versionName "0.8.0"
     }
 }
 
@@ -24,3 +28,13 @@ dependencies {
     compile 'com.android.support:support-annotations:23.1.1'
     testCompile 'junit:junit:4.12'
 }
+
+//publish {
+//    userOrg = 'thefinestartist'
+//    groupId = 'com.thefinestartist'
+//    artifactId = 'base.utils'
+//    publishVersion = '0.8.0'
+//    desc = 'Context free and basic utils to build Android project conveniently.'
+//    website = 'https://github.com/TheFinestArtist/AndroidBaseUtils'
+//}
+//$ ./gradlew clean build bintrayUpload -PbintrayUser=thefinestartist -PbintrayKey=BINTRAY_KEY -PdryRun=false

@@ -58,8 +58,8 @@ void            Base.initialize(Context context);
 
 Context         Base.getContext();
 Resources       Base.getResources();
-Theme           Base.getResources();
-AssetManager    Base.getTheme();
+Theme           Base.getTheme();
+AssetManager    Base.getAssets();
 Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```

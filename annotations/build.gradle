@@ -1,1 +1,11 @@
 apply plugin: 'java'
+//apply plugin: 'com.novoda.bintray-release'
+
+//publish {
+//    userOrg = 'thefinestartist'
+//    groupId = 'com.thefinestartist'
+//    artifactId = 'annotations'
+//    publishVersion = rootProject.ext.versionName
+//    desc = 'Context free and basic utils to build Android project conveniently.'
+//    website = 'https://github.com/TheFinestArtist/AndroidBaseUtils'
+//}

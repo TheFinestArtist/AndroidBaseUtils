@@ -1,8 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'com.novoda.bintray-release'
-
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_7
+//apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     compile project(':annotations')
@@ -11,11 +8,11 @@ dependencies {
     compile 'com.squareup:javapoet:1.5.1'
 }
 
-publish {
-    userOrg = 'thefinestartist'
-    groupId = 'com.thefinestartist'
-    artifactId = 'base.compilers'
-    publishVersion = '0.8.0'
-    desc = 'Context free and basic utils to build Android project conveniently.'
-    website = 'https://github.com/TheFinestArtist/AndroidBaseUtils'
-}
+//publish {
+//    userOrg = 'thefinestartist'
+//    groupId = 'com.thefinestartist'
+//    artifactId = 'compilers'
+//    publishVersion = rootProject.ext.versionName
+//    desc = 'Context free and basic utils to build Android project conveniently.'
+//    website = 'https://github.com/TheFinestArtist/AndroidBaseUtils'
+//}

@@ -25,10 +25,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
+import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.annotation.StyleRes;
+import android.support.annotation.StyleableRes;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 
@@ -36,7 +40,9 @@ import com.thefinestartist.Base;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -46,59 +52,6 @@ import java.io.InputStream;
  */
 public class ContextUtil {
 
-    // From ContextCompat
-    public static boolean startActivities(Intent[] intents) {
-        for (Intent intent : intents)
-            if (intent != null)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        return ContextCompat.startActivities(Base.getContext(), intents);
-    }
-
-    public static boolean startActivities(Intent[] intents, Bundle options) {
-        for (Intent intent : intents)
-            if (intent != null)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        return ContextCompat.startActivities(Base.getContext(), intents, options);
-    }
-
-    public static File[] getObbDirs() {
-        return ContextCompat.getObbDirs(Base.getContext());
-    }
-
-    public static File[] getExternalFilesDirs(String type) {
-        return ContextCompat.getExternalFilesDirs(Base.getContext(), type);
-    }
-
-    public static File[] getExternalCacheDirs() {
-        return ContextCompat.getExternalCacheDirs(Base.getContext());
-    }
-
-    public static Drawable getDrawable(@DrawableRes int drawableRes) {
-        return ContextCompat.getDrawable(Base.getContext(), drawableRes);
-    }
-
-    public static ColorStateList getColorStateList(@ColorRes int colorRes) {
-        return ContextCompat.getColorStateList(Base.getContext(), colorRes);
-    }
-
-    @ColorInt
-    public static int getColor(@ColorRes int colorRes) {
-        return ContextCompat.getColor(Base.getContext(), colorRes);
-    }
-
-    public static int checkSelfPermission(@NonNull String permission) {
-        return ContextCompat.checkSelfPermission(Base.getContext(), permission);
-    }
-
-    public static File getNoBackupFilesDir() {
-        return new ContextCompat().getNoBackupFilesDir(Base.getContext());
-    }
-
-    public static File getCodeCacheDir() {
-        return new ContextCompat().getCodeCacheDir(Base.getContext());
-    }
-
-    // From Context
     public static boolean bindService(Intent service, ServiceConnection conn, int flags) {
         return Base.getContext().bindService(service, conn, flags);
     }
@@ -121,6 +74,10 @@ public class ContextUtil {
 
     public static int checkPermission(String permission, int pid, int uid) {
         return Base.getContext().checkPermission(permission, pid, uid);
+    }
+
+    public static int checkSelfPermission(@NonNull String permission) {
+        return ContextCompat.checkSelfPermission(Base.getContext(), permission);
     }
 
     public static int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -200,203 +157,208 @@ public class ContextUtil {
     }
 
     public static File getCodeCacheDir() {
-        return Base.getContext().getCodeCacheDir();
+        return new ContextCompat().getCodeCacheDir(Base.getContext());
     }
 
-    public static int getColor(int id) {
-
+    @ColorInt
+    public static int getColor(@ColorRes int colorRes) {
+        return ContextCompat.getColor(Base.getContext(), colorRes);
     }
 
-    public static ColorStateList getColorStateList(int id) {
-
+    public static ColorStateList getColorStateList(@ColorRes int colorRes) {
+        return ContextCompat.getColorStateList(Base.getContext(), colorRes);
     }
 
     public static ContentResolver getContentResolver() {
-
+        return Base.getContext().getContentResolver();
     }
 
     public static File getDatabasePath(String name) {
-
+        return Base.getContext().getDatabasePath(name);
     }
 
     public static File getDir(String name, int mode) {
-
+        return Base.getContext().getDir(name, mode);
     }
 
-    public static Drawable getDrawable(int id) {
-
+    public static Drawable getDrawable(@DrawableRes int drawableRes) {
+        return ContextCompat.getDrawable(Base.getContext(), drawableRes);
     }
 
     public static File getExternalCacheDir() {
-
+        return Base.getContext().getExternalCacheDir();
     }
 
     public static File[] getExternalCacheDirs() {
-
+        return ContextCompat.getExternalCacheDirs(Base.getContext());
     }
 
     public static File getExternalFilesDir(String type) {
+        return Base.getContext().getExternalFilesDir(type);
+    }
 
+    public static File[] getExternalFilesDirs(String type) {
+        return ContextCompat.getExternalFilesDirs(Base.getContext(), type);
     }
 
     public static File[] getExternalMediaDirs() {
-
+        return Base.getContext().getExternalMediaDirs();
     }
 
     public static File getFileStreamPath(String name) {
-
+        return Base.getContext().getFileStreamPath(name);
     }
 
     public static File getFilesDir() {
-
+        return Base.getContext().getFilesDir();
     }
 
     public static Looper getMainLooper() {
-
+        return Base.getContext().getMainLooper();
     }
 
     public static File getNoBackupFilesDir() {
-
+        return new ContextCompat().getNoBackupFilesDir(Base.getContext());
     }
 
     public static File getObbDir() {
-
+        return Base.getContext().getObbDir();
     }
 
     public static File[] getObbDirs() {
-
+        return ContextCompat.getObbDirs(Base.getContext());
     }
 
     public static String getPackageCodePath() {
-
+        return Base.getContext().getPackageCodePath();
     }
 
     public static PackageManager getPackageManager() {
-
+        return Base.getContext().getPackageManager();
     }
 
     public static String getPackageName() {
-
+        return Base.getContext().getPackageName();
     }
 
     public static String getPackageResourcePath() {
-
+        return Base.getContext().getPackageResourcePath();
     }
 
     public static Resources getResources() {
-
+        return Base.getContext().getResources();
     }
 
     public static SharedPreferences getSharedPreferences(String name, int mode) {
-
+        return Base.getContext().getSharedPreferences(name, mode);
     }
 
-    public static String getString(int resId) {
-
+    public static String getString(@StringRes int stringRes) {
+        return Base.getContext().getString(stringRes);
     }
 
-    public static String getString(int resId, Object... formatArgs) {
-
+    public static String getString(@StringRes int stringRes, Object... formatArgs) {
+        return Base.getContext().getString(stringRes, formatArgs);
     }
 
-    public static T getSystemService(Class<T> serviceClass) {
-
+    public static <T> T getSystemService(Class<T> serviceClass) {
+        return Base.getContext().getSystemService(serviceClass);
     }
 
     public static Object getSystemService(String name) {
-
+        return Base.getContext().getSystemService(name);
     }
 
     public static String getSystemServiceName(Class<?> serviceClass) {
-
+        return Base.getContext().getSystemServiceName(serviceClass);
     }
 
-    public static CharSequence getText(int resId) {
-
+    public static CharSequence getText(@StringRes int stringRes) {
+        return Base.getContext().getText(stringRes);
     }
 
     public static Resources.Theme getTheme() {
-
+        return Base.getContext().getTheme();
     }
 
     public static Drawable getWallpaper() {
-
+        return Base.getContext().getWallpaper();
     }
 
     public static int getWallpaperDesiredMinimumHeight() {
-
+        return Base.getContext().getWallpaperDesiredMinimumHeight();
     }
 
     public static int getWallpaperDesiredMinimumWidth() {
-
+        return Base.getContext().getWallpaperDesiredMinimumWidth();
     }
 
     public static void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
-
+        Base.getContext().grantUriPermission(toPackage, uri, modeFlags);
     }
 
     public boolean isRestricted() {
-
+        return Base.getContext().isRestricted();
     }
 
-    public static TypedArray obtainStyledAttributes(int[] attrs) {
-
+    public static TypedArray obtainStyledAttributes(@StyleableRes int[] attrs) {
+        return Base.getContext().obtainStyledAttributes(attrs);
     }
 
-    public static TypedArray obtainStyledAttributes(AttributeSet set, int[] attrs, int defStyleAttr, int defStyleRes) {
-
+    public static TypedArray obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes) {
+        return Base.getContext().obtainStyledAttributes(set, attrs, defStyleAttr, defStyleRes);
     }
 
-    public static TypedArray obtainStyledAttributes(AttributeSet set, int[] attrs) {
-
+    public static TypedArray obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs) {
+        return Base.getContext().obtainStyledAttributes(set, attrs);
     }
 
-    public static TypedArray obtainStyledAttributes(int resid, int[] attrs) {
-
+    public static TypedArray obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs) {
+        return Base.getContext().obtainStyledAttributes(resid, attrs);
     }
 
-    public static FileInputStream openFileInput(String name) {
-
+    public static FileInputStream openFileInput(String name) throws FileNotFoundException {
+        return Base.getContext().openFileInput(name);
     }
 
-    public static FileOutputStream openFileOutput(String name, int mode) {
-
+    public static FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
+        return Base.getContext().openFileOutput(name, mode);
     }
 
     public static SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory) {
-
+        return Base.getContext().openOrCreateDatabase(name, mode, factory);
     }
 
     public static SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory, DatabaseErrorHandler errorHandler) {
-
+        return Base.getContext().openOrCreateDatabase(name, mode, factory, errorHandler);
     }
 
     public static Drawable peekWallpaper() {
-
+        return Base.getContext().peekWallpaper();
     }
 
     public static void registerComponentCallbacks(ComponentCallbacks callback) {
-
+        Base.getContext().registerComponentCallbacks(callback);
     }
 
     public static Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-
+        return Base.getContext().registerReceiver(receiver, filter);
     }
 
     public static Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter, String broadcastPermission, Handler scheduler) {
-
+        return Base.getContext().registerReceiver(receiver, filter, broadcastPermission, scheduler);
     }
 
     public static void removeStickyBroadcast(Intent intent) {
-
+        Base.getContext().removeStickyBroadcast(intent);
     }
 
     public static void removeStickyBroadcastAsUser(Intent intent, UserHandle user) {
-
+        Base.getContext().removeStickyBroadcastAsUser(intent, user);
     }
 
     public static void revokeUriPermission(Uri uri, int modeFlags) {
-
+        Base.getContext().revokeUriPermission(uri, modeFlags);
     }
 
     public static void sendBroadcast(Intent intent, String receiverPermission) {
@@ -408,59 +370,65 @@ public class ContextUtil {
     }
 
     public static void sendBroadcastAsUser(Intent intent, UserHandle user) {
-
+        Base.getContext().sendBroadcastAsUser(intent, user);
     }
 
     public static void sendBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission) {
-
+        Base.getContext().sendBroadcastAsUser(intent, user, receiverPermission);
     }
 
     public static void sendOrderedBroadcast(Intent intent, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-
+        Base.getContext().sendOrderedBroadcast(intent, receiverPermission, resultReceiver, scheduler, initialCode, initialData, initialExtras);
     }
 
     public static void sendOrderedBroadcast(Intent intent, String receiverPermission) {
-
+        Base.getContext().sendOrderedBroadcast(intent, receiverPermission);
     }
 
     public static void sendOrderedBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-
+        Base.getContext().sendOrderedBroadcastAsUser(intent, user, receiverPermission, resultReceiver, scheduler, initialCode, initialData, initialExtras);
     }
 
     public static void sendStickyBroadcast(Intent intent) {
-
+        Base.getContext().sendStickyBroadcast(intent);
     }
 
     public static void sendStickyBroadcastAsUser(Intent intent, UserHandle user) {
-
+        Base.getContext().sendStickyBroadcastAsUser(intent, user);
     }
 
     public static void sendStickyOrderedBroadcast(Intent intent, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-
+        Base.getContext().sendStickyOrderedBroadcast(intent, resultReceiver, scheduler, initialCode, initialData, initialExtras);
     }
 
     public static void sendStickyOrderedBroadcastAsUser(Intent intent, UserHandle user, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
-
+        Base.getContext().sendStickyOrderedBroadcastAsUser(intent, user, resultReceiver, scheduler, initialCode, initialData, initialExtras);
     }
 
-    public static void setTheme(int resid) {
-
+    public static void setTheme(@StyleRes int styleRes) {
+        Base.getContext().setTheme(styleRes);
     }
 
-    public static void setWallpaper(InputStream data) {
-
+    public static void setWallpaper(InputStream data) throws IOException {
+        Base.getContext().setWallpaper(data);
     }
 
-    public static void setWallpaper(Bitmap bitmap) {
-
+    public static void setWallpaper(Bitmap bitmap) throws IOException {
+        Base.getContext().setWallpaper(bitmap);
     }
 
-    public static void startActivities(Intent[] intents, Bundle options) {
-
+    public static boolean startActivities(Intent[] intents, Bundle options) {
+        for (Intent intent : intents)
+            if (intent != null)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return ContextCompat.startActivities(Base.getContext(), intents, options);
     }
 
-    public static void startActivities(Intent[] intents) {
-
+    public static boolean startActivities(Intent[] intents) {
+        for (Intent intent : intents)
+            if (intent != null)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return ContextCompat.startActivities(Base.getContext(), intents);
     }
 
     public static void startActivity(@NonNull Intent intent) {
@@ -469,19 +437,19 @@ public class ContextUtil {
     }
 
     public static void startActivity(Intent intent, Bundle options) {
-
+        Base.getContext().startActivity(intent, options);
     }
 
     public static boolean startInstrumentation(ComponentName className, String profileFile, Bundle arguments) {
-
+        return Base.getContext().startInstrumentation(className, profileFile, arguments);
     }
 
-    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) {
-
+    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) throws IntentSender.SendIntentException {
+        Base.getContext().startIntentSender(intent, fillInIntent, flagsMask, flagsValues, extraFlags, options);
     }
 
-    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) {
-
+    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws IntentSender.SendIntentException {
+        Base.getContext().startIntentSender(intent, fillInIntent, flagsMask, flagsValues, extraFlags);
     }
 
     public static ComponentName startService(Intent service) {
@@ -496,11 +464,11 @@ public class ContextUtil {
         Base.getContext().unbindService(conn);
     }
 
-    public void unregisterComponentCallbacks(ComponentCallbacks callback) {
-
+    public static void unregisterComponentCallbacks(ComponentCallbacks callback) {
+        Base.getContext().unregisterComponentCallbacks(callback);
     }
 
     public static void unregisterReceiver(BroadcastReceiver receiver) {
-
+        Base.getContext().unregisterReceiver(receiver);
     }
 }

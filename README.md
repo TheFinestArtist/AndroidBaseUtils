@@ -31,6 +31,19 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
     1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
     1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
+1. Work in process
+    1. AgeUtil
+    1. AudioManagerUtil
+    1. AwakeUtil
+    1. BitmapUtil
+    1. DateUtil
+    1. EmailUtil
+    1. FileUtil
+    1. LanguageDetector
+    1. NetworkUtil
+    1. PhotoUtil
+    1. RippleUtil
+    1. Validator
 1. [Contributor](https://github.com/TheFinestArtist/AndroidBaseUtils#contributor)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 

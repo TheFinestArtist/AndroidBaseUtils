@@ -201,20 +201,20 @@ MediaRouter             ServiceUtil.getMediaRouter();
 ActivityBuilder helps to build Activity Intent and start Activity.
 
 ```java
-Constructor     ActivityBuilder(@NonNull Class<C> clazz);
+Constructor         ActivityBuilder(@NonNull Class<C> clazz);
 
-ActivityBuilder set(@NonNull String key, T value);
-ActivityBuilder set(@NonNull String key, Parcelable value);
-ActivityBuilder set(@NonNull String key, Parcelable[] value);
-ActivityBuilder set(@NonNull String key, ArrayList<T> value);
-ActivityBuilder remove(@NonNull String key);
-ActivityBuilder setFlags(int flags);
-ActivityBuilder addFlags(int flags);
+ActivityBuilder     set(@NonNull String key, T value);
+ActivityBuilder     set(@NonNull String key, Parcelable value);
+ActivityBuilder     set(@NonNull String key, Parcelable[] value);
+ActivityBuilder     set(@NonNull String key, ArrayList<T> value);
+ActivityBuilder     remove(@NonNull String key);
+ActivityBuilder     setFlags(int flags);
+ActivityBuilder     addFlags(int flags);
 
-Intent          buildIntent();
-void            start();
-void            startForResult(@NonNull Activity activity, int requestCode);
-void            startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options);
+Intent              buildIntent();
+void                start();
+void                startForResult(@NonNull Activity activity, int requestCode);
+void                startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options);
 ```
 
 ```java
@@ -230,9 +230,9 @@ new ActivityBuilder(YourActivity.class)
 BundleBuilder helps to build Bundle conveniently.
 
 ```java
-BundleBuilder set(String key, T value);
-T get(String key);
-Bundle build();
+BundleBuilder   set(String key, T value);
+T               get(String key);
+Bundle          build();
 ```
 
 ```java
@@ -245,8 +245,8 @@ Bundle bundle = new BundleBuilder()
 PackageUtil helps to handle methods related to package.
 
 ```java
-boolean isInstalled(String packageName);
-void    updateApp();
+boolean     isInstalled(String packageName);
+void        updateApp();
 ```
 
 ## VibratorUtil (★☆☆☆☆)

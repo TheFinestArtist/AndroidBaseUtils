@@ -31,7 +31,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
     1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
     1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
-1. Work in process
+1. Upcoming utils
     1. AgeUtil
     1. AudioManagerUtil
     1. AwakeUtil

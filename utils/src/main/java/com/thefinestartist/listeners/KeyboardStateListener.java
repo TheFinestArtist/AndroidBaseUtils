@@ -1,7 +1,11 @@
 package com.thefinestartist.listeners;
 
+import com.thefinestartist.utils.ui.KeyboardUtil;
+
 /**
- * Created by TheFinestArtist on 2/9/16.
+ * Listener class associated with {@link KeyboardUtil}.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public abstract class KeyboardStateListener {
 

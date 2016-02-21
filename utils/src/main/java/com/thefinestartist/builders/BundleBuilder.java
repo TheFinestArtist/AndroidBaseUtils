@@ -5,7 +5,9 @@ import android.os.Bundle;
 import java.io.Serializable;
 
 /**
- * Created by TheFinestArtist on 2/7/16.
+ * BundleBuilder helps to build {@link Bundle} conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class BundleBuilder {
 

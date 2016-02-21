@@ -1,8 +1,10 @@
 package com.thefinestartist.utils.content;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -18,7 +20,9 @@ import com.thefinestartist.Base;
 import java.io.File;
 
 /**
- * Created by TheFinestArtist on 2/2/16.
+ * ContextUtil helps to use {@link Context} conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ContextUtil {
 
@@ -98,6 +102,63 @@ public class ContextUtil {
     public static int checkPermission(String permission, int pid, int uid) {
         return Base.getContext().checkPermission(permission, pid, uid);
     }
+
+    public static int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
+        return Base.getContext().checkUriPermission(uri, pid, uid, modeFlags);
+    }
+
+    public static int checkUriPermission(Uri uri, String readPermission, String writePermission, int pid, int uid, int modeFlags) {
+        return Base.getContext().checkUriPermission(uri, readPermission, writePermission, pid, uid, modeFlags);
+    }
+
+    public static Context createPackageContext(String packageName, int flags) throws PackageManager.NameNotFoundException {
+        return Base.getContext().createPackageContext(packageName, flags);
+    }
+
+    public static String[] databaseList() {
+        return Base.getContext().databaseList();
+    }
+
+    public static boolean deleteDatabase(String name) {
+        return Base.getContext().deleteDatabase(name);
+    }
+
+    public static boolean deleteFile(String name) {
+        return Base.getContext().deleteFile(name);
+    }
+
+    public static void enforceCallingOrSelfPermission(String permission, String message) {
+        Base.getContext().enforceCallingOrSelfPermission(permission, message);
+    }
+
+    public static void enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message) {
+        Base.getContext().enforceCallingOrSelfUriPermission(uri, modeFlags, message);
+    }
+
+    public static void enforceCallingPermission(String permission, String message) {
+        Base.getContext().enforceCallingPermission(permission, message);
+    }
+
+    public static void enforceCallingUriPermission(Uri uri, int modeFlags, String message) {
+        Base.getContext().enforceCallingUriPermission(uri, modeFlags, message);
+    }
+
+    public static void enforcePermission(String permission, int pid, int uid, String message) {
+        Base.getContext().enforcePermission(permission, pid, uid, message);
+    }
+
+    public static void enforceUriPermission(Uri uri, int pid, int uid, int modeFlags, String message) {
+        Base.getContext().enforceUriPermission(uri, pid, uid, modeFlags, message);
+    }
+
+    public static void enforceUriPermission(Uri uri, String readPermission, String writePermission, int pid, int uid, int modeFlags, String message) {
+        Base.getContext().enforceUriPermission(uri, readPermission, writePermission, pid, uid, modeFlags, message);
+    }
+
+    public static String[] fileList() {
+        return Base.getContext().fileList();
+    }
+
 
     public static void sendBroadcast(Intent intent, String receiverPermission) {
         Base.getContext().sendBroadcast(intent, receiverPermission);

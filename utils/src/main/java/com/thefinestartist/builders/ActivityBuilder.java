@@ -15,7 +15,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by TheFinestArtist on 2/7/16.
+ * ActivityBuilder helps to build {@link Activity} {@link Intent} and start {@link Activity}.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ActivityBuilder {
 

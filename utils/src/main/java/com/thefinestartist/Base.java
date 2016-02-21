@@ -33,6 +33,10 @@ public class Base {
         return Base.getContext().getResources();
     }
 
+    public static Resources.Theme getTheme() {
+        return Base.getContext().getTheme();
+    }
+
     public static AssetManager getAssets() {
         return Base.getContext().getAssets();
     }
@@ -45,7 +49,7 @@ public class Base {
         return Base.getResources().getDisplayMetrics();
     }
 }
-// TODO: Thread safe
-// TODO: ripple, bitmap, time, contact list, picture list, video list, connectivity, wake lock, screen lock/off/on, get attributes, cookie
+// TODO: Thread safety
+// TODO: ripple, bitmap, time, contact list, picture list, video list, connectivity, wake lock, screen lock/off/on, get attributes, cookie, audio
 // TODO: keystore
 // TODO: http://jo.centis1504.net/?p=1189

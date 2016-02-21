@@ -5,7 +5,7 @@
 
 #### Context free and basic utils to build Android project conveniently
 
-Any kinds of contribution including **pull request**, **writing issue**, **email me personally** is always welcome. Let me know if you have any idea about basic utils for Android development.
+Any kinds of contributions including **pull requests**, **writing issues**, **email me personally** are always welcome. Let me know if you have any idea about basic utils for Android development.
 
 
 # Table of Contents
@@ -55,7 +55,8 @@ void            Base.initialize(Context context);
 
 Context         Base.getContext();
 Resources       Base.getResources();
-AssetManager    Base.getAssets();
+Theme           Base.getResources();
+AssetManager    Base.getTheme();
 Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```

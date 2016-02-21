@@ -6,12 +6,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.accessibility.CaptioningManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.thefinestartist.builders.ActivityBuilder;
 import com.thefinestartist.builders.BundleBuilder;
 import com.thefinestartist.utils.sample.fragments.Fragment1;
+import com.thefinestartist.utils.service.ServiceUtil;
 
 import java.util.ArrayList;
 

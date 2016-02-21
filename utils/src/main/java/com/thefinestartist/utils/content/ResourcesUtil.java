@@ -1,13 +1,17 @@
 package com.thefinestartist.utils.content;
 
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
+import android.graphics.Movie;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.AnimRes;
+import android.support.annotation.AnyRes;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.BoolRes;
 import android.support.annotation.ColorInt;
@@ -17,15 +21,25 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.PluralsRes;
+import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
 import android.support.annotation.XmlRes;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 import com.thefinestartist.Base;
 import com.thefinestartist.utils.etc.APILevel;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
- * Created by TheFinestArtist on 1/25/16.
+ * ResourcesUtil helps to use {@link Resources} conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class ResourcesUtil {
 
@@ -117,33 +131,138 @@ public class ResourcesUtil {
         return Base.getResources().getFraction(id, base, pbase);
     }
 
-
-
-
-
-
-
-
-    public static String getString(@StringRes int stringRes) {
-        return Base.getContext().getString(stringRes);
+    public static int getIdentifier(String name, String defType, String defPackage) {
+        return Base.getResources().getIdentifier(name, defType, defPackage);
     }
 
-    public static String getString(@StringRes int stringRes, Object... formatArgs) {
-        return Base.getContext().getString(stringRes, formatArgs);
-    }
-
-    public static String getQuantityString(@PluralsRes int pluralsRes, int quantity, Object... formatArgs) {
-        return Base.getResources().getQuantityString(pluralsRes, quantity, formatArgs);
-    }
-
-    public static String getQuantityString(@PluralsRes int pluralsRes, int quantity) throws Resources.NotFoundException {
-        return Base.getResources().getQuantityString(pluralsRes, quantity);
+    public static int[] getIntArray(@ArrayRes int arrayRes) {
+        return Base.getResources().getIntArray(arrayRes);
     }
 
     public static int getInteger(@IntegerRes int integerRes) {
         return Base.getResources().getInteger(integerRes);
     }
 
+    public static XmlResourceParser getLayout(@LayoutRes int layoutRes) {
+        return Base.getResources().getLayout(layoutRes);
+    }
+
+    public static Movie getMovie(@RawRes int rawRes) {
+        return Base.getResources().getMovie(rawRes);
+    }
+
+    public static String getQuantityString(int id, int quantity, Object... formatArgs) {
+        return Base.getResources().getQuantityString(id, quantity, formatArgs);
+    }
+
+    public static String getQuantityString(@PluralsRes int pluralsRes, int quantity) throws Resources.NotFoundException {
+        return Base.getResources().getQuantityString(pluralsRes, quantity);
+    }
+
+    public static CharSequence getQuantityText(int id, int quantity) {
+        return Base.getResources().getQuantityText(id, quantity);
+    }
+
+    public static String getResourceEntryName(@AnyRes int anyRes) {
+        return Base.getResources().getResourceEntryName(anyRes);
+    }
+
+    public String getResourceName(@AnyRes int anyRes) {
+        return Base.getResources().getResourceName(anyRes);
+    }
+
+    public String getResourcePackageName(@AnyRes int anyRes) {
+        return Base.getResources().getResourcePackageName(anyRes);
+    }
+
+    public String getResourceTypeName(@AnyRes int anyRes) {
+        return Base.getResources().getResourceTypeName(anyRes);
+    }
+
+    public static String getString(@StringRes int stringRes) {
+        return Base.getResources().getString(stringRes);
+    }
+
+    public static String getString(@StringRes int stringRes, Object... formatArgs) {
+        return Base.getResources().getString(stringRes, formatArgs);
+    }
+
+    public static String[] getStringArray(@ArrayRes int arrayRes) {
+        return Base.getResources().getStringArray(arrayRes);
+    }
+
+    public static Resources getSystem() {
+        return Base.getResources().getSystem();
+    }
+
+    public static CharSequence getText(@StringRes int stringRes, CharSequence def) {
+        return Base.getResources().getText(stringRes, def);
+    }
+
+    public static CharSequence getText(@StringRes int stringRes) {
+        return Base.getResources().getText(stringRes);
+    }
+
+    public static CharSequence[] getTextArray(@ArrayRes int arrayRes) {
+        return Base.getResources().getTextArray(arrayRes);
+    }
+
+    public static void getValue(String name, TypedValue outValue, boolean resolveRefs) {
+        Base.getResources().getValue(name, outValue, resolveRefs);
+    }
+
+    public static void getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs) {
+        Base.getResources().getValue(anyRes, outValue, resolveRefs);
+    }
+
+    public static void getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs) {
+        if (APILevel.require(15))
+            Base.getResources().getValueForDensity(anyRes, density, outValue, resolveRefs);
+        else
+            Base.getResources().getValue(anyRes, outValue, resolveRefs);
+    }
+
+    public static XmlResourceParser getXml(@XmlRes int xmlRes) {
+        return Base.getResources().getXml(xmlRes);
+    }
+
+    public static Resources.Theme newTheme() {
+        return Base.getResources().newTheme();
+    }
+
+    public static TypedArray obtainAttributes(AttributeSet set, int[] attrs) {
+        return Base.getResources().obtainAttributes(set, attrs);
+    }
+
+    public static TypedArray obtainTypedArray(@ArrayRes int anyRes) {
+        return Base.getResources().obtainTypedArray(anyRes);
+    }
+
+    public static InputStream openRawResource(@RawRes int rawRes) {
+        return Base.getResources().openRawResource(rawRes);
+    }
+
+    public static InputStream openRawResource(@RawRes int rawRes, TypedValue value) {
+        return Base.getResources().openRawResource(rawRes, value);
+    }
+
+    public static AssetFileDescriptor openRawResourceFd(@RawRes int rawRes) {
+        return Base.getResources().openRawResourceFd(rawRes);
+    }
+
+    public static void parseBundleExtra(String tagName, AttributeSet attrs, Bundle outBundle) throws XmlPullParserException {
+        Base.getResources().parseBundleExtra(tagName, attrs, outBundle);
+    }
+
+    public static void parseBundleExtras(XmlResourceParser parser, Bundle outBundle) throws XmlPullParserException, IOException {
+        Base.getResources().parseBundleExtras(parser, outBundle);
+    }
+
+    public static void updateConfiguration(Configuration config, DisplayMetrics metrics) {
+        Base.getResources().updateConfiguration(config, metrics);
+    }
+
+    // Added methods
     public static int[] getColorArray(@ArrayRes int array) {
         if (array == 0)
             return null;
@@ -155,16 +274,4 @@ public class ResourcesUtil {
         typedArray.recycle();
         return colors;
     }
-
-    public static XmlResourceParser getLayout(@LayoutRes int layoutRes) {
-        return Base.getResources().getLayout(layoutRes);
-    }
-
-    public static XmlResourceParser getXml(@XmlRes int xmlRes) {
-        return Base.getResources().getXml(xmlRes);
-    }
-
-    public static int getIdentifier(String name, String defType, String defPackage) {
-        return Base.getResources().getIdentifier(name, defType, defPackage);
-    }
-} // TODO: do some more
+}

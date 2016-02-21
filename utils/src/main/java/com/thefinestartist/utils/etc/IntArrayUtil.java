@@ -1,9 +1,9 @@
 package com.thefinestartist.utils.etc;
 
 /**
- * IntArrayUtil
- * <p/>
- * Created by TheFinestArtist
+ * IntArrayUtil helps to deal with IntArray conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class IntArrayUtil {
 
@@ -22,11 +22,8 @@ public class IntArrayUtil {
             return new int[]{value};
 
         int[] newArray = new int[array.length + 1];
-        for (int i = 0; i < array.length; i++)
-            newArray[i] = array[i];
+        System.arraycopy(array, 0, newArray, 0, array.length);
         newArray[array.length] = value;
-
         return newArray;
     }
-
 }

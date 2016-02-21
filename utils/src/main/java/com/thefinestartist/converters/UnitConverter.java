@@ -4,6 +4,8 @@ import com.thefinestartist.Base;
 
 /**
  * UnitConverter helps to convert dp or sp size into pixel.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class UnitConverter {
 

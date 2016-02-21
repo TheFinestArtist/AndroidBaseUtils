@@ -5,7 +5,9 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 
 /**
- * Created by TheFinestArtist on 1/26/16.
+ * SparseArrayUtil helps to deal with SparseArray conveniently.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class SparseArrayUtil {
 

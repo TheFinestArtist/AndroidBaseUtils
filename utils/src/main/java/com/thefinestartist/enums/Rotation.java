@@ -1,7 +1,11 @@
 package com.thefinestartist.enums;
 
+import com.thefinestartist.utils.ui.DisplayUtil;
+
 /**
- * Created by TheFinestArtist on 2/16/16.
+ * Enum class associated with {@link DisplayUtil}.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public enum Rotation {
     DEGREES_0(0),

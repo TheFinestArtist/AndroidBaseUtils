@@ -35,8 +35,16 @@ public class PackageUtil {
         }
     }
 
-    public static void updateApp() {
+    public static String getPackageName() {
+        return Base.getContext().getPackageName();
+    }
+
+    public static void openPlayStore() {
         String packageName = Base.getContext().getPackageName();
+        openPlayStore(packageName);
+    }
+
+    public static void openPlayStore(String packageName) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

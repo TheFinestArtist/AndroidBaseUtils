@@ -29,6 +29,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
     1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
     1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
+1. [Contributor](https://github.com/TheFinestArtist/AndroidBaseUtils#contributor)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
 # Get started
@@ -249,7 +250,9 @@ PackageUtil helps to handle methods related to package.
 
 ```java
 boolean     isInstalled(String packageName);
-void        updateApp();
+String      getPackageName();
+void        openPlayStore();
+void        openPlayStore(String packageName);
 ```
 
 ## VibratorUtil (★☆☆☆☆)
@@ -309,6 +312,11 @@ ThreadUtil helps to deal with thread conveniently.
 ```java
 boolean     isMain();
 ```
+
+# Contributor
+[Leonardo Taehwan Kim](https://github.com/thefinestartist)
+[Marcos Trujillo](https://github.com/Aracem)
+[Min Kim](https://github.com/openyourboxes)
 
 # License
 

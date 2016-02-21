@@ -1,23 +1,43 @@
 package com.thefinestartist.utils.content;
 
+import android.content.BroadcastReceiver;
+import android.content.ComponentCallbacks;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.IntentSender;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.util.AttributeSet;
 
 import com.thefinestartist.Base;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 /**
  * ContextUtil helps to use {@link Context} conveniently.
@@ -74,7 +94,7 @@ public class ContextUtil {
         return new ContextCompat().getNoBackupFilesDir(Base.getContext());
     }
 
-    public final File getCodeCacheDir() {
+    public static File getCodeCacheDir() {
         return new ContextCompat().getCodeCacheDir(Base.getContext());
     }
 
@@ -159,6 +179,225 @@ public class ContextUtil {
         return Base.getContext().fileList();
     }
 
+    public static Context getApplicationContext() {
+        return Base.getContext().getApplicationContext();
+    }
+
+    public static ApplicationInfo getApplicationInfo() {
+        return Base.getContext().getApplicationInfo();
+    }
+
+    public static AssetManager getAssets() {
+        return Base.getContext().getAssets();
+    }
+
+    public static File getCacheDir() {
+        return Base.getContext().getCacheDir();
+    }
+
+    public static ClassLoader getClassLoader() {
+        return Base.getContext().getClassLoader();
+    }
+
+    public static File getCodeCacheDir() {
+        return Base.getContext().getCodeCacheDir();
+    }
+
+    public static int getColor(int id) {
+
+    }
+
+    public static ColorStateList getColorStateList(int id) {
+
+    }
+
+    public static ContentResolver getContentResolver() {
+
+    }
+
+    public static File getDatabasePath(String name) {
+
+    }
+
+    public static File getDir(String name, int mode) {
+
+    }
+
+    public static Drawable getDrawable(int id) {
+
+    }
+
+    public static File getExternalCacheDir() {
+
+    }
+
+    public static File[] getExternalCacheDirs() {
+
+    }
+
+    public static File getExternalFilesDir(String type) {
+
+    }
+
+    public static File[] getExternalMediaDirs() {
+
+    }
+
+    public static File getFileStreamPath(String name) {
+
+    }
+
+    public static File getFilesDir() {
+
+    }
+
+    public static Looper getMainLooper() {
+
+    }
+
+    public static File getNoBackupFilesDir() {
+
+    }
+
+    public static File getObbDir() {
+
+    }
+
+    public static File[] getObbDirs() {
+
+    }
+
+    public static String getPackageCodePath() {
+
+    }
+
+    public static PackageManager getPackageManager() {
+
+    }
+
+    public static String getPackageName() {
+
+    }
+
+    public static String getPackageResourcePath() {
+
+    }
+
+    public static Resources getResources() {
+
+    }
+
+    public static SharedPreferences getSharedPreferences(String name, int mode) {
+
+    }
+
+    public static String getString(int resId) {
+
+    }
+
+    public static String getString(int resId, Object... formatArgs) {
+
+    }
+
+    public static T getSystemService(Class<T> serviceClass) {
+
+    }
+
+    public static Object getSystemService(String name) {
+
+    }
+
+    public static String getSystemServiceName(Class<?> serviceClass) {
+
+    }
+
+    public static CharSequence getText(int resId) {
+
+    }
+
+    public static Resources.Theme getTheme() {
+
+    }
+
+    public static Drawable getWallpaper() {
+
+    }
+
+    public static int getWallpaperDesiredMinimumHeight() {
+
+    }
+
+    public static int getWallpaperDesiredMinimumWidth() {
+
+    }
+
+    public static void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
+
+    }
+
+    public boolean isRestricted() {
+
+    }
+
+    public static TypedArray obtainStyledAttributes(int[] attrs) {
+
+    }
+
+    public static TypedArray obtainStyledAttributes(AttributeSet set, int[] attrs, int defStyleAttr, int defStyleRes) {
+
+    }
+
+    public static TypedArray obtainStyledAttributes(AttributeSet set, int[] attrs) {
+
+    }
+
+    public static TypedArray obtainStyledAttributes(int resid, int[] attrs) {
+
+    }
+
+    public static FileInputStream openFileInput(String name) {
+
+    }
+
+    public static FileOutputStream openFileOutput(String name, int mode) {
+
+    }
+
+    public static SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory) {
+
+    }
+
+    public static SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory, DatabaseErrorHandler errorHandler) {
+
+    }
+
+    public static Drawable peekWallpaper() {
+
+    }
+
+    public static void registerComponentCallbacks(ComponentCallbacks callback) {
+
+    }
+
+    public static Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+
+    }
+
+    public static Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter, String broadcastPermission, Handler scheduler) {
+
+    }
+
+    public static void removeStickyBroadcast(Intent intent) {
+
+    }
+
+    public static void removeStickyBroadcastAsUser(Intent intent, UserHandle user) {
+
+    }
+
+    public static void revokeUriPermission(Uri uri, int modeFlags) {
+
+    }
 
     public static void sendBroadcast(Intent intent, String receiverPermission) {
         Base.getContext().sendBroadcast(intent, receiverPermission);
@@ -168,9 +407,81 @@ public class ContextUtil {
         Base.getContext().sendBroadcast(intent);
     }
 
+    public static void sendBroadcastAsUser(Intent intent, UserHandle user) {
+
+    }
+
+    public static void sendBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission) {
+
+    }
+
+    public static void sendOrderedBroadcast(Intent intent, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+
+    }
+
+    public static void sendOrderedBroadcast(Intent intent, String receiverPermission) {
+
+    }
+
+    public static void sendOrderedBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+
+    }
+
+    public static void sendStickyBroadcast(Intent intent) {
+
+    }
+
+    public static void sendStickyBroadcastAsUser(Intent intent, UserHandle user) {
+
+    }
+
+    public static void sendStickyOrderedBroadcast(Intent intent, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+
+    }
+
+    public static void sendStickyOrderedBroadcastAsUser(Intent intent, UserHandle user, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras) {
+
+    }
+
+    public static void setTheme(int resid) {
+
+    }
+
+    public static void setWallpaper(InputStream data) {
+
+    }
+
+    public static void setWallpaper(Bitmap bitmap) {
+
+    }
+
+    public static void startActivities(Intent[] intents, Bundle options) {
+
+    }
+
+    public static void startActivities(Intent[] intents) {
+
+    }
+
     public static void startActivity(@NonNull Intent intent) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         Base.getContext().startActivity(intent);
+    }
+
+    public static void startActivity(Intent intent, Bundle options) {
+
+    }
+
+    public static boolean startInstrumentation(ComponentName className, String profileFile, Bundle arguments) {
+
+    }
+
+    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) {
+
+    }
+
+    public static void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) {
+
     }
 
     public static ComponentName startService(Intent service) {
@@ -184,4 +495,12 @@ public class ContextUtil {
     public static void unbindService(ServiceConnection conn) {
         Base.getContext().unbindService(conn);
     }
-} // TODO: do some more
+
+    public void unregisterComponentCallbacks(ComponentCallbacks callback) {
+
+    }
+
+    public static void unregisterReceiver(BroadcastReceiver receiver) {
+
+    }
+}

@@ -200,7 +200,7 @@ MediaRouter             ServiceUtil.getMediaRouter();
 ActivityBuilder helps to build Activity Intent and start Activity.
 
 ```java
-                ActivityBuilder(@NonNull Class<C> clazz);
+Constructor     ActivityBuilder(@NonNull Class<C> clazz);
 
 ActivityBuilder set(@NonNull String key, T value);
 ActivityBuilder set(@NonNull String key, Parcelable value);

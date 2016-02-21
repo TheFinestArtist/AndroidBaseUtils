@@ -26,6 +26,9 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [ClipboardManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#clipboardmanagerutil-)
     1. [TypedValueUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#typedvalueutil-)
     1. [WindowManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#windowmanagerutil-)
+    1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
+    1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
+    1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
 1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
 
 # Get started
@@ -283,6 +286,28 @@ WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
 ```java
 Display     WindowManagerUtil.getDefaultDisplay();
 void        WindowManagerUtil.removeViewImmediate(View view);
+```
+
+## IntArrayUtil (☆☆☆☆☆)
+IntArrayUtil helps to deal with IntArray conveniently.
+
+```java
+boolean     contains(int[] array, int value);
+int[]       add(int[] array, int value);
+```
+
+## SparseArrayUtil (☆☆☆☆☆)
+SparseArrayUtil helps to deal with SparseArray conveniently.
+
+```java
+ArrayList<C>    asArrayList(SparseArray<C> sparseArray);
+```
+
+## ThreadUtil (☆☆☆☆☆)
+ThreadUtil helps to deal with thread conveniently.
+
+```java
+boolean     isMain();
 ```
 
 # License

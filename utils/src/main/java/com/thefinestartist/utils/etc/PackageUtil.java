@@ -8,7 +8,7 @@ import android.net.Uri;
 import com.thefinestartist.Base;
 
 /**
- * PackageUtil is a helper class related to package
+ * PackageUtil helps to handle methods related to package.
  *
  * @author Leonardo Taehwan Kim
  */
@@ -25,10 +25,10 @@ public class PackageUtil {
     public static String KAKAOTALK = "com.kakao.talk";
     public static String KAKAOSTORY = "com.kakao.story";
 
-    public static boolean isInstalled(String packageUri) {
+    public static boolean isInstalled(String packageName) {
         PackageManager packageManager = Base.getContext().getPackageManager();
         try {
-            packageManager.getPackageInfo(packageUri, PackageManager.GET_ACTIVITIES);
+            packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;

@@ -21,6 +21,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
     1. [ActivityBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#activitybuilder-)
     1. [BundleBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#bundlebuilder-)
+    1. [PackageUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#packageutil-)
     1. [VibratorUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#vibratorutil-)
     1. [ClipboardManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#clipboardmanagerutil-)
     1. [TypedValueUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#typedvalueutil-)
@@ -240,6 +241,13 @@ Bundle bundle = new BundleBuilder()
                     .build();
 ```
 
+## PackageUtil (★☆☆☆☆)
+PackageUtil helps to handle methods related to package.
+
+```java
+boolean isInstalled(String packageName);
+void    updateApp();
+```
 
 ## VibratorUtil (★☆☆☆☆)
 VibratorUtil helps to use `Vibrator` conveniently.

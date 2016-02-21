@@ -53,3 +53,4 @@ public class Base {
 // TODO: ripple, bitmap, time, contact list, picture list, video list, connectivity, wake lock, screen lock/off/on, get attributes, cookie, audio
 // TODO: keystore
 // TODO: http://jo.centis1504.net/?p=1189
+// TODO: Test codes

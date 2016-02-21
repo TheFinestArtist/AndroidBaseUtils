@@ -70,12 +70,12 @@ public class ActivityBuilder {
         ContextUtil.startActivity(intent);
     }
 
-    public void startActivityForResult(@NonNull Activity activity, int requestCode) {
+    public void startForResult(@NonNull Activity activity, int requestCode) {
         activity.startActivityForResult(intent, requestCode);
     }
 
     @TargetApi(16)
-    public void startActivityForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options) {
+    public void startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options) {
         activity.startActivityForResult(intent, requestCode, options);
     }
 }

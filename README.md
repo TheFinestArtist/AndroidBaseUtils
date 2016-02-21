@@ -19,6 +19,8 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [DisplayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#displayutil-)
     1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
     1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
+    1. [ActivityBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#activitybuilder-)
+    1. [BundleBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#bundlebuilder-)
     1. [VibratorUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#vibratorutil-)
     1. [ClipboardManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#clipboardmanagerutil-)
     1. [TypedValueUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#typedvalueutil-)
@@ -193,6 +195,51 @@ AudioManager            ServiceUtil.getAudioManager();
 MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
+
+## ActivityBuilder (★★☆☆☆)
+ActivityBuilder helps to build Activity Intent and start Activity.
+
+```java
+                ActivityBuilder(@NonNull Class<C> clazz);
+
+ActivityBuilder set(@NonNull String key, T value);
+ActivityBuilder set(@NonNull String key, Parcelable value);
+ActivityBuilder set(@NonNull String key, Parcelable[] value);
+ActivityBuilder set(@NonNull String key, ArrayList<T> value);
+ActivityBuilder remove(@NonNull String key);
+ActivityBuilder setFlags(int flags);
+ActivityBuilder addFlags(int flags);
+
+Intent          buildIntent();
+void            start();
+void            startForResult(@NonNull Activity activity, int requestCode);
+void            startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options);
+```
+
+```java
+new ActivityBuilder(YourActivity.class)
+    .set(YourActivity.TITLE, "Title")
+    .set(YourActivity.CONTENT, 1)
+    .set("values", new int[]{1, 2, 3})
+    .set(YourActivity.ARRAY_LIST, list)
+    .start();
+```
+
+## BundleBuilder (★★☆☆☆)
+BundleBuilder helps to build Bundle conveniently.
+
+```java
+BundleBuilder set(String key, T value);
+T get(String key);
+Bundle build();
+```
+
+```java
+Bundle bundle = new BundleBuilder()
+                    .set("values", new int[]{1, 2, 3})
+                    .build();
+```
+
 
 ## VibratorUtil (★☆☆☆☆)
 VibratorUtil helps to use `Vibrator` conveniently.

@@ -1,8 +1,9 @@
-<img src="https://github.com/TheFinestArtist/AndroidBaseUtils/blob/master/art/256_1.png?raw=true">
-=============
+# AndroidBaseUtils
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
+
+<img src="https://github.com/TheFinestArtist/AndroidBaseUtils/blob/master/art/256_1.png?raw=true">
 
 #### Context free and basic utils to build Android project conveniently
 

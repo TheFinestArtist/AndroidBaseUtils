@@ -101,12 +101,70 @@ DisplayMetrics  Base.getDisplayMetrics();
 ContextUtil helps to use Context conveniently.
 
 ```java
+boolean bindService(Intent service, ServiceConnection conn, int flags);
+int checkCallingOrSelfPermission(String permission);
+int checkSelfPermission(@NonNull String permission);
+void enforceCallingOrSelfPermission(String permission, String message);
+void enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
+ApplicationInfo getApplicationInfo();
+File getCacheDir();
+File getExternalCacheDir();
+File getExternalFilesDir(String type);
+Looper getMainLooper();
+Object getSystemService(String name);
+void sendBroadcast(Intent intent, String receiverPermission);
+void sendBroadcast(Intent intent);
+boolean startActivities(Intent[] intents, Bundle options);
+boolean startActivities(Intent[] intents);
+void startActivity(@NonNull Intent intent);
+void startActivity(Intent intent, Bundle options);
+ComponentName startService(Intent service);
+boolean stopService(Intent service);
+void unbindService(ServiceConnection conn);
+// and so on...
 ```
 
 ## ResourcesUtil (★★★★☆)
 ResourcesUtil helps to use Resources conveniently.
 
 ```java
+XmlResourceParser   getAnimation(@AnimRes int animRes);
+boolean             getBoolean(@BoolRes int boolRes);
+int                 getColor(@ColorRes int colorRes);
+int                 getColor(@ColorRes int colorRes, Resources.Theme theme);
+ColorStateList      getColorStateList(@ColorRes int colorRes);
+ColorStateList      getColorStateList(@ColorRes int colorRes, Resources.Theme theme);
+float               getDimension(@DimenRes int dimenRes);
+int                 getDimensionPixelOffset(@DimenRes int dimenRes);
+int                 getDimensionPixelSize(@DimenRes int dimenRes);
+DisplayMetrics      getDisplayMetrics();
+Drawable            getDrawable(@DrawableRes int drawableRes);
+int                 getIdentifier(String name, String defType, String defPackage);
+int[]               getIntArray(@ArrayRes int arrayRes);
+int                 getInteger(@IntegerRes int integerRes);
+XmlResourceParser   getLayout(@LayoutRes int layoutRes);
+String              getQuantityString(int id, int quantity, Object... formatArgs);
+CharSequence        getQuantityText(int id, int quantity);
+String              getResourceEntryName(@AnyRes int anyRes);
+String              getResourceName(@AnyRes int anyRes);
+String              getResourcePackageName(@AnyRes int anyRes);
+String              getResourceTypeName(@AnyRes int anyRes);
+String              getString(@StringRes int stringRes);
+String              getString(@StringRes int stringRes, Object... formatArgs);
+String[]            getStringArray(@ArrayRes int arrayRes);
+CharSequence        getText(@StringRes int stringRes, CharSequence def);
+CharSequence        getText(@StringRes int stringRes);
+CharSequence[]      getTextArray(@ArrayRes int arrayRes);
+void                getValue(String name, TypedValue outValue, boolean resolveRefs);
+void                getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs);
+void                getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs);
+XmlResourceParser   getXml(@XmlRes int xmlRes);
+TypedArray          obtainAttributes(AttributeSet set, int[] attrs);
+TypedArray          obtainTypedArray(@ArrayRes int anyRes);
+InputStream         openRawResource(@RawRes int rawRes);
+AssetFileDescriptor openRawResourceFd(@RawRes int rawRes);
+int[]               getColorArray(@ArrayRes int array);
+// and so on...
 ```
 
 ## ExtrasBinder (★★★★☆)

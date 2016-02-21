@@ -310,7 +310,7 @@ public class ContextUtil {
         Base.getContext().grantUriPermission(toPackage, uri, modeFlags);
     }
 
-    public boolean isRestricted() {
+    public static boolean isRestricted() {
         return Base.getContext().isRestricted();
     }
 

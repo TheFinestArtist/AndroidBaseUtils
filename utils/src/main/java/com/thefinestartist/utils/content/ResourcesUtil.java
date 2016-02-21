@@ -167,15 +167,15 @@ public class ResourcesUtil {
         return Base.getResources().getResourceEntryName(anyRes);
     }
 
-    public String getResourceName(@AnyRes int anyRes) {
+    public static String getResourceName(@AnyRes int anyRes) {
         return Base.getResources().getResourceName(anyRes);
     }
 
-    public String getResourcePackageName(@AnyRes int anyRes) {
+    public static String getResourcePackageName(@AnyRes int anyRes) {
         return Base.getResources().getResourcePackageName(anyRes);
     }
 
-    public String getResourceTypeName(@AnyRes int anyRes) {
+    public static String getResourceTypeName(@AnyRes int anyRes) {
         return Base.getResources().getResourceTypeName(anyRes);
     }
 

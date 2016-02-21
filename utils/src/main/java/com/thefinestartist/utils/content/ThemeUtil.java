@@ -20,36 +20,36 @@ import com.thefinestartist.Base;
  */
 public class ThemeUtil {
 
-    public void applyStyle(int resId, boolean force) {
+    public static void applyStyle(int resId, boolean force) {
         Base.getTheme().applyStyle(resId, force);
     }
 
-    public void dump(int priority, String tag, String prefix) {
+    public static void dump(int priority, String tag, String prefix) {
         Base.getTheme().dump(priority, tag, prefix);
     }
 
     @TargetApi(23)
-    public int getChangingConfigurations() {
+    public static int getChangingConfigurations() {
         return Base.getTheme().getChangingConfigurations();
     }
 
-    public Drawable getDrawable(@DrawableRes int drawableRes) {
+    public static Drawable getDrawable(@DrawableRes int drawableRes) {
         return ResourcesUtil.getDrawable(drawableRes);
     }
 
-    public Resources getResources() {
+    public static Resources getResources() {
         return Base.getResources();
     }
 
-    public TypedArray obtainStyledAttributes(@StyleableRes int[] attrs) {
+    public static TypedArray obtainStyledAttributes(@StyleableRes int[] attrs) {
         return Base.getTheme().obtainStyledAttributes(attrs);
     }
 
-    public TypedArray obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs) {
+    public static TypedArray obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs) {
         return Base.getTheme().obtainStyledAttributes(resid, attrs);
     }
 
-    public TypedArray obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes) {
+    public static TypedArray obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes) {
         return Base.getTheme().obtainStyledAttributes(set, attrs, defStyleAttr, defStyleRes);
     }
 
@@ -57,7 +57,7 @@ public class ThemeUtil {
         return Base.getTheme().resolveAttribute(resid, outValue, resolveRefs);
     }
 
-    public void setTo(Resources.Theme other) {
+    public static void setTo(Resources.Theme other) {
         Base.getTheme().setTo(other);
     }
 }

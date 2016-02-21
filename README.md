@@ -14,6 +14,8 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
 1. [Get started](https://github.com/TheFinestArtist/AndroidBaseUtils#get-started)
 1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#utils)
     1. [Base](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
+    1. [ContextUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#contextutil-)
+    1. [ResourcesUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#resourcesutil-)
     1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
     1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
     1. [UnitConverter](https://github.com/TheFinestArtist/AndroidBaseUtils#unitconverter-)
@@ -21,6 +23,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [DisplayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#displayutil-)
     1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
     1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
+    1. [ThemeUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#themeutil-)
     1. [ActivityBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#activitybuilder-)
     1. [BundleBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#bundlebuilder-)
     1. [PackageUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#packageutil-)
@@ -92,6 +95,18 @@ Theme           Base.getTheme();
 AssetManager    Base.getAssets();
 Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
+```
+
+## ContextUtil (★★★★☆)
+ContextUtil helps to use Context conveniently.
+
+```java
+```
+
+## ResourcesUtil (★★★★☆)
+ResourcesUtil helps to use Resources conveniently.
+
+```java
 ```
 
 ## ExtrasBinder (★★★★☆)
@@ -234,6 +249,22 @@ AlarmManager            ServiceUtil.getAlarmManager();
 AudioManager            ServiceUtil.getAudioManager();
 MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
+```
+
+## ThemeUtil (★★★★☆)
+ThemeUtil helps to use Theme conveniently.
+
+```java
+void        applyStyle(int resId, boolean force);
+void        dump(int priority, String tag, String prefix);
+int         getChangingConfigurations();
+Drawable    getDrawable(@DrawableRes int drawableRes);
+Resources   getResources();
+TypedArray  obtainStyledAttributes(@StyleableRes int[] attrs);
+TypedArray  obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs);
+TypedArray  obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes);
+boolean     resolveAttribute(int resid, TypedValue outValue, boolean resolveRefs);
+void        setTo(Resources.Theme other);
 ```
 
 ## ActivityBuilder (★★☆☆☆)

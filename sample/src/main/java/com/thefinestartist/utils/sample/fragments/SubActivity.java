@@ -2,11 +2,13 @@ package com.thefinestartist.utils.sample.fragments;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.binders.ExtrasBinder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by TheFinestArtist on 2/7/16.
@@ -26,5 +28,9 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ExtrasBinder.bind(this);
+        Log.e("SubActivity", "title: " + title);
+        Log.e("SubActivity", "content: " + content);
+        Log.e("SubActivity", "values: " + values);
+        Log.e("SubActivity", "list: " + list);
     }
 }

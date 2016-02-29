@@ -42,7 +42,7 @@ ext {
     targetCompatibility = JavaVersion.VERSION_1_7
 
     versionCode = 2
-    versionName = '0.8.1'
+    versionName = '0.8.3'
 
-    supportLibVersion = '23.1.1'
+    supportLibVersion = '23.2.0'
 }

@@ -46,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         .set(SubActivity.ARRAY_LIST, list)
                         .start();
 
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                intent.putExtra(SubActivity.TITLE, "Title");
-                intent.putExtra(SubActivity.CONTENT, 1);
-                MainActivity.this.startActivity(intent);
-
                 Fragment1 fragment1 = new Fragment1();
                 Bundle bundle = new Bundle();
                 bundle.putString(Fragment1.NAME, "Name");

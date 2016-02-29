@@ -3,6 +3,7 @@ package com.thefinestartist.utils.ui;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
+import com.thefinestartist.Base;
+import com.thefinestartist.converters.UnitConverter;
 import com.thefinestartist.utils.etc.ThreadUtil;
 import com.thefinestartist.utils.service.ServiceUtil;
 
@@ -107,6 +110,23 @@ public class KeyboardUtil {
 
         view.clearFocus();
         ServiceUtil.getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public static int height = 0;
+    public static final String KEYBOARD_UTIL_PREF = "KEYBOARD_UTIL_PREF";
+    public static final String KEYBOARD_HEIGHT = "KEYBOARD_HEIGHT";
+    public static final int DEFAULT_KEYBOARD_HEIGHT = 200;
+
+    public static int getHeight() {
+        if (height <= 0)
+            height = Base.getContext().getSharedPreferences(KEYBOARD_UTIL_PREF, Context.MODE_PRIVATE).getInt(KEYBOARD_HEIGHT, UnitConverter.dpToPx(DEFAULT_KEYBOARD_HEIGHT));
+
+        return height;
+    }
+
+    public static void setHeight(int height) {
+        KeyboardUtil.height = height;
+        Base.getContext().getSharedPreferences(KEYBOARD_UTIL_PREF, Context.MODE_PRIVATE).edit().putInt(KEYBOARD_HEIGHT, height).apply();
     }
 
 //    coordinatorLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {

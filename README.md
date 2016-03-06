@@ -34,6 +34,7 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
     1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
     1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
+    1. [PreferenceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#preferenceutil-)
 1. Upcoming utils
     1. AgeUtil
     1. AudioManagerUtil
@@ -437,10 +438,32 @@ ThreadUtil helps to deal with thread conveniently.
 boolean     isMain();
 ```
 
+## PreferenceUtil (☆☆☆☆☆)
+PreferenceUtil helps to manage application-wide preferences conveniently.
+
+```java
+boolean        get(String key, boolean defValue);
+int            get(String key, int defValue);
+float          get(String key, float defValue);
+long           get(String key, long defValue);
+String         get(String key, String defValue);
+Set<String>    get(String key, Set<String> defValue);
+C              get(String key, C defValue);
+void           put(String key, boolean value);
+void           put(String key, int value);
+void           put(String key, float value);
+void           put(String key, long value);
+void           put(String key, String value);
+void           put(String key, Set<String> value);
+void           put(String key, C value);
+void           remove(String key);
+```
+
 # Contributors
 [Leonardo Taehwan Kim](https://github.com/thefinestartist)  
 [Marcos Trujillo](https://github.com/Aracem)  
-[Min Kim](https://github.com/openyourboxes)
+[Min Kim](https://github.com/openyourboxes)  
+[Robin Gustafsson](https://github.com/rgson)
 
 # License
 

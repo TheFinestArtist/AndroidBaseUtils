@@ -17,8 +17,9 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [ContextUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#contextutil-)
     1. [ResourcesUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#resourcesutil-)
     1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
-    1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
+    1. [PreferenceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#preferenceutil-)
     1. [UnitConverter](https://github.com/TheFinestArtist/AndroidBaseUtils#unitconverter-)
+    1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
     1. [APILevel](https://github.com/TheFinestArtist/AndroidBaseUtils#apilevel-)
     1. [DisplayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#displayutil-)
     1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
@@ -34,7 +35,6 @@ Any kinds of contributions including **pull requests**, **writing issues**, **em
     1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
     1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
     1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
-    1. [PreferenceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#preferenceutil-)
 1. Upcoming utils
     1. AgeUtil
     1. AudioManagerUtil
@@ -98,7 +98,7 @@ Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```
 
-## ContextUtil (★★★★☆)
+## ContextUtil (★★★★★)
 ContextUtil helps to use Context conveniently.
 
 ```java
@@ -125,7 +125,7 @@ void unbindService(ServiceConnection conn);
 // and so on...
 ```
 
-## ResourcesUtil (★★★★☆)
+## ResourcesUtil (★★★★★)
 ResourcesUtil helps to use Resources conveniently.
 
 ```java
@@ -224,20 +224,28 @@ Proguard
 }
 ```
 
-## KeyboardUtil (★★★★☆)
-KeyboardUtil helps to `show` and `hide` keyboard conveniently.
+## PreferenceUtil (★★★★★)
+PreferenceUtil helps to manage application-wide preferences conveniently.
 
 ```java
-void    KeyboardUtil.show(View);
-void    KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
-
-void    KeyboardUtil.hide(View);
-void    KeyboardUtil.hide(Activity);
-void    KeyboardUtil.hide(Fragment);
-void    KeyboardUtil.hide(Dialog);
+boolean        get(String key, boolean defValue);
+int            get(String key, int defValue);
+float          get(String key, float defValue);
+long           get(String key, long defValue);
+String         get(String key, String defValue);
+Set<String>    get(String key, Set<String> defValue);
+C              get(String key, C defValue);
+void           put(String key, boolean value);
+void           put(String key, int value);
+void           put(String key, float value);
+void           put(String key, long value);
+void           put(String key, String value);
+void           put(String key, Set<String> value);
+void           put(String key, C value);
+void           remove(String key);
 ```
 
-## UnitConverter (★★★★☆)
+## UnitConverter (★★★★★)
 UnitConverter helps to convert dp or sp size into pixel.
 
 ```java
@@ -251,7 +259,20 @@ float   UnitConverter.pxToSp(float px);
 int     UnitConverter.pxToSp(int px);
 ```
 
-## APILevel (★★★☆☆)
+## KeyboardUtil (★★★★☆)
+KeyboardUtil helps to `show` and `hide` keyboard conveniently.
+
+```java
+void    KeyboardUtil.show(View);
+void    KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
+
+void    KeyboardUtil.hide(View);
+void    KeyboardUtil.hide(Activity);
+void    KeyboardUtil.hide(Fragment);
+void    KeyboardUtil.hide(Dialog);
+```
+
+## APILevel (★★★★☆)
 `APILevel` helps to check device API `Build.VERSION` conveniently.
 ```java
 boolean APILevel.require(int level); // Build.VERSION.SDK_INT >= level
@@ -271,7 +292,7 @@ boolean APILevel.depecatedAtGingerbread();
 // and so on...
 ```
 
-## DisplayUtil (★★★☆☆)
+## DisplayUtil (★★★★☆)
 DisplayUtil helps to calculate screen size conveniently.
 
 ```java
@@ -286,7 +307,7 @@ int         DisplayUtil.getActionBarHeight();
 int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-## ViewUtil (★★☆☆☆)
+## ViewUtil (★★★☆☆)
 ViewUtil helps to set background drawable conveniently.
 
 ```java
@@ -294,7 +315,7 @@ void    ViewUtil.setBackground(View view, Drawable drawable);
 void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
-## ServiceUtil (★★☆☆☆)
+## ServiceUtil (★★★☆☆)
 ServiceUtil helps to get Android system service conveniently.
 
 ```java
@@ -438,32 +459,11 @@ ThreadUtil helps to deal with thread conveniently.
 boolean     isMain();
 ```
 
-## PreferenceUtil (☆☆☆☆☆)
-PreferenceUtil helps to manage application-wide preferences conveniently.
-
-```java
-boolean        get(String key, boolean defValue);
-int            get(String key, int defValue);
-float          get(String key, float defValue);
-long           get(String key, long defValue);
-String         get(String key, String defValue);
-Set<String>    get(String key, Set<String> defValue);
-C              get(String key, C defValue);
-void           put(String key, boolean value);
-void           put(String key, int value);
-void           put(String key, float value);
-void           put(String key, long value);
-void           put(String key, String value);
-void           put(String key, Set<String> value);
-void           put(String key, C value);
-void           remove(String key);
-```
-
 # Contributors
-[Leonardo Taehwan Kim](https://github.com/thefinestartist)  
-[Marcos Trujillo](https://github.com/Aracem)  
+[Leonardo Taehwan Kim](https://github.com/thefinestartist) 
 [Min Kim](https://github.com/openyourboxes)  
-[Robin Gustafsson](https://github.com/rgson)
+[Robin Gustafsson](https://github.com/rgson)  
+[Marcos Trujillo](https://github.com/Aracem)  
 
 # License
 

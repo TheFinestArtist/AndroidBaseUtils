@@ -38,4 +38,3 @@ dependencies {
 //    desc = 'Context free and basic utils to build Android project conveniently.'
 //    website = 'https://github.com/TheFinestArtist/AndroidBaseUtils'
 //}
-//$ ./gradlew clean build bintrayUpload -PbintrayUser=thefinestartist -PbintrayKey=BINTRAY_KEY -PdryRun=false

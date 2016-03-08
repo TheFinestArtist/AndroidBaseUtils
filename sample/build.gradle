@@ -29,7 +29,7 @@ dependencies {
 //    compile project(':utils')
 //    apt project(':compilers')
 //    compile 'com.thefinestartist:annotations:0.8.1'
-    compile 'com.thefinestartist:utils:0.8.3'
-    apt 'com.thefinestartist:compilers:0.8.3'
+    compile 'com.thefinestartist:utils:0.8.4'
+    apt 'com.thefinestartist:compilers:0.8.4'
     compile 'com.android.support:appcompat-v7:23.1.1'
 }

@@ -447,7 +447,7 @@ boolean     isMain();
 ```
 
 # Contributors
-[Leonardo Taehwan Kim](https://github.com/thefinestartist) 
+[Leonardo Taehwan Kim](https://github.com/thefinestartist)  
 [Min Kim](https://github.com/openyourboxes)  
 [Robin Gustafsson](https://github.com/rgson)  
 [Marcos Trujillo](https://github.com/Aracem)  

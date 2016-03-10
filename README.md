@@ -215,6 +215,9 @@ Proguard
 PreferenceUtil helps to manage application-wide preferences conveniently.
 
 ```java
+String         getDefaultName();
+void           setDefaultName(String name);
+
 boolean        get(String key, boolean defValue);
 int            get(String key, int defValue);
 float          get(String key, float defValue);
@@ -222,6 +225,15 @@ long           get(String key, long defValue);
 String         get(String key, String defValue);
 Set<String>    get(String key, Set<String> defValue);
 C              get(String key, C defValue);
+
+boolean        get(String name, String key, boolean defValue);
+int            get(String name, String key, int defValue);
+float          get(String name, String key, float defValue);
+long           get(String name, String key, long defValue);
+String         get(String name, String key, String defValue);
+Set<String>    get(String name, String key, Set<String> defValue);
+C              get(String name, String key, C defValue);
+
 void           put(String key, boolean value);
 void           put(String key, int value);
 void           put(String key, float value);
@@ -229,7 +241,20 @@ void           put(String key, long value);
 void           put(String key, String value);
 void           put(String key, Set<String> value);
 void           put(String key, C value);
+
+void           put(String name, String key, boolean value);
+void           put(String name, String key, int value);
+void           put(String name, String key, float value);
+void           put(String name, String key, long value);
+void           put(String name, String key, String value);
+void           put(String name, String key, Set<String> value);
+void           put(String name, String key, C value);
+
 void           remove(String key);
+void           remove(String name, String key);
+
+void           clear();
+void           clear(String name);
 ```
 
 ## UnitConverter (★★★★★)

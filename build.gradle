@@ -45,6 +45,7 @@ ext {
     versionName = '0.8.5'
 
     supportLibVersion = '23.2.0'
+    playLibVersion = '8.4.0'
 }
 
 //$ ./gradlew clean build bintrayUpload -PbintrayUser=thefinestartist -PbintrayKey=BINTRAY_KEY -PdryRun=false

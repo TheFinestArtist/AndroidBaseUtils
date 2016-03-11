@@ -7,7 +7,7 @@
 
 #### Context free and basic utils to build Android project conveniently
 
-Any kinds of contributions including **pull requests**, **writing issues**, **email me personally** are always welcome. Let me know if you have any idea about basic utils for Android development.
+Any kinds of contributions including **pull requests**, **new issues**, **personal emails** are always welcome. Let me know if you have any idea about basic utils for Android development.
 
 
 # Table of Contents

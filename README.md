@@ -3,7 +3,7 @@
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-<img src="https://github.com/TheFinestArtist/AndroidBaseUtils/blob/master/art/256_1.png?raw=true">
+![AndroidBaseUtils Art Image](art/256_1.png)
 
 #### Context free and basic utils to build Android project conveniently
 
@@ -11,32 +11,32 @@ Any kinds of contributions including **pull requests**, **new issues**, **person
 
 
 # Table of Contents
-1. [Get started](https://github.com/TheFinestArtist/AndroidBaseUtils#get-started)
-1. [Utils](https://github.com/TheFinestArtist/AndroidBaseUtils#utils)
-    1. [Base](https://github.com/TheFinestArtist/AndroidBaseUtils#base-)
-    1. [ContextUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#contextutil-)
-    1. [ResourcesUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#resourcesutil-)
-    1. [ExtrasBinder](https://github.com/TheFinestArtist/AndroidBaseUtils#extrasbinder-)
-    1. [PreferenceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#preferenceutil-)
-    1. [UnitConverter](https://github.com/TheFinestArtist/AndroidBaseUtils#unitconverter-)
-    1. [KeyboardUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#keyboardutil-)
-    1. [APILevel](https://github.com/TheFinestArtist/AndroidBaseUtils#apilevel-)
-    1. [DisplayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#displayutil-)
-    1. [ViewUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#viewutil-)
-    1. [ServiceUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#serviceutil-)
-    1. [ThemeUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#themeutil-)
-    1. [ActivityBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#activitybuilder-)
-    1. [BundleBuilder](https://github.com/TheFinestArtist/AndroidBaseUtils#bundlebuilder-)
-    1. [PackageUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#packageutil-)
-    1. [VibratorUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#vibratorutil-)
-    1. [ClipboardManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#clipboardmanagerutil-)
-    1. [TypedValueUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#typedvalueutil-)
-    1. [WindowManagerUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#windowmanagerutil-)
-    1. [IntArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#intarrayutil-)
-    1. [SparseArrayUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#sparsearrayutil-)
-    1. [ThreadUtil](https://github.com/TheFinestArtist/AndroidBaseUtils#threadutil-)
-1. [Contributors](https://github.com/TheFinestArtist/AndroidBaseUtils#contributors)
-1. [License](https://github.com/TheFinestArtist/AndroidBaseUtils#license)
+1. [Get started](#get-started)
+1. [Utils](#utils)
+    1. [Base](#base-)
+    1. [ContextUtil](#contextutil-)
+    1. [ResourcesUtil](#resourcesutil-)
+    1. [ExtrasBinder](#extrasbinder-)
+    1. [PreferenceUtil](#preferenceutil-)
+    1. [UnitConverter](#unitconverter-)
+    1. [KeyboardUtil](#keyboardutil-)
+    1. [APILevel](#apilevel-)
+    1. [DisplayUtil](#displayutil-)
+    1. [ViewUtil](#viewutil-)
+    1. [ServiceUtil](#serviceutil-)
+    1. [ThemeUtil](#themeutil-)
+    1. [ActivityBuilder](#activitybuilder-)
+    1. [BundleBuilder](#bundlebuilder-)
+    1. [PackageUtil](#packageutil-)
+    1. [VibratorUtil](#vibratorutil-)
+    1. [ClipboardManagerUtil](#clipboardmanagerutil-)
+    1. [TypedValueUtil](#typedvalueutil-)
+    1. [WindowManagerUtil](#windowmanagerutil-)
+    1. [IntArrayUtil](#intarrayutil-)
+    1. [SparseArrayUtil](#sparsearrayutil-)
+    1. [ThreadUtil](#threadutil-)
+1. [Contributors](#contributors)
+1. [License](#license)
 
 # Get started
 

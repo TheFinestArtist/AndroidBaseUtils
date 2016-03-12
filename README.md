@@ -295,12 +295,12 @@ boolean APILevel.requireFroyo();
 boolean APILevel.requireGingerbread();
 // and so on...
 
-boolean APILevel.depecatedAt(int level); // Build.VERSION.SDK_INT < level
-boolean APILevel.depecatedAtCupcake();
-boolean APILevel.depecatedAtDonut();
-boolean APILevel.depecatedAtEclair();
-boolean APILevel.depecatedAtFroyo();
-boolean APILevel.depecatedAtGingerbread();
+boolean APILevel.deprecatedAt(int level); // Build.VERSION.SDK_INT < level
+boolean APILevel.deprecatedAtCupcake();
+boolean APILevel.deprecatedAtDonut();
+boolean APILevel.deprecatedAtEclair();
+boolean APILevel.deprecatedAtFroyo();
+boolean APILevel.deprecatedAtGingerbread();
 // and so on...
 ```
 

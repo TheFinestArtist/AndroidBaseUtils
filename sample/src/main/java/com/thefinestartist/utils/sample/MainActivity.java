@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import com.thefinestartist.builders.ActivityBuilder;
 import com.thefinestartist.builders.BundleBuilder;
 import com.thefinestartist.utils.sample.fragments.SubActivity;
+import com.thefinestartist.utils.ui.DisplayUtil;
 
 import java.util.ArrayList;
 
@@ -46,19 +48,21 @@ public class MainActivity extends AppCompatActivity {
 //                        .set(SubActivity.ARRAY_LIST, list)
 //                        .start();
 
-                Fragment1 fragment1 = new Fragment1();
-                Bundle bundle = new Bundle();
-                bundle.putString(Fragment1.NAME, "Name");
-                fragment1.setArguments(bundle);
+//                Fragment1 fragment1 = new Fragment1();
+//                Bundle bundle = new Bundle();
+//                bundle.putString(Fragment1.NAME, "Name");
+//                fragment1.setArguments(bundle);
+//
+//                fragment1.setArguments(new BundleBuilder()
+//                        .set(Fragment1.NAME, "Hoy")
+//                        .build());
+//
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.add(android.R.id.content, fragment1);
+//                fragmentTransaction.commitAllowingStateLoss();
 
-                fragment1.setArguments(new BundleBuilder()
-                        .set(Fragment1.NAME, "Hoy")
-                        .build());
-
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(android.R.id.content, fragment1);
-                fragmentTransaction.commitAllowingStateLoss();
+                Log.e("DisplayUtil","DisplayUtil: " + DisplayUtil.getWidth());
             }
         });
 

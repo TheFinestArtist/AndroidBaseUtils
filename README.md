@@ -7,7 +7,7 @@
 
 #### Context free and basic utils to build Android project conveniently
 
-Any kinds of contributions including **pull requests**, **new issues**, **personal emails** are always welcome. Let me know if you have any idea about basic utils for Android development.
+Any kinds of contributions including **pull requests**, **registering new issues**, **sending me personal emails** are always welcome. Let me know if you have any idea about basic utils for Android development.
 
 
 # Table of Contents
@@ -155,7 +155,7 @@ int[]               getColorArray(@ArrayRes int array);
 // and so on...
 ```
 
-## ExtrasBinder (★★★★☆)
+## ExtrasBinder (★★★★★)
 Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable. ExtrasBinder will consider `annotation variable` as key. If there is no annotation variable, it will consider `variable name` as key.
 
 ```java

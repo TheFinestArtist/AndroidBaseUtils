@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
 //                        .set(SubActivity.TITLE, "Hey")
 //                        .start();
 
-                ArrayList<Integer> list = new ArrayList<>();
-                list.add(1);
-                new ActivityBuilder(SubActivity.class)
-                        .set(SubActivity.TITLE, "Hey")
-                        .set(SubActivity.CONTENT, 1)
-                        .set("values", new int[]{1, 2, 3})
-                        .set(SubActivity.ARRAY_LIST, list)
-                        .start();
+//                ArrayList<Integer> list = new ArrayList<>();
+//                list.add(1);
+//                new ActivityBuilder(SubActivity.class)
+//                        .set(SubActivity.TITLE, "Hey")
+//                        .set(SubActivity.CONTENT, 1)
+//                        .set("values", new int[]{1, 2, 3})
+//                        .set(SubActivity.ARRAY_LIST, list)
+//                        .start();
 
                 Fragment1 fragment1 = new Fragment1();
                 Bundle bundle = new Bundle();

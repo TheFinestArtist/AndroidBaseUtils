@@ -18,6 +18,9 @@ import com.thefinestartist.utils.service.WindowManagerUtil;
  */
 public class DisplayUtil {
 
+    private static int displayWidth = Integer.MAX_VALUE;
+    private static int displayHeight = Integer.MAX_VALUE;
+
     public static int getWidth() {
         Display display = WindowManagerUtil.getDefaultDisplay();
         if (APILevel.require(13)) {

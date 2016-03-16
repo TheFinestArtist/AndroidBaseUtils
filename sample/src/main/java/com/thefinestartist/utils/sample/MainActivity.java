@@ -48,21 +48,21 @@ public class MainActivity extends AppCompatActivity {
 //                        .set(SubActivity.ARRAY_LIST, list)
 //                        .start();
 
-//                Fragment1 fragment1 = new Fragment1();
-//                Bundle bundle = new Bundle();
-//                bundle.putString(Fragment1.NAME, "Name");
-//                fragment1.setArguments(bundle);
+                Fragment1 fragment1 = new Fragment1();
+                Bundle bundle = new Bundle();
+                bundle.putString(Fragment1.NAME, "Name");
+                fragment1.setArguments(bundle);
 //
 //                fragment1.setArguments(new BundleBuilder()
 //                        .set(Fragment1.NAME, "Hoy")
 //                        .build());
 //
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.add(android.R.id.content, fragment1);
-//                fragmentTransaction.commitAllowingStateLoss();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(android.R.id.content, fragment1);
+                fragmentTransaction.commitAllowingStateLoss();
 
-                Log.e("DisplayUtil","DisplayUtil: " + DisplayUtil.getWidth());
+//                Log.e("DisplayUtil","DisplayUtil: " + DisplayUtil.getWidth());
             }
         });
 

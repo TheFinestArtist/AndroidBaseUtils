@@ -287,7 +287,7 @@ void    KeyboardUtil.hide(Dialog);
 ## APILevel (★★★★☆)
 `APILevel` helps to check device API `Build.VERSION` conveniently.
 
-Update your Android Studio lint option before you use this class.  
+Update your Android Studio lint option before you use this class. [Show Image](https://raw.githubusercontent.com/TheFinestArtist/AndroidBaseUtils/master/art/APILevel%20Lint%20Option.png)  
 `Android Studio`  
 → `Preferences...`  
 → `Editor`  

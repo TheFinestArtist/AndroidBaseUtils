@@ -12,10 +12,21 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
     }
+
+    signingConfigs {
+        release {
+            storeFile file("../sample/keystore/keystore.jks")
+            storePassword "baseutils"
+            keyAlias "thefinestartist"
+            keyPassword "baseutils"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled true
@@ -26,10 +37,10 @@ android {
 
 dependencies {
 //    compile project(':annotations')
-//    compile project(':utils')
+    compile project(':utils')
 //    apt project(':compilers')
 //    compile 'com.thefinestartist:annotations:0.8.1'
-    compile 'com.thefinestartist:utils:0.8.5'
+//    compile 'com.thefinestartist:utils:0.8.5'
     apt 'com.thefinestartist:compilers:0.8.5'
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     compile 'com.jakewharton:butterknife:7.0.1'

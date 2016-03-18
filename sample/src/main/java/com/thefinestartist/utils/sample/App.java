@@ -1,6 +1,7 @@
 package com.thefinestartist.utils.sample;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.thefinestartist.Base;
 
@@ -12,5 +13,20 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         Base.initialize(this);
+
+        Log.v("App", "App v");
+        Log.d("App", "App d");
+        Log.i("App", "App i");
+        Log.w("App", "App w");
+        Log.e("App", "App e");
+        Log.e("App", "Caller: " + Fragment1.getCallerClassName());
+
+        char c = 'a';
+        log(c);
+    }
+
+    public void log(Object message) {
+        Log.e("App", "Log: " + message);
+        Log.e("App", "Log: " + message.getClass().getCanonicalName());
     }
 }

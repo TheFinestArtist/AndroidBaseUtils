@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.binders.ExtrasBinder;
+import com.thefinestartist.helpers.log.LogHelper;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +21,7 @@ import butterknife.ButterKnife;
 public class Fragment1 extends Fragment {
 
     public static final String NAME = "NAME";
+    LogHelper logHelper = new LogHelper(Fragment1.class);
 
     @Extra(NAME) String name;
     @Bind(R.id.view) View view;
@@ -30,8 +32,20 @@ public class Fragment1 extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment1_layout, container, false);
         ButterKnife.bind(this, rootView);
         ExtrasBinder.bind(this);
-        Log.e("Fragment1", "Name: " + name);
+        logHelper.v("Hey");
+        logHelper.v("Hellow");
         return rootView;
+    }
+
+    public static String getCallerClassName() {
+        StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
+        for (int i = 1; i < stElements.length; i++) {
+            StackTraceElement ste = stElements[i];
+            if (!ste.getClassName().equals(Fragment1.class.getName()) && ste.getClassName().indexOf("java.lang.Thread") != 0) {
+                return ste.getClassName();
+            }
+        }
+        return null;
     }
 
 }

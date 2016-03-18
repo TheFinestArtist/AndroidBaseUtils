@@ -174,26 +174,26 @@ logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefines
 ContextUtil helps to use Context conveniently.
 
 ```java
-boolean         bindService(Intent service, ServiceConnection conn, int flags);
-int             checkCallingOrSelfPermission(String permission);
-int             checkSelfPermission(@NonNull String permission);
-void            enforceCallingOrSelfPermission(String permission, String message);
-void            enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
-ApplicationInfo getApplicationInfo();
-File            getCacheDir();
-File            getExternalCacheDir();
-File            getExternalFilesDir(String type);
-Looper          getMainLooper();
-Object          getSystemService(String name);
-void            sendBroadcast(Intent intent, String receiverPermission);
-void            sendBroadcast(Intent intent);
-boolean         startActivities(Intent[] intents, Bundle options);
-boolean         startActivities(Intent[] intents);
-void            startActivity(@NonNull Intent intent);
-void            startActivity(Intent intent, Bundle options);
-ComponentName   startService(Intent service);
-boolean         stopService(Intent service);
-void            unbindService(ServiceConnection conn);
+boolean         ContextUtil.bindService(Intent service, ServiceConnection conn, int flags);
+int             ContextUtil.checkCallingOrSelfPermission(String permission);
+int             ContextUtil.checkSelfPermission(@NonNull String permission);
+void            ContextUtil.enforceCallingOrSelfPermission(String permission, String message);
+void            ContextUtil.enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
+ApplicationInfo ContextUtil.getApplicationInfo();
+File            ContextUtil.getCacheDir();
+File            ContextUtil.getExternalCacheDir();
+File            ContextUtil.getExternalFilesDir(String type);
+Looper          ContextUtil.getMainLooper();
+Object          ContextUtil.getSystemService(String name);
+void            ContextUtil.sendBroadcast(Intent intent, String receiverPermission);
+void            ContextUtil.sendBroadcast(Intent intent);
+boolean         ContextUtil.startActivities(Intent[] intents, Bundle options);
+boolean         ContextUtil.startActivities(Intent[] intents);
+void            ContextUtil.startActivity(@NonNull Intent intent);
+void            ContextUtil.startActivity(Intent intent, Bundle options);
+ComponentName   ContextUtil.startService(Intent service);
+boolean         ContextUtil.stopService(Intent service);
+void            ContextUtil.unbindService(ServiceConnection conn);
 // and so on...
 ```
 
@@ -201,42 +201,42 @@ void            unbindService(ServiceConnection conn);
 ResourcesUtil helps to use Resources conveniently.
 
 ```java
-XmlResourceParser   getAnimation(@AnimRes int animRes);
-boolean             getBoolean(@BoolRes int boolRes);
-int                 getColor(@ColorRes int colorRes);
-int                 getColor(@ColorRes int colorRes, Resources.Theme theme);
-ColorStateList      getColorStateList(@ColorRes int colorRes);
-ColorStateList      getColorStateList(@ColorRes int colorRes, Resources.Theme theme);
-float               getDimension(@DimenRes int dimenRes);
-int                 getDimensionPixelOffset(@DimenRes int dimenRes);
-int                 getDimensionPixelSize(@DimenRes int dimenRes);
-DisplayMetrics      getDisplayMetrics();
-Drawable            getDrawable(@DrawableRes int drawableRes);
-int                 getIdentifier(String name, String defType, String defPackage);
-int[]               getIntArray(@ArrayRes int arrayRes);
-int                 getInteger(@IntegerRes int integerRes);
-XmlResourceParser   getLayout(@LayoutRes int layoutRes);
-String              getQuantityString(int id, int quantity, Object... formatArgs);
-CharSequence        getQuantityText(int id, int quantity);
-String              getResourceEntryName(@AnyRes int anyRes);
-String              getResourceName(@AnyRes int anyRes);
-String              getResourcePackageName(@AnyRes int anyRes);
-String              getResourceTypeName(@AnyRes int anyRes);
-String              getString(@StringRes int stringRes);
-String              getString(@StringRes int stringRes, Object... formatArgs);
-String[]            getStringArray(@ArrayRes int arrayRes);
-CharSequence        getText(@StringRes int stringRes, CharSequence def);
-CharSequence        getText(@StringRes int stringRes);
-CharSequence[]      getTextArray(@ArrayRes int arrayRes);
-void                getValue(String name, TypedValue outValue, boolean resolveRefs);
-void                getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs);
-void                getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs);
-XmlResourceParser   getXml(@XmlRes int xmlRes);
-TypedArray          obtainAttributes(AttributeSet set, int[] attrs);
-TypedArray          obtainTypedArray(@ArrayRes int anyRes);
-InputStream         openRawResource(@RawRes int rawRes);
-AssetFileDescriptor openRawResourceFd(@RawRes int rawRes);
-int[]               getColorArray(@ArrayRes int array);
+XmlResourceParser   ResourcesUtil.getAnimation(@AnimRes int animRes);
+boolean             ResourcesUtil.getBoolean(@BoolRes int boolRes);
+int                 ResourcesUtil.getColor(@ColorRes int colorRes);
+int                 ResourcesUtil.getColor(@ColorRes int colorRes, Resources.Theme theme);
+ColorStateList      ResourcesUtil.getColorStateList(@ColorRes int colorRes);
+ColorStateList      ResourcesUtil.getColorStateList(@ColorRes int colorRes, Resources.Theme theme);
+float               ResourcesUtil.getDimension(@DimenRes int dimenRes);
+int                 ResourcesUtil.getDimensionPixelOffset(@DimenRes int dimenRes);
+int                 ResourcesUtil.getDimensionPixelSize(@DimenRes int dimenRes);
+DisplayMetrics      ResourcesUtil.getDisplayMetrics();
+Drawable            ResourcesUtil.getDrawable(@DrawableRes int drawableRes);
+int                 ResourcesUtil.getIdentifier(String name, String defType, String defPackage);
+int[]               ResourcesUtil.getIntArray(@ArrayRes int arrayRes);
+int                 ResourcesUtil.getInteger(@IntegerRes int integerRes);
+XmlResourceParser   ResourcesUtil.getLayout(@LayoutRes int layoutRes);
+String              ResourcesUtil.getQuantityString(int id, int quantity, Object... formatArgs);
+CharSequence        ResourcesUtil.getQuantityText(int id, int quantity);
+String              ResourcesUtil.getResourceEntryName(@AnyRes int anyRes);
+String              ResourcesUtil.getResourceName(@AnyRes int anyRes);
+String              ResourcesUtil.getResourcePackageName(@AnyRes int anyRes);
+String              ResourcesUtil.getResourceTypeName(@AnyRes int anyRes);
+String              ResourcesUtil.getString(@StringRes int stringRes);
+String              ResourcesUtil.getString(@StringRes int stringRes, Object... formatArgs);
+String[]            ResourcesUtil.getStringArray(@ArrayRes int arrayRes);
+CharSequence        ResourcesUtil.getText(@StringRes int stringRes, CharSequence def);
+CharSequence        ResourcesUtil.getText(@StringRes int stringRes);
+CharSequence[]      ResourcesUtil.getTextArray(@ArrayRes int arrayRes);
+void                ResourcesUtil.getValue(String name, TypedValue outValue, boolean resolveRefs);
+void                ResourcesUtil.getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs);
+void                ResourcesUtil.getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs);
+XmlResourceParser   ResourcesUtil.getXml(@XmlRes int xmlRes);
+TypedArray          ResourcesUtil.obtainAttributes(AttributeSet set, int[] attrs);
+TypedArray          ResourcesUtil.obtainTypedArray(@ArrayRes int anyRes);
+InputStream         ResourcesUtil.openRawResource(@RawRes int rawRes);
+AssetFileDescriptor ResourcesUtil.openRawResourceFd(@RawRes int rawRes);
+int[]               ResourcesUtil.getColorArray(@ArrayRes int array);
 // and so on...
 ```
 
@@ -244,46 +244,46 @@ int[]               getColorArray(@ArrayRes int array);
 PreferenceUtil helps to manage application-wide preferences conveniently.
 
 ```java
-String         getDefaultName();
-void           setDefaultName(String name);
+String         PreferenceUtil.getDefaultName();
+void           PreferenceUtil.setDefaultName(String name);
 
-boolean        get(String key, boolean defValue);
-int            get(String key, int defValue);
-float          get(String key, float defValue);
-long           get(String key, long defValue);
-String         get(String key, String defValue);
-Set<String>    get(String key, Set<String> defValue);
-C              get(String key, C defValue);
+boolean        PreferenceUtil.get(String key, boolean defValue);
+int            PreferenceUtil.get(String key, int defValue);
+float          PreferenceUtil.get(String key, float defValue);
+long           PreferenceUtil.get(String key, long defValue);
+String         PreferenceUtil.get(String key, String defValue);
+Set<String>    PreferenceUtil.get(String key, Set<String> defValue);
+C              PreferenceUtil.get(String key, C defValue);
 
-boolean        get(String name, String key, boolean defValue);
-int            get(String name, String key, int defValue);
-float          get(String name, String key, float defValue);
-long           get(String name, String key, long defValue);
-String         get(String name, String key, String defValue);
-Set<String>    get(String name, String key, Set<String> defValue);
-C              get(String name, String key, C defValue);
+boolean        PreferenceUtil.get(String name, String key, boolean defValue);
+int            PreferenceUtil.get(String name, String key, int defValue);
+float          PreferenceUtil.get(String name, String key, float defValue);
+long           PreferenceUtil.get(String name, String key, long defValue);
+String         PreferenceUtil.get(String name, String key, String defValue);
+Set<String>    PreferenceUtil.get(String name, String key, Set<String> defValue);
+C              PreferenceUtil.get(String name, String key, C defValue);
 
-void           put(String key, boolean value);
-void           put(String key, int value);
-void           put(String key, float value);
-void           put(String key, long value);
-void           put(String key, String value);
-void           put(String key, Set<String> value);
-void           put(String key, C value);
+void           PreferenceUtil.put(String key, boolean value);
+void           PreferenceUtil.put(String key, int value);
+void           PreferenceUtil.put(String key, float value);
+void           PreferenceUtil.put(String key, long value);
+void           PreferenceUtil.put(String key, String value);
+void           PreferenceUtil.put(String key, Set<String> value);
+void           PreferenceUtil.put(String key, C value);
 
-void           put(String name, String key, boolean value);
-void           put(String name, String key, int value);
-void           put(String name, String key, float value);
-void           put(String name, String key, long value);
-void           put(String name, String key, String value);
-void           put(String name, String key, Set<String> value);
-void           put(String name, String key, C value);
+void           PreferenceUtil.put(String name, String key, boolean value);
+void           PreferenceUtil.put(String name, String key, int value);
+void           PreferenceUtil.put(String name, String key, float value);
+void           PreferenceUtil.put(String name, String key, long value);
+void           PreferenceUtil.put(String name, String key, String value);
+void           PreferenceUtil.put(String name, String key, Set<String> value);
+void           PreferenceUtil.put(String name, String key, C value);
 
-void           remove(String key);
-void           remove(String name, String key);
+void           PreferenceUtil.remove(String key);
+void           PreferenceUtil.remove(String name, String key);
 
-void           clear();
-void           clear(String name);
+void           PreferenceUtil.clear();
+void           PreferenceUtil.clear(String name);
 ```
 
 ## ExtrasBinder (★★★★★)
@@ -444,16 +444,16 @@ MediaRouter             ServiceUtil.getMediaRouter();
 ThemeUtil helps to use Theme conveniently.
 
 ```java
-void        applyStyle(int resId, boolean force);
-void        dump(int priority, String tag, String prefix);
-int         getChangingConfigurations();
-Drawable    getDrawable(@DrawableRes int drawableRes);
-Resources   getResources();
-TypedArray  obtainStyledAttributes(@StyleableRes int[] attrs);
-TypedArray  obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs);
-TypedArray  obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes);
-boolean     resolveAttribute(int resid, TypedValue outValue, boolean resolveRefs);
-void        setTo(Resources.Theme other);
+void        ThemeUtil.applyStyle(int resId, boolean force);
+void        ThemeUtil.dump(int priority, String tag, String prefix);
+int         ThemeUtil.getChangingConfigurations();
+Drawable    ThemeUtil.getDrawable(@DrawableRes int drawableRes);
+Resources   ThemeUtil.getResources();
+TypedArray  ThemeUtil.obtainStyledAttributes(@StyleableRes int[] attrs);
+TypedArray  ThemeUtil.obtainStyledAttributes(@StyleRes int resid, @StyleableRes int[] attrs);
+TypedArray  ThemeUtil.obtainStyledAttributes(AttributeSet set, @StyleableRes int[] attrs, @AttrRes int defStyleAttr, @StyleRes int defStyleRes);
+boolean     ThemeUtil.resolveAttribute(int resid, TypedValue outValue, boolean resolveRefs);
+void        ThemeUtil.setTo(Resources.Theme other);
 ```
 
 ## ActivityBuilder (★★☆☆☆)
@@ -462,18 +462,18 @@ ActivityBuilder helps to build Activity Intent and start Activity.
 ```java
 Constructor         ActivityBuilder(@NonNull Class<C> clazz);
 
-ActivityBuilder     set(@NonNull String key, T value);
-ActivityBuilder     set(@NonNull String key, Parcelable value);
-ActivityBuilder     set(@NonNull String key, Parcelable[] value);
-ActivityBuilder     set(@NonNull String key, ArrayList<T> value);
-ActivityBuilder     remove(@NonNull String key);
-ActivityBuilder     setFlags(int flags);
-ActivityBuilder     addFlags(int flags);
+ActivityBuilder     ActivityBuilder.set(@NonNull String key, T value);
+ActivityBuilder     ActivityBuilder.set(@NonNull String key, Parcelable value);
+ActivityBuilder     ActivityBuilder.set(@NonNull String key, Parcelable[] value);
+ActivityBuilder     ActivityBuilder.set(@NonNull String key, ArrayList<T> value);
+ActivityBuilder     ActivityBuilder.remove(@NonNull String key);
+ActivityBuilder     ActivityBuilder.setFlags(int flags);
+ActivityBuilder     ActivityBuilder.addFlags(int flags);
 
-Intent              buildIntent();
-void                start();
-void                startForResult(@NonNull Activity activity, int requestCode);
-void                startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options);
+Intent              ActivityBuilder.buildIntent();
+void                ActivityBuilder.start();
+void                ActivityBuilder.startForResult(@NonNull Activity activity, int requestCode);
+void                ActivityBuilder.startForResult(@NonNull Activity activity, int requestCode, @Nullable Bundle options);
 ```
 
 ```java
@@ -489,9 +489,9 @@ new ActivityBuilder(YourActivity.class)
 BundleBuilder helps to build Bundle conveniently.
 
 ```java
-BundleBuilder   set(String key, T value);
-T               get(String key);
-Bundle          build();
+BundleBuilder   BundleBuilder.set(String key, T value);
+T               BundleBuilder.get(String key);
+Bundle          BundleBuilder.build();
 ```
 
 ```java
@@ -504,10 +504,10 @@ Bundle bundle = new BundleBuilder()
 PackageUtil helps to handle methods related to package.
 
 ```java
-boolean     isInstalled(String packageName);
-String      getPackageName();
-void        openPlayStore();
-void        openPlayStore(String packageName);
+boolean     PackageUtil.isInstalled(String packageName);
+String      PackageUtil.getPackageName();
+void        PackageUtil.openPlayStore();
+void        PackageUtil.openPlayStore(String packageName);
 ```
 
 ## VibratorUtil (★☆☆☆☆)
@@ -550,22 +550,22 @@ void        WindowManagerUtil.removeViewImmediate(View view);
 IntArrayUtil helps to deal with IntArray conveniently.
 
 ```java
-boolean     contains(int[] array, int value);
-int[]       add(int[] array, int value);
+boolean     IntArrayUtil.contains(int[] array, int value);
+int[]       IntArrayUtil.add(int[] array, int value);
 ```
 
 ## SparseArrayUtil (☆☆☆☆☆)
 SparseArrayUtil helps to deal with SparseArray conveniently.
 
 ```java
-ArrayList<C>    asArrayList(SparseArray<C> sparseArray);
+ArrayList<C>    SparseArrayUtil.asArrayList(SparseArray<C> sparseArray);
 ```
 
 ## ThreadUtil (☆☆☆☆☆)
 ThreadUtil helps to deal with thread conveniently.
 
 ```java
-boolean     isMain();
+boolean     ThreadUtil.isMain();
 ```
 
 # Contributors

@@ -288,12 +288,14 @@ void    KeyboardUtil.hide(Dialog);
 `APILevel` helps to check device API `Build.VERSION` conveniently.
 
 Update your Android Studio lint option before you use this class. <a href="https://raw.githubusercontent.com/TheFinestArtist/AndroidBaseUtils/master/art/APILevel%20Lint%20Option.png" target="_blank">Show Image</a>  
-`Android Studio`  
-→ `Preferences...`  
-→ `Editor`  
-→ `Inspections`  
-→ `Android Lint`  
-→ Set `Severity` of `Calling new methods on older versions` as `Warning`.
+```java
+→ Android Studio  
+→ Preferences...  
+→ Editor  
+→ Inspections  
+→ Android Lint  
+→ Set Severity of Calling new methods on older versions as Warning.
+```
 
 ```java
 boolean APILevel.require(int level); // Build.VERSION.SDK_INT >= level

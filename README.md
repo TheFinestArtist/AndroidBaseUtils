@@ -294,7 +294,8 @@ void    KeyboardUtil.hide(Dialog);
 → Editor  
 → Inspections  
 → Android Lint  
-→ Set Severity of Calling new methods on older versions as Warning.
+→ Calling new methods on older versions
+→ Set Severity as Warning.
 ```
 
 ```java

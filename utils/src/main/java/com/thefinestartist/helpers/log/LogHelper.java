@@ -11,6 +11,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.StringReader;
+import java.io.StringWriter;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+
 /**
  * LogHelper helps to deal with {@link Log} conveniently.
  *
@@ -19,6 +30,7 @@ import org.json.JSONObject;
 public class LogHelper {
 
     private static final int INDENT_SPACES = 4;
+    // http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%E2%94%80-%E2%95%BF%EF%BF%A8%5D
     private static final String TOP_DIVIDER = "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
     private static final String MIDDLE_DIVIDER = "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
     private static final String BOTTOM_DIVIDER = "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
@@ -386,40 +398,58 @@ public class LogHelper {
 
     // Logging JsonString
     public void json(String jsonString) {
-        log(LogLevel.DEBUG, jsonString);
+        json(LogLevel.DEBUG, jsonString);
     }
 
     public void json(LogLevel logLevel, String jsonString) {
-
         if (TextUtils.isEmpty(jsonString)) {
-            d("Empty/Null json content");
-            return;
-        }
-        try {
+            log(logLevel, "Json string is empty.");
+        } else {
             jsonString = jsonString.trim();
-            if (jsonString.startsWith("{")) {
-                JSONObject jsonObject = new JSONObject(jsonString);
-                String message = jsonObject.toString(INDENT_SPACES);
-                d(message);
-                return;
+
+            try {
+                if (jsonString.startsWith("{")) {
+                    JSONObject jsonObject = new JSONObject(jsonString);
+                    String message = jsonObject.toString(INDENT_SPACES);
+                    log(logLevel, message);
+                    return;
+                }
+                if (jsonString.startsWith("[")) {
+                    JSONArray jsonArray = new JSONArray(jsonString);
+                    String message = jsonArray.toString(INDENT_SPACES);
+                    log(logLevel, message);
+                }
+            } catch (JSONException e) {
+                log(logLevel, e);
             }
-            if (jsonString.startsWith("[")) {
-                JSONArray jsonArray = new JSONArray(jsonString);
-                String message = jsonArray.toString(INDENT_SPACES);
-                d(message);
-            }
-        } catch (JSONException e) {
-            e(e.getCause().getMessage() + "\n" + jsonString);
         }
     }
 
     // Logging XmlString
     public void xml(String xmlString) {
-        log(LogLevel.DEBUG, xmlString);
+        xml(LogLevel.DEBUG, xmlString);
     }
 
-    public void xml(LogLevel logLevel, String jsonString) {
-
+    public void xml(LogLevel logLevel, String xmlString) {
+        if (TextUtils.isEmpty(xmlString)) {
+            log(logLevel, "Xml string is empty.");
+        } else {
+            if (APILevel.require(8)) {
+                try {
+                    Source xmlInput = new StreamSource(new StringReader(xmlString));
+                    StreamResult xmlOutput = new StreamResult(new StringWriter());
+                    Transformer transformer = TransformerFactory.newInstance().newTransformer();
+                    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                    transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+                    transformer.transform(xmlInput, xmlOutput);
+                    log(logLevel, xmlOutput.getWriter().toString().replaceFirst(">", ">\n"));
+                } catch (TransformerException e) {
+                    log(logLevel, e);
+                }
+            } else {
+                log(logLevel, xmlString);
+            }
+        }
     }
 
     // Printing
@@ -490,7 +520,11 @@ public class LogHelper {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        try {
+            print(logLevel, message.toString(INDENT_SPACES));
+        } catch (JSONException e) {
+            log(logLevel, e);
+        }
     }
 
     private void log(LogLevel logLevel, JSONArray message) {
@@ -547,7 +581,8 @@ public class LogHelper {
         }
         if (methodCount > 0) print(logLevel, TAG, MIDDLE_DIVIDER);
 
-        print(logLevel, TAG, methodCount > 0 ? "┃ " + message : message);
+        String[] lines = message.split(System.getProperty("line.separator"));
+        for (String line : lines) print(logLevel, TAG, methodCount > 0 ? "┃ " + line : line);
         if (methodCount > 0) print(logLevel, TAG, BOTTOM_DIVIDER);
     }
 

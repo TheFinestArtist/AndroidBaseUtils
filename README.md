@@ -3,7 +3,6 @@
 [![API](https://img.shields.io/badge/API-7%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=7)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-![AndroidBaseUtils Art Image](art/256_1.png)
 <img align="center" src="https://github.com/TheFinestArtist/AndroidBaseUtils/blob/master/art/256_1.png"/>
 
 #### Context free and basic utils to build Android project conveniently

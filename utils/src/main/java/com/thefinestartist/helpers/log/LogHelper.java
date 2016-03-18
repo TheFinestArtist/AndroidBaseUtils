@@ -1,5 +1,6 @@
 package com.thefinestartist.helpers.log;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.thefinestartist.enums.LogLevel;
@@ -7,6 +8,7 @@ import com.thefinestartist.utils.etc.APILevel;
 import com.thefinestartist.utils.log.LogUtil;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -15,6 +17,11 @@ import org.json.JSONObject;
  * @author Leonardo Taehwan Kim
  */
 public class LogHelper {
+
+    private static final int INDENT_SPACES = 4;
+    private static final String TOP_DIVIDER = "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    private static final String MIDDLE_DIVIDER = "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    private static final String BOTTOM_DIVIDER = "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
     public String tag;
     public boolean showThreadInfo;
@@ -37,7 +44,22 @@ public class LogHelper {
         return this;
     }
 
-    public void initialize() {
+    public LogHelper showThreadInfo(boolean showThreadInfo) {
+        this.showThreadInfo = showThreadInfo;
+        return this;
+    }
+
+    public LogHelper methodCount(int methodCount) {
+        this.methodCount = methodCount;
+        return this;
+    }
+
+    public LogHelper logLevel(LogLevel logLevel) {
+        this.logLevel = logLevel;
+        return this;
+    }
+
+    public void setToDefault() {
         tag = LogUtil.defaultTag;
         showThreadInfo = LogUtil.defaultShowThreadInfo;
         methodCount = LogUtil.defaultMethodCount;
@@ -369,6 +391,26 @@ public class LogHelper {
 
     public void json(LogLevel logLevel, String jsonString) {
 
+        if (TextUtils.isEmpty(jsonString)) {
+            d("Empty/Null json content");
+            return;
+        }
+        try {
+            jsonString = jsonString.trim();
+            if (jsonString.startsWith("{")) {
+                JSONObject jsonObject = new JSONObject(jsonString);
+                String message = jsonObject.toString(INDENT_SPACES);
+                d(message);
+                return;
+            }
+            if (jsonString.startsWith("[")) {
+                JSONArray jsonArray = new JSONArray(jsonString);
+                String message = jsonArray.toString(INDENT_SPACES);
+                d(message);
+            }
+        } catch (JSONException e) {
+            e(e.getCause().getMessage() + "\n" + jsonString);
+        }
     }
 
     // Logging XmlString
@@ -472,29 +514,66 @@ public class LogHelper {
         print(logLevel, String.valueOf(message));
     }
 
+    private String getSimpleClassName(String name) {
+        int lastIndex = name.lastIndexOf(".");
+        return name.substring(lastIndex + 1);
+    }
+
     private void print(LogLevel logLevel, String message) {
+
+        String TAG = tag;
+        if (showThreadInfo) TAG += "(" + Thread.currentThread().getName() + ")";
+
+        StackTraceElement[] trace = Thread.currentThread().getStackTrace();
+        int stackIndex = 5;
+        if (methodCount > 0) print(logLevel, TAG, TOP_DIVIDER);
+        String indent = "";
+        while (stackIndex < Math.min(trace.length, 5 + methodCount)) {
+            StringBuilder builder = new StringBuilder();
+            builder.append("┃ ")
+                    .append(indent)
+                    .append(getSimpleClassName(trace[stackIndex].getClassName()))
+                    .append(".")
+                    .append(trace[stackIndex].getMethodName())
+                    .append("(")
+                    .append(trace[stackIndex].getFileName())
+                    .append(":")
+                    .append(trace[stackIndex].getLineNumber())
+                    .append(")");
+
+            print(logLevel, TAG, builder.toString());
+            indent += "  ";
+            stackIndex++;
+        }
+        if (methodCount > 0) print(logLevel, TAG, MIDDLE_DIVIDER);
+
+        print(logLevel, TAG, methodCount > 0 ? "┃ " + message : message);
+        if (methodCount > 0) print(logLevel, TAG, BOTTOM_DIVIDER);
+    }
+
+    private void print(LogLevel logLevel, String TAG, String message) {
         switch (logLevel) {
             case FULL:
             case VERBOSE:
-                Log.v(tag, message);
+                Log.v(TAG, message);
                 break;
             case DEBUG:
-                Log.d(tag, message);
+                Log.d(TAG, message);
                 break;
             case INFO:
-                Log.i(tag, message);
+                Log.i(TAG, message);
                 break;
             case WARN:
-                Log.w(tag, message);
+                Log.w(TAG, message);
                 break;
             case ERROR:
-                Log.e(tag, message);
+                Log.e(TAG, message);
                 break;
             case ASSERT:
                 if (APILevel.require(8))
-                    Log.wtf(tag, message);
+                    Log.wtf(TAG, message);
                 else
-                    Log.e(tag, message);
+                    Log.e(TAG, message);
                 break;
         }
     }

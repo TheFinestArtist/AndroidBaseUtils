@@ -96,11 +96,79 @@ void        LogUtil.setDefaultShowThreadInfo(boolean showThreadInfo);
 void        LogUtil.setDefaultMethodCount(int methodCount);
 void        LogUtil.setDefaultLogLevel(LogLevel logLevel);
 
+LogHelper   LogUtil.tag(String tag);
+LogHelper   LogUtil.showThreadInfo(boolean showThreadInfo);
+LogHelper   LogUtil.methodCount(int methodCount);
+LogHelper   LogUtil.logLevel(LogLevel logLevel);
 
+void        LogUtil.v(byte message);
+void        LogUtil.v(char message);
+void        LogUtil.v(short message);
+void        LogUtil.v(int message);
+void        LogUtil.v(long message);
+void        LogUtil.v(float message);
+void        LogUtil.v(double message);
+void        LogUtil.v(boolean message);
+void        LogUtil.v(String message);
+void        LogUtil.v(JSONObject message);
+void        LogUtil.v(JSONArray message);
+void        LogUtil.v(Exception message);
+void        LogUtil.v(Object message);
+// and so on...
+
+void        LogUtil.json(String jsonString);
+void        LogUtil.json(LogLevel logLevel, String jsonString);
+void        LogUtil.xml(String xmlString);
+void        LogUtil.xml(LogLevel logLevel, String jsonString);
+```
+
+```java
+LogUtil.v("Hello World");
+LogUtil.tag("MainActivity").e(12.0f);
+LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
 
 ## LogHelper (★★★★★)
 LogHelper helps to deal with Log conveniently.
+
+```java
+LogHelper   new LogHelper();
+LogHelper   new LogHelper(String tag);
+LogHelper   new LogHelper(Class clazz);
+
+LogHelper   tag(String tag);
+LogHelper   showThreadInfo(boolean showThreadInfo);
+LogHelper   methodCount(int methodCount);
+LogHelper   logLevel(LogLevel logLevel);
+
+void        v(byte message);
+void        v(char message);
+void        v(short message);
+void        v(int message);
+void        v(long message);
+void        v(float message);
+void        v(double message);
+void        v(boolean message);
+void        v(String message);
+void        v(JSONObject message);
+void        v(JSONArray message);
+void        v(Exception message);
+void        v(Object message);
+// and so on...
+
+void        json(String jsonString);
+void        json(LogLevel logLevel, String jsonString);
+void        xml(String xmlString);
+void        xml(LogLevel logLevel, String jsonString);
+```
+
+```java
+LogHelper logHelper = new LogHelper(MainActivity.class).showThreadInfo(true);
+
+logHelper.v("Hello World");
+logHelper.e(12.0f);
+logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+```
 
 ## ContextUtil (★★★★★)
 ContextUtil helps to use Context conveniently.

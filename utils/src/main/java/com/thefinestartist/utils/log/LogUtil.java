@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class LogUtil {
 
     // Defaults
-    public static String defaultTag = LogUtil.class.getCanonicalName();
+    public static String defaultTag = LogUtil.class.getSimpleName();
     public static boolean defaultShowThreadInfo = false;
     public static int defaultMethodCount = 0;
     public static LogLevel defaultLogLevel = LogLevel.FULL;
@@ -55,8 +55,13 @@ public class LogUtil {
         return logHelper;
     }
 
-    public static LogHelper showMethods(int methodCount) {
+    public static LogHelper methodCount(int methodCount) {
         logHelper.methodCount = methodCount;
+        return logHelper;
+    }
+
+    public static LogHelper logLevel(LogLevel logLevel) {
+        logHelper.logLevel = logLevel;
         return logHelper;
     }
 

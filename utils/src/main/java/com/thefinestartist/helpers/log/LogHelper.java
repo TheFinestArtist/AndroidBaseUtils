@@ -41,13 +41,16 @@ public class LogHelper {
     public LogLevel logLevel;
 
     public LogHelper() {
+        setToDefault();
     }
 
     public LogHelper(String tag) {
+        setToDefault();
         this.tag = tag;
     }
 
     public LogHelper(Class clazz) {
+        setToDefault();
         this.tag = clazz.getSimpleName();
     }
 
@@ -613,3 +616,4 @@ public class LogHelper {
         }
     }
 }
+// TODO: exception & trace count

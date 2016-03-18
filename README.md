@@ -14,10 +14,12 @@ Any kinds of contributions including **pull requests**, **registering new issues
 1. [Get started](#get-started)
 1. [Utils](#utils)
     1. [Base](#base-)
+    1. [LogUtil](#logutil-)
+    1. [LogHelper](#loghelper-)
     1. [ContextUtil](#contextutil-)
     1. [ResourcesUtil](#resourcesutil-)
-    1. [ExtrasBinder](#extrasbinder-)
     1. [PreferenceUtil](#preferenceutil-)
+    1. [ExtrasBinder](#extrasbinder-)
     1. [UnitConverter](#unitconverter-)
     1. [KeyboardUtil](#keyboardutil-)
     1. [APILevel](#apilevel-)
@@ -85,30 +87,45 @@ Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```
 
+## LogUtil (★★★★★)
+LogUtil helps to deal with Log conveniently.
+
+```java
+void        LogUtil.setDefaultTag(String tag);
+void        LogUtil.setDefaultShowThreadInfo(boolean showThreadInfo);
+void        LogUtil.setDefaultMethodCount(int methodCount);
+void        LogUtil.setDefaultLogLevel(LogLevel logLevel);
+
+
+```
+
+## LogHelper (★★★★★)
+LogHelper helps to deal with Log conveniently.
+
 ## ContextUtil (★★★★★)
 ContextUtil helps to use Context conveniently.
 
 ```java
-boolean bindService(Intent service, ServiceConnection conn, int flags);
-int checkCallingOrSelfPermission(String permission);
-int checkSelfPermission(@NonNull String permission);
-void enforceCallingOrSelfPermission(String permission, String message);
-void enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
+boolean         bindService(Intent service, ServiceConnection conn, int flags);
+int             checkCallingOrSelfPermission(String permission);
+int             checkSelfPermission(@NonNull String permission);
+void            enforceCallingOrSelfPermission(String permission, String message);
+void            enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
 ApplicationInfo getApplicationInfo();
-File getCacheDir();
-File getExternalCacheDir();
-File getExternalFilesDir(String type);
-Looper getMainLooper();
-Object getSystemService(String name);
-void sendBroadcast(Intent intent, String receiverPermission);
-void sendBroadcast(Intent intent);
-boolean startActivities(Intent[] intents, Bundle options);
-boolean startActivities(Intent[] intents);
-void startActivity(@NonNull Intent intent);
-void startActivity(Intent intent, Bundle options);
-ComponentName startService(Intent service);
-boolean stopService(Intent service);
-void unbindService(ServiceConnection conn);
+File            getCacheDir();
+File            getExternalCacheDir();
+File            getExternalFilesDir(String type);
+Looper          getMainLooper();
+Object          getSystemService(String name);
+void            sendBroadcast(Intent intent, String receiverPermission);
+void            sendBroadcast(Intent intent);
+boolean         startActivities(Intent[] intents, Bundle options);
+boolean         startActivities(Intent[] intents);
+void            startActivity(@NonNull Intent intent);
+void            startActivity(Intent intent, Bundle options);
+ComponentName   startService(Intent service);
+boolean         stopService(Intent service);
+void            unbindService(ServiceConnection conn);
 // and so on...
 ```
 
@@ -153,6 +170,52 @@ InputStream         openRawResource(@RawRes int rawRes);
 AssetFileDescriptor openRawResourceFd(@RawRes int rawRes);
 int[]               getColorArray(@ArrayRes int array);
 // and so on...
+```
+
+## PreferenceUtil (★★★★★)
+PreferenceUtil helps to manage application-wide preferences conveniently.
+
+```java
+String         getDefaultName();
+void           setDefaultName(String name);
+
+boolean        get(String key, boolean defValue);
+int            get(String key, int defValue);
+float          get(String key, float defValue);
+long           get(String key, long defValue);
+String         get(String key, String defValue);
+Set<String>    get(String key, Set<String> defValue);
+C              get(String key, C defValue);
+
+boolean        get(String name, String key, boolean defValue);
+int            get(String name, String key, int defValue);
+float          get(String name, String key, float defValue);
+long           get(String name, String key, long defValue);
+String         get(String name, String key, String defValue);
+Set<String>    get(String name, String key, Set<String> defValue);
+C              get(String name, String key, C defValue);
+
+void           put(String key, boolean value);
+void           put(String key, int value);
+void           put(String key, float value);
+void           put(String key, long value);
+void           put(String key, String value);
+void           put(String key, Set<String> value);
+void           put(String key, C value);
+
+void           put(String name, String key, boolean value);
+void           put(String name, String key, int value);
+void           put(String name, String key, float value);
+void           put(String name, String key, long value);
+void           put(String name, String key, String value);
+void           put(String name, String key, Set<String> value);
+void           put(String name, String key, C value);
+
+void           remove(String key);
+void           remove(String name, String key);
+
+void           clear();
+void           clear(String name);
 ```
 
 ## ExtrasBinder (★★★★★)
@@ -209,52 +272,6 @@ Proguard
 -keepclasseswithmembernames class * {
     @com.thefinestartist.annotations.Extra <fields>;
 }
-```
-
-## PreferenceUtil (★★★★★)
-PreferenceUtil helps to manage application-wide preferences conveniently.
-
-```java
-String         getDefaultName();
-void           setDefaultName(String name);
-
-boolean        get(String key, boolean defValue);
-int            get(String key, int defValue);
-float          get(String key, float defValue);
-long           get(String key, long defValue);
-String         get(String key, String defValue);
-Set<String>    get(String key, Set<String> defValue);
-C              get(String key, C defValue);
-
-boolean        get(String name, String key, boolean defValue);
-int            get(String name, String key, int defValue);
-float          get(String name, String key, float defValue);
-long           get(String name, String key, long defValue);
-String         get(String name, String key, String defValue);
-Set<String>    get(String name, String key, Set<String> defValue);
-C              get(String name, String key, C defValue);
-
-void           put(String key, boolean value);
-void           put(String key, int value);
-void           put(String key, float value);
-void           put(String key, long value);
-void           put(String key, String value);
-void           put(String key, Set<String> value);
-void           put(String key, C value);
-
-void           put(String name, String key, boolean value);
-void           put(String name, String key, int value);
-void           put(String name, String key, float value);
-void           put(String name, String key, long value);
-void           put(String name, String key, String value);
-void           put(String name, String key, Set<String> value);
-void           put(String name, String key, C value);
-
-void           remove(String key);
-void           remove(String name, String key);
-
-void           clear();
-void           clear(String name);
 ```
 
 ## UnitConverter (★★★★★)

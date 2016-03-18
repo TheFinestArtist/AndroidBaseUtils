@@ -36,8 +36,8 @@ public class LogUtil {
         logHelper.setToDefault();
     }
 
-    public static void setDefaultLogLevel(int methodCount) {
-        LogUtil.defaultMethodCount = methodCount;
+    public static void setDefaultLogLevel(LogLevel logLevel) {
+        LogUtil.defaultLogLevel = logLevel;
         logHelper.setToDefault();
     }
 

@@ -11,12 +11,15 @@ import android.widget.EditText;
 import com.thefinestartist.helpers.log.LogHelper;
 import com.thefinestartist.utils.log.LogUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by TheFinestArtist on 1/30/16.
  */
 public class MainActivity extends AppCompatActivity {
 
-    LogHelper logHelper = new LogHelper(Fragment1.class).showThreadInfo(true);
+    LogHelper logHelper = new LogHelper(MainActivity.class).showThreadInfo(true);
 
     EditText editText;
     Button button;
@@ -118,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
 //        LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 
         LogUtil.v("Hello World");
-        LogUtil.tag("MainActivity").e(12.0f);
+        LogUtil.tag("Tag").e(12.0f);
+        LogUtil.showThreadInfo(true).i(new int[]{1, 2, 3});
         LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 
         logHelper.v("Hello World");

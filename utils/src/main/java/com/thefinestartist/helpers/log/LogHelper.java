@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Arrays;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
@@ -31,22 +32,19 @@ public class LogHelper {
 
     private static final int INDENT_SPACES = 4;
 
-    private String tag;
-    private boolean showThreadInfo;
-    private int methodCount;
-    private LogLevel logLevel;
+    private String tag = LogHelper.class.getSimpleName();
+    private boolean showThreadInfo = false;
+    private int methodCount = 0;
+    private LogLevel logLevel = LogLevel.FULL;
 
     public LogHelper() {
-        setToDefault();
     }
 
     public LogHelper(String tag) {
-        setToDefault();
         this.tag = tag;
     }
 
     public LogHelper(Class clazz) {
-        setToDefault();
         this.tag = clazz.getSimpleName();
     }
 
@@ -84,13 +82,6 @@ public class LogHelper {
 
     public void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel;
-    }
-
-    public void setToDefault() {
-        tag = LogUtil.defaultTag;
-        showThreadInfo = LogUtil.defaultShowThreadInfo;
-        methodCount = LogUtil.defaultMethodCount;
-        logLevel = LogUtil.defaultLogLevel;
     }
 
     // Logging Verbose
@@ -554,7 +545,7 @@ public class LogHelper {
     }
 
     private void log(LogLevel logLevel, Exception message) {
-        if (logLevel.ordinal() < logLevel.ordinal())
+        if (logLevel.ordinal() < this.logLevel.ordinal())
             return;
 
         StringBuilder builder = new StringBuilder();
@@ -582,7 +573,19 @@ public class LogHelper {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        String log;
+        if (message instanceof byte[]) log = Arrays.toString((byte[]) message);
+        else if (message instanceof char[]) log = Arrays.toString((char[]) message);
+        else if (message instanceof short[]) log = Arrays.toString((short[]) message);
+        else if (message instanceof int[]) log = Arrays.toString((int[]) message);
+        else if (message instanceof long[]) log = Arrays.toString((long[]) message);
+        else if (message instanceof float[]) log = Arrays.toString((float[]) message);
+        else if (message instanceof double[]) log = Arrays.toString((double[]) message);
+        else if (message instanceof boolean[]) log = Arrays.toString((boolean[]) message);
+        else if (message instanceof Object[]) log = Arrays.toString((Object[]) message);
+        else log = String.valueOf(message);
+
+        printLog(logLevel, log);
     }
 
     private void printLog(LogLevel logLevel, String message) {
@@ -628,6 +631,9 @@ public class LogHelper {
             printLine(logLevel, TAG, "    at " + leftTraceCount + " more stack traces...");
         if (methodCount > 0 && leftTraceCount == 1)
             printLine(logLevel, TAG, "    at 1 more stack trace...");
+
+        if (this == LogUtil.logHelper)
+            LogUtil.setToDefault();
     }
 
     private void printLine(LogLevel logLevel, String TAG, String message) {

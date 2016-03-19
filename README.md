@@ -124,7 +124,8 @@ void        LogUtil.xml(LogLevel logLevel, String jsonString);
 
 ```java
 LogUtil.v("Hello World");
-LogUtil.tag("MainActivity").e(12.0f);
+LogUtil.tag("Tag").e(12.0f);
+LogUtil.showThreadInfo(true).i(new int[]{1, 2, 3});
 LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
 ![LogUtil Sample](art/LogUtil.png)

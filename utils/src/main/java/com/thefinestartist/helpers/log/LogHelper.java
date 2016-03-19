@@ -34,7 +34,7 @@ public class LogHelper {
 
     private String tag = LogHelper.class.getSimpleName();
     private boolean showThreadInfo = false;
-    private int methodCount = 0;
+    private int showStackTrace = 0;
     private LogLevel logLevel = LogLevel.FULL;
 
     public LogHelper() {
@@ -58,8 +58,8 @@ public class LogHelper {
         return this;
     }
 
-    public LogHelper methodCount(int methodCount) {
-        this.methodCount = methodCount;
+    public LogHelper showStackTrace(int showStackTrace) {
+        this.showStackTrace = showStackTrace;
         return this;
     }
 
@@ -76,8 +76,8 @@ public class LogHelper {
         this.showThreadInfo = showThreadInfo;
     }
 
-    public void setMethodCount(int methodCount) {
-        this.methodCount = methodCount;
+    public void setShowStackTrace(int showStackTrace) {
+        this.showStackTrace = showStackTrace;
     }
 
     public void setLogLevel(LogLevel logLevel) {
@@ -601,7 +601,7 @@ public class LogHelper {
         String[] lines = message.split(System.getProperty("line.separator"));
         for (String line : lines) printLine(logLevel, TAG, line);
 
-        if (methodCount > 0 && fromException) printLine(logLevel, TAG, "Exception is occurred");
+        if (showStackTrace > 0 && fromException) printLine(logLevel, TAG, "Exception is occurred");
 
         // Log Stack Trace
         StackTraceElement[] traces = Thread.currentThread().getStackTrace();
@@ -610,7 +610,7 @@ public class LogHelper {
                 || LogHelper.class.getCanonicalName().equals(traces[startIndex].getClassName()))
             startIndex++;
 
-        for (int i = startIndex; i < Math.min(traces.length, startIndex + methodCount); i++) {
+        for (int i = startIndex; i < Math.min(traces.length, startIndex + showStackTrace); i++) {
             StringBuilder builder = new StringBuilder();
             builder.append("    at ")
                     .append(traces[i].getClassName())
@@ -626,10 +626,10 @@ public class LogHelper {
         }
 
         // Log ellipsized stack trance
-        int leftTraceCount = traces.length - startIndex - methodCount;
-        if (methodCount > 0 && leftTraceCount > 1)
+        int leftTraceCount = traces.length - startIndex - showStackTrace;
+        if (showStackTrace > 0 && leftTraceCount > 1)
             printLine(logLevel, TAG, "    at " + leftTraceCount + " more stack traces...");
-        if (methodCount > 0 && leftTraceCount == 1)
+        if (showStackTrace > 0 && leftTraceCount == 1)
             printLine(logLevel, TAG, "    at 1 more stack trace...");
 
         if (this == LogUtil.logHelper)

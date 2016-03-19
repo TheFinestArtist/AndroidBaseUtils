@@ -22,13 +22,13 @@ public class LogUtil {
     // Defaults
     public static String defaultTag = LogUtil.class.getSimpleName();
     public static boolean defaultShowThreadInfo = false;
-    public static int defaultMethodCount = 0;
+    public static int defaultShowStackTrace = 0;
     public static LogLevel defaultLogLevel = LogLevel.FULL;
 
     public static void setToDefault() {
         logHelper.setTag(defaultTag);
         logHelper.setShowThreadInfo(defaultShowThreadInfo);
-        logHelper.setMethodCount(defaultMethodCount);
+        logHelper.setShowStackTrace(defaultShowStackTrace);
         logHelper.setLogLevel(defaultLogLevel);
     }
 
@@ -42,8 +42,8 @@ public class LogUtil {
         setToDefault();
     }
 
-    public static void setDefaultMethodCount(int methodCount) {
-        LogUtil.defaultMethodCount = methodCount;
+    public static void setDefaultShowStackTrace(int showStackTrace) {
+        LogUtil.defaultShowStackTrace = showStackTrace;
         setToDefault();
     }
 
@@ -56,7 +56,7 @@ public class LogUtil {
     public static volatile LogHelper logHelper = new LogHelper()
             .tag(defaultTag)
             .showThreadInfo(defaultShowThreadInfo)
-            .methodCount(defaultMethodCount)
+            .showStackTrace(defaultShowStackTrace)
             .logLevel(defaultLogLevel);
 
     // Builder
@@ -70,8 +70,8 @@ public class LogUtil {
         return logHelper;
     }
 
-    public static LogHelper methodCount(int methodCount) {
-        logHelper.setMethodCount(methodCount);
+    public static LogHelper showStackTrace(int showStackTrace) {
+        logHelper.setShowStackTrace(showStackTrace);
         return logHelper;
     }
 

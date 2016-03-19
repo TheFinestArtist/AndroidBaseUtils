@@ -54,8 +54,8 @@ buildscript {
 apply plugin: 'com.neenbedankt.android-apt'
 
 dependencies {
-    compile 'com.thefinestartist:utils:0.8.6'
-    apt 'com.thefinestartist:compilers:0.8.6'
+    compile 'com.thefinestartist:utils:0.8.7'
+    apt 'com.thefinestartist:compilers:0.8.7'
 }
 ```
 
@@ -93,12 +93,12 @@ LogUtil helps to deal with `Log` conveniently.
 ```java
 void        LogUtil.setDefaultTag(String tag);
 void        LogUtil.setDefaultShowThreadInfo(boolean showThreadInfo);
-void        LogUtil.setDefaultMethodCount(int methodCount);
+void        LogUtil.setDefaultShowStackTrace(int showStackTrace);
 void        LogUtil.setDefaultLogLevel(LogLevel logLevel);
 
 LogHelper   LogUtil.tag(String tag);
 LogHelper   LogUtil.showThreadInfo(boolean showThreadInfo);
-LogHelper   LogUtil.methodCount(int methodCount);
+LogHelper   LogUtil.showStackTrace(int showStackTrace);
 LogHelper   LogUtil.logLevel(LogLevel logLevel);
 
 void        LogUtil.v(byte message);
@@ -126,7 +126,7 @@ void        LogUtil.xml(LogLevel logLevel, String jsonString);
 LogUtil.v("Hello World");
 LogUtil.tag("Tag").e(12.0f);
 LogUtil.showThreadInfo(true).i(new int[]{1, 2, 3});
-LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
 ![LogUtil Sample](art/LogUtil.png)
 
@@ -140,7 +140,7 @@ LogHelper   new LogHelper(Class clazz);
 
 LogHelper   tag(String tag);
 LogHelper   showThreadInfo(boolean showThreadInfo);
-LogHelper   methodCount(int methodCount);
+LogHelper   showStackTrace(int showStackTrace);
 LogHelper   logLevel(LogLevel logLevel);
 
 void        v(byte message);

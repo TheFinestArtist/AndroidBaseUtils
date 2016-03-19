@@ -45,12 +45,12 @@ repositories {
 }
 
 dependencies {
-//    compile project(':annotations')
-//    compile project(':utils')
-//    apt project(':compilers')
-    compile 'com.thefinestartist:annotations:0.8.6'
-    compile 'com.thefinestartist:utils:0.8.6'
-    apt 'com.thefinestartist:compilers:0.8.6'
+    compile project(':annotations')
+    compile project(':utils')
+    apt project(':compilers')
+//    compile 'com.thefinestartist:annotations:0.8.6'
+//    compile 'com.thefinestartist:utils:0.8.6'
+//    apt 'com.thefinestartist:compilers:0.8.6'
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
 //    compile 'com.jakewharton:butterknife:7.0.1'
 //    compile 'com.github.orhanobut:logger:1.12'

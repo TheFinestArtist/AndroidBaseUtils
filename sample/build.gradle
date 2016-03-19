@@ -35,7 +35,13 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
+//    compile 'com.github.orhanobut:logger:1.12'
 //    compile project(':annotations')
     compile project(':utils')
 //    apt project(':compilers')

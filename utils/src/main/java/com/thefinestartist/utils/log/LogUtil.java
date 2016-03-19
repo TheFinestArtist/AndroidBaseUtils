@@ -46,22 +46,22 @@ public class LogUtil {
 
     // Builder
     public static LogHelper tag(String tag) {
-        logHelper.tag = tag;
+        logHelper.setTag(tag);
         return logHelper;
     }
 
     public static LogHelper showThreadInfo(boolean showThreadInfo) {
-        logHelper.showThreadInfo = showThreadInfo;
+        logHelper.setShowThreadInfo(showThreadInfo);
         return logHelper;
     }
 
     public static LogHelper methodCount(int methodCount) {
-        logHelper.methodCount = methodCount;
+        logHelper.setMethodCount(methodCount);
         return logHelper;
     }
 
     public static LogHelper logLevel(LogLevel logLevel) {
-        logHelper.logLevel = logLevel;
+        logHelper.setLogLevel(logLevel);
         return logHelper;
     }
 

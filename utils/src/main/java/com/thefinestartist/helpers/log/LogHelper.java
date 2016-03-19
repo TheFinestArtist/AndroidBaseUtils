@@ -30,15 +30,11 @@ import javax.xml.transform.stream.StreamSource;
 public class LogHelper {
 
     private static final int INDENT_SPACES = 4;
-    // http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%E2%94%80-%E2%95%BF%EF%BF%A8%5D
-    private static final String TOP_DIVIDER = "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
-    private static final String MIDDLE_DIVIDER = "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
-    private static final String BOTTOM_DIVIDER = "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
-    public String tag;
-    public boolean showThreadInfo;
-    public int methodCount;
-    public LogLevel logLevel;
+    private String tag;
+    private boolean showThreadInfo;
+    private int methodCount;
+    private LogLevel logLevel;
 
     public LogHelper() {
         setToDefault();
@@ -72,6 +68,22 @@ public class LogHelper {
     public LogHelper logLevel(LogLevel logLevel) {
         this.logLevel = logLevel;
         return this;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public void setShowThreadInfo(boolean showThreadInfo) {
+        this.showThreadInfo = showThreadInfo;
+    }
+
+    public void setMethodCount(int methodCount) {
+        this.methodCount = methodCount;
+    }
+
+    public void setLogLevel(LogLevel logLevel) {
+        this.logLevel = logLevel;
     }
 
     public void setToDefault() {
@@ -460,63 +472,63 @@ public class LogHelper {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, char message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, short message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, int message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, long message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, float message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, double message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, boolean message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, String message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, message);
+        printLog(logLevel, message);
     }
 
     private void log(LogLevel logLevel, JSONObject message) {
@@ -524,7 +536,7 @@ public class LogHelper {
             return;
 
         try {
-            print(logLevel, message.toString(INDENT_SPACES));
+            printLog(logLevel, message.toString(INDENT_SPACES));
         } catch (JSONException e) {
             log(logLevel, e);
         }
@@ -534,62 +546,91 @@ public class LogHelper {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        try {
+            printLog(logLevel, message.toString(INDENT_SPACES));
+        } catch (JSONException e) {
+            log(logLevel, e);
+        }
     }
 
     private void log(LogLevel logLevel, Exception message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.valueOf(message));
+        builder.append("\n");
+
+        StackTraceElement[] traces = message.getStackTrace();
+        for (StackTraceElement trace : traces) {
+            builder.append("    at ")
+                    .append(trace.getClassName())
+                    .append(".")
+                    .append(trace.getMethodName())
+                    .append("(")
+                    .append(trace.getFileName())
+                    .append(":")
+                    .append(trace.getLineNumber())
+                    .append(")")
+                    .append("\n");
+        }
+
+        printLog(logLevel, builder.toString(), true);
     }
 
     private void log(LogLevel logLevel, Object message) {
         if (logLevel.ordinal() < logLevel.ordinal())
             return;
 
-        print(logLevel, String.valueOf(message));
+        printLog(logLevel, String.valueOf(message));
     }
 
-    private String getSimpleClassName(String name) {
-        int lastIndex = name.lastIndexOf(".");
-        return name.substring(lastIndex + 1);
+    private void printLog(LogLevel logLevel, String message) {
+        printLog(logLevel, message, false);
     }
 
-    private void print(LogLevel logLevel, String message) {
-
+    private synchronized void printLog(LogLevel logLevel, String message, boolean fromException) {
+        // Create TAG
         String TAG = tag;
         if (showThreadInfo) TAG += "(" + Thread.currentThread().getName() + ")";
 
-        StackTraceElement[] trace = Thread.currentThread().getStackTrace();
-        int stackIndex = 5;
-        if (methodCount > 0) print(logLevel, TAG, TOP_DIVIDER);
-        String indent = "";
-        while (stackIndex < Math.min(trace.length, 5 + methodCount)) {
+        // Log Content
+        String[] lines = message.split(System.getProperty("line.separator"));
+        for (String line : lines) printLine(logLevel, TAG, line);
+
+        if (methodCount > 0 && fromException) printLine(logLevel, TAG, "Exception is occurred");
+
+        // Log Stack Trace
+        StackTraceElement[] traces = Thread.currentThread().getStackTrace();
+        int startIndex = 2;
+        while (LogUtil.class.getCanonicalName().equals(traces[startIndex].getClassName())
+                || LogHelper.class.getCanonicalName().equals(traces[startIndex].getClassName()))
+            startIndex++;
+
+        for (int i = startIndex; i < Math.min(traces.length, startIndex + methodCount); i++) {
             StringBuilder builder = new StringBuilder();
-            builder.append("┃ ")
-                    .append(indent)
-                    .append(getSimpleClassName(trace[stackIndex].getClassName()))
+            builder.append("    at ")
+                    .append(traces[i].getClassName())
                     .append(".")
-                    .append(trace[stackIndex].getMethodName())
+                    .append(traces[i].getMethodName())
                     .append("(")
-                    .append(trace[stackIndex].getFileName())
+                    .append(traces[i].getFileName())
                     .append(":")
-                    .append(trace[stackIndex].getLineNumber())
+                    .append(traces[i].getLineNumber())
                     .append(")");
 
-            print(logLevel, TAG, builder.toString());
-            indent += "  ";
-            stackIndex++;
+            printLine(logLevel, TAG, builder.toString());
         }
-        if (methodCount > 0) print(logLevel, TAG, MIDDLE_DIVIDER);
 
-        String[] lines = message.split(System.getProperty("line.separator"));
-        for (String line : lines) print(logLevel, TAG, methodCount > 0 ? "┃ " + line : line);
-        if (methodCount > 0) print(logLevel, TAG, BOTTOM_DIVIDER);
+        // Log ellipsized stack trance
+        int leftTraceCount = traces.length - startIndex - methodCount;
+        if (methodCount > 0 && leftTraceCount > 1)
+            printLine(logLevel, TAG, "    at " + leftTraceCount + " more stack traces...");
+        if (methodCount > 0 && leftTraceCount == 1)
+            printLine(logLevel, TAG, "    at 1 more stack trace...");
     }
 
-    private void print(LogLevel logLevel, String TAG, String message) {
+    private void printLine(LogLevel logLevel, String TAG, String message) {
         switch (logLevel) {
             case FULL:
             case VERBOSE:
@@ -616,4 +657,4 @@ public class LogHelper {
         }
     }
 }
-// TODO: exception & trace count
+// TODO: exception

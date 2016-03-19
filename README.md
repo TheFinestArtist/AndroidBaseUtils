@@ -88,7 +88,7 @@ DisplayMetrics  Base.getDisplayMetrics();
 ```
 
 ## LogUtil (★★★★★)
-LogUtil helps to deal with Log conveniently.
+LogUtil helps to deal with `Log` conveniently.
 
 ```java
 void        LogUtil.setDefaultTag(String tag);
@@ -131,7 +131,7 @@ LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leon
 ![LogUtil Sample](art/LogUtil.png)
 
 ## LogHelper (★★★★★)
-LogHelper helps to deal with Log conveniently.
+LogHelper helps to deal with `Log` conveniently.
 
 ```java
 LogHelper   new LogHelper();
@@ -174,7 +174,7 @@ logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefines
 ![LogHelper Sample](art/LogHelper.png)
 
 ## ContextUtil (★★★★★)
-ContextUtil helps to use Context conveniently.
+ContextUtil helps to use `Context` conveniently.
 
 ```java
 boolean         ContextUtil.bindService(Intent service, ServiceConnection conn, int flags);
@@ -201,7 +201,7 @@ void            ContextUtil.unbindService(ServiceConnection conn);
 ```
 
 ## ResourcesUtil (★★★★★)
-ResourcesUtil helps to use Resources conveniently.
+ResourcesUtil helps to use `Resources` conveniently.
 
 ```java
 XmlResourceParser   ResourcesUtil.getAnimation(@AnimRes int animRes);
@@ -444,7 +444,7 @@ MediaRouter             ServiceUtil.getMediaRouter();
 ```
 
 ## ThemeUtil (★★★★☆)
-ThemeUtil helps to use Theme conveniently.
+ThemeUtil helps to use `Theme` conveniently.
 
 ```java
 void        ThemeUtil.applyStyle(int resId, boolean force);
@@ -460,7 +460,7 @@ void        ThemeUtil.setTo(Resources.Theme other);
 ```
 
 ## ActivityBuilder (★★☆☆☆)
-ActivityBuilder helps to build Activity Intent and start Activity.
+ActivityBuilder helps to build `Activity Intent` and start `Activity`.
 
 ```java
 Constructor         ActivityBuilder(@NonNull Class<C> clazz);
@@ -489,7 +489,7 @@ new ActivityBuilder(YourActivity.class)
 ```
 
 ## BundleBuilder (★★☆☆☆)
-BundleBuilder helps to build Bundle conveniently.
+BundleBuilder helps to build `Bundle` conveniently.
 
 ```java
 BundleBuilder   BundleBuilder.set(String key, T value);
@@ -542,7 +542,7 @@ int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
 ## WindowManagerUtil (☆☆☆☆☆)
-WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
+WindowManagerUtil helps to use `WindowManager` conveniently.
 
 ```java
 Display     WindowManagerUtil.getDefaultDisplay();
@@ -550,7 +550,7 @@ void        WindowManagerUtil.removeViewImmediate(View view);
 ```
 
 ## IntArrayUtil (☆☆☆☆☆)
-IntArrayUtil helps to deal with IntArray conveniently.
+IntArrayUtil helps to deal with `IntArray` conveniently.
 
 ```java
 boolean     IntArrayUtil.contains(int[] array, int value);
@@ -558,7 +558,7 @@ int[]       IntArrayUtil.add(int[] array, int value);
 ```
 
 ## SparseArrayUtil (☆☆☆☆☆)
-SparseArrayUtil helps to deal with SparseArray conveniently.
+SparseArrayUtil helps to deal with `SparseArray` conveniently.
 
 ```java
 ArrayList<C>    SparseArrayUtil.asArrayList(SparseArray<C> sparseArray);

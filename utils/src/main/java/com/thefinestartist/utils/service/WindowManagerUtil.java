@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 /**
- * WindowManagerUtil helps to use Android {@link WindowManager} conveniently.
+ * WindowManagerUtil helps to use {@link WindowManager} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

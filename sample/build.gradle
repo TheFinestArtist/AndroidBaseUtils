@@ -5,6 +5,10 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    lintOptions {
+        abortOnError false
+    }
+
     defaultConfig {
         applicationId "com.thefinestartist.helpers.sample"
         minSdkVersion 8
@@ -33,10 +37,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    lintOptions {
-        abortOnError false
-    }
 }
 
 repositories {
@@ -45,14 +45,14 @@ repositories {
 }
 
 dependencies {
-    compile project(':annotations')
+//    compile project(':annotations')
     compile project(':utils')
     apt project(':compilers')
 //    compile 'com.thefinestartist:annotations:0.8.6'
-//    compile 'com.thefinestartist:utils:0.8.6'
-//    apt 'com.thefinestartist:compilers:0.8.6'
+//    compile 'com.thefinestartist:utils:0.8.4'
+//    apt 'com.thefinestartist:compilers:0.8.4'
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-//    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
 //    compile 'com.github.orhanobut:logger:1.12'
 //    compile 'com.jakewharton:butterknife:8.0.0-SNAPSHOT'
 //    apt 'com.jakewharton:butterknife-compiler:8.0.0-SNAPSHOT'

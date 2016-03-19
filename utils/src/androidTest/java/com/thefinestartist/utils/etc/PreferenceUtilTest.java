@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Tests the PreferenceUtil class.
+ * Tests of the {@link PreferenceUtil} class.
  *
  * @author Robin Gustafsson
  */

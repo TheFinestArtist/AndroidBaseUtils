@@ -25,11 +25,11 @@ public class LogUtil {
     public static int defaultShowStackTrace = 0;
     public static LogLevel defaultLogLevel = LogLevel.FULL;
 
-    public static void setToDefault() {
-        logHelper.setTag(defaultTag);
-        logHelper.setShowThreadInfo(defaultShowThreadInfo);
-        logHelper.setShowStackTrace(defaultShowStackTrace);
-        logHelper.setLogLevel(defaultLogLevel);
+    private static void setToDefault() {
+        logHelper.tag(defaultTag);
+        logHelper.showThreadInfo(defaultShowThreadInfo);
+        logHelper.showStackTrace(defaultShowStackTrace);
+        logHelper.logLevel(defaultLogLevel);
     }
 
     public static void setDefaultTag(String tag) {
@@ -61,23 +61,19 @@ public class LogUtil {
 
     // Builder
     public static LogHelper tag(String tag) {
-        logHelper.setTag(tag);
-        return logHelper;
+        return logHelper.tag(tag);
     }
 
     public static LogHelper showThreadInfo(boolean showThreadInfo) {
-        logHelper.setShowThreadInfo(showThreadInfo);
-        return logHelper;
+        return logHelper.showThreadInfo(showThreadInfo);
     }
 
     public static LogHelper showStackTrace(int showStackTrace) {
-        logHelper.setShowStackTrace(showStackTrace);
-        return logHelper;
+        return logHelper.showStackTrace(showStackTrace);
     }
 
     public static LogHelper logLevel(LogLevel logLevel) {
-        logHelper.setLogLevel(logLevel);
-        return logHelper;
+        return logHelper.logLevel(logLevel);
     }
 
     // Logging Verbose

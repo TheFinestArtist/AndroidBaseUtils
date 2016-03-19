@@ -633,7 +633,14 @@ public class LogHelper {
             printLine(logLevel, TAG, "    at 1 more stack trace...");
 
         if (this == LogUtil.logHelper)
-            LogUtil.setToDefault();
+            setToDefault();
+    }
+
+    private void setToDefault() {
+        this.tag = LogUtil.defaultTag;
+        this.showThreadInfo = LogUtil.defaultShowThreadInfo;
+        this.showStackTrace = LogUtil.defaultShowStackTrace;
+        this.logLevel = LogUtil.defaultLogLevel;
     }
 
     private void printLine(LogLevel logLevel, String TAG, String message) {

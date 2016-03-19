@@ -8,7 +8,6 @@ import com.thefinestartist.annotations.Extra;
 import com.thefinestartist.binders.ExtrasBinder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by TheFinestArtist on 2/7/16.

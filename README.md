@@ -13,30 +13,30 @@ Any kinds of contributions including **pull requests**, **registering new issues
 # Table of Contents
 1. [Get started](#get-started)
 1. [Utils](#utils)
-    1. [Base](#base-)
-    1. [LogUtil](#logutil-)
-    1. [LogHelper](#loghelper-)
-    1. [ContextUtil](#contextutil-)
-    1. [ResourcesUtil](#resourcesutil-)
-    1. [PreferenceUtil](#preferenceutil-)
-    1. [ExtrasBinder](#extrasbinder-)
-    1. [UnitConverter](#unitconverter-)
-    1. [KeyboardUtil](#keyboardutil-)
-    1. [APILevel](#apilevel-)
-    1. [DisplayUtil](#displayutil-)
-    1. [ViewUtil](#viewutil-)
-    1. [ServiceUtil](#serviceutil-)
-    1. [ThemeUtil](#themeutil-)
-    1. [ActivityBuilder](#activitybuilder-)
-    1. [BundleBuilder](#bundlebuilder-)
-    1. [PackageUtil](#packageutil-)
-    1. [VibratorUtil](#vibratorutil-)
-    1. [ClipboardManagerUtil](#clipboardmanagerutil-)
-    1. [TypedValueUtil](#typedvalueutil-)
-    1. [WindowManagerUtil](#windowmanagerutil-)
-    1. [IntArrayUtil](#intarrayutil-)
-    1. [SparseArrayUtil](#sparsearrayutil-)
-    1. [ThreadUtil](#threadutil-)
+    1. [Base](#base)
+    1. [LogUtil](#logutil)
+    1. [LogHelper](#loghelper)
+    1. [ContextUtil](#contextutil)
+    1. [ResourcesUtil](#resourcesutil)
+    1. [PreferenceUtil](#preferenceutil)
+    1. [ExtrasBinder](#extrasbinder)
+    1. [UnitConverter](#unitconverter)
+    1. [KeyboardUtil](#keyboardutil)
+    1. [APILevel](#apilevel)
+    1. [DisplayUtil](#displayutil)
+    1. [ViewUtil](#viewutil)
+    1. [ServiceUtil](#serviceutil)
+    1. [ThemeUtil](#themeutil)
+    1. [ActivityBuilder](#activitybuilder)
+    1. [BundleBuilder](#bundlebuilder)
+    1. [PackageUtil](#packageutil)
+    1. [VibratorUtil](#vibratorutil)
+    1. [ClipboardManagerUtil](#clipboardmanagerutil)
+    1. [TypedValueUtil](#typedvalueutil)
+    1. [WindowManagerUtil](#windowmanagerutil)
+    1. [IntArrayUtil](#intarrayutil)
+    1. [SparseArrayUtil](#sparsearrayutil)
+    1. [ThreadUtil](#threadutil)
 1. [Contributors](#contributors)
 1. [License](#license)
 
@@ -73,7 +73,7 @@ public class App extends Application {
 
 # Utils
 
-## Base (★★★★★)
+## Base
 Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
@@ -87,7 +87,7 @@ Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```
 
-## LogUtil (★★★★★)
+## LogUtil
 LogUtil helps to deal with `Log` conveniently.
 
 ```java
@@ -130,7 +130,7 @@ LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"l
 ```
 ![LogUtil Sample](art/LogUtil.png)
 
-## LogHelper (★★★★★)
+## LogHelper
 LogHelper helps to deal with `Log` conveniently.
 
 ```java
@@ -173,7 +173,7 @@ logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefines
 ```
 ![LogHelper Sample](art/LogHelper.png)
 
-## ContextUtil (★★★★★)
+## ContextUtil
 ContextUtil helps to use `Context` conveniently.
 
 ```java
@@ -200,7 +200,7 @@ void            ContextUtil.unbindService(ServiceConnection conn);
 // and so on...
 ```
 
-## ResourcesUtil (★★★★★)
+## ResourcesUtil
 ResourcesUtil helps to use `Resources` conveniently.
 
 ```java
@@ -243,7 +243,7 @@ int[]               ResourcesUtil.getColorArray(@ArrayRes int array);
 // and so on...
 ```
 
-## PreferenceUtil (★★★★★)
+## PreferenceUtil
 PreferenceUtil helps to manage application-wide preferences conveniently.
 
 ```java
@@ -289,7 +289,7 @@ void           PreferenceUtil.clear();
 void           PreferenceUtil.clear(String name);
 ```
 
-## ExtrasBinder (★★★★★)
+## ExtrasBinder
 Simply call `ExtrasBinder.bind(this)` in your `Activity` or `Fragment`. ExtrasBinder binds data from `Intent` or `Bundle` to matching variable. ExtrasBinder will consider `annotation variable` as key. If there is no annotation variable, it will consider `variable name` as key.
 
 ```java
@@ -345,7 +345,7 @@ Proguard
 }
 ```
 
-## UnitConverter (★★★★★)
+## UnitConverter
 UnitConverter helps to convert dp or sp size into pixel.
 
 ```java
@@ -359,7 +359,7 @@ float   UnitConverter.pxToSp(float px);
 int     UnitConverter.pxToSp(int px);
 ```
 
-## KeyboardUtil (★★★★☆)
+## KeyboardUtil
 KeyboardUtil helps to `show` and `hide` keyboard conveniently.
 
 ```java
@@ -372,7 +372,7 @@ void    KeyboardUtil.hide(Fragment);
 void    KeyboardUtil.hide(Dialog);
 ```
 
-## APILevel (★★★★☆)
+## APILevel
 `APILevel` helps to check device API `Build.VERSION` conveniently.
 
 * Update your Android Studio lint option before you use this class. <a href="https://raw.githubusercontent.com/TheFinestArtist/AndroidBaseUtils/master/art/APILevel%20Lint%20Option.png" target="_blank">Show Image</a>  
@@ -404,7 +404,7 @@ boolean APILevel.deprecatedAtGingerbread();
 // and so on...
 ```
 
-## DisplayUtil (★★★★☆)
+## DisplayUtil
 DisplayUtil helps to calculate screen size conveniently.
 
 ```java
@@ -419,7 +419,7 @@ int         DisplayUtil.getActionBarHeight();
 int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located bottom of device for `back`, `home` and `menu` buttons.
 ```
 
-## ViewUtil (★★★☆☆)
+## ViewUtil
 ViewUtil helps to set background drawable conveniently.
 
 ```java
@@ -427,7 +427,7 @@ void    ViewUtil.setBackground(View view, Drawable drawable);
 void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
-## ServiceUtil (★★★☆☆)
+## ServiceUtil
 ServiceUtil helps to get Android system service conveniently.
 
 ```java
@@ -443,7 +443,7 @@ MediaRouter             ServiceUtil.getMediaRouter();
 // and so on...
 ```
 
-## ThemeUtil (★★★★☆)
+## ThemeUtil
 ThemeUtil helps to use `Theme` conveniently.
 
 ```java
@@ -459,7 +459,7 @@ boolean     ThemeUtil.resolveAttribute(int resid, TypedValue outValue, boolean r
 void        ThemeUtil.setTo(Resources.Theme other);
 ```
 
-## ActivityBuilder (★★☆☆☆)
+## ActivityBuilder
 ActivityBuilder helps to build `Activity Intent` and start `Activity`.
 
 ```java
@@ -488,7 +488,7 @@ new ActivityBuilder(YourActivity.class)
     .start();
 ```
 
-## BundleBuilder (★★☆☆☆)
+## BundleBuilder
 BundleBuilder helps to build `Bundle` conveniently.
 
 ```java
@@ -503,7 +503,7 @@ Bundle bundle = new BundleBuilder()
                     .build();
 ```
 
-## PackageUtil (★★☆☆☆)
+## PackageUtil
 PackageUtil helps to handle methods related to package.
 
 ```java
@@ -513,7 +513,7 @@ void        PackageUtil.openPlayStore();
 void        PackageUtil.openPlayStore(String packageName);
 ```
 
-## VibratorUtil (★☆☆☆☆)
+## VibratorUtil
 VibratorUtil helps to use `Vibrator` conveniently.
 
 ```java
@@ -522,7 +522,7 @@ void    VibratorUtil.vibrate(milliseconds);
 // and more...
 ```
 
-## ClipboardManagerUtil (★☆☆☆☆)
+## ClipboardManagerUtil
 ClipboardManagerUtil helps to use `ClipboardManager` conveniently.
 
 ```java
@@ -531,7 +531,7 @@ boolean         ClipboardManagerUtil.hasText();
 CharSequence    ClipboardManagerUtil.getText();
 ```
 
-## TypedValueUtil (☆☆☆☆☆)
+## TypedValueUtil
 TypedValueUtil helps to use `TypedValue` class conveniently.
 
 ```java
@@ -541,7 +541,7 @@ int     TypedValueUtil.complexToDimensionPixelOffset(int data);
 int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
-## WindowManagerUtil (☆☆☆☆☆)
+## WindowManagerUtil
 WindowManagerUtil helps to use `WindowManager` conveniently.
 
 ```java
@@ -549,7 +549,7 @@ Display     WindowManagerUtil.getDefaultDisplay();
 void        WindowManagerUtil.removeViewImmediate(View view);
 ```
 
-## IntArrayUtil (☆☆☆☆☆)
+## IntArrayUtil
 IntArrayUtil helps to deal with `IntArray` conveniently.
 
 ```java
@@ -557,14 +557,14 @@ boolean     IntArrayUtil.contains(int[] array, int value);
 int[]       IntArrayUtil.add(int[] array, int value);
 ```
 
-## SparseArrayUtil (☆☆☆☆☆)
+## SparseArrayUtil
 SparseArrayUtil helps to deal with `SparseArray` conveniently.
 
 ```java
 ArrayList<C>    SparseArrayUtil.asArrayList(SparseArray<C> sparseArray);
 ```
 
-## ThreadUtil (☆☆☆☆☆)
+## ThreadUtil
 ThreadUtil helps to deal with thread conveniently.
 
 ```java

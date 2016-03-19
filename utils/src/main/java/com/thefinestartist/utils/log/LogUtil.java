@@ -15,6 +15,10 @@ import org.json.JSONObject;
  */
 public class LogUtil {
 
+    // No Instance
+    private LogUtil() {
+    }
+
     // Defaults
     public static String defaultTag = LogUtil.class.getSimpleName();
     public static boolean defaultShowThreadInfo = false;

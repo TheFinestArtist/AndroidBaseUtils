@@ -68,6 +68,10 @@ import com.thefinestartist.Base;
  */
 public class ServiceUtil {
 
+    // No Instance
+    private ServiceUtil() {
+    }
+
     public static Object getSystemService(@NonNull String serviceName) {
         return Base.getContext().getSystemService(serviceName);
     }

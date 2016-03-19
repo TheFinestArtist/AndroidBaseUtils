@@ -15,6 +15,10 @@ import java.lang.reflect.Method;
  */
 public class ExtrasBinder {
 
+    // No Instance
+    private ExtrasBinder() {
+    }
+
     static final String SUFFIX = "$$ExtraBinder";
 
     public static void bind(Activity activity) {

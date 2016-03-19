@@ -8,6 +8,11 @@ import android.os.Looper;
  * @author Leonardo Taehwan Kim
  */
 public class ThreadUtil {
+
+    // No Instance
+    private ThreadUtil() {
+    }
+
     public static boolean isMain() {
         return Looper.myLooper() == Looper.getMainLooper();
     }

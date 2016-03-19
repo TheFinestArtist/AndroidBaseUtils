@@ -11,6 +11,10 @@ import com.thefinestartist.Base;
  */
 public class TypedValueUtil {
 
+    // No Instance
+    private TypedValueUtil() {
+    }
+
     public static float applyDimension(int unit, float value) {
         return TypedValue.applyDimension(unit, value, Base.getDisplayMetrics());
     }

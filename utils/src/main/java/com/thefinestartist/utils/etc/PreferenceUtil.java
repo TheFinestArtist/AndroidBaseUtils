@@ -24,13 +24,12 @@ import java.util.Set;
  */
 public class PreferenceUtil {
 
+    // No Instance
+    private PreferenceUtil() {
+    }
+
     private static final String TAG = PreferenceUtil.class.getCanonicalName();
-
     private static String defaultName = PreferenceUtil.class.getCanonicalName();
-
-
-    private PreferenceUtil() { }
-
 
     private static SharedPreferences getPreferences(String name) {
         return Base.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -75,7 +74,6 @@ public class PreferenceUtil {
     public static <C extends Serializable> C get(String key, C defValue) {
         return get(defaultName, key, defValue);
     }
-
 
     public static boolean get(String name, String key, boolean defValue) {
         return getPreferences(name).getBoolean(key, defValue);
@@ -170,7 +168,6 @@ public class PreferenceUtil {
     public static <C extends Serializable> void put(String key, C value) {
         put(defaultName, key, value);
     }
-
 
     public static void put(String name, String key, boolean value) {
         getPreferences(name).edit().putBoolean(key, value).commit();

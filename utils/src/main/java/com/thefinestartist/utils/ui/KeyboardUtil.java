@@ -26,6 +26,10 @@ import com.thefinestartist.utils.service.ServiceUtil;
  */
 public class KeyboardUtil {
 
+    // No Instance
+    private KeyboardUtil() {
+    }
+
     /**
      * Helps to show keyboard in {@link Activity#onCreate(Bundle)}, {@link Activity#onStart()},
      * {@link Activity#onResume()},

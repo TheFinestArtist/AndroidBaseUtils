@@ -18,18 +18,18 @@ import java.io.Serializable;
 import java.util.Set;
 
 /**
- * PreferenceUtil helps to manage application-wide preferences conveniently.
+ * PreferencesUtil helps to manage application-wide {@link SharedPreferences} conveniently.
  *
  * @author Robin Gustafsson
  */
-public class PreferenceUtil {
+public class PreferencesUtil {
 
     // No Instance
-    private PreferenceUtil() {
+    private PreferencesUtil() {
     }
 
-    private static final String TAG = PreferenceUtil.class.getCanonicalName();
-    private static String defaultName = PreferenceUtil.class.getCanonicalName();
+    private static final String TAG = PreferencesUtil.class.getCanonicalName();
+    private static String defaultName = PreferencesUtil.class.getCanonicalName();
 
     private static SharedPreferences getPreferences(String name) {
         return Base.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);

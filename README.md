@@ -18,7 +18,7 @@ Any kinds of contributions including **pull requests**, **registering new issues
     1. [LogHelper](#loghelper)
     1. [ContextUtil](#contextutil)
     1. [ResourcesUtil](#resourcesutil)
-    1. [PreferenceUtil](#preferenceutil)
+    1. [PreferencesUtil](#PreferencesUtil)
     1. [ExtrasBinder](#extrasbinder)
     1. [UnitConverter](#unitconverter)
     1. [KeyboardUtil](#keyboardutil)
@@ -243,50 +243,50 @@ int[]               ResourcesUtil.getColorArray(@ArrayRes int array);
 // and so on...
 ```
 
-## PreferenceUtil
-PreferenceUtil helps to manage application-wide preferences conveniently.
+## PreferencesUtil
+PreferencesUtil helps to manage application-wide preferences conveniently.
 
 ```java
-String         PreferenceUtil.getDefaultName();
-void           PreferenceUtil.setDefaultName(String name);
+String         PreferencesUtil.getDefaultName();
+void           PreferencesUtil.setDefaultName(String name);
 
-boolean        PreferenceUtil.get(String key, boolean defValue);
-int            PreferenceUtil.get(String key, int defValue);
-float          PreferenceUtil.get(String key, float defValue);
-long           PreferenceUtil.get(String key, long defValue);
-String         PreferenceUtil.get(String key, String defValue);
-Set<String>    PreferenceUtil.get(String key, Set<String> defValue);
-C              PreferenceUtil.get(String key, C defValue);
+boolean        PreferencesUtil.get(String key, boolean defValue);
+int            PreferencesUtil.get(String key, int defValue);
+float          PreferencesUtil.get(String key, float defValue);
+long           PreferencesUtil.get(String key, long defValue);
+String         PreferencesUtil.get(String key, String defValue);
+Set<String>    PreferencesUtil.get(String key, Set<String> defValue);
+C              PreferencesUtil.get(String key, C defValue);
 
-boolean        PreferenceUtil.get(String name, String key, boolean defValue);
-int            PreferenceUtil.get(String name, String key, int defValue);
-float          PreferenceUtil.get(String name, String key, float defValue);
-long           PreferenceUtil.get(String name, String key, long defValue);
-String         PreferenceUtil.get(String name, String key, String defValue);
-Set<String>    PreferenceUtil.get(String name, String key, Set<String> defValue);
-C              PreferenceUtil.get(String name, String key, C defValue);
+boolean        PreferencesUtil.get(String name, String key, boolean defValue);
+int            PreferencesUtil.get(String name, String key, int defValue);
+float          PreferencesUtil.get(String name, String key, float defValue);
+long           PreferencesUtil.get(String name, String key, long defValue);
+String         PreferencesUtil.get(String name, String key, String defValue);
+Set<String>    PreferencesUtil.get(String name, String key, Set<String> defValue);
+C              PreferencesUtil.get(String name, String key, C defValue);
 
-void           PreferenceUtil.put(String key, boolean value);
-void           PreferenceUtil.put(String key, int value);
-void           PreferenceUtil.put(String key, float value);
-void           PreferenceUtil.put(String key, long value);
-void           PreferenceUtil.put(String key, String value);
-void           PreferenceUtil.put(String key, Set<String> value);
-void           PreferenceUtil.put(String key, C value);
+void           PreferencesUtil.put(String key, boolean value);
+void           PreferencesUtil.put(String key, int value);
+void           PreferencesUtil.put(String key, float value);
+void           PreferencesUtil.put(String key, long value);
+void           PreferencesUtil.put(String key, String value);
+void           PreferencesUtil.put(String key, Set<String> value);
+void           PreferencesUtil.put(String key, C value);
 
-void           PreferenceUtil.put(String name, String key, boolean value);
-void           PreferenceUtil.put(String name, String key, int value);
-void           PreferenceUtil.put(String name, String key, float value);
-void           PreferenceUtil.put(String name, String key, long value);
-void           PreferenceUtil.put(String name, String key, String value);
-void           PreferenceUtil.put(String name, String key, Set<String> value);
-void           PreferenceUtil.put(String name, String key, C value);
+void           PreferencesUtil.put(String name, String key, boolean value);
+void           PreferencesUtil.put(String name, String key, int value);
+void           PreferencesUtil.put(String name, String key, float value);
+void           PreferencesUtil.put(String name, String key, long value);
+void           PreferencesUtil.put(String name, String key, String value);
+void           PreferencesUtil.put(String name, String key, Set<String> value);
+void           PreferencesUtil.put(String name, String key, C value);
 
-void           PreferenceUtil.remove(String key);
-void           PreferenceUtil.remove(String name, String key);
+void           PreferencesUtil.remove(String key);
+void           PreferencesUtil.remove(String name, String key);
 
-void           PreferenceUtil.clear();
-void           PreferenceUtil.clear(String name);
+void           PreferencesUtil.clear();
+void           PreferencesUtil.clear(String name);
 ```
 
 ## ExtrasBinder

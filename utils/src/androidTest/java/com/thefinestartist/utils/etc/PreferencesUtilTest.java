@@ -11,11 +11,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Tests of the {@link PreferenceUtil} class.
+ * Tests of the {@link PreferencesUtil} class.
  *
  * @author Robin Gustafsson
  */
-public class PreferenceUtilTest extends AndroidTestCase {
+public class PreferencesUtilTest extends AndroidTestCase {
 
     @Override
     public void setUp() throws Exception {
@@ -27,8 +27,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
     public void testSetGetDefaultName() {
         final String expected = "TEST_DEFAULT_NAME";
 
-        PreferenceUtil.setDefaultName(expected);
-        String actual = PreferenceUtil.getDefaultName();
+        PreferencesUtil.setDefaultName(expected);
+        String actual = PreferencesUtil.getDefaultName();
         assertEquals(expected, actual);
     }
 
@@ -40,8 +40,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final boolean value = true;
         final boolean expected = false;
 
-        PreferenceUtil.put(name1, key, value);
-        boolean actual = PreferenceUtil.get(name2, key, expected);
+        PreferencesUtil.put(name1, key, value);
+        boolean actual = PreferencesUtil.get(name2, key, expected);
         assertEquals(expected, actual);
     }
 
@@ -51,8 +51,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final boolean expected = true;
         final boolean defValue = false;
 
-        PreferenceUtil.put(key, expected);
-        boolean actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        boolean actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -63,8 +63,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final boolean expected = true;
         final boolean defValue = false;
 
-        PreferenceUtil.put(name, key, expected);
-        boolean actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        boolean actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -74,8 +74,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final int expected = 321;
         final int defValue = 0;
 
-        PreferenceUtil.put(key, expected);
-        int actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        int actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -86,8 +86,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final int expected = 321;
         final int defValue = 0;
 
-        PreferenceUtil.put(name, key, expected);
-        int actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        int actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -97,8 +97,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final float expected = 12.3f;
         final float defValue = 0.0f;
 
-        PreferenceUtil.put(key, expected);
-        float actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        float actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -109,8 +109,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final float expected = 12.3f;
         final float defValue = 0.0f;
 
-        PreferenceUtil.put(name, key, expected);
-        float actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        float actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -120,8 +120,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final long expected = 321L;
         final long defValue = 0L;
 
-        PreferenceUtil.put(key, expected);
-        long actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        long actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -132,8 +132,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final long expected = 321L;
         final long defValue = 0L;
 
-        PreferenceUtil.put(name, key, expected);
-        long actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        long actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -143,8 +143,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String expected = "Lorem ipsum";
         final String defValue = null;
 
-        PreferenceUtil.put(key, expected);
-        String actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        String actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -155,8 +155,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String expected = "Lorem ipsum";
         final String defValue = null;
 
-        PreferenceUtil.put(name, key, expected);
-        String actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        String actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -169,8 +169,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         expected.add("consectetur adipiscing elit");
         final Set<String> defValue = null;
 
-        PreferenceUtil.put(key, expected);
-        Set<String> actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        Set<String> actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -184,8 +184,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         expected.add("consectetur adipiscing elit");
         final Set<String> defValue = null;
 
-        PreferenceUtil.put(name, key, expected);
-        Set<String> actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        Set<String> actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -199,8 +199,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final ArrayList<String> defValue = new ArrayList<>();
         defValue.add("Proin mollis dictum");
 
-        PreferenceUtil.put(key, expected);
-        ArrayList<String> actual = PreferenceUtil.get(key, defValue);
+        PreferencesUtil.put(key, expected);
+        ArrayList<String> actual = PreferencesUtil.get(key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -215,8 +215,8 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final ArrayList<String> defValue = new ArrayList<>();
         defValue.add("Proin mollis dictum");
 
-        PreferenceUtil.put(name, key, expected);
-        ArrayList<String> actual = PreferenceUtil.get(name, key, defValue);
+        PreferencesUtil.put(name, key, expected);
+        ArrayList<String> actual = PreferencesUtil.get(name, key, defValue);
         assertEquals(expected, actual);
     }
 
@@ -225,9 +225,9 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String key = "TEST_REMOVE";
         final String expected = null;
 
-        PreferenceUtil.put(key, "Lorem ipsum");
-        PreferenceUtil.remove(key);
-        String actual = PreferenceUtil.get(key, expected);
+        PreferencesUtil.put(key, "Lorem ipsum");
+        PreferencesUtil.remove(key);
+        String actual = PreferencesUtil.get(key, expected);
         assertEquals(expected, actual);
     }
 
@@ -237,9 +237,9 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String key = "TEST_REMOVE";
         final String expected = null;
 
-        PreferenceUtil.put(name, key, "Lorem ipsum");
-        PreferenceUtil.remove(name, key);
-        String actual = PreferenceUtil.get(name, key, expected);
+        PreferencesUtil.put(name, key, "Lorem ipsum");
+        PreferencesUtil.remove(name, key);
+        String actual = PreferencesUtil.get(name, key, expected);
         assertEquals(expected, actual);
     }
 
@@ -249,11 +249,11 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String expected = null;
 
         for (String key : keys) {
-            PreferenceUtil.put(key, "Lorem ipsum");
+            PreferencesUtil.put(key, "Lorem ipsum");
         }
-        PreferenceUtil.clear();
+        PreferencesUtil.clear();
         for (String key : keys) {
-            String actual = PreferenceUtil.get(key, expected);
+            String actual = PreferencesUtil.get(key, expected);
             assertEquals(expected, actual);
         }
     }
@@ -265,11 +265,11 @@ public class PreferenceUtilTest extends AndroidTestCase {
         final String expected = null;
 
         for (String key : keys) {
-            PreferenceUtil.put(name, key, "Lorem ipsum");
+            PreferencesUtil.put(name, key, "Lorem ipsum");
         }
-        PreferenceUtil.clear(name);
+        PreferencesUtil.clear(name);
         for (String key : keys) {
-            String actual = PreferenceUtil.get(name, key, expected);
+            String actual = PreferencesUtil.get(name, key, expected);
             assertEquals(expected, actual);
         }
     }

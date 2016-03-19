@@ -127,6 +127,7 @@ LogUtil.v("Hello World");
 LogUtil.tag("MainActivity").e(12.0f);
 LogUtil.methodCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
+![LogUtil Sample](art/LogUtil.png)
 
 ## LogHelper (★★★★★)
 LogHelper helps to deal with Log conveniently.
@@ -169,6 +170,7 @@ logHelper.v("Hello World");
 logHelper.e(12.0f);
 logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
+![LogHelper Sample](art/LogHelper.png)
 
 ## ContextUtil (★★★★★)
 ContextUtil helps to use Context conveniently.

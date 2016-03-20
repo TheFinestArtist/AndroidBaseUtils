@@ -14,7 +14,7 @@ import android.util.TypedValue;
 import com.thefinestartist.Base;
 
 /**
- * ThemeUtil helps to use {@link Resources.Theme} conveniently.
+ * ThemeUtil helps to manage {@link Resources.Theme} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

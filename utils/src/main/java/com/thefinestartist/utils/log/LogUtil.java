@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * LogUtil helps to deal with {@link Log} conveniently.
+ * LogUtil helps to manage application-wide {@link Log} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

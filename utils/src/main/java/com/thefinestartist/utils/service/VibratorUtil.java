@@ -5,7 +5,7 @@ import android.media.AudioAttributes;
 import android.os.Vibrator;
 
 /**
- * VibratorUtil helps to use Android {@link Vibrator} conveniently.
+ * VibratorUtil helps to manage {@link Vibrator} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

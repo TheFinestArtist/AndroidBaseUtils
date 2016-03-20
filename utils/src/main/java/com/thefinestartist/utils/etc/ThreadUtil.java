@@ -3,7 +3,7 @@ package com.thefinestartist.utils.etc;
 import android.os.Looper;
 
 /**
- * ThreadUtil helps to deal with thread conveniently.
+ * ThreadUtil helps to manage thread conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

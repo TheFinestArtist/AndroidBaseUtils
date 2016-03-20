@@ -7,7 +7,7 @@ import android.content.ClipboardManager;
 import com.thefinestartist.utils.etc.APILevel;
 
 /**
- * ClipboardManagerUtil helps to use Android {@link ClipboardManager} conveniently.
+ * ClipboardManagerUtil helps to manage {@link ClipboardManager} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

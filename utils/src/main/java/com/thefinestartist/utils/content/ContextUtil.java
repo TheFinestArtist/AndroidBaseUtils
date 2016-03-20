@@ -49,7 +49,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * ContextUtil helps to use {@link Context} conveniently.
+ * ContextUtil helps to manage {@link Context} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

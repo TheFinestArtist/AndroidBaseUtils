@@ -62,7 +62,7 @@ import android.view.textservice.TextServicesManager;
 import com.thefinestartist.Base;
 
 /**
- * ServiceUtil helps to get Android system service conveniently.
+ * ServiceUtil helps to manage Android system service conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

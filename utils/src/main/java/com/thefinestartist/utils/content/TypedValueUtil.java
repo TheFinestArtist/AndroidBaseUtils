@@ -5,7 +5,7 @@ import android.util.TypedValue;
 import com.thefinestartist.Base;
 
 /**
- * TypedValueUtil helps to use {@link TypedValue} class conveniently.
+ * TypedValueUtil helps to manage {@link TypedValue} class conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

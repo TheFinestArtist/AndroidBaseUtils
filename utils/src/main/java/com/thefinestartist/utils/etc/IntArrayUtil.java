@@ -1,7 +1,7 @@
 package com.thefinestartist.utils.etc;
 
 /**
- * IntArrayUtil helps to deal with IntArray conveniently.
+ * IntArrayUtil helps to manage IntArray conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

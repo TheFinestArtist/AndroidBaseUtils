@@ -8,6 +8,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.thefinestartist.Base;
+import com.thefinestartist.helpers.log.LogHelper;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -28,7 +29,7 @@ public class PreferencesUtil {
     private PreferencesUtil() {
     }
 
-    private static final String TAG = PreferencesUtil.class.getCanonicalName();
+    private static final LogHelper logHelper = new LogHelper(PreferencesUtil.class);
     private static String defaultName = PreferencesUtil.class.getCanonicalName();
 
     private static SharedPreferences getPreferences(String name) {
@@ -115,21 +116,20 @@ public class PreferencesUtil {
                 result = (C) ois.readObject();
 
             } catch (Exception e) {
-                Log.e(TAG, e.toString());
-
+                logHelper.e(e);
             } finally {
                 if (ois != null) {
                     try {
                         ois.close();
                     } catch (IOException e) {
-                        Log.e(TAG, e.toString());
+                        logHelper.e(e);
                     }
                 }
                 if (bais != null) {
                     try {
                         bais.close();
                     } catch (IOException e) {
-                        Log.e(TAG, e.toString());
+                        logHelper.e(e);
                     }
                 }
             }
@@ -207,7 +207,7 @@ public class PreferencesUtil {
             getPreferences(name).edit().putString(key, new String(encoded)).commit();
 
         } catch (IOException e) {
-            Log.e(TAG, e.toString());
+            logHelper.e(e);
             throw new RuntimeException(e);
 
         } finally {
@@ -215,14 +215,14 @@ public class PreferencesUtil {
                 try {
                     oos.close();
                 } catch (IOException e) {
-                    Log.e(TAG, e.toString());
+                    logHelper.e(e);
                 }
             }
             if (baos != null) {
                 try {
                     baos.close();
                 } catch (IOException e) {
-                    Log.e(TAG, e.toString());
+                    logHelper.e(e);
                 }
             }
         }

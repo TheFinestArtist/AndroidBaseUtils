@@ -37,7 +37,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * ResourcesUtil helps to use {@link Resources} conveniently.
+ * ResourcesUtil helps to manage {@link Resources} conveniently.
  *
  * @author Leonardo Taehwan Kim
  */

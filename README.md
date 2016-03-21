@@ -74,7 +74,7 @@ public class App extends Application {
 # Utils
 
 ## Base
-Base helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.
+`Base` helps to get `Context`, `Resources`, `Assets`, `Configuration` and `DisplayMetrics` in any class.
 
 ```java
 void            Base.initialize(Context context);
@@ -88,7 +88,9 @@ DisplayMetrics  Base.getDisplayMetrics();
 ```
 
 ## LogUtil (L)
-LogUtil helps to deal with `Log` conveniently.
+`LogUtil` helps to deal with `Log` conveniently.  
+`L` is abbreviation class of `LogUtil`.  
+You can `extends LogUtil` to create your own `L`.  
 
 ```java
 Settings    L.getDefaultSettings();
@@ -137,7 +139,7 @@ L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonar
 ![LogUtil Sample](art/LogUtil.png)
 
 ## LogHelper
-LogHelper helps to deal with `Log` conveniently.
+`LogHelper` helps to deal with `Log` conveniently.
 
 ```java
 LogHelper   new LogHelper();
@@ -184,7 +186,9 @@ logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefines
 ![LogHelper Sample](art/LogHelper.png)
 
 ## ContextUtil (Ctx)
-ContextUtil helps to use `Context` conveniently.
+`ContextUtil` helps to use `Context` conveniently.  
+`Ctx` is abbreviation class of `ContextUtil`.  
+You can `extends ContextUtil` to create your own `Ctx`.  
 
 ```java
 boolean         Ctx.bindService(Intent service, ServiceConnection conn, int flags);
@@ -211,7 +215,9 @@ void            Ctx.unbindService(ServiceConnection conn);
 ```
 
 ## ResourcesUtil (Res)
-`ResourcesUtil` helps to use `Resources` conveniently.
+`ResourcesUtil` helps to use `Resources` conveniently.  
+`Res` is abbreviation class of `ResourcesUtil`.  
+You can `extends ResourcesUtil` to create your own `Res`.  
 
 ```java
 XmlResourceParser   Res.getAnimation(@AnimRes int animRes);
@@ -254,7 +260,9 @@ int[]               Res.getColorArray(@ArrayRes int array);
 ```
 
 ## PreferencesUtil (Pref)
-`PreferencesUtil` helps to manage application-wide preferences conveniently.
+`PreferencesUtil` helps to manage application-wide preferences conveniently.  
+`Pref` is abbreviation class of `PreferencesUtil`.  
+You can `extends PreferencesUtil` to create your own `Pref`.  
 
 ```java
 String         Pref.getDefaultName();
@@ -356,7 +364,9 @@ Proguard
 ```
 
 ## UnitConverter (Unit)
-`UnitConverter` helps to convert dp or sp size into pixel.
+`UnitConverter` helps to convert dp or sp size into pixel.  
+`Unit` is abbreviation class of `UnitConverter`.  
+You can `extends UnitConverter` to create your own `Unit`.  
 
 ```java
 float   Unit.dpToPx(float dp);
@@ -370,7 +380,9 @@ int     Unit.pxToSp(int px);
 ```
 
 ## KeyboardUtil (Keyboard)
-`KeyboardUtil` helps to `show` and `hide` keyboard conveniently.
+`KeyboardUtil` helps to `show` and `hide` keyboard conveniently.  
+`Keyboard` is abbreviation class of `KeyboardUtil`.  
+You can `extends KeyboardUtil` to create your own `Keyboard`.  
 
 ```java
 void    Keyboard.show(View);

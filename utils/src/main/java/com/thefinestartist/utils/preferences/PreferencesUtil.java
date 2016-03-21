@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.Base64;
 
 import com.thefinestartist.Base;
+import com.thefinestartist.utils.etc.APILevel;
 import com.thefinestartist.utils.log.LogHelper;
 
 import java.io.ByteArrayInputStream;
@@ -169,28 +170,46 @@ public class PreferencesUtil {
     }
 
     public static void put(String name, String key, boolean value) {
-        getPreferences(name).edit().putBoolean(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putBoolean(key, value).apply();
+        else
+            getPreferences(name).edit().putBoolean(key, value).commit();
     }
 
     public static void put(String name, String key, int value) {
-        getPreferences(name).edit().putInt(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putInt(key, value).apply();
+        else
+            getPreferences(name).edit().putInt(key, value).commit();
     }
 
     public static void put(String name, String key, float value) {
-        getPreferences(name).edit().putFloat(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putFloat(key, value).apply();
+        else
+            getPreferences(name).edit().putFloat(key, value).commit();
     }
 
     public static void put(String name, String key, long value) {
-        getPreferences(name).edit().putLong(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putLong(key, value).apply();
+        else
+            getPreferences(name).edit().putLong(key, value).commit();
     }
 
     public static void put(String name, String key, String value) {
-        getPreferences(name).edit().putString(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putString(key, value).apply();
+        else
+            getPreferences(name).edit().putString(key, value).commit();
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static void put(String name, String key, Set<String> value) {
-        getPreferences(name).edit().putStringSet(key, value).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().putStringSet(key, value).apply();
+        else
+            getPreferences(name).edit().putStringSet(key, value).commit();
     }
 
     @TargetApi(Build.VERSION_CODES.FROYO)
@@ -203,7 +222,10 @@ public class PreferencesUtil {
             oos = new ObjectOutputStream(baos);
             oos.writeObject(value);
             byte[] encoded = Base64.encode(baos.toByteArray(), Base64.DEFAULT);
-            getPreferences(name).edit().putString(key, new String(encoded)).commit();
+            if (APILevel.require(9))
+                getPreferences(name).edit().putString(key, new String(encoded)).apply();
+            else
+                getPreferences(name).edit().putString(key, new String(encoded)).commit();
 
         } catch (IOException e) {
             LogHelper.e(e);
@@ -233,7 +255,10 @@ public class PreferencesUtil {
     }
 
     public static void remove(String name, String key) {
-        getPreferences(name).edit().remove(key).commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().remove(key).apply();
+        else
+            getPreferences(name).edit().remove(key).commit();
     }
 
 
@@ -242,7 +267,9 @@ public class PreferencesUtil {
     }
 
     public static void clear(String name) {
-        getPreferences(name).edit().clear().commit();
+        if (APILevel.require(9))
+            getPreferences(name).edit().clear().apply();
+        else
+            getPreferences(name).edit().clear().commit();
     }
-
 }

@@ -18,7 +18,7 @@ Any kinds of contributions including **pull requests**, **registering new issues
     1. [LogHelper](#loghelper)
     1. [ContextUtil (Ctx)](#contextutil-ctx)
     1. [ResourcesUtil (Res)](#resourcesutil-res)
-    1. [PreferencesUtil (Pref)](#preferencesUtil-pref)
+    1. [PreferencesUtil (Pref)](#preferencesutil-pref)
     1. [ExtrasBinder](#extrasbinder)
     1. [UnitConverter (Unit)](#unitconverter-unit)
     1. [KeyboardUtil](#keyboardutil)

@@ -21,7 +21,7 @@ Any kinds of contributions including **pull requests**, **registering new issues
     1. [PreferencesUtil (Pref)](#preferencesutil-pref)
     1. [ExtrasBinder](#extrasbinder)
     1. [UnitConverter (Unit)](#unitconverter-unit)
-    1. [KeyboardUtil](#keyboardutil)
+    1. [KeyboardUtil](#keyboardutil-keyboard)
     1. [APILevel](#apilevel)
     1. [DisplayUtil](#displayutil)
     1. [ViewUtil](#viewutil)
@@ -369,17 +369,17 @@ float   Unit.pxToSp(float px);
 int     Unit.pxToSp(int px);
 ```
 
-## KeyboardUtil
+## KeyboardUtil (Keyboard)
 `KeyboardUtil` helps to `show` and `hide` keyboard conveniently.
 
 ```java
-void    KeyboardUtil.show(View);
-void    KeyboardUtil.showImmediately(View); // Call this method if your activity or fragment is resumed.
+void    Keyboard.show(View);
+void    Keyboard.showImmediately(View); // Call this method if your activity or fragment is resumed.
 
-void    KeyboardUtil.hide(View);
-void    KeyboardUtil.hide(Activity);
-void    KeyboardUtil.hide(Fragment);
-void    KeyboardUtil.hide(Dialog);
+void    Keyboard.hide(View);
+void    Keyboard.hide(Activity);
+void    Keyboard.hide(Fragment);
+void    Keyboard.hide(Dialog);
 ```
 
 ## APILevel

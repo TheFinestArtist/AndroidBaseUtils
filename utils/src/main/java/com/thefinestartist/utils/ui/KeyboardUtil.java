@@ -27,7 +27,7 @@ import com.thefinestartist.utils.service.ServiceUtil;
 public class KeyboardUtil {
 
     // No Instance
-    private KeyboardUtil() {
+    protected KeyboardUtil() {
     }
 
     /**

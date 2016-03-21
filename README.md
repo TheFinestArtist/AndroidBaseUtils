@@ -16,11 +16,11 @@ Any kinds of contributions including **pull requests**, **registering new issues
     1. [Base](#base)
     1. [LogUtil](#logutil-l)
     1. [LogHelper](#loghelper)
-    1. [ContextUtil](#contextutil)
+    1. [ContextUtil](#contextutil-ctx)
     1. [ResourcesUtil](#resourcesutil-res)
-    1. [PreferencesUtil](#PreferencesUtil)
+    1. [PreferencesUtil](#preferencesUtil-pref)
     1. [ExtrasBinder](#extrasbinder)
-    1. [UnitConverter](#unitconverter)
+    1. [UnitConverter](#unitconverter-unit)
     1. [KeyboardUtil](#keyboardutil)
     1. [APILevel](#apilevel)
     1. [DisplayUtil](#displayutil)
@@ -91,34 +91,34 @@ DisplayMetrics  Base.getDisplayMetrics();
 LogUtil helps to deal with `Log` conveniently.
 
 ```java
-LogHelper.Settings  L.getDefaultSettings();
+Settings    L.getDefaultSettings();
 
-LogHelper           L.tag(String tag);
-LogHelper           L.tag(@StringRes int tagRes);
-LogHelper           L.tag(Class clazz);
-LogHelper           L.showThreadInfo(boolean showThreadInfo);
-LogHelper           L.stackTraceCount(int stackTraceCount);
-LogHelper           L.logLevel(LogLevel logLevel);
+LogHelper   L.tag(String tag);
+LogHelper   L.tag(@StringRes int tagRes);
+LogHelper   L.tag(Class clazz);
+LogHelper   L.showThreadInfo(boolean showThreadInfo);
+LogHelper   L.stackTraceCount(int stackTraceCount);
+LogHelper   L.logLevel(LogLevel logLevel);
 
-void                L.v(byte message);
-void                L.v(char message);
-void                L.v(short message);
-void                L.v(int message);
-void                L.v(long message);
-void                L.v(float message);
-void                L.v(double message);
-void                L.v(boolean message);
-void                L.v(String message);
-void                L.v(JSONObject message);
-void                L.v(JSONArray message);
-void                L.v(Exception message);
-void                L.v(Object message);
+void        L.v(byte message);
+void        L.v(char message);
+void        L.v(short message);
+void        L.v(int message);
+void        L.v(long message);
+void        L.v(float message);
+void        L.v(double message);
+void        L.v(boolean message);
+void        L.v(String message);
+void        L.v(JSONObject message);
+void        L.v(JSONArray message);
+void        L.v(Exception message);
+void        L.v(Object message);
 // and so on...
 
-void                L.json(String jsonString);
-void                L.json(LogLevel logLevel, String jsonString);
-void                L.xml(String xmlString);
-void                L.xml(LogLevel logLevel, String jsonString);
+void        L.json(String jsonString);
+void        L.json(LogLevel logLevel, String jsonString);
+void        L.xml(String xmlString);
+void        L.xml(LogLevel logLevel, String jsonString);
 ```
 
 ```java
@@ -183,35 +183,35 @@ logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefines
 ```
 ![LogHelper Sample](art/LogHelper.png)
 
-## ContextUtil
+## ContextUtil (Ctx)
 ContextUtil helps to use `Context` conveniently.
 
 ```java
-boolean         ContextUtil.bindService(Intent service, ServiceConnection conn, int flags);
-int             ContextUtil.checkCallingOrSelfPermission(String permission);
-int             ContextUtil.checkSelfPermission(@NonNull String permission);
-void            ContextUtil.enforceCallingOrSelfPermission(String permission, String message);
-void            ContextUtil.enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
-ApplicationInfo ContextUtil.getApplicationInfo();
-File            ContextUtil.getCacheDir();
-File            ContextUtil.getExternalCacheDir();
-File            ContextUtil.getExternalFilesDir(String type);
-Looper          ContextUtil.getMainLooper();
-Object          ContextUtil.getSystemService(String name);
-void            ContextUtil.sendBroadcast(Intent intent, String receiverPermission);
-void            ContextUtil.sendBroadcast(Intent intent);
-boolean         ContextUtil.startActivities(Intent[] intents, Bundle options);
-boolean         ContextUtil.startActivities(Intent[] intents);
-void            ContextUtil.startActivity(@NonNull Intent intent);
-void            ContextUtil.startActivity(Intent intent, Bundle options);
-ComponentName   ContextUtil.startService(Intent service);
-boolean         ContextUtil.stopService(Intent service);
-void            ContextUtil.unbindService(ServiceConnection conn);
+boolean         Ctx.bindService(Intent service, ServiceConnection conn, int flags);
+int             Ctx.checkCallingOrSelfPermission(String permission);
+int             Ctx.checkSelfPermission(@NonNull String permission);
+void            Ctx.enforceCallingOrSelfPermission(String permission, String message);
+void            Ctx.enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message);
+ApplicationInfo Ctx.getApplicationInfo();
+File            Ctx.getCacheDir();
+File            Ctx.getExternalCacheDir();
+File            Ctx.getExternalFilesDir(String type);
+Looper          Ctx.getMainLooper();
+Object          Ctx.getSystemService(String name);
+void            Ctx.sendBroadcast(Intent intent, String receiverPermission);
+void            Ctx.sendBroadcast(Intent intent);
+boolean         Ctx.startActivities(Intent[] intents, Bundle options);
+boolean         Ctx.startActivities(Intent[] intents);
+void            Ctx.startActivity(@NonNull Intent intent);
+void            Ctx.startActivity(Intent intent, Bundle options);
+ComponentName   Ctx.startService(Intent service);
+boolean         Ctx.stopService(Intent service);
+void            Ctx.unbindService(ServiceConnection conn);
 // and so on...
 ```
 
 ## ResourcesUtil (Res)
-ResourcesUtil helps to use `Resources` conveniently.
+`ResourcesUtil` helps to use `Resources` conveniently.
 
 ```java
 XmlResourceParser   Res.getAnimation(@AnimRes int animRes);
@@ -253,50 +253,50 @@ int[]               Res.getColorArray(@ArrayRes int array);
 // and so on...
 ```
 
-## PreferencesUtil
-PreferencesUtil helps to manage application-wide preferences conveniently.
+## PreferencesUtil (Pref)
+`PreferencesUtil` helps to manage application-wide preferences conveniently.
 
 ```java
-String         PreferencesUtil.getDefaultName();
-void           PreferencesUtil.setDefaultName(String name);
+String         Pref.getDefaultName();
+void           Pref.setDefaultName(String name);
 
-boolean        PreferencesUtil.get(String key, boolean defValue);
-int            PreferencesUtil.get(String key, int defValue);
-float          PreferencesUtil.get(String key, float defValue);
-long           PreferencesUtil.get(String key, long defValue);
-String         PreferencesUtil.get(String key, String defValue);
-Set<String>    PreferencesUtil.get(String key, Set<String> defValue);
-C              PreferencesUtil.get(String key, C defValue);
+boolean        Pref.get(String key, boolean defValue);
+int            Pref.get(String key, int defValue);
+float          Pref.get(String key, float defValue);
+long           Pref.get(String key, long defValue);
+String         Pref.get(String key, String defValue);
+Set<String>    Pref.get(String key, Set<String> defValue);
+C              Pref.get(String key, C defValue);
 
-boolean        PreferencesUtil.get(String name, String key, boolean defValue);
-int            PreferencesUtil.get(String name, String key, int defValue);
-float          PreferencesUtil.get(String name, String key, float defValue);
-long           PreferencesUtil.get(String name, String key, long defValue);
-String         PreferencesUtil.get(String name, String key, String defValue);
-Set<String>    PreferencesUtil.get(String name, String key, Set<String> defValue);
-C              PreferencesUtil.get(String name, String key, C defValue);
+boolean        Pref.get(String name, String key, boolean defValue);
+int            Pref.get(String name, String key, int defValue);
+float          Pref.get(String name, String key, float defValue);
+long           Pref.get(String name, String key, long defValue);
+String         Pref.get(String name, String key, String defValue);
+Set<String>    Pref.get(String name, String key, Set<String> defValue);
+C              Pref.get(String name, String key, C defValue);
 
-void           PreferencesUtil.put(String key, boolean value);
-void           PreferencesUtil.put(String key, int value);
-void           PreferencesUtil.put(String key, float value);
-void           PreferencesUtil.put(String key, long value);
-void           PreferencesUtil.put(String key, String value);
-void           PreferencesUtil.put(String key, Set<String> value);
-void           PreferencesUtil.put(String key, C value);
+void           Pref.put(String key, boolean value);
+void           Pref.put(String key, int value);
+void           Pref.put(String key, float value);
+void           Pref.put(String key, long value);
+void           Pref.put(String key, String value);
+void           Pref.put(String key, Set<String> value);
+void           Pref.put(String key, C value);
 
-void           PreferencesUtil.put(String name, String key, boolean value);
-void           PreferencesUtil.put(String name, String key, int value);
-void           PreferencesUtil.put(String name, String key, float value);
-void           PreferencesUtil.put(String name, String key, long value);
-void           PreferencesUtil.put(String name, String key, String value);
-void           PreferencesUtil.put(String name, String key, Set<String> value);
-void           PreferencesUtil.put(String name, String key, C value);
+void           Pref.put(String name, String key, boolean value);
+void           Pref.put(String name, String key, int value);
+void           Pref.put(String name, String key, float value);
+void           Pref.put(String name, String key, long value);
+void           Pref.put(String name, String key, String value);
+void           Pref.put(String name, String key, Set<String> value);
+void           Pref.put(String name, String key, C value);
 
-void           PreferencesUtil.remove(String key);
-void           PreferencesUtil.remove(String name, String key);
+void           Pref.remove(String key);
+void           Pref.remove(String name, String key);
 
-void           PreferencesUtil.clear();
-void           PreferencesUtil.clear(String name);
+void           Pref.clear();
+void           Pref.clear(String name);
 ```
 
 ## ExtrasBinder
@@ -355,22 +355,22 @@ Proguard
 }
 ```
 
-## UnitConverter
-UnitConverter helps to convert dp or sp size into pixel.
+## UnitConverter (Unit)
+`UnitConverter` helps to convert dp or sp size into pixel.
 
 ```java
-float   UnitConverter.dpToPx(float dp);
-int     UnitConverter.dpToPx(int dp);
-float   UnitConverter.pxToDp(float px);
-int     UnitConverter.pxToDp(int px);
-float   UnitConverter.spToPx(float sp);
-int     UnitConverter.spToPx(int sp);
-float   UnitConverter.pxToSp(float px);
-int     UnitConverter.pxToSp(int px);
+float   Unit.dpToPx(float dp);
+int     Unit.dpToPx(int dp);
+float   Unit.pxToDp(float px);
+int     Unit.pxToDp(int px);
+float   Unit.spToPx(float sp);
+int     Unit.spToPx(int sp);
+float   Unit.pxToSp(float px);
+int     Unit.pxToSp(int px);
 ```
 
 ## KeyboardUtil
-KeyboardUtil helps to `show` and `hide` keyboard conveniently.
+`KeyboardUtil` helps to `show` and `hide` keyboard conveniently.
 
 ```java
 void    KeyboardUtil.show(View);
@@ -415,7 +415,7 @@ boolean APILevel.deprecatedAtGingerbread();
 ```
 
 ## DisplayUtil
-DisplayUtil helps to calculate screen size conveniently.
+`DisplayUtil` helps to calculate screen size conveniently.
 
 ```java
 int         DisplayUtil.getWidth();
@@ -430,7 +430,7 @@ int         DisplayUtil.getNavigationBarHeight(); // Navigation bar is located b
 ```
 
 ## ViewUtil
-ViewUtil helps to set background drawable conveniently.
+`ViewUtil` helps to set background drawable conveniently.
 
 ```java
 void    ViewUtil.setBackground(View view, Drawable drawable);
@@ -438,7 +438,7 @@ void    ViewUtil.setBackground(View view, int drawableRes);
 ```
 
 ## ServiceUtil
-ServiceUtil helps to get Android system service conveniently.
+`ServiceUtil` helps to get Android system service conveniently.
 
 ```java
 Object                  ServiceUtil.getSystemService(Context.ServiceName);
@@ -454,7 +454,7 @@ MediaRouter             ServiceUtil.getMediaRouter();
 ```
 
 ## ThemeUtil
-ThemeUtil helps to use `Theme` conveniently.
+`ThemeUtil` helps to use `Theme` conveniently.
 
 ```java
 void        ThemeUtil.applyStyle(int resId, boolean force);
@@ -470,7 +470,7 @@ void        ThemeUtil.setTo(Resources.Theme other);
 ```
 
 ## ActivityBuilder
-ActivityBuilder helps to build `Activity Intent` and start `Activity`.
+`ActivityBuilder` helps to build `Activity Intent` and start `Activity`.
 
 ```java
 Constructor         ActivityBuilder(@NonNull Class<C> clazz);
@@ -499,7 +499,7 @@ new ActivityBuilder(YourActivity.class)
 ```
 
 ## BundleBuilder
-BundleBuilder helps to build `Bundle` conveniently.
+`BundleBuilder` helps to build `Bundle` conveniently.
 
 ```java
 BundleBuilder   BundleBuilder.set(String key, T value);
@@ -514,7 +514,7 @@ Bundle bundle = new BundleBuilder()
 ```
 
 ## PackageUtil
-PackageUtil helps to handle methods related to package.
+`PackageUtil` helps to handle methods related to package.
 
 ```java
 boolean     PackageUtil.isInstalled(String packageName);
@@ -524,7 +524,7 @@ void        PackageUtil.openPlayStore(String packageName);
 ```
 
 ## VibratorUtil
-VibratorUtil helps to use `Vibrator` conveniently.
+`VibratorUtil` helps to use `Vibrator` conveniently.
 
 ```java
 void    VibratorUtil.vibrate(); // vibrate device for 200 milliseconds
@@ -533,7 +533,7 @@ void    VibratorUtil.vibrate(milliseconds);
 ```
 
 ## ClipboardManagerUtil
-ClipboardManagerUtil helps to use `ClipboardManager` conveniently.
+`ClipboardManagerUtil` helps to use `ClipboardManager` conveniently.
 
 ```java
 void            ClipboardManagerUtil.setText(CharSequence text);
@@ -542,7 +542,7 @@ CharSequence    ClipboardManagerUtil.getText();
 ```
 
 ## TypedValueUtil
-TypedValueUtil helps to use `TypedValue` class conveniently.
+`TypedValueUtil` helps to use `TypedValue` class conveniently.
 
 ```java
 float   TypedValueUtil.applyDimension(int unit, float value);
@@ -552,7 +552,7 @@ int     TypedValueUtil.complexToDimensionPixelSize(int data);
 ```
 
 ## WindowManagerUtil
-WindowManagerUtil helps to use `WindowManager` conveniently.
+`WindowManagerUtil` helps to use `WindowManager` conveniently.
 
 ```java
 Display     WindowManagerUtil.getDefaultDisplay();
@@ -560,7 +560,7 @@ void        WindowManagerUtil.removeViewImmediate(View view);
 ```
 
 ## IntArrayUtil
-IntArrayUtil helps to deal with `IntArray` conveniently.
+`IntArrayUtil` helps to deal with `IntArray` conveniently.
 
 ```java
 boolean     IntArrayUtil.contains(int[] array, int value);
@@ -568,14 +568,14 @@ int[]       IntArrayUtil.add(int[] array, int value);
 ```
 
 ## SparseArrayUtil
-SparseArrayUtil helps to deal with `SparseArray` conveniently.
+`SparseArrayUtil` helps to deal with `SparseArray` conveniently.
 
 ```java
 ArrayList<C>    SparseArrayUtil.asArrayList(SparseArray<C> sparseArray);
 ```
 
 ## ThreadUtil
-ThreadUtil helps to deal with thread conveniently.
+`ThreadUtil` helps to deal with thread conveniently.
 
 ```java
 boolean     ThreadUtil.isMain();

@@ -10,7 +10,7 @@ import com.thefinestartist.Base;
 public class UnitConverter {
 
     // No Instance
-    private UnitConverter() {
+    protected UnitConverter() {
     }
 
     public static float dpToPx(float dp) {

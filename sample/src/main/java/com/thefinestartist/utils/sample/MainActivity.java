@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.thefinestartist.utils.log.LogHelper;
 import com.thefinestartist.utils.log.L;
+import com.thefinestartist.utils.log.LogHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;

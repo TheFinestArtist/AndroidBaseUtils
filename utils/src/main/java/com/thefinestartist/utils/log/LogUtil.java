@@ -20,9 +20,9 @@ public class LogUtil {
     }
 
     // Defaults
-    private static LogHelper.Settings defaultSettings = new LogHelper.Settings(LogUtil.class.getSimpleName());
+    private static Settings defaultSettings = new Settings(LogUtil.class.getSimpleName());
 
-    public static LogHelper.Settings getDefaultSettings() {
+    public static Settings getDefaultSettings() {
         return defaultSettings;
     }
 

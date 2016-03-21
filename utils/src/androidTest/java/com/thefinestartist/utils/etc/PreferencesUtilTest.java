@@ -5,6 +5,7 @@ import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.thefinestartist.Base;
+import com.thefinestartist.utils.preferences.PreferencesUtil;
 
 import java.util.ArrayList;
 import java.util.HashSet;

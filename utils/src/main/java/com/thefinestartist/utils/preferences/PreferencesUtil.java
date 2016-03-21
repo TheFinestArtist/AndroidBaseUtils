@@ -1,4 +1,4 @@
-package com.thefinestartist.utils.etc;
+package com.thefinestartist.utils.preferences;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -25,7 +25,7 @@ import java.util.Set;
 public class PreferencesUtil {
 
     // No Instance
-    private PreferencesUtil() {
+    protected PreferencesUtil() {
     }
 
     private static final LogHelper LogHelper = new LogHelper(PreferencesUtil.class);

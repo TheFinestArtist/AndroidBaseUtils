@@ -56,7 +56,7 @@ import java.io.InputStream;
 public class ContextUtil {
 
     // No Instance
-    private ContextUtil() {
+    protected ContextUtil() {
     }
 
     public static boolean bindService(Intent service, ServiceConnection conn, int flags) {

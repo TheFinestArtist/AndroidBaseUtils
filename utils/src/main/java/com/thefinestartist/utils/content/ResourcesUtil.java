@@ -44,7 +44,7 @@ import java.io.InputStream;
 public class ResourcesUtil {
 
     // No Instance
-    private ResourcesUtil() {
+    protected ResourcesUtil() {
     }
 
     private static void finishPreloading() {

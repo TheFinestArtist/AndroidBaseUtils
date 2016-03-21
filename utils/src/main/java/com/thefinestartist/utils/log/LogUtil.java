@@ -1,9 +1,9 @@
 package com.thefinestartist.utils.log;
 
+import android.support.annotation.StringRes;
 import android.util.Log;
 
 import com.thefinestartist.enums.LogLevel;
-import com.thefinestartist.helpers.log.LogHelper;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -16,60 +16,46 @@ import org.json.JSONObject;
 public class LogUtil {
 
     // No Instance
-    private LogUtil() {
+    protected LogUtil() {
     }
 
     // Defaults
-    public static String defaultTag = LogUtil.class.getSimpleName();
-    public static boolean defaultShowThreadInfo = false;
-    public static int defaultShowStackTrace = 0;
-    public static LogLevel defaultLogLevel = LogLevel.FULL;
+    private static LogHelper.Settings defaultSettings = new LogHelper.Settings(LogUtil.class.getSimpleName());
 
-    private static void setToDefault() {
-        logHelper.tag(defaultTag);
-        logHelper.showThreadInfo(defaultShowThreadInfo);
-        logHelper.showStackTrace(defaultShowStackTrace);
-        logHelper.logLevel(defaultLogLevel);
-    }
-
-    public static void setDefaultTag(String tag) {
-        LogUtil.defaultTag = tag;
-        setToDefault();
-    }
-
-    public static void setDefaultShowThreadInfo(boolean showThreadInfo) {
-        LogUtil.defaultShowThreadInfo = showThreadInfo;
-        setToDefault();
-    }
-
-    public static void setDefaultShowStackTrace(int showStackTrace) {
-        LogUtil.defaultShowStackTrace = showStackTrace;
-        setToDefault();
-    }
-
-    public static void setDefaultLogLevel(LogLevel logLevel) {
-        LogUtil.defaultLogLevel = logLevel;
-        setToDefault();
+    public static LogHelper.Settings getDefaultSettings() {
+        return defaultSettings;
     }
 
     // Singleton
-    public static volatile LogHelper logHelper = new LogHelper()
-            .tag(defaultTag)
-            .showThreadInfo(defaultShowThreadInfo)
-            .showStackTrace(defaultShowStackTrace)
-            .logLevel(defaultLogLevel);
+    private static volatile LogHelper logHelper = new LogHelper()
+            .tag(defaultSettings.getTag())
+            .showThreadInfo(defaultSettings.getShowThreadInfo())
+            .stackTraceCount(defaultSettings.getStackTraceCount())
+            .logLevel(defaultSettings.getLogLevel());
+
+    public static LogHelper getInstance() {
+        return logHelper;
+    }
 
     // Builder
     public static LogHelper tag(String tag) {
         return logHelper.tag(tag);
     }
 
+    public static LogHelper tag(@StringRes int tagRes) {
+        return logHelper.tag(tagRes);
+    }
+
+    public static LogHelper tag(Class clazz) {
+        return logHelper.tag(clazz);
+    }
+
     public static LogHelper showThreadInfo(boolean showThreadInfo) {
         return logHelper.showThreadInfo(showThreadInfo);
     }
 
-    public static LogHelper showStackTrace(int showStackTrace) {
-        return logHelper.showStackTrace(showStackTrace);
+    public static LogHelper stackTraceCount(int stackTraceCount) {
+        return logHelper.stackTraceCount(stackTraceCount);
     }
 
     public static LogHelper logLevel(LogLevel logLevel) {

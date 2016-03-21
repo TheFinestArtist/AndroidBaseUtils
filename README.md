@@ -87,46 +87,52 @@ Configuration   Base.getConfiguration();
 DisplayMetrics  Base.getDisplayMetrics();
 ```
 
-## LogUtil
+## LogUtil (L)
 LogUtil helps to deal with `Log` conveniently.
 
 ```java
-void        LogUtil.setDefaultTag(String tag);
-void        LogUtil.setDefaultShowThreadInfo(boolean showThreadInfo);
-void        LogUtil.setDefaultShowStackTrace(int showStackTrace);
-void        LogUtil.setDefaultLogLevel(LogLevel logLevel);
+LogHelper.Settings  L.getDefaultSettings();
 
-LogHelper   LogUtil.tag(String tag);
-LogHelper   LogUtil.showThreadInfo(boolean showThreadInfo);
-LogHelper   LogUtil.showStackTrace(int showStackTrace);
-LogHelper   LogUtil.logLevel(LogLevel logLevel);
+LogHelper           L.tag(String tag);
+LogHelper           L.tag(@StringRes int tagRes);
+LogHelper           L.tag(Class clazz);
+LogHelper           L.showThreadInfo(boolean showThreadInfo);
+LogHelper           L.stackTraceCount(int stackTraceCount);
+LogHelper           L.logLevel(LogLevel logLevel);
 
-void        LogUtil.v(byte message);
-void        LogUtil.v(char message);
-void        LogUtil.v(short message);
-void        LogUtil.v(int message);
-void        LogUtil.v(long message);
-void        LogUtil.v(float message);
-void        LogUtil.v(double message);
-void        LogUtil.v(boolean message);
-void        LogUtil.v(String message);
-void        LogUtil.v(JSONObject message);
-void        LogUtil.v(JSONArray message);
-void        LogUtil.v(Exception message);
-void        LogUtil.v(Object message);
+void                L.v(byte message);
+void                L.v(char message);
+void                L.v(short message);
+void                L.v(int message);
+void                L.v(long message);
+void                L.v(float message);
+void                L.v(double message);
+void                L.v(boolean message);
+void                L.v(String message);
+void                L.v(JSONObject message);
+void                L.v(JSONArray message);
+void                L.v(Exception message);
+void                L.v(Object message);
 // and so on...
 
-void        LogUtil.json(String jsonString);
-void        LogUtil.json(LogLevel logLevel, String jsonString);
-void        LogUtil.xml(String xmlString);
-void        LogUtil.xml(LogLevel logLevel, String jsonString);
+void                L.json(String jsonString);
+void                L.json(LogLevel logLevel, String jsonString);
+void                L.xml(String xmlString);
+void                L.xml(LogLevel logLevel, String jsonString);
 ```
 
 ```java
-LogUtil.v("Hello World");
-LogUtil.tag("Tag").e(12.0f);
-LogUtil.showThreadInfo(true).i(new int[]{1, 2, 3});
-LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+// Set default settings at your Application.
+L.getDefaultSettings()
+        .setTag(LogUtil.class)
+        .setShowThreadInfo(flase)
+        .setStackTraceCount(0)
+        .setLogLevel(LogLevel.FULL);
+        
+L.v("Hello World");
+L.tag("Tag").e(12.0f);
+L.showThreadInfo(true).i(new int[]{1, 2, 3});
+L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
 ![LogUtil Sample](art/LogUtil.png)
 
@@ -136,11 +142,14 @@ LogHelper helps to deal with `Log` conveniently.
 ```java
 LogHelper   new LogHelper();
 LogHelper   new LogHelper(String tag);
+LogHelper   new LogHelper(@StringRes int tagRes);
 LogHelper   new LogHelper(Class clazz);
 
 LogHelper   tag(String tag);
+LogHelper   tag(@StringRes int tagRes);
+LogHelper   tag(Class clazz);
 LogHelper   showThreadInfo(boolean showThreadInfo);
-LogHelper   showStackTrace(int showStackTrace);
+LogHelper   stackTraceCount(int stackTraceCount);
 LogHelper   logLevel(LogLevel logLevel);
 
 void        v(byte message);
@@ -165,6 +174,7 @@ void        xml(LogLevel logLevel, String jsonString);
 ```
 
 ```java
+// Set default settings at any Class.
 LogHelper logHelper = new LogHelper(MainActivity.class).showThreadInfo(true);
 
 logHelper.v("Hello World");
@@ -200,46 +210,46 @@ void            ContextUtil.unbindService(ServiceConnection conn);
 // and so on...
 ```
 
-## ResourcesUtil
+## ResourcesUtil (Res)
 ResourcesUtil helps to use `Resources` conveniently.
 
 ```java
-XmlResourceParser   ResourcesUtil.getAnimation(@AnimRes int animRes);
-boolean             ResourcesUtil.getBoolean(@BoolRes int boolRes);
-int                 ResourcesUtil.getColor(@ColorRes int colorRes);
-int                 ResourcesUtil.getColor(@ColorRes int colorRes, Resources.Theme theme);
-ColorStateList      ResourcesUtil.getColorStateList(@ColorRes int colorRes);
-ColorStateList      ResourcesUtil.getColorStateList(@ColorRes int colorRes, Resources.Theme theme);
-float               ResourcesUtil.getDimension(@DimenRes int dimenRes);
-int                 ResourcesUtil.getDimensionPixelOffset(@DimenRes int dimenRes);
-int                 ResourcesUtil.getDimensionPixelSize(@DimenRes int dimenRes);
-DisplayMetrics      ResourcesUtil.getDisplayMetrics();
-Drawable            ResourcesUtil.getDrawable(@DrawableRes int drawableRes);
-int                 ResourcesUtil.getIdentifier(String name, String defType, String defPackage);
-int[]               ResourcesUtil.getIntArray(@ArrayRes int arrayRes);
-int                 ResourcesUtil.getInteger(@IntegerRes int integerRes);
-XmlResourceParser   ResourcesUtil.getLayout(@LayoutRes int layoutRes);
-String              ResourcesUtil.getQuantityString(int id, int quantity, Object... formatArgs);
-CharSequence        ResourcesUtil.getQuantityText(int id, int quantity);
-String              ResourcesUtil.getResourceEntryName(@AnyRes int anyRes);
-String              ResourcesUtil.getResourceName(@AnyRes int anyRes);
-String              ResourcesUtil.getResourcePackageName(@AnyRes int anyRes);
-String              ResourcesUtil.getResourceTypeName(@AnyRes int anyRes);
-String              ResourcesUtil.getString(@StringRes int stringRes);
-String              ResourcesUtil.getString(@StringRes int stringRes, Object... formatArgs);
-String[]            ResourcesUtil.getStringArray(@ArrayRes int arrayRes);
-CharSequence        ResourcesUtil.getText(@StringRes int stringRes, CharSequence def);
-CharSequence        ResourcesUtil.getText(@StringRes int stringRes);
-CharSequence[]      ResourcesUtil.getTextArray(@ArrayRes int arrayRes);
-void                ResourcesUtil.getValue(String name, TypedValue outValue, boolean resolveRefs);
-void                ResourcesUtil.getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs);
-void                ResourcesUtil.getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs);
-XmlResourceParser   ResourcesUtil.getXml(@XmlRes int xmlRes);
-TypedArray          ResourcesUtil.obtainAttributes(AttributeSet set, int[] attrs);
-TypedArray          ResourcesUtil.obtainTypedArray(@ArrayRes int anyRes);
-InputStream         ResourcesUtil.openRawResource(@RawRes int rawRes);
-AssetFileDescriptor ResourcesUtil.openRawResourceFd(@RawRes int rawRes);
-int[]               ResourcesUtil.getColorArray(@ArrayRes int array);
+XmlResourceParser   Res.getAnimation(@AnimRes int animRes);
+boolean             Res.getBoolean(@BoolRes int boolRes);
+int                 Res.getColor(@ColorRes int colorRes);
+int                 Res.getColor(@ColorRes int colorRes, Resources.Theme theme);
+ColorStateList      Res.getColorStateList(@ColorRes int colorRes);
+ColorStateList      Res.getColorStateList(@ColorRes int colorRes, Resources.Theme theme);
+float               Res.getDimension(@DimenRes int dimenRes);
+int                 Res.getDimensionPixelOffset(@DimenRes int dimenRes);
+int                 Res.getDimensionPixelSize(@DimenRes int dimenRes);
+DisplayMetrics      Res.getDisplayMetrics();
+Drawable            Res.getDrawable(@DrawableRes int drawableRes);
+int                 Res.getIdentifier(String name, String defType, String defPackage);
+int[]               Res.getIntArray(@ArrayRes int arrayRes);
+int                 Res.getInteger(@IntegerRes int integerRes);
+XmlResourceParser   Res.getLayout(@LayoutRes int layoutRes);
+String              Res.getQuantityString(int id, int quantity, Object... formatArgs);
+CharSequence        Res.getQuantityText(int id, int quantity);
+String              Res.getResourceEntryName(@AnyRes int anyRes);
+String              Res.getResourceName(@AnyRes int anyRes);
+String              Res.getResourcePackageName(@AnyRes int anyRes);
+String              Res.getResourceTypeName(@AnyRes int anyRes);
+String              Res.getString(@StringRes int stringRes);
+String              Res.getString(@StringRes int stringRes, Object... formatArgs);
+String[]            Res.getStringArray(@ArrayRes int arrayRes);
+CharSequence        Res.getText(@StringRes int stringRes, CharSequence def);
+CharSequence        Res.getText(@StringRes int stringRes);
+CharSequence[]      Res.getTextArray(@ArrayRes int arrayRes);
+void                Res.getValue(String name, TypedValue outValue, boolean resolveRefs);
+void                Res.getValue(@AnyRes int anyRes, TypedValue outValue, boolean resolveRefs);
+void                Res.getValueForDensity(@AnyRes int anyRes, int density, TypedValue outValue, boolean resolveRefs);
+XmlResourceParser   Res.getXml(@XmlRes int xmlRes);
+TypedArray          Res.obtainAttributes(AttributeSet set, int[] attrs);
+TypedArray          Res.obtainTypedArray(@ArrayRes int anyRes);
+InputStream         Res.openRawResource(@RawRes int rawRes);
+AssetFileDescriptor Res.openRawResourceFd(@RawRes int rawRes);
+int[]               Res.getColorArray(@ArrayRes int array);
 // and so on...
 ```
 

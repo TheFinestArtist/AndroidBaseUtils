@@ -1,11 +1,12 @@
-package com.thefinestartist.helpers.log;
+package com.thefinestartist.utils.log;
 
+import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.thefinestartist.enums.LogLevel;
+import com.thefinestartist.utils.content.ResourcesUtil;
 import com.thefinestartist.utils.etc.APILevel;
-import com.thefinestartist.utils.log.LogUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,56 +33,128 @@ public class LogHelper {
 
     private static final int INDENT_SPACES = 4;
 
-    private String tag = LogHelper.class.getSimpleName();
-    private boolean showThreadInfo = false;
-    private int showStackTrace = 0;
-    private LogLevel logLevel = LogLevel.FULL;
+    public static class Settings {
 
+        private String tag = Settings.class.getSimpleName();
+        private boolean showThreadInfo = false;
+        private int stackTraceCount = 0;
+        private LogLevel logLevel = LogLevel.FULL;
+
+        public Settings() {
+        }
+
+        public Settings(String tag) {
+            this.tag = tag;
+        }
+
+        public Settings(@StringRes int tagRes) {
+            this.tag = ResourcesUtil.getString(tagRes);
+        }
+
+        public Settings(Class clazz) {
+            this.tag = clazz.getSimpleName();
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public Settings setTag(String tag) {
+            this.tag = tag;
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+
+        public Settings setTag(@StringRes int tagRes) {
+            this.tag = ResourcesUtil.getString(tagRes);
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+
+        public Settings setTag(Class clazz) {
+            this.tag = clazz.getSimpleName();
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+
+        public boolean getShowThreadInfo() {
+            return showThreadInfo;
+        }
+
+        public Settings setShowThreadInfo(boolean showThreadInfo) {
+            this.showThreadInfo = showThreadInfo;
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+
+        public int getStackTraceCount() {
+            return stackTraceCount;
+        }
+
+        public Settings setStackTraceCount(int stackTraceCount) {
+            this.stackTraceCount = stackTraceCount;
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+
+        public LogLevel getLogLevel() {
+            return logLevel;
+        }
+
+        public Settings setLogLevel(LogLevel logLevel) {
+            this.logLevel = logLevel;
+            if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+            return this;
+        }
+    }
+
+    private Settings settings = new Settings(LogHelper.class.getSimpleName());
+
+    // Constructors
     public LogHelper() {
     }
 
     public LogHelper(String tag) {
-        this.tag = tag;
+        settings.setTag(tag);
+    }
+
+    public LogHelper(@StringRes int tagRes) {
+        settings.setTag(ResourcesUtil.getString(tagRes));
     }
 
     public LogHelper(Class clazz) {
-        this.tag = clazz.getSimpleName();
+        settings.setTag(clazz.getSimpleName());
     }
 
+    // Setters
     public LogHelper tag(String tag) {
-        this.tag = tag;
+        settings.setTag(tag);
+        return this;
+    }
+
+    public LogHelper tag(@StringRes int tagRes) {
+        settings.setTag(tagRes);
+        return this;
+    }
+
+    public LogHelper tag(Class clazz) {
+        settings.setTag(clazz);
         return this;
     }
 
     public LogHelper showThreadInfo(boolean showThreadInfo) {
-        this.showThreadInfo = showThreadInfo;
+        settings.setShowThreadInfo(showThreadInfo);
         return this;
     }
 
-    public LogHelper showStackTrace(int showStackTrace) {
-        this.showStackTrace = showStackTrace;
+    public LogHelper stackTraceCount(int stackTraceCount) {
+        settings.setStackTraceCount(stackTraceCount);
         return this;
     }
 
     public LogHelper logLevel(LogLevel logLevel) {
-        this.logLevel = logLevel;
+        settings.setLogLevel(logLevel);
         return this;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public void setShowThreadInfo(boolean showThreadInfo) {
-        this.showThreadInfo = showThreadInfo;
-    }
-
-    public void setShowStackTrace(int showStackTrace) {
-        this.showStackTrace = showStackTrace;
-    }
-
-    public void setLogLevel(LogLevel logLevel) {
-        this.logLevel = logLevel;
     }
 
     // Logging Verbose
@@ -545,7 +618,7 @@ public class LogHelper {
     }
 
     private void log(LogLevel logLevel, Exception message) {
-        if (logLevel.ordinal() < this.logLevel.ordinal())
+        if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
         StringBuilder builder = new StringBuilder();
@@ -594,14 +667,15 @@ public class LogHelper {
 
     private synchronized void printLog(LogLevel logLevel, String message, boolean fromException) {
         // Create TAG
-        String TAG = tag;
-        if (showThreadInfo) TAG += "(" + Thread.currentThread().getName() + ")";
+        String TAG = settings.getTag();
+        if (settings.getShowThreadInfo()) TAG += "(" + Thread.currentThread().getName() + ")";
 
         // Log Content
         String[] lines = message.split(System.getProperty("line.separator"));
         for (String line : lines) printLine(logLevel, TAG, line);
 
-        if (showStackTrace > 0 && fromException) printLine(logLevel, TAG, "Exception is occurred");
+        if (settings.getStackTraceCount() > 0 && fromException)
+            printLine(logLevel, TAG, "Exception is occurred");
 
         // Log Stack Trace
         StackTraceElement[] traces = Thread.currentThread().getStackTrace();
@@ -610,7 +684,7 @@ public class LogHelper {
                 || LogHelper.class.getCanonicalName().equals(traces[startIndex].getClassName()))
             startIndex++;
 
-        for (int i = startIndex; i < Math.min(traces.length, startIndex + showStackTrace); i++) {
+        for (int i = startIndex; i < Math.min(traces.length, startIndex + settings.getStackTraceCount()); i++) {
             StringBuilder builder = new StringBuilder();
             builder.append("    at ")
                     .append(traces[i].getClassName())
@@ -626,21 +700,20 @@ public class LogHelper {
         }
 
         // Log ellipsized stack trance
-        int leftTraceCount = traces.length - startIndex - showStackTrace;
-        if (showStackTrace > 0 && leftTraceCount > 1)
+        int leftTraceCount = traces.length - startIndex - settings.getStackTraceCount();
+        if (settings.getStackTraceCount() > 0 && leftTraceCount > 1)
             printLine(logLevel, TAG, "    at " + leftTraceCount + " more stack traces...");
-        if (showStackTrace > 0 && leftTraceCount == 1)
+        if (settings.getStackTraceCount() > 0 && leftTraceCount == 1)
             printLine(logLevel, TAG, "    at 1 more stack trace...");
 
-        if (this == LogUtil.logHelper)
-            setToDefault();
+        if (this == LogUtil.getInstance()) setToDefault();
     }
 
-    private void setToDefault() {
-        this.tag = LogUtil.defaultTag;
-        this.showThreadInfo = LogUtil.defaultShowThreadInfo;
-        this.showStackTrace = LogUtil.defaultShowStackTrace;
-        this.logLevel = LogUtil.defaultLogLevel;
+    protected void setToDefault() {
+        settings.setTag(LogUtil.getDefaultSettings().getTag());
+        settings.setShowThreadInfo(LogUtil.getDefaultSettings().getShowThreadInfo());
+        settings.setStackTraceCount(LogUtil.getDefaultSettings().getStackTraceCount());
+        settings.setLogLevel(LogUtil.getDefaultSettings().getLogLevel());
     }
 
     private void printLine(LogLevel logLevel, String TAG, String message) {
@@ -670,4 +743,3 @@ public class LogHelper {
         }
     }
 }
-// TODO: exception

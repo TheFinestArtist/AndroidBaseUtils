@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.thefinestartist.helpers.log.LogHelper;
-import com.thefinestartist.utils.log.LogUtil;
+import com.thefinestartist.utils.log.LogHelper;
+import com.thefinestartist.utils.log.L;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public class MainActivity extends AppCompatActivity {
 
-    LogHelper logHelper = new LogHelper(MainActivity.class).showStackTrace(3).showThreadInfo(true);
+    LogHelper logHelper = new LogHelper(MainActivity.class).stackTraceCount(3).showThreadInfo(true);
 
     EditText editText;
     Button button;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject("caller\":\"getPoiById\",\"results\":{\"indexForPhone\":0,\"indexForEmail\":\"NULL\",\"indexForHomePage\":\"NULL\",\"indexForComment\":\"NULL\",\"phone\":\"05137-930 68\",\"cleanPhone\":\"0513793068\",\"internetAccess\":\"2\",\"overnightStay\":\"2\",\"wasteDisposal\":\"2\",\"toilet\":\"2\",\"electricity\":\"2\",\"cran\":\"2\",\"slipway\":\"2\",\"camping\":\"2\",\"freshWater\":\"2\",\"fieldNamesWithValue\":[\"phone\"],\"fieldNameTranslations\":[\"Telefon\"],\"id\":\"1470\",\"name\":\"Marina Rasche Werft GmbH & Co. KG\",\"latitude\":\"52.3956107286487\",\"longitude\":\"9.56583023071289\"}}");
             logHelper.e(jsonObject);
         } catch (JSONException e) {
-            LogUtil.e(e);
+            L.e(e);
             logHelper.e(e);
         }
 
@@ -112,18 +112,17 @@ public class MainActivity extends AppCompatActivity {
         });
         thread.start();
 
-        LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
-        LogUtil.e("Hello World");
+        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+        L.e("Hello World");
 
+        L.showThreadInfo(true).v("Hello World");
+        L.tag("MainActivity").e(12.0f);
+        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 
-        LogUtil.v("Hello World");
-        LogUtil.tag("MainActivity").e(12.0f);
-        LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
-
-//        LogUtil.v("Hello World");
-//        LogUtil.tag("Tag").e(12.0f);
-//        LogUtil.showThreadInfo(true).i(new int[]{1, 2, 3});
-//        LogUtil.showStackTrace(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+//        L.v("Hello World");
+//        L.tag("Tag").e(12.0f);
+//        L.showThreadInfo(true).i(new int[]{1, 2, 3});
+//        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 //
 //        logHelper.v("Hello World");
 //        logHelper.e(12.0f);

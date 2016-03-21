@@ -21,7 +21,7 @@ Any kinds of contributions including **pull requests**, **registering new issues
     1. [PreferencesUtil (Pref)](#preferencesutil-pref)
     1. [ExtrasBinder](#extrasbinder)
     1. [UnitConverter (Unit)](#unitconverter-unit)
-    1. [KeyboardUtil](#keyboardutil-keyboard)
+    1. [KeyboardUtil (Keyboard)](#keyboardutil-keyboard)
     1. [APILevel](#apilevel)
     1. [DisplayUtil](#displayutil)
     1. [ViewUtil](#viewutil)

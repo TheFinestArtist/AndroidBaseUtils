@@ -15,10 +15,6 @@ import org.json.JSONObject;
  */
 public class LogUtil {
 
-    // No Instance
-    protected LogUtil() {
-    }
-
     // Defaults
     private static Settings defaultSettings = new Settings(LogUtil.class.getSimpleName());
 

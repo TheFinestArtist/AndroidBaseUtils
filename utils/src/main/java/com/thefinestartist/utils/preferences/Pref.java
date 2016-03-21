@@ -6,8 +6,4 @@ package com.thefinestartist.utils.preferences;
  * @author Robin Gustafsson
  */
 public class Pref extends PreferencesUtil {
-
-    // No Instance
-    protected Pref() {
-    }
 }

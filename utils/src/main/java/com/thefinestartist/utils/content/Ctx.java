@@ -6,8 +6,4 @@ package com.thefinestartist.utils.content;
  * @author Leonardo Taehwan Kim
  */
 public class Ctx extends ContextUtil {
-
-    // No Instance
-    protected Ctx() {
-    }
 }

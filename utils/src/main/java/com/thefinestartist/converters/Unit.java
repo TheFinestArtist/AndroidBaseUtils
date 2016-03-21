@@ -6,8 +6,4 @@ package com.thefinestartist.converters;
  * @author Leonardo Taehwan Kim
  */
 public class Unit extends UnitConverter {
-
-    // No Instance
-    protected Unit() {
-    }
 }

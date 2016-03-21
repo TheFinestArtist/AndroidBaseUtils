@@ -6,8 +6,4 @@ package com.thefinestartist.utils.ui;
  * @author Leonardo Taehwan Kim
  */
 public class Keyboard extends KeyboardUtil {
-
-    // No Instance
-    protected Keyboard() {
-    }
 }

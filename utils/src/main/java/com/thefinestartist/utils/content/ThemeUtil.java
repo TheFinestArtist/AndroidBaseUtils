@@ -20,10 +20,6 @@ import com.thefinestartist.Base;
  */
 public class ThemeUtil {
 
-    // No Instance
-    private ThemeUtil() {
-    }
-
     public static void applyStyle(int resId, boolean force) {
         Base.getTheme().applyStyle(resId, force);
     }

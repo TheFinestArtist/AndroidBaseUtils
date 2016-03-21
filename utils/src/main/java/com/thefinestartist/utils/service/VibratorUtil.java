@@ -11,10 +11,6 @@ import android.os.Vibrator;
  */
 public class VibratorUtil {
 
-    // No Instance
-    private VibratorUtil() {
-    }
-
     @TargetApi(11)
     public static boolean hasVibrator() {
         return ServiceUtil.getVibrator().hasVibrator();

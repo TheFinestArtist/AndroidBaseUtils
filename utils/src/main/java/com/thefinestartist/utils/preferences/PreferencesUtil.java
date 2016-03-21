@@ -25,10 +25,6 @@ import java.util.Set;
  */
 public class PreferencesUtil {
 
-    // No Instance
-    protected PreferencesUtil() {
-    }
-
     private static final LogHelper LogHelper = new LogHelper(PreferencesUtil.class);
     private static String defaultName = PreferencesUtil.class.getCanonicalName();
 

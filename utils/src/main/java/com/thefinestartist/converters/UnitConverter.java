@@ -9,10 +9,6 @@ import com.thefinestartist.Base;
  */
 public class UnitConverter {
 
-    // No Instance
-    protected UnitConverter() {
-    }
-
     public static float dpToPx(float dp) {
         return dp * Base.getDisplayMetrics().density;
     }

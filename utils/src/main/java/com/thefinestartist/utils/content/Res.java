@@ -6,8 +6,4 @@ package com.thefinestartist.utils.content;
  * @author Leonardo Taehwan Kim
  */
 public class Res extends ResourcesUtil {
-
-    // No Instance
-    protected Res() {
-    }
 }

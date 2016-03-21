@@ -7,10 +7,6 @@ package com.thefinestartist.utils.etc;
  */
 public class IntArrayUtil {
 
-    // No Instance
-    private IntArrayUtil() {
-    }
-
     public static boolean contains(int[] array, int value) {
         if (array == null)
             return false;

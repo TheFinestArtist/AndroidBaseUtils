@@ -55,10 +55,6 @@ import java.io.InputStream;
  */
 public class ContextUtil {
 
-    // No Instance
-    protected ContextUtil() {
-    }
-
     public static boolean bindService(Intent service, ServiceConnection conn, int flags) {
         return Base.getContext().bindService(service, conn, flags);
     }

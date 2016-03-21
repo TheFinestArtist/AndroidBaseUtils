@@ -14,10 +14,6 @@ import com.thefinestartist.Base;
  */
 public class TypefaceUtil {
 
-    // No Instance
-    private TypefaceUtil() {
-    }
-
     private static final SimpleArrayMap<String, Typeface> cache = new SimpleArrayMap<>();
 
     public static Typeface get(@NonNull String path) {

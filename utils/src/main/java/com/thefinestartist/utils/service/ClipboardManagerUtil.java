@@ -13,10 +13,6 @@ import com.thefinestartist.utils.etc.APILevel;
  */
 public class ClipboardManagerUtil {
 
-    // No Instance
-    private ClipboardManagerUtil() {
-    }
-
     public static void setText(CharSequence text) {
         android.text.ClipboardManager clipboardManager = ServiceUtil.getClipboardManager();
         if (APILevel.require(11)) {

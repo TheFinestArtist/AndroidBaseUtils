@@ -43,10 +43,6 @@ import java.io.InputStream;
  */
 public class ResourcesUtil {
 
-    // No Instance
-    protected ResourcesUtil() {
-    }
-
     private static void finishPreloading() {
         Base.getResources().finishPreloading();
     }

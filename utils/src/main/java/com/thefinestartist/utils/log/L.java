@@ -6,8 +6,4 @@ package com.thefinestartist.utils.log;
  * @author Leonardo Taehwan Kim
  */
 public class L extends LogUtil {
-
-    // No Instance
-    protected L() {
-    }
 }

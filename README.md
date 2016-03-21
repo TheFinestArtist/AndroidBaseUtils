@@ -54,8 +54,8 @@ buildscript {
 apply plugin: 'com.neenbedankt.android-apt'
 
 dependencies {
-    compile 'com.thefinestartist:utils:0.9.0'
-    apt 'com.thefinestartist:compilers:0.9.0'
+    compile 'com.thefinestartist:utils:0.9.1'
+    apt 'com.thefinestartist:compilers:0.9.1'
 }
 ```
 

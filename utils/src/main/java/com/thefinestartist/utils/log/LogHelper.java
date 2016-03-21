@@ -600,7 +600,7 @@ public class LogHelper {
         for (String line : lines) printLine(logLevel, TAG, line);
 
         if (settings.getStackTraceCount() > 0 && fromException)
-            printLine(logLevel, TAG, "Exception is occurred");
+            printLine(logLevel, TAG, "Exception occurred");
 
         // Log Stack Trace
         StackTraceElement[] traces = Thread.currentThread().getStackTrace();

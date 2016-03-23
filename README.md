@@ -54,8 +54,8 @@ buildscript {
 apply plugin: 'com.neenbedankt.android-apt'
 
 dependencies {
-    compile 'com.thefinestartist:utils:0.9.1'
-    apt 'com.thefinestartist:compilers:0.9.1'
+    compile 'com.thefinestartist:utils:0.9.2'
+    apt 'com.thefinestartist:compilers:0.9.2'
 }
 ```
 
@@ -100,6 +100,7 @@ LogHelper   L.tag(Class clazz);
 LogHelper   L.showThreadInfo(boolean showThreadInfo);
 LogHelper   L.stackTraceCount(int stackTraceCount);
 LogHelper   L.logLevel(LogLevel logLevel);
+LogHelper   L.showDivider(boolean showDivider);
 
 void        L.v(byte message);
 void        L.v(char message);
@@ -153,6 +154,7 @@ LogHelper   tag(Class clazz);
 LogHelper   showThreadInfo(boolean showThreadInfo);
 LogHelper   stackTraceCount(int stackTraceCount);
 LogHelper   logLevel(LogLevel logLevel);
+LogHelper   showDivider(boolean showDivider);
 
 void        v(byte message);
 void        v(char message);

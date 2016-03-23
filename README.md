@@ -128,12 +128,13 @@ L.getDefaultSettings()
         .setTag(LogUtil.class)
         .setShowThreadInfo(flase)
         .setStackTraceCount(0)
-        .setLogLevel(LogLevel.FULL);
+        .setLogLevel(LogLevel.FULL)
+        .setShowDivider(false);
         
 L.v("Hello World");
 L.tag("Tag").e(12.0f);
 L.showThreadInfo(true).i(new int[]{1, 2, 3});
-L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+L.stackTraceCount(3).showDivider(true).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
 ```
 ![LogUtil Sample](art/LogUtil.png)
 

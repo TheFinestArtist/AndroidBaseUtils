@@ -32,6 +32,10 @@ import javax.xml.transform.stream.StreamSource;
 public class LogHelper {
 
     private static final int INDENT_SPACES = 4;
+    // http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%E2%94%80-%E2%95%BF%EF%BF%A8%5D
+    private static final String TOP_DIVIDER = "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    private static final String MIDDLE_DIVIDER = "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    private static final String BOTTOM_DIVIDER = "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
     protected Settings settings = new Settings(LogHelper.class.getSimpleName());
 
@@ -79,6 +83,11 @@ public class LogHelper {
 
     public LogHelper logLevel(LogLevel logLevel) {
         settings.setLogLevel(logLevel);
+        return this;
+    }
+
+    public LogHelper showDivider(boolean showDivider) {
+        settings.setShowDivider(showDivider);
         return this;
     }
 
@@ -595,12 +604,21 @@ public class LogHelper {
         String TAG = settings.getTag();
         if (settings.getShowThreadInfo()) TAG += "(" + Thread.currentThread().getName() + ")";
 
+        // Top Divider
+        if (settings.getShowDivider()) printLine(logLevel, TAG, TOP_DIVIDER);
+
         // Log Content
         String[] lines = message.split(System.getProperty("line.separator"));
-        for (String line : lines) printLine(logLevel, TAG, line);
+        for (String line : lines)
+            printLine(logLevel, TAG, settings.getShowDivider() ?
+                    "┃ " + line :
+                    line);
 
         if (settings.getStackTraceCount() > 0 && fromException)
             printLine(logLevel, TAG, "Exception occurred");
+
+        // Middle Divider
+        if (settings.getShowDivider()) printLine(logLevel, TAG, MIDDLE_DIVIDER);
 
         // Log Stack Trace
         StackTraceElement[] traces = Thread.currentThread().getStackTrace();
@@ -621,16 +639,26 @@ public class LogHelper {
                     .append(traces[i].getLineNumber())
                     .append(")");
 
-            printLine(logLevel, TAG, builder.toString());
+            printLine(logLevel, TAG, settings.getShowDivider() ?
+                    "┃ " + builder.toString() :
+                    builder.toString());
         }
 
         // Log ellipsized stack trance
         int leftTraceCount = traces.length - startIndex - settings.getStackTraceCount();
         if (settings.getStackTraceCount() > 0 && leftTraceCount > 1)
-            printLine(logLevel, TAG, "    at " + leftTraceCount + " more stack traces...");
+            printLine(logLevel, TAG, settings.getShowDivider() ?
+                    "┃     at " + leftTraceCount + " more stack traces..." :
+                    "    at " + leftTraceCount + " more stack traces...");
         if (settings.getStackTraceCount() > 0 && leftTraceCount == 1)
-            printLine(logLevel, TAG, "    at 1 more stack trace...");
+            printLine(logLevel, TAG, settings.getShowDivider() ?
+                    "┃     at 1 more stack trace..." :
+                    "    at 1 more stack trace...");
 
+        // Middle Divider
+        if (settings.getShowDivider()) printLine(logLevel, TAG, BOTTOM_DIVIDER);
+
+        // LogUtil setToDefault
         if (this == LogUtil.getInstance()) setToDefault();
     }
 
@@ -639,6 +667,7 @@ public class LogHelper {
         settings.setShowThreadInfo(LogUtil.getDefaultSettings().getShowThreadInfo());
         settings.setStackTraceCount(LogUtil.getDefaultSettings().getStackTraceCount());
         settings.setLogLevel(LogUtil.getDefaultSettings().getLogLevel());
+        settings.setShowDivider(LogUtil.getDefaultSettings().getShowDivider());
     }
 
     private void printLine(LogLevel logLevel, String TAG, String message) {

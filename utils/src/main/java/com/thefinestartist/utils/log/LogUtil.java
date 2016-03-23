@@ -27,7 +27,8 @@ public class LogUtil {
             .tag(defaultSettings.getTag())
             .showThreadInfo(defaultSettings.getShowThreadInfo())
             .stackTraceCount(defaultSettings.getStackTraceCount())
-            .logLevel(defaultSettings.getLogLevel());
+            .logLevel(defaultSettings.getLogLevel())
+            .showDivider(defaultSettings.getShowDivider());
 
     public static LogHelper getInstance() {
         return logHelper;
@@ -56,6 +57,10 @@ public class LogUtil {
 
     public static LogHelper logLevel(LogLevel logLevel) {
         return logHelper.logLevel(logLevel);
+    }
+
+    public static LogHelper showDivider(boolean showDivider) {
+        return logHelper.showDivider(showDivider);
     }
 
     // Logging Verbose

@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public class MainActivity extends AppCompatActivity {
 
-    LogHelper logHelper = new LogHelper(MainActivity.class).stackTraceCount(3).showThreadInfo(true);
+    LogHelper logHelper = new LogHelper(MainActivity.class).showThreadInfo(true);
 
     EditText editText;
     Button button;
@@ -68,65 +68,65 @@ public class MainActivity extends AppCompatActivity {
 //        VibratorUtil.eee();
 //        KeyboardUtil.showImmediately(editText);
 
-        logHelper.v("Hey");
-        logHelper.v("Hello");
-        try {
-            JSONObject jsonObject = new JSONObject("caller\":\"getPoiById\",\"results\":{\"indexForPhone\":0,\"indexForEmail\":\"NULL\",\"indexForHomePage\":\"NULL\",\"indexForComment\":\"NULL\",\"phone\":\"05137-930 68\",\"cleanPhone\":\"0513793068\",\"internetAccess\":\"2\",\"overnightStay\":\"2\",\"wasteDisposal\":\"2\",\"toilet\":\"2\",\"electricity\":\"2\",\"cran\":\"2\",\"slipway\":\"2\",\"camping\":\"2\",\"freshWater\":\"2\",\"fieldNamesWithValue\":[\"phone\"],\"fieldNameTranslations\":[\"Telefon\"],\"id\":\"1470\",\"name\":\"Marina Rasche Werft GmbH & Co. KG\",\"latitude\":\"52.3956107286487\",\"longitude\":\"9.56583023071289\"}}");
-            logHelper.e(jsonObject);
-        } catch (JSONException e) {
-            L.e(e);
-            logHelper.e(e);
-        }
-
-        logHelper.json("{\"caller\":\"getPoiById\",\"results\":{\"indexForPhone\":0,\"indexForEmail\":\"NULL\",\"indexForHomePage\":\"NULL\",\"indexForComment\":\"NULL\",\"phone\":\"05137-930 68\",\"cleanPhone\":\"0513793068\",\"internetAccess\":\"2\",\"overnightStay\":\"2\",\"wasteDisposal\":\"2\",\"toilet\":\"2\",\"electricity\":\"2\",\"cran\":\"2\",\"slipway\":\"2\",\"camping\":\"2\",\"freshWater\":\"2\",\"fieldNamesWithValue\":[\"phone\"],\"fieldNameTranslations\":[\"Telefon\"],\"id\":\"1470\",\"name\":\"Marina Rasche Werft GmbH & Co. KG\",\"latitude\":\"52.3956107286487\",\"longitude\":\"9.56583023071289\"}}");
-
-        logHelper.xml("<set xmlns:android=\"http://schemas.android.com/apk/res/android\">\n" +
-                "    <!-- Before rotating, immediately set the alpha to 0. -->\n" +
-                "    <objectAnimator\n" +
-                "        android:valueFrom=\"1.0\"\n" +
-                "        android:valueTo=\"0.0\"\n" +
-                "        android:propertyName=\"alpha\"\n" +
-                "        android:duration=\"0\" />\n" +
-                "\n" +
-                "    <!-- Rotate. -->\n" +
-                "    <objectAnimator\n" +
-                "        android:valueFrom=\"-180\"\n" +
-                "        android:valueTo=\"0\"\n" +
-                "        android:propertyName=\"rotationY\"\n" +
-                "        android:interpolator=\"@android:anim/accelerate_decelerate_interpolator\"\n" +
-                "        android:duration=\"300\" />\n" +
-                "\n" +
-                "    <!-- Half-way through the rotation (see startOffset), set the alpha to 1. -->\n" +
-                "    <objectAnimator\n" +
-                "        android:valueFrom=\"0.0\"\n" +
-                "        android:valueTo=\"1.0\"\n" +
-                "        android:propertyName=\"alpha\"\n" +
-                "        android:startOffset=\"150\"\n" +
-                "        android:duration=\"1\" />\n" +
-                "</set>");
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                logHelper.e("Hey");
-            }
-        });
-        thread.start();
-
-        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
-        L.e("Hello World");
-
-        L.showThreadInfo(true).v("Hello World");
-        L.tag("MainActivity").e(12.0f);
-        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
-
-//        L.v("Hello World");
-//        L.tag("Tag").e(12.0f);
-//        L.showThreadInfo(true).i(new int[]{1, 2, 3});
-//        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+//        logHelper.v("Hey");
+//        logHelper.v("Hello");
+//        try {
+//            JSONObject jsonObject = new JSONObject("caller\":\"getPoiById\",\"results\":{\"indexForPhone\":0,\"indexForEmail\":\"NULL\",\"indexForHomePage\":\"NULL\",\"indexForComment\":\"NULL\",\"phone\":\"05137-930 68\",\"cleanPhone\":\"0513793068\",\"internetAccess\":\"2\",\"overnightStay\":\"2\",\"wasteDisposal\":\"2\",\"toilet\":\"2\",\"electricity\":\"2\",\"cran\":\"2\",\"slipway\":\"2\",\"camping\":\"2\",\"freshWater\":\"2\",\"fieldNamesWithValue\":[\"phone\"],\"fieldNameTranslations\":[\"Telefon\"],\"id\":\"1470\",\"name\":\"Marina Rasche Werft GmbH & Co. KG\",\"latitude\":\"52.3956107286487\",\"longitude\":\"9.56583023071289\"}}");
+//            logHelper.e(jsonObject);
+//        } catch (JSONException e) {
+//            L.e(e);
+//            logHelper.e(e);
+//        }
 //
-//        logHelper.v("Hello World");
-//        logHelper.e(12.0f);
-//        logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+//        logHelper.json("{\"caller\":\"getPoiById\",\"results\":{\"indexForPhone\":0,\"indexForEmail\":\"NULL\",\"indexForHomePage\":\"NULL\",\"indexForComment\":\"NULL\",\"phone\":\"05137-930 68\",\"cleanPhone\":\"0513793068\",\"internetAccess\":\"2\",\"overnightStay\":\"2\",\"wasteDisposal\":\"2\",\"toilet\":\"2\",\"electricity\":\"2\",\"cran\":\"2\",\"slipway\":\"2\",\"camping\":\"2\",\"freshWater\":\"2\",\"fieldNamesWithValue\":[\"phone\"],\"fieldNameTranslations\":[\"Telefon\"],\"id\":\"1470\",\"name\":\"Marina Rasche Werft GmbH & Co. KG\",\"latitude\":\"52.3956107286487\",\"longitude\":\"9.56583023071289\"}}");
+//
+//        logHelper.xml("<set xmlns:android=\"http://schemas.android.com/apk/res/android\">\n" +
+//                "    <!-- Before rotating, immediately set the alpha to 0. -->\n" +
+//                "    <objectAnimator\n" +
+//                "        android:valueFrom=\"1.0\"\n" +
+//                "        android:valueTo=\"0.0\"\n" +
+//                "        android:propertyName=\"alpha\"\n" +
+//                "        android:duration=\"0\" />\n" +
+//                "\n" +
+//                "    <!-- Rotate. -->\n" +
+//                "    <objectAnimator\n" +
+//                "        android:valueFrom=\"-180\"\n" +
+//                "        android:valueTo=\"0\"\n" +
+//                "        android:propertyName=\"rotationY\"\n" +
+//                "        android:interpolator=\"@android:anim/accelerate_decelerate_interpolator\"\n" +
+//                "        android:duration=\"300\" />\n" +
+//                "\n" +
+//                "    <!-- Half-way through the rotation (see startOffset), set the alpha to 1. -->\n" +
+//                "    <objectAnimator\n" +
+//                "        android:valueFrom=\"0.0\"\n" +
+//                "        android:valueTo=\"1.0\"\n" +
+//                "        android:propertyName=\"alpha\"\n" +
+//                "        android:startOffset=\"150\"\n" +
+//                "        android:duration=\"1\" />\n" +
+//                "</set>");
+//        Thread thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                logHelper.e("Hey");
+//            }
+//        });
+//        thread.start();
+//
+//        L.stackTraceCount(3).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+//        L.e("Hello World");
+//
+//        L.showThreadInfo(true).v("Hello World");
+//        L.tag("MainActivity").e(12.0f);
+//        L.stackTraceCount(3).showDivider(true).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+
+        L.v("Hello World");
+        L.tag("Tag").e(12.0f);
+        L.showThreadInfo(true).i(new int[]{1, 2, 3});
+        L.stackTraceCount(3).showDivider(true).json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
+
+        logHelper.v("Hello World");
+        logHelper.e(12.0f);
+        logHelper.json("{\"name\":\"Leonardo Taehwan Kim\",\"email\":\"leonardo@thefinestartist.com\"}");
     }
 
     @Override

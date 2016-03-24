@@ -101,6 +101,7 @@ LogHelper   L.showThreadInfo(boolean showThreadInfo);
 LogHelper   L.stackTraceCount(int stackTraceCount);
 LogHelper   L.logLevel(LogLevel logLevel);
 LogHelper   L.showDivider(boolean showDivider);
+LogHelper   L.logPrinter(LogPrinter logPrinter);
 
 void        L.v(byte message);
 void        L.v(char message);
@@ -130,7 +131,8 @@ L.getDefaultSettings()
         .setShowThreadInfo(flase)
         .setStackTraceCount(0)
         .setLogLevel(LogLevel.FULL)
-        .setShowDivider(false);
+        .setShowDivider(false)
+        .setLogPrinter(new AndroidLogPrinter());
         
 L.v("Hello World");
 L.tag("Tag").e(12.0f);
@@ -155,6 +157,7 @@ LogHelper   showThreadInfo(boolean showThreadInfo);
 LogHelper   stackTraceCount(int stackTraceCount);
 LogHelper   logLevel(LogLevel logLevel);
 LogHelper   showDivider(boolean showDivider);
+LogHelper   logPrinter(LogPrinter logPrinter);
 
 void        v(byte message);
 void        v(char message);

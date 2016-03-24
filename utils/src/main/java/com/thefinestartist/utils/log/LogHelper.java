@@ -91,6 +91,11 @@ public class LogHelper {
         return this;
     }
 
+    public LogHelper logPrinter(LogPrinter logPrinter) {
+        settings.setLogPrinter(logPrinter);
+        return this;
+    }
+
     // Logging Verbose
     public void v(byte message) {
         log(LogLevel.VERBOSE, message);
@@ -470,63 +475,63 @@ public class LogHelper {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, char message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, short message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, int message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, long message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, float message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, double message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, boolean message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, String.valueOf(message));
+        printString(logLevel, String.valueOf(message));
     }
 
     private void log(LogLevel logLevel, String message) {
         if (logLevel.ordinal() < settings.getLogLevel().ordinal())
             return;
 
-        printLog(logLevel, message);
+        printString(logLevel, message);
     }
 
     private void log(LogLevel logLevel, JSONObject message) {
@@ -534,7 +539,7 @@ public class LogHelper {
             return;
 
         try {
-            printLog(logLevel, message.toString(INDENT_SPACES));
+            printString(logLevel, message.toString(INDENT_SPACES));
         } catch (JSONException e) {
             log(logLevel, e);
         }
@@ -545,7 +550,7 @@ public class LogHelper {
             return;
 
         try {
-            printLog(logLevel, message.toString(INDENT_SPACES));
+            printString(logLevel, message.toString(INDENT_SPACES));
         } catch (JSONException e) {
             log(logLevel, e);
         }
@@ -573,7 +578,7 @@ public class LogHelper {
                     .append("\n");
         }
 
-        printLog(logLevel, builder.toString(), true);
+        printString(logLevel, builder.toString(), true);
     }
 
     private void log(LogLevel logLevel, Object message) {
@@ -592,14 +597,14 @@ public class LogHelper {
         else if (message instanceof Object[]) log = Arrays.toString((Object[]) message);
         else log = String.valueOf(message);
 
-        printLog(logLevel, log);
+        printString(logLevel, log);
     }
 
-    private void printLog(LogLevel logLevel, String message) {
-        printLog(logLevel, message, false);
+    private void printString(LogLevel logLevel, String message) {
+        printString(logLevel, message, false);
     }
 
-    private synchronized void printLog(LogLevel logLevel, String message, boolean fromException) {
+    private synchronized void printString(LogLevel logLevel, String message, boolean fromException) {
         // Create TAG
         String TAG = settings.getTag();
         if (settings.getShowThreadInfo()) TAG += "(" + Thread.currentThread().getName() + ")";
@@ -662,38 +667,35 @@ public class LogHelper {
         if (this == LogUtil.getInstance()) setToDefault();
     }
 
+    private void printLine(LogLevel logLevel, String tag, String message) {
+        switch (logLevel) {
+            case FULL:
+            case VERBOSE:
+                settings.getLogPrinter().v(tag, message);
+                break;
+            case DEBUG:
+                settings.getLogPrinter().d(tag, message);
+                break;
+            case INFO:
+                settings.getLogPrinter().i(tag, message);
+                break;
+            case WARN:
+                settings.getLogPrinter().w(tag, message);
+                break;
+            case ERROR:
+                settings.getLogPrinter().e(tag, message);
+                break;
+            case ASSERT:
+                settings.getLogPrinter().wtf(tag, message);
+                break;
+        }
+    }
+
     protected void setToDefault() {
         settings.setTag(LogUtil.getDefaultSettings().getTag());
         settings.setShowThreadInfo(LogUtil.getDefaultSettings().getShowThreadInfo());
         settings.setStackTraceCount(LogUtil.getDefaultSettings().getStackTraceCount());
         settings.setLogLevel(LogUtil.getDefaultSettings().getLogLevel());
         settings.setShowDivider(LogUtil.getDefaultSettings().getShowDivider());
-    }
-
-    private void printLine(LogLevel logLevel, String TAG, String message) {
-        switch (logLevel) {
-            case FULL:
-            case VERBOSE:
-                Log.v(TAG, message);
-                break;
-            case DEBUG:
-                Log.d(TAG, message);
-                break;
-            case INFO:
-                Log.i(TAG, message);
-                break;
-            case WARN:
-                Log.w(TAG, message);
-                break;
-            case ERROR:
-                Log.e(TAG, message);
-                break;
-            case ASSERT:
-                if (APILevel.require(8))
-                    Log.wtf(TAG, message);
-                else
-                    Log.e(TAG, message);
-                break;
-        }
     }
 }

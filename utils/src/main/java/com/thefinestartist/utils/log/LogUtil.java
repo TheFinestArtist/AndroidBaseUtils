@@ -63,6 +63,10 @@ public class LogUtil {
         return logHelper.showDivider(showDivider);
     }
 
+    public LogHelper logPrinter(LogPrinter logPrinter) {
+        return logHelper.logPrinter(logPrinter);
+    }
+
     // Logging Verbose
     public static void v(byte message) {
         logHelper.v(message);

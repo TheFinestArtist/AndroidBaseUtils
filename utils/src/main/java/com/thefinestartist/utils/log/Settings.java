@@ -15,6 +15,7 @@ public class Settings {
     private int stackTraceCount = 0;
     private LogLevel logLevel = LogLevel.FULL;
     private boolean showDivider = false;
+    private LogPrinter logPrinter = new AndroidLogPrinter();
 
     public Settings() {
     }
@@ -89,6 +90,16 @@ public class Settings {
 
     public Settings setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
+        if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
+        return this;
+    }
+
+    public LogPrinter getLogPrinter() {
+        return logPrinter;
+    }
+
+    public Settings setLogPrinter(LogPrinter logPrinter) {
+        this.logPrinter = logPrinter;
         if (this == LogUtil.getDefaultSettings()) LogUtil.getInstance().setToDefault();
         return this;
     }

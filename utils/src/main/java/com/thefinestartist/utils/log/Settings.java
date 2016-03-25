@@ -6,7 +6,9 @@ import com.thefinestartist.enums.LogLevel;
 import com.thefinestartist.utils.content.ResourcesUtil;
 
 /**
- * Created by TheFinestArtist on 3/21/16.
+ * Settings for {@link LogHelper}.
+ *
+ * @author Leonardo Taehwan Kim
  */
 public class Settings {
 

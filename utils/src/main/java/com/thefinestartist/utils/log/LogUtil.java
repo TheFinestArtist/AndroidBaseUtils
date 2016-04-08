@@ -18,10 +18,6 @@ public class LogUtil {
     // Defaults
     private static Settings defaultSettings = new Settings(LogUtil.class.getSimpleName());
 
-    public static Settings getDefaultSettings() {
-        return defaultSettings;
-    }
-
     // Singleton
     private static volatile LogHelper logHelper = new LogHelper()
             .tag(defaultSettings.getTag())
@@ -29,6 +25,10 @@ public class LogUtil {
             .stackTraceCount(defaultSettings.getStackTraceCount())
             .logLevel(defaultSettings.getLogLevel())
             .showDivider(defaultSettings.getShowDivider());
+
+    public static Settings getDefaultSettings() {
+        return defaultSettings;
+    }
 
     public static LogHelper getInstance() {
         return logHelper;

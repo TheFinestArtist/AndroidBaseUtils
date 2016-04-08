@@ -9,6 +9,8 @@ import android.os.Build;
  */
 public class APILevel {
 
+    private APILevel() {}
+
     /**
      * @param level minimum API level version that has to support the device
      * @return true when the caller API version is at least level

@@ -15,6 +15,8 @@ import com.thefinestartist.utils.etc.APILevel;
  */
 public class ViewUtil {
 
+    private ViewUtil() {}
+
     public static void setBackground(View view, Drawable drawable) {
         if (view == null)
             return;

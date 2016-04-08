@@ -14,6 +14,8 @@ import com.thefinestartist.Base;
  */
 public class PackageUtil {
 
+    private PackageUtil() {}
+
     public static String FACEBOOK = "com.facebook.katana";
     public static String TWITTER = "com.twitter.android";
     public static String GOOGLE_PLUS = "com.google.android.apps.plus";

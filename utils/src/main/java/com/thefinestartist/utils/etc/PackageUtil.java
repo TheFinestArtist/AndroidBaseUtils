@@ -14,16 +14,16 @@ import com.thefinestartist.Base;
  */
 public class PackageUtil {
 
-    public static String FACEBOOK = "com.facebook.katana";
-    public static String TWITTER = "com.twitter.android";
-    public static String GOOGLE_PLUS = "com.google.android.apps.plus";
-    public static String GMAIL = "com.google.android.gm";
-    public static String PINTEREST = "com.pinterest";
-    public static String TUMBLR = "com.tumblr";
-    public static String FANCY = "com.thefancy.app";
-    public static String FLIPBOARD = "flipboard.app";
-    public static String KAKAOTALK = "com.kakao.talk";
-    public static String KAKAOSTORY = "com.kakao.story";
+    public static final String FACEBOOK = "com.facebook.katana";
+    public static final String TWITTER = "com.twitter.android";
+    public static final String GOOGLE_PLUS = "com.google.android.apps.plus";
+    public static final String GMAIL = "com.google.android.gm";
+    public static final String PINTEREST = "com.pinterest";
+    public static final String TUMBLR = "com.tumblr";
+    public static final String FANCY = "com.thefancy.app";
+    public static final String FLIPBOARD = "flipboard.app";
+    public static final String KAKAOTALK = "com.kakao.talk";
+    public static final String KAKAOSTORY = "com.kakao.story";
 
     public static boolean isInstalled(String packageName) {
         PackageManager packageManager = Base.getContext().getPackageManager();

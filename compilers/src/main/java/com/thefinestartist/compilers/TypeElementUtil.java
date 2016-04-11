@@ -9,6 +9,8 @@ import javax.lang.model.type.NoType;
  */
 public class TypeElementUtil {
 
+    private TypeElementUtil() {}
+
     public static boolean instanceOf(TypeElement typeElement, Class clazz) {
         if (typeElement == null || typeElement instanceof NoType) {
             return false;

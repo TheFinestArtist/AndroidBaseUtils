@@ -11,6 +11,8 @@ import java.util.ArrayList;
  */
 public class SparseArrayUtil {
 
+    private SparseArrayUtil() {}
+
     public static <C> ArrayList<C> asArrayList(SparseArray<C> sparseArray) {
         if (sparseArray == null)
             return new ArrayList<C>();

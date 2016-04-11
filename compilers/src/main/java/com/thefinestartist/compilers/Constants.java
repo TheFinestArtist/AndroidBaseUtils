@@ -5,6 +5,8 @@ package com.thefinestartist.compilers;
  */
 public class Constants {
 
+    private Constants() {}
+
     public static final String SUFFIX = "$$ExtraBinder";
 
     public static final String BINDING_ACTIVITY = "        activity.%s = (%s) bundle.get(\"%s\");";

@@ -11,6 +11,8 @@ import android.os.Vibrator;
  */
 public class VibratorUtil {
 
+    private VibratorUtil() {}
+
     @TargetApi(11)
     public static boolean hasVibrator() {
         return ServiceUtil.getVibrator().hasVibrator();

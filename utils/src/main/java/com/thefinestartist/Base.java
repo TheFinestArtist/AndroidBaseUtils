@@ -14,6 +14,8 @@ import android.util.DisplayMetrics;
  */
 public class Base {
 
+    private Base() {}
+
     private static Context context;
 
     public static void initialize(@NonNull Context context) {

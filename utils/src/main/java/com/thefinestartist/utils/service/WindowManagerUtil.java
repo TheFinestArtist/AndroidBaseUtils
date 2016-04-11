@@ -11,6 +11,8 @@ import android.view.WindowManager;
  */
 public class WindowManagerUtil {
 
+    private WindowManagerUtil() {}
+
     public static Display getDefaultDisplay() {
         return ServiceUtil.getWindowManager().getDefaultDisplay();
     }

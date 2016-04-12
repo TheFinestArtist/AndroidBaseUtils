@@ -3,6 +3,7 @@ package com.thefinestartist.utils.etc;
 import android.util.SparseArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * SparseArrayUtil helps to manage SparseArray conveniently.
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  */
 public class SparseArrayUtil {
 
-    public static <C> ArrayList<C> asArrayList(SparseArray<C> sparseArray) {
+    public static <C> List<C> asArrayList(SparseArray<C> sparseArray) {
         if (sparseArray == null)
             return new ArrayList<C>();
 

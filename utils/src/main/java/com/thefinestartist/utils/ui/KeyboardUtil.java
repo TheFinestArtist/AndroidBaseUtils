@@ -26,6 +26,11 @@ import com.thefinestartist.utils.service.ServiceUtil;
  */
 public class KeyboardUtil {
 
+    public static int height = 0;
+    public static final String KEYBOARD_UTIL_PREF = "KEYBOARD_UTIL_PREF";
+    public static final String KEYBOARD_HEIGHT = "KEYBOARD_HEIGHT";
+    public static final int DEFAULT_KEYBOARD_HEIGHT = 200;
+
     /**
      * Helps to show keyboard in {@link Activity#onCreate(Bundle)}, {@link Activity#onStart()},
      * {@link Activity#onResume()},
@@ -111,11 +116,6 @@ public class KeyboardUtil {
         view.clearFocus();
         ServiceUtil.getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-
-    public static int height = 0;
-    public static final String KEYBOARD_UTIL_PREF = "KEYBOARD_UTIL_PREF";
-    public static final String KEYBOARD_HEIGHT = "KEYBOARD_HEIGHT";
-    public static final int DEFAULT_KEYBOARD_HEIGHT = 200;
 
     public static int getHeight() {
         if (height <= 0)

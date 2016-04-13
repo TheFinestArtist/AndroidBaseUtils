@@ -35,14 +35,15 @@ import javax.tools.JavaFileObject;
 @SupportedAnnotationTypes("com.thefinestartist.annotations.Extra")
 public class ExtraCompiler extends AbstractProcessor {
 
-    @Override
-    public SourceVersion getSupportedSourceVersion() {
-        return SourceVersion.latestSupported();
-    }
 
     Filer filer;
     Messager messager;
     Types types;
+
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.latestSupported();
+    }
 
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {

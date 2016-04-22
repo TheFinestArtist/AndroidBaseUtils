@@ -48,13 +48,11 @@ public class DisplayUtil {
     }
 
     public static boolean isPortrait() {
-        Rotation rotation = getRotation();
-        return rotation == Rotation.DEGREES_0 || rotation == Rotation.DEGREES_180;
+        return getHeight() >= getWidth();
     }
 
     public static boolean isLandscape() {
-        Rotation rotation = getRotation();
-        return rotation == Rotation.DEGREES_90 || rotation == Rotation.DEGREES_270;
+        return getHeight() < getWidth();
     }
 
     public static int getStatusBarHeight() {

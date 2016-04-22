@@ -128,7 +128,7 @@ void        L.xml(LogLevel logLevel, String jsonString);
 // Set default settings at your Application.
 L.getDefaultSettings()
         .setTag(LogUtil.class)
-        .setShowThreadInfo(flase)
+        .setShowThreadInfo(false)
         .setStackTraceCount(0)
         .setLogLevel(LogLevel.FULL)
         .setShowDivider(false)

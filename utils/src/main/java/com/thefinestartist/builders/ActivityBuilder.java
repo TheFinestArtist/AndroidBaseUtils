@@ -12,7 +12,7 @@ import com.thefinestartist.Base;
 import com.thefinestartist.utils.content.ContextUtil;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * ActivityBuilder helps to build {@link Activity} {@link Intent} and start {@link Activity}.
@@ -42,7 +42,7 @@ public class ActivityBuilder {
         return this;
     }
 
-    public <T extends Parcelable> ActivityBuilder set(@NonNull String key, List<T> value) {
+    public <T extends Parcelable> ActivityBuilder set(@NonNull String key, ArrayList<T> value) {
         intent.putExtra(key, value);
         return this;
     }

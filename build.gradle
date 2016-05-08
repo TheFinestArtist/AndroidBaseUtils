@@ -5,8 +5,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-beta5'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.android.tools.build:gradle:2.1.0'
         classpath 'com.novoda:bintray-release:0.3.4'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -42,9 +42,9 @@ ext {
     targetCompatibility = JavaVersion.VERSION_1_7
 
     versionCode = 1
-    versionName = '0.9.3'
+    versionName = '0.9.4'
 
-    supportLibVersion = '23.2.1'
+    supportLibVersion = '23.3.0'
     playLibVersion = '8.4.0'
 }
 

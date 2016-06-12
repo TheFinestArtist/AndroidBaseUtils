@@ -54,8 +54,8 @@ buildscript {
 apply plugin: 'com.neenbedankt.android-apt'
 
 dependencies {
-    compile 'com.thefinestartist:utils:0.9.4'
-    apt 'com.thefinestartist:compilers:0.9.4'
+    compile 'com.thefinestartist:utils:0.9.5'
+    apt 'com.thefinestartist:compilers:0.9.5'
 }
 ```
 
@@ -389,9 +389,13 @@ void    Keyboard.show(View);
 void    Keyboard.showImmediately(View); // Call this method if your activity or fragment is resumed.
 
 void    Keyboard.hide(View);
+void    Keyboard.hide(View, clearFocus);
 void    Keyboard.hide(Activity);
+void    Keyboard.hide(Activity, clearFocus);
 void    Keyboard.hide(Fragment);
+void    Keyboard.hide(Fragment, clearFocus);
 void    Keyboard.hide(Dialog);
+void    Keyboard.hide(Dialog, clearFocus);
 ```
 
 ## APILevel

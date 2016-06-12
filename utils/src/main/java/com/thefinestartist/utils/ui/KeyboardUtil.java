@@ -87,8 +87,7 @@ public class KeyboardUtil {
         hide(fragment.getActivity());
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static void hide(android.app.Fragment fragment) {
+    public static void hide(Fragment fragment, boolean clearFocus) {
         if (fragment == null || fragment.getActivity() == null)
             return;
 
@@ -96,24 +95,52 @@ public class KeyboardUtil {
     }
 
     public static void hide(Activity activity) {
+        hide(activity, true);
+    }
+
+    public static void hide(Activity activity, boolean clearFocus) {
         if (activity == null)
             return;
 
-        hide(activity.getCurrentFocus());
+        hide(activity.getCurrentFocus(), clearFocus);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static void hide(android.app.Fragment fragment) {
+        hide(fragment, true);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static void hide(android.app.Fragment fragment, boolean clearFocus) {
+        if (fragment == null || fragment.getActivity() == null)
+            return;
+
+        hide(fragment.getActivity(), clearFocus);
     }
 
     public static void hide(Dialog dialog) {
+        hide(dialog, true);
+    }
+
+    public static void hide(Dialog dialog, boolean clearFocus) {
         if (dialog == null)
             return;
 
-        hide(dialog.getCurrentFocus());
+        hide(dialog.getCurrentFocus(), clearFocus);
     }
 
     public static void hide(View view) {
+        hide(view, true);
+    }
+
+    public static void hide(View view, boolean clearFocus) {
         if (view == null)
             return;
 
-        view.clearFocus();
+        if (clearFocus) {
+            view.clearFocus();
+        }
+
         ServiceUtil.getInputMethodManager().hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 

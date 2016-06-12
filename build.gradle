@@ -42,7 +42,7 @@ ext {
     targetCompatibility = JavaVersion.VERSION_1_7
 
     versionCode = 1
-    versionName = '0.9.4'
+    versionName = '0.9.5'
 
     supportLibVersion = '23.3.0'
     playLibVersion = '8.4.0'

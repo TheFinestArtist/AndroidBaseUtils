@@ -1,6 +1,7 @@
 package com.thefinestartist.builders;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import java.io.Serializable;
 
@@ -15,6 +16,11 @@ public class BundleBuilder {
 
     public <T extends Serializable> BundleBuilder set(String key, T value) {
         bundle.putSerializable(key, value);
+        return this;
+    }
+
+    public BundleBuilder set(String key, Parcelable value) {
+        bundle.putParcelable(key, value);
         return this;
     }
 
